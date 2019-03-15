@@ -21,6 +21,6 @@ namespace team_development
             Application.Run(new Form1());
         }
         //test-hwx
-        //test2
+        //test2d
     }
 }
