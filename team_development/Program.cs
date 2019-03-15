@@ -9,7 +9,6 @@ namespace team_development
     static class Program
     {
         //test
-        //test_zz
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
