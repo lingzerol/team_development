@@ -9,7 +9,6 @@ namespace team_development
     static class Program
     {
         //test
-        //tset-hwx
         //test_lzp
         /// <summary>
         /// 应用程序的主入口点。
@@ -21,5 +20,7 @@ namespace team_development
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        //test-hwx
+        //test2
     }
 }
