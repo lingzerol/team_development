@@ -8,8 +8,6 @@ namespace team_development
 {
     static class Program
     {
-        //test
-        //test_lzp2
 
         /// 应用程序的主入口点。
         /// </summary>
@@ -20,8 +18,6 @@ namespace team_development
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
-        //test-hwx
-        //test2d
-        //faflajfl
+        
     }
 }
