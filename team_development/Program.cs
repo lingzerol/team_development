@@ -8,9 +8,7 @@ namespace team_development
 {
     static class Program
     {
-        //test_lzp2
-        //testwhw
-        /// <summary>
+
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
@@ -20,5 +18,6 @@ namespace team_development
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        
     }
 }
