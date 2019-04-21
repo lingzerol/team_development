@@ -47,12 +47,15 @@ namespace team_development
 
         private void Selection_Click(object sender, EventArgs e)
         {
-
+            MessageBoxButtons btn = MessageBoxButtons.OKCancel;
+            DialogResult dlr = MessageBox.Show("您选择了：", "...", btn);
         }
 
         private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
+
+        
     }
 }
