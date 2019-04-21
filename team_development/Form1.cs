@@ -16,5 +16,18 @@ namespace team_development
         {
             InitializeComponent();
         }
+
+        private void CourseSelectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Form1Content.Controls.Clear();
+            Form f = MenuGetter.GetMenu(MenuType.JWXT, SubMenuType.C_S);
+            this.Form1Content.Controls.Add(f);
+            f.Show();
+        }
+
+        private void Form1Content_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
