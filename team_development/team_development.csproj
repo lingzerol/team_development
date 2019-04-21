@@ -55,10 +55,19 @@
     <Compile Include="InquiryNotification.Designer.cs">
       <DependentUpon>InquiryNotification.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotificationArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotificationArticle.Designer.cs">
+      <DependentUpon>NotificationArticle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="InquiryNotification.resx">
       <DependentUpon>InquiryNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotificationArticle.resx">
+      <DependentUpon>NotificationArticle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
