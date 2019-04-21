@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using log4net;
 namespace team_development
 {
     static class Program
@@ -18,6 +18,7 @@ namespace team_development
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+           
         }
     }
 }
