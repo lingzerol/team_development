@@ -55,6 +55,7 @@ namespace team_development
             this.Hide();
             h.ShowDialog();
             Application.ExitThread();
-        }
+            
+    }
     }
 }

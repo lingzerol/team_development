@@ -44,11 +44,11 @@ namespace team_development
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewNotifocation = new System.Windows.Forms.DataGridView();
             this.ColumnTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPublishAgency = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPublishDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotifocation)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,21 +63,21 @@ namespace team_development
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dataGridView1
+            // dataGridViewNotifocation
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewNotifocation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewNotifocation.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.dataGridViewNotifocation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNotifocation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnTitle,
             this.ColumnPublishAgency,
             this.ColumnPublishDate});
-            this.dataGridView1.Location = new System.Drawing.Point(49, 114);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(939, 395);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridViewNotifocation.Location = new System.Drawing.Point(49, 114);
+            this.dataGridViewNotifocation.Name = "dataGridViewNotifocation";
+            this.dataGridViewNotifocation.RowTemplate.Height = 27;
+            this.dataGridViewNotifocation.Size = new System.Drawing.Size(939, 395);
+            this.dataGridViewNotifocation.TabIndex = 1;
+            this.dataGridViewNotifocation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ColumnTitle
             // 
@@ -99,12 +99,12 @@ namespace team_development
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 568);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewNotifocation);
             this.Controls.Add(this.label1);
             this.Name = "InquiryNotification";
             this.Text = "InquiryNotification";
             this.Load += new System.EventHandler(this.InquiryNotification_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotifocation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,7 +113,7 @@ namespace team_development
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewNotifocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPublishAgency;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPublishDate;

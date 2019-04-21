@@ -15,7 +15,7 @@ namespace team_development
         public InquiryNotification()
         {
             InitializeComponent();
-            DataGridViewRowCollection rows = dataGridView1.Rows;
+            DataGridViewRowCollection rows = dataGridViewNotifocation.Rows;
             rows.Add(new object[] { "暨南大学党政办公室关于2019年“五一”国际劳动节放假的通知","党政办公室" ,"2019 - 04 - 15" });
             rows.Add(new object[] { "关于启动暨南大学首次五级、六级职员聘任工作的通知","人力资源开发与管理处","2019 - 04 - 03" });
             rows.Add(new object[] { "关于开展第十五届广东省丁颖科技奖推荐评选工作的通知" ,"人力资源开发与管理处","2019 - 04 - 19" });
@@ -43,9 +43,13 @@ namespace team_development
                 this.Hide();
                 f.ShowDialog();
                 Application.ExitThread();
-            }
+                
+    }
         }
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
         private void InquiryNotification_Load(object sender, EventArgs e)
         {
 
