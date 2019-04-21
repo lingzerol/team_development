@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using log4net;
 namespace team_development
 {
     static class Program
     {
-        //testlzp 3.19 22:55
-        //testwhw 3.19 23:16
-        //testHwx 3.20 20:21
+       
+        //testwhw
+        //testlzp
         /// <summary>
+    
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
@@ -20,6 +21,8 @@ namespace team_development
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+           
         }
+        
     }
 }
