@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace team_development
+using team_development.UI.CourseSelection;
+namespace team_development.Lib
 {
     enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
     enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
