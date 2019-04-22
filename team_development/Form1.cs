@@ -27,10 +27,18 @@ namespace team_development
         {
 
         }
+<<<<<<< HEAD
+
+        private void 用户信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Form1Content.Controls.Clear();
+            Form f = MenuGetter.GetMenu(MenuType.UserInfo);
+=======
         private void TurnForm(MenuType MenuId,SubMenuType SubMenu)
         {
             this.Form1Content.Controls.Clear();
             Form f = MenuGetter.GetMenu(MenuId,SubMenu);
+>>>>>>> b95d75f59fe20d26029a7d4f4b81f54109d7cdb5
             this.Form1Content.Controls.Add(f);
             f.Show();
         }

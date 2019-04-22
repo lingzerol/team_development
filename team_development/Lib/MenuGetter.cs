@@ -50,6 +50,7 @@ namespace team_development.Lib
                     }
                     break;
                 case MenuType.UserInfo:
+                    result = new User1();
                     break;
                 default:
                     //error processing

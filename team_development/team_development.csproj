@@ -70,6 +70,21 @@
     <Compile Include="Lib\MenuGetter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+    <Compile Include="User1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User1.Designer.cs">
+      <DependentUpon>User1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User2.Designer.cs">
+      <DependentUpon>User2.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CourseSelection.resx">
+=======
     <Compile Include="UI\CourseSelection\TimeSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +92,7 @@
       <DependentUpon>TimeSetting.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UI\CourseSelection\CourseSelection.resx">
+>>>>>>> b95d75f59fe20d26029a7d4f4b81f54109d7cdb5
       <DependentUpon>CourseSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -94,8 +110,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <EmbeddedResource Include="User1.resx">
+      <DependentUpon>User1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User2.resx">
+      <DependentUpon>User2.cs</DependentUpon>
+=======
     <EmbeddedResource Include="UI\CourseSelection\TimeSetting.resx">
       <DependentUpon>TimeSetting.cs</DependentUpon>
+>>>>>>> b95d75f59fe20d26029a7d4f4b81f54109d7cdb5
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
