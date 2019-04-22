@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace team_development.UI.UserInfo
 {
-    public partial class UserInfo_Setting : Form
+    public partial class UserInfoSetting : Form
     {
-        public UserInfo_Setting()
+        public UserInfoSetting()
         {
             InitializeComponent();
         }

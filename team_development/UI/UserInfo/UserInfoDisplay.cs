@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace team_development.UI.UserInfo
 {
-    public partial class UserInfo_Display : Form
+    public partial class UserInfoDisplay : Form
     {
-        public UserInfo_Display()
+        public UserInfoDisplay()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserInfo_Setting f = new UserInfo_Setting();
+            UserInfoSetting f = new UserInfoSetting();
             f.Show();
         }
 
