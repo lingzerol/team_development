@@ -40,5 +40,10 @@ namespace team_development
             this.Form1Content.Controls.Add(f);
             f.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
