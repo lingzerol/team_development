@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\MatchScheme\MatchScheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MatchScheme\MatchScheme.Designer.cs">
+      <DependentUpon>MatchScheme.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\CourseSelection\CourseSelection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     <Compile Include="UI\UserInfo\UserInfoSetting.Designer.cs">
       <DependentUpon>UserInfoSetting.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\MatchScheme\MatchScheme.resx">
+      <DependentUpon>MatchScheme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\CourseSelection\CourseSelection.resx">
       <DependentUpon>CourseSelection.cs</DependentUpon>
     </EmbeddedResource>

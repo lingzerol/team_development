@@ -45,5 +45,10 @@ namespace team_development
         {
 
         }
+
+        private void MatchSchemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.JWXT, SubMenuType.MatchScheme);
+        }
     }
 }

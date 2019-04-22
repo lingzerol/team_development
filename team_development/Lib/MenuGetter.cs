@@ -24,6 +24,7 @@ namespace team_development.Lib
                             result = new CourseSelection();
                             break;
                         case SubMenuType.MatchScheme:
+                            result = new MatchScheme();
                             break;
                         default:break;
                             //error processing
