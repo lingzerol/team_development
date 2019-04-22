@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace team_development
 {
-    public partial class Form2 : Form
+    public partial class Rice_card_inquiry : Form
     {
-        public Form2()
+        public Rice_card_inquiry()
         {
             InitializeComponent();
+        }
+
+        private void rice_card_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void college_name_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

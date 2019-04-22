@@ -20,8 +20,14 @@ namespace team_development
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-           
+            //Application.Run(new Form1());
+            //add
+            Rice_card_inquiry rice = new Rice_card_inquiry();
+            if (rice.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new Form1());
+            }
+
         }
         
     }
