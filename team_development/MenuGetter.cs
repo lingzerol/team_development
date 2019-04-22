@@ -49,6 +49,7 @@ namespace team_development
                     }
                     break;
                 case MenuType.UserInfo:
+                    result = new User1();
                     break;
                 default:
                     //error processing

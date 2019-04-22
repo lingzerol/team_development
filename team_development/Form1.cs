@@ -29,5 +29,13 @@ namespace team_development
         {
 
         }
+
+        private void 用户信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Form1Content.Controls.Clear();
+            Form f = MenuGetter.GetMenu(MenuType.UserInfo);
+            this.Form1Content.Controls.Add(f);
+            f.Show();
+        }
     }
 }
