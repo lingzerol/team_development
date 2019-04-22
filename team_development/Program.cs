@@ -20,7 +20,7 @@ namespace team_development
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InquiryOffer());
+            Application.Run(new InquiryNotification());
            
         }
         
