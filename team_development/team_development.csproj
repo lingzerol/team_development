@@ -49,10 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CourseSelection.cs">
+    <Compile Include="UI\CourseSelection\CourseSelection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CourseSelection.designer.cs">
+    <Compile Include="UI\CourseSelection\CourseSelection.designer.cs">
       <DependentUpon>CourseSelection.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -61,14 +61,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuGetter.cs" />
+    <Compile Include="UI\CourseSelection\LeftTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CourseSelection\LeftTime.Designer.cs">
+      <DependentUpon>LeftTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\MenuGetter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CourseSelection.resx">
+    <Compile Include="UI\CourseSelection\TimeSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CourseSelection\TimeSetting.Designer.cs">
+      <DependentUpon>TimeSetting.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\CourseSelection\CourseSelection.resx">
       <DependentUpon>CourseSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CourseSelection\LeftTime.resx">
+      <DependentUpon>LeftTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,6 +94,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\CourseSelection\TimeSetting.resx">
+      <DependentUpon>TimeSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,5 +111,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
