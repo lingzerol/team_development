@@ -19,15 +19,20 @@ namespace team_development
 
         private void CourseSelectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Form1Content.Controls.Clear();
-            Form f = MenuGetter.GetMenu(MenuType.JWXT, SubMenuType.C_S);
-            this.Form1Content.Controls.Add(f);
-            f.Show();
+            TurnForm(MenuType.JWXT, SubMenuType.C_S);
         }
+
 
         private void Form1Content_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void TurnForm(MenuType MenuId,SubMenuType SubMenu)
+        {
+            this.Form1Content.Controls.Clear();
+            Form f = MenuGetter.GetMenu(MenuId,SubMenu);
+            this.Form1Content.Controls.Add(f);
+            f.Show();
         }
     }
 }
