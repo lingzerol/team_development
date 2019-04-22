@@ -36,8 +36,10 @@ namespace team_development
                         case SubMenuType.Q_Mark:
                             break;
                         case SubMenuType.Q_Inform:
+                            result = new InquiryNotification();
                             break;
                         case SubMenuType.Q_Employ:
+                            result=new InquiryOffer();
                             break;
                         case SubMenuType.Q_MealCard:
                             break;
