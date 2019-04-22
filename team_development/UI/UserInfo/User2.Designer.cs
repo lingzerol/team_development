@@ -1,4 +1,4 @@
-﻿namespace team_development
+﻿namespace team_development.UI.UserInfo
 {
     partial class User2
     {
@@ -187,6 +187,7 @@
             this.Controls.Add(this.label1);
             this.Name = "User2";
             this.Text = "修改用户信息";
+            this.Load += new System.EventHandler(this.User2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

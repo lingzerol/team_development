@@ -1,4 +1,4 @@
-﻿namespace team_development
+﻿namespace team_development.UI.UserInfo
 {
     partial class User1
     {
@@ -215,6 +215,7 @@
             this.Controls.Add(this.label1);
             this.Name = "User1";
             this.Text = "用户信息";
+            this.Load += new System.EventHandler(this.User1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

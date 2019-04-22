@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development
+namespace team_development.UI.UserInfo
 {
     public partial class User1 : Form
     {
@@ -21,6 +21,11 @@ namespace team_development
         {
             User2 f = new User2();
             f.Show();
+        }
+
+        private void User1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

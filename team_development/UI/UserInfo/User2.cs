@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development
+namespace team_development.UI.UserInfo
 {
     public partial class User2 : Form
     {
@@ -24,6 +24,11 @@ namespace team_development
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void User2_Load(object sender, EventArgs e)
         {
 
         }
