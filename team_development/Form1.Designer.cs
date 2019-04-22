@@ -74,14 +74,14 @@
             // 选课ToolStripMenuItem
             // 
             this.选课ToolStripMenuItem.Name = "选课ToolStripMenuItem";
-            this.选课ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.选课ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.选课ToolStripMenuItem.Text = "选课";
             this.选课ToolStripMenuItem.Click += new System.EventHandler(this.CourseSelectionToolStripMenuItem_Click);
             // 
             // 查询培养方案ToolStripMenuItem
             // 
             this.查询培养方案ToolStripMenuItem.Name = "查询培养方案ToolStripMenuItem";
-            this.查询培养方案ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.查询培养方案ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.查询培养方案ToolStripMenuItem.Text = "查询培养方案";
             // 
             // 写请假条ToolStripMenuItem
@@ -143,6 +143,7 @@
             this.用户信息ToolStripMenuItem.Name = "用户信息ToolStripMenuItem";
             this.用户信息ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.用户信息ToolStripMenuItem.Text = "用户信息";
+            this.用户信息ToolStripMenuItem.Click += new System.EventHandler(this.用户信息ToolStripMenuItem_Click);
             // 
             // 帮助ToolStripMenuItem
             // 

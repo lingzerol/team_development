@@ -7,9 +7,9 @@ using System.Windows.Forms;
 using team_development.UI.CourseSelection;
 namespace team_development.Lib
 {
-    enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
-    enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
-    class MenuGetter
+    public enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
+    public enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
+    public class MenuGetter
     {
         
         static MenuGetter() {
@@ -50,6 +50,7 @@ namespace team_development.Lib
                     }
                     break;
                 case MenuType.UserInfo:
+                    result = new User1();
                     break;
                 default:
                     //error processing
