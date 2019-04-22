@@ -143,7 +143,7 @@
             this.用户信息ToolStripMenuItem.Name = "用户信息ToolStripMenuItem";
             this.用户信息ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.用户信息ToolStripMenuItem.Text = "用户信息";
-            this.用户信息ToolStripMenuItem.Click += new System.EventHandler(this.用户信息ToolStripMenuItem_Click);
+            this.用户信息ToolStripMenuItem.Click += new System.EventHandler(this.UserInfoToolStripMenuItem_Click);
             // 
             // 帮助ToolStripMenuItem
             // 

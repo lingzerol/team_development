@@ -29,7 +29,7 @@ namespace team_development
         }
 
 
-        private void 用户信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void UserInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TurnForm(MenuType.UserInfo);
         }

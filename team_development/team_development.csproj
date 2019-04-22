@@ -91,17 +91,17 @@
     <Compile Include="UI\CourseSelection\TimeSetting.Designer.cs">
       <DependentUpon>TimeSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UserInfo\User1.cs">
+    <Compile Include="UI\UserInfo\UserInfo_Display.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\UserInfo\User1.Designer.cs">
-      <DependentUpon>User1.cs</DependentUpon>
+    <Compile Include="UI\UserInfo\UserInfo_Display.Designer.cs">
+      <DependentUpon>UserInfo_Display.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UserInfo\User2.cs">
+    <Compile Include="UI\UserInfo\UserInfo_Setting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\UserInfo\User2.Designer.cs">
-      <DependentUpon>User2.cs</DependentUpon>
+    <Compile Include="UI\UserInfo\UserInfo_Setting.Designer.cs">
+      <DependentUpon>UserInfo_Setting.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UI\CourseSelection\CourseSelection.resx">
       <DependentUpon>CourseSelection.cs</DependentUpon>
@@ -124,11 +124,11 @@
     <EmbeddedResource Include="UI\CourseSelection\TimeSetting.resx">
       <DependentUpon>TimeSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UserInfo\User1.resx">
-      <DependentUpon>User1.cs</DependentUpon>
+    <EmbeddedResource Include="UI\UserInfo\UserInfo_Display.resx">
+      <DependentUpon>UserInfo_Display.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UserInfo\User2.resx">
-      <DependentUpon>User2.cs</DependentUpon>
+    <EmbeddedResource Include="UI\UserInfo\UserInfo_Setting.resx">
+      <DependentUpon>UserInfo_Setting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
