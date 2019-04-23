@@ -58,9 +58,6 @@ namespace team_development.Lib
                     //error processing
                     break;
             }
-            result.TopLevel = false;
-            result.FormBorderStyle = FormBorderStyle.None;
-            result.Dock = System.Windows.Forms.DockStyle.Fill;
             return result;
         }
 

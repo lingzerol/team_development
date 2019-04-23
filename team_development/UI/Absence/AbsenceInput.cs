@@ -53,16 +53,7 @@ namespace team_development
         private void TurnToForm(Form f)
         {
             //TODO 会不会出现null的情况
-            Panel parent = (Panel)this.Parent;
-            parent.Controls.Clear();
-
-            //Form templateSelect = new TemplateSelect();
-            f.TopLevel = false;
-            f.FormBorderStyle = FormBorderStyle.None;
-            f.Dock = System.Windows.Forms.DockStyle.Fill;
-
-            parent.Controls.Add(f);
-            f.Show();
+            ((Form1)(this.ParentForm)).TurnForm(f);
         }
     }
 }
