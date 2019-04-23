@@ -91,6 +91,18 @@
     <Compile Include="UI\CourseSelection\TimeSetting.Designer.cs">
       <DependentUpon>TimeSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\GPAandCardInquiry\GpaInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GPAandCardInquiry\GpaInquiry.Designer.cs">
+      <DependentUpon>GpaInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GPAandCardInquiry\MealcardInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\GPAandCardInquiry\MealcardInquiry.Designer.cs">
+      <DependentUpon>MealcardInquiry.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserInfo\UserInfoDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,12 @@
     </Compile>
     <EmbeddedResource Include="UI\CourseSelection\TimeSetting.resx">
       <DependentUpon>TimeSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GPAandCardInquiry\GpaInquiry.resx">
+      <DependentUpon>GpaInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\GPAandCardInquiry\MealcardInquiry.resx">
+      <DependentUpon>MealcardInquiry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UserInfo\UserInfoDisplay.resx">
       <DependentUpon>UserInfoDisplay.cs</DependentUpon>
