@@ -132,6 +132,10 @@
     <Compile Include="UI\GPAandCardInquiry\MealcardInquiry.Designer.cs">
       <DependentUpon>MealcardInquiry.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\MatchScheme\MatchScheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MatchScheme\MatchScheme.Designer.cs" />
     <Compile Include="UI\UserInfo\UserInfoDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +206,7 @@
     <EmbeddedResource Include="UI\GPAandCardInquiry\MealcardInquiry.resx">
       <DependentUpon>MealcardInquiry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\MatchScheme\MatchScheme.resx" />
     <EmbeddedResource Include="UI\UserInfo\UserInfoDisplay.resx">
       <DependentUpon>UserInfoDisplay.cs</DependentUpon>
     </EmbeddedResource>
