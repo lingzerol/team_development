@@ -19,8 +19,7 @@ namespace team_development.UI.UserInfo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserInfoSetting f = new UserInfoSetting();
-            f.Show();
+            ((Form1)this.ParentForm).TurnForm(new UserInfoSetting());
         }
 
         private void User1_Load(object sender, EventArgs e)
