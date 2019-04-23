@@ -45,5 +45,15 @@ namespace team_development
         {
 
         }
+
+        private void MealcardInquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Query,SubMenuType.Q_MealCard);
+        }
+
+        private void GpaInquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Query, SubMenuType.Q_Mark);
+        }
     }
 }
