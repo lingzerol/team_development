@@ -84,5 +84,10 @@ namespace team_development
         {
             TurnForm(MenuType.Query, SubMenuType.Q_Employ);
         }
+
+        private void MatchSchemeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.JWXT, SubMenuType.MatchScheme);
+        }
     }
 }
