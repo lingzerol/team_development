@@ -8,24 +8,28 @@ using team_development.UI.CourseSelection;
 using team_development.UI.UserInfo;
 namespace team_development.Lib
 {
-    public enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
+    enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
     enum SubMenuType { C_S, MatchScheme, Q_Mark, Q_Inform, Q_Inform_Article, Q_Employ, Q_Employ_Article, Q_MealCard, Q_Cost }
-    public class MenuGetter
+    class MenuGetter
     {
-        
-        static MenuGetter() {
+
+        static MenuGetter()
+        {
         }
-        public static Form GetMenu(MenuType MenuId,SubMenuType SubMenu=0) {
-            Form result=new Form();
-            switch (MenuId) {
+        public static Form GetMenu(MenuType MenuId, SubMenuType SubMenu = 0)
+        {
+            Form result = new Form();
+            switch (MenuId)
+            {
                 case MenuType.JWXT:
-                    switch (SubMenu) {
+                    switch (SubMenu)
+                    {
                         case SubMenuType.C_S:
                             result = new CourseSelection();
                             break;
                         case SubMenuType.MatchScheme:
                             break;
-                        default:break;
+                        default: break;
                             //error processing
                     }
                     break;
@@ -34,7 +38,8 @@ namespace team_development.Lib
                 case MenuType.Forum:
                     break;
                 case MenuType.Query:
-                    switch (SubMenu) {
+                    switch (SubMenu)
+                    {
                         case SubMenuType.Q_Mark:
                             break;
                         case SubMenuType.Q_Inform:
@@ -72,5 +77,5 @@ namespace team_development.Lib
         }
 
     }
-   
+
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development
+namespace team_development.UI.InqueryEmploy
 {
     public partial class InquiryOffer : Form
     {
