@@ -27,12 +27,52 @@ namespace team_development
         {
 
         }
-        private void TurnForm(MenuType MenuId,SubMenuType SubMenu)
+
+
+        private void UserInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            TurnForm(MenuType.UserInfo);
+        }
+        public void TurnForm(MenuType MenuId,SubMenuType SubMenu=0)
+        {
+            TurnForm(MenuGetter.GetMenu(MenuId, SubMenu));
+        }
+        public void TurnForm(Form PannelForm) {
+            PannelForm.TopLevel = false;
+            PannelForm.FormBorderStyle = FormBorderStyle.None;
+            PannelForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Form1Content.Controls.Clear();
-            Form f = MenuGetter.GetMenu(MenuId,SubMenu);
-            this.Form1Content.Controls.Add(f);
-            f.Show();
+            this.Form1Content.Controls.Add(PannelForm);
+            PannelForm.Show();
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AbsenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Absence);
+        }
+
+        /*private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }*/
+
+        private void MatchSchemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.JWXT, SubMenuType.MatchScheme);
+        }
+
+        private void MealcardInquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Query, SubMenuType.Q_MealCard);
+        }
+
+        private void GpaInquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Query, SubMenuType.Q_Mark);
         }
     }
 }

@@ -14,6 +14,7 @@
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
+            if (disposing && (components != null))
             {
                 components.Dispose();
             }
@@ -32,7 +33,7 @@
             this.教务系统ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.选课ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询培养方案ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.写请假条ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AbsenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.进入学校论坛ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询成绩ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,7 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.教务系统ToolStripMenuItem,
-            this.写请假条ToolStripMenuItem,
+            this.AbsenceToolStripMenuItem,
             this.进入学校论坛ToolStripMenuItem,
             this.查询ToolStripMenuItem,
             this.用户信息ToolStripMenuItem,
@@ -84,11 +85,12 @@
             this.查询培养方案ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.查询培养方案ToolStripMenuItem.Text = "查询培养方案";
             // 
-            // 写请假条ToolStripMenuItem
+            // AbsenceToolStripMenuItem
             // 
-            this.写请假条ToolStripMenuItem.Name = "写请假条ToolStripMenuItem";
-            this.写请假条ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
-            this.写请假条ToolStripMenuItem.Text = "写请假条";
+            this.AbsenceToolStripMenuItem.Name = "AbsenceToolStripMenuItem";
+            this.AbsenceToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
+            this.AbsenceToolStripMenuItem.Text = "写请假条";
+            this.AbsenceToolStripMenuItem.Click += new System.EventHandler(this.AbsenceToolStripMenuItem_Click);
             // 
             // 进入学校论坛ToolStripMenuItem
             // 
@@ -111,31 +113,33 @@
             // 查询成绩ToolStripMenuItem
             // 
             this.查询成绩ToolStripMenuItem.Name = "查询成绩ToolStripMenuItem";
-            this.查询成绩ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询成绩ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询成绩ToolStripMenuItem.Text = "查询成绩";
+            this.查询成绩ToolStripMenuItem.Click += new System.EventHandler(this.GpaInquiryToolStripMenuItem_Click);
             // 
             // 查询通知ToolStripMenuItem
             // 
             this.查询通知ToolStripMenuItem.Name = "查询通知ToolStripMenuItem";
-            this.查询通知ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询通知ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询通知ToolStripMenuItem.Text = "查询通知";
             // 
             // 查询就业ToolStripMenuItem
             // 
             this.查询就业ToolStripMenuItem.Name = "查询就业ToolStripMenuItem";
-            this.查询就业ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询就业ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询就业ToolStripMenuItem.Text = "查询就业";
             // 
             // 查询饭卡ToolStripMenuItem
             // 
             this.查询饭卡ToolStripMenuItem.Name = "查询饭卡ToolStripMenuItem";
-            this.查询饭卡ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询饭卡ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询饭卡ToolStripMenuItem.Text = "查询饭卡";
+            this.查询饭卡ToolStripMenuItem.Click += new System.EventHandler(this.MealcardInquiryToolStripMenuItem_Click);
             // 
             // 查询ToolStripMenuItem1
             // 
             this.查询ToolStripMenuItem1.Name = "查询ToolStripMenuItem1";
-            this.查询ToolStripMenuItem1.Size = new System.Drawing.Size(159, 26);
+            this.查询ToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
             this.查询ToolStripMenuItem1.Text = "查询水电费";
             // 
             // 用户信息ToolStripMenuItem
@@ -143,6 +147,7 @@
             this.用户信息ToolStripMenuItem.Name = "用户信息ToolStripMenuItem";
             this.用户信息ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.用户信息ToolStripMenuItem.Text = "用户信息";
+            this.用户信息ToolStripMenuItem.Click += new System.EventHandler(this.UserInfoToolStripMenuItem_Click);
             // 
             // 帮助ToolStripMenuItem
             // 
@@ -167,6 +172,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -180,7 +186,7 @@
         private System.Windows.Forms.ToolStripMenuItem 教务系统ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 选课ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查询培养方案ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 写请假条ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AbsenceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 进入学校论坛ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查询ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查询成绩ToolStripMenuItem;

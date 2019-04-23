@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using team_development.UI.CourseSelection;
+using team_development.UI.UserInfo;
+using team_development.UI.Absence;
+using team_development.UI.GPAandCardInquiry;
 namespace team_development.Lib
 {
-    enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
-    enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
-    class MenuGetter
+    public enum MenuType { JWXT, Absence, Forum, Query, UserInfo };
+    public enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
+    public class MenuGetter
     {
         
         static MenuGetter() {
@@ -23,24 +26,28 @@ namespace team_development.Lib
                             result = new CourseSelection();
                             break;
                         case SubMenuType.MatchScheme:
+                            //result = new MatchScheme();
                             break;
                         default:break;
                             //error processing
                     }
                     break;
-                case MenuType.AFL:
+                case MenuType.Absence:
+                    result = new AbsenceInput();
                     break;
                 case MenuType.Forum:
                     break;
                 case MenuType.Query:
                     switch (SubMenu) {
                         case SubMenuType.Q_Mark:
+                            result = new GpaInquiry();
                             break;
                         case SubMenuType.Q_Inform:
                             break;
                         case SubMenuType.Q_Employ:
                             break;
                         case SubMenuType.Q_MealCard:
+                            result = new MealcardInquiry();
                             break;
                         case SubMenuType.Q_Cost:
                             break;
@@ -50,14 +57,12 @@ namespace team_development.Lib
                     }
                     break;
                 case MenuType.UserInfo:
+                    result = new UserInfoDisplay();
                     break;
                 default:
                     //error processing
                     break;
             }
-            result.TopLevel = false;
-            result.FormBorderStyle = FormBorderStyle.None;
-            result.Dock = System.Windows.Forms.DockStyle.Fill;
             return result;
         }
 
