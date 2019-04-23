@@ -65,6 +65,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\InqueryEmploy\OfferArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InqueryEmploy\OfferArticle.Designer.cs" />
+    <Compile Include="UI\InqueryInform\InquiryNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InqueryInform\InquiryNotification.Designer.cs">
+      <DependentUpon>InquiryNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InqueryEmploy\InquiryOffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InqueryEmploy\InquiryOffer.Designer.cs">
+      <DependentUpon>InquiryOffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InqueryInform\NotificationArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InqueryInform\NotificationArticle.Designer.cs">
+      <DependentUpon>NotificationArticle.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\CourseSelection\CourseSelection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +132,12 @@
     <Compile Include="UI\GPAandCardInquiry\MealcardInquiry.Designer.cs">
       <DependentUpon>MealcardInquiry.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Search\Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Search\Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserInfo\UserInfoDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +150,28 @@
     <Compile Include="UI\UserInfo\UserInfoSetting.Designer.cs">
       <DependentUpon>UserInfoSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\WaterElectricity\WaterElectricitySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WaterElectricity\WaterElectricitySearch.Designer.cs">
+      <DependentUpon>WaterElectricitySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WaterElectricity\WaterElectricityShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WaterElectricity\WaterElectricityShow.Designer.cs">
+      <DependentUpon>WaterElectricityShow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\InqueryEmploy\OfferArticle.resx" />
+    <EmbeddedResource Include="UI\InqueryInform\InquiryNotification.resx">
+      <DependentUpon>InquiryNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InqueryEmploy\InquiryOffer.resx">
+      <DependentUpon>InquiryOffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InqueryInform\NotificationArticle.resx">
+      <DependentUpon>NotificationArticle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\CourseSelection\CourseSelection.resx">
       <DependentUpon>CourseSelection.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +220,9 @@
     <EmbeddedResource Include="UI\GPAandCardInquiry\MealcardInquiry.resx">
       <DependentUpon>MealcardInquiry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Search\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UserInfo\UserInfoDisplay.resx">
       <DependentUpon>UserInfoDisplay.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +237,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Absence\WordPreview.resx">
       <DependentUpon>WordPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WaterElectricity\WaterElectricitySearch.resx">
+      <DependentUpon>WaterElectricitySearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WaterElectricity\WaterElectricityShow.resx">
+      <DependentUpon>WaterElectricityShow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -211,5 +270,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

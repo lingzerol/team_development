@@ -8,9 +8,13 @@ using team_development.UI.CourseSelection;
 using team_development.UI.UserInfo;
 using team_development.UI.Absence;
 using team_development.UI.GPAandCardInquiry;
+using team_development.UI.InqueryEmploy;
+using team_development.UI.InqueryInform;
+using team_development.UI.WaterElectricity;
+
 namespace team_development.Lib
 {
-    public enum MenuType { JWXT, Absence, Forum, Query, UserInfo };
+    public enum MenuType { JWXT, Absence, Forum, Query, UserInfo};
     public enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
     public class MenuGetter
     {
@@ -43,13 +47,16 @@ namespace team_development.Lib
                             result = new GpaInquiry();
                             break;
                         case SubMenuType.Q_Inform:
+                            result = new InquiryNotification();
                             break;
                         case SubMenuType.Q_Employ:
+                            result = new InquiryOffer();
                             break;
                         case SubMenuType.Q_MealCard:
                             result = new MealcardInquiry();
                             break;
                         case SubMenuType.Q_Cost:
+                            result = new WaterElectricitySearch();
                             break;
                         default:
                             //error processing
