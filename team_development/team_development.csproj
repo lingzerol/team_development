@@ -71,10 +71,10 @@
     <Compile Include="UI\CourseSelection\CourseSelection.designer.cs">
       <DependentUpon>CourseSelection.cs</DependentUpon>
     </Compile>
-    <Compile Include="AbsenceInput.cs">
+    <Compile Include="UI\Absence\AbsenceInput.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AbsenceInput.Designer.cs">
+    <Compile Include="UI\Absence\AbsenceInput.Designer.cs">
       <DependentUpon>AbsenceInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -131,25 +131,25 @@
     <EmbeddedResource Include="UI\CourseSelection\LeftTime.resx">
       <DependentUpon>LeftTime.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="TemplatePreview.cs">
+    <Compile Include="UI\Absence\TemplatePreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TemplatePreview.Designer.cs">
+    <Compile Include="UI\Absence\TemplatePreview.Designer.cs">
       <DependentUpon>TemplatePreview.cs</DependentUpon>
     </Compile>
-    <Compile Include="TemplateSelect.cs">
+    <Compile Include="UI\Absence\TemplateSelect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TemplateSelect.Designer.cs">
+    <Compile Include="UI\Absence\TemplateSelect.Designer.cs">
       <DependentUpon>TemplateSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="WordPreview.cs">
+    <Compile Include="UI\Absence\WordPreview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WordPreview.Designer.cs">
+    <Compile Include="UI\Absence\WordPreview.Designer.cs">
       <DependentUpon>WordPreview.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AbsenceInput.resx">
+    <EmbeddedResource Include="UI\Absence\AbsenceInput.resx">
       <DependentUpon>AbsenceInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -176,13 +176,13 @@
     <EmbeddedResource Include="UI\UserInfo\UserInfoSetting.resx">
       <DependentUpon>UserInfoSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TemplatePreview.resx">
+    <EmbeddedResource Include="UI\Absence\TemplatePreview.resx">
       <DependentUpon>TemplatePreview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TemplateSelect.resx">
+    <EmbeddedResource Include="UI\Absence\TemplateSelect.resx">
       <DependentUpon>TemplateSelect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WordPreview.resx">
+    <EmbeddedResource Include="UI\Absence\WordPreview.resx">
       <DependentUpon>WordPreview.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
