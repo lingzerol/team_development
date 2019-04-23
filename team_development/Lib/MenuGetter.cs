@@ -9,7 +9,7 @@ using team_development.UI.UserInfo;
 namespace team_development.Lib
 {
     public enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
-    public enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
+    enum SubMenuType { C_S, MatchScheme, Q_Mark, Q_Inform, Q_Inform_Article, Q_Employ, Q_Employ_Article, Q_MealCard, Q_Cost }
     public class MenuGetter
     {
         
