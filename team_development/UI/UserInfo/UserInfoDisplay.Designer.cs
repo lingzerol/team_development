@@ -1,6 +1,6 @@
 ﻿namespace team_development.UI.UserInfo
 {
-    partial class User1
+    partial class UserInfoDisplay
     {
         /// <summary>
         /// Required designer variable.

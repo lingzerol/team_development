@@ -91,17 +91,29 @@
     <Compile Include="UI\CourseSelection\TimeSetting.Designer.cs">
       <DependentUpon>TimeSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UserInfo\User1.cs">
+    <Compile Include="UI\GPAandCardInquiry\GpaInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\UserInfo\User1.Designer.cs">
-      <DependentUpon>User1.cs</DependentUpon>
+    <Compile Include="UI\GPAandCardInquiry\GpaInquiry.Designer.cs">
+      <DependentUpon>GpaInquiry.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UserInfo\User2.cs">
+    <Compile Include="UI\GPAandCardInquiry\MealcardInquiry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\UserInfo\User2.Designer.cs">
-      <DependentUpon>User2.cs</DependentUpon>
+    <Compile Include="UI\GPAandCardInquiry\MealcardInquiry.Designer.cs">
+      <DependentUpon>MealcardInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserInfo\UserInfoDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserInfo\UserInfoDisplay.Designer.cs">
+      <DependentUpon>UserInfoDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserInfo\UserInfoSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserInfo\UserInfoSetting.Designer.cs">
+      <DependentUpon>UserInfoSetting.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UI\CourseSelection\CourseSelection.resx">
       <DependentUpon>CourseSelection.cs</DependentUpon>
@@ -124,11 +136,17 @@
     <EmbeddedResource Include="UI\CourseSelection\TimeSetting.resx">
       <DependentUpon>TimeSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UserInfo\User1.resx">
-      <DependentUpon>User1.cs</DependentUpon>
+    <EmbeddedResource Include="UI\GPAandCardInquiry\GpaInquiry.resx">
+      <DependentUpon>GpaInquiry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UserInfo\User2.resx">
-      <DependentUpon>User2.cs</DependentUpon>
+    <EmbeddedResource Include="UI\GPAandCardInquiry\MealcardInquiry.resx">
+      <DependentUpon>MealcardInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserInfo\UserInfoDisplay.resx">
+      <DependentUpon>UserInfoDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserInfo\UserInfoSetting.resx">
+      <DependentUpon>UserInfoSetting.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

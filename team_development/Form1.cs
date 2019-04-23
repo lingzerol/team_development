@@ -29,7 +29,7 @@ namespace team_development
         }
 
 
-        private void 用户信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void UserInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TurnForm(MenuType.UserInfo);
         }
@@ -39,6 +39,11 @@ namespace team_development
             Form f = MenuGetter.GetMenu(MenuId,SubMenu);
             this.Form1Content.Controls.Add(f);
             f.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
