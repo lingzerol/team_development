@@ -26,5 +26,10 @@ namespace team_development.UI.UserInfo
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

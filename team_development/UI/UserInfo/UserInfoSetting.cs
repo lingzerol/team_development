@@ -20,12 +20,13 @@ namespace team_development.UI.UserInfo
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBoxButtons btn = MessageBoxButtons.OKCancel;
-            DialogResult dlr = MessageBox.Show("您选择了：", "...", btn);
+            DialogResult dlr = MessageBox.Show("修改成功！", "通知", btn);
+            ((Form1)this.ParentForm).TurnForm(new UserInfoDisplay());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            ((Form1)this.ParentForm).TurnForm(new UserInfoDisplay());
         }
 
         private void User2_Load(object sender, EventArgs e)

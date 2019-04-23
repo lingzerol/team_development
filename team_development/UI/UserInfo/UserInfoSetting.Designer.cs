@@ -166,10 +166,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // User2
+            // UserInfoSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1054, 568);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -185,7 +186,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "User2";
+            this.Name = "UserInfoSetting";
             this.Text = "修改用户信息";
             this.Load += new System.EventHandler(this.User2_Load);
             this.ResumeLayout(false);
