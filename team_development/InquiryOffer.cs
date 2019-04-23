@@ -32,6 +32,8 @@ namespace team_development
         {
             
         }
+        public event TransfDelegate TransfEvent;
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -40,10 +42,8 @@ namespace team_development
             if (RIndex == 0 && CIndex == 0)
             {
 
-                OfferArticle f = new OfferArticle();
-                this.Hide();
-                f.ShowDialog();
-                Application.ExitThread();
+                TransfEvent("Employ");
+                this.Close();
 
             }
         }
