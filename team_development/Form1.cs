@@ -55,24 +55,9 @@ namespace team_development
             TurnForm(MenuType.Absence);
         }
 
-        /*private void Form1_Load(object sender, EventArgs e)
+        private void InqueryEmployToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }*/
-
-        private void MatchSchemeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TurnForm(MenuType.JWXT, SubMenuType.MatchScheme);
-        }
-
-        private void MealcardInquiryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TurnForm(MenuType.Query, SubMenuType.Q_MealCard);
-        }
-
-        private void GpaInquiryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TurnForm(MenuType.Query, SubMenuType.Q_Mark);
+            TurnForm(MenuType.Query, SubMenuType.Q_Employ);
         }
 
         private void InqueryInformToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,9 +65,9 @@ namespace team_development
             TurnForm(MenuType.Query, SubMenuType.Q_Inform);
         }
 
-        private void InqueryEmployToolStripMenuItem_Click(object sender, EventArgs e)
+        private void InqueryCostToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            TurnForm(MenuType.Query, SubMenuType.Q_Employ);
+            TurnForm(MenuType.Query, SubMenuType.Q_Cost);
         }
     }
 }
