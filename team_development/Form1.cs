@@ -45,5 +45,17 @@ namespace team_development
         {
 
         }
+
+        private void InqueryInformToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Query, SubMenuType.Q_Inform);
+
+        }
+
+        private void InqueryEmployToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Query, SubMenuType.Q_Employ);
+
+        }
     }
 }

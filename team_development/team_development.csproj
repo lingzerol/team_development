@@ -64,6 +64,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\InqueryEmploy\OfferArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InqueryEmploy\OfferArticle.Designer.cs" />
     <Compile Include="UI\InqueryInform\InquiryNotification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +125,7 @@
     <Compile Include="UI\UserInfo\UserInfoSetting.Designer.cs">
       <DependentUpon>UserInfoSetting.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\InqueryEmploy\OfferArticle.resx" />
     <EmbeddedResource Include="UI\InqueryInform\InquiryNotification.resx">
       <DependentUpon>InquiryNotification.cs</DependentUpon>
     </EmbeddedResource>

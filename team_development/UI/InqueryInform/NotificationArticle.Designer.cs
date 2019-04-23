@@ -1,4 +1,4 @@
-﻿namespace team_development.UI.Inquery
+﻿namespace team_development.UI.InqueryInform
 {
     partial class NotificationArticle
     {

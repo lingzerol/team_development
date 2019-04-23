@@ -32,7 +32,7 @@ namespace team_development.UI.InqueryEmploy
         {
             
         }
-        public event TransfDelegate TransfEvent;
+     //   public event TransfDelegate TransfEvent;
 
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -42,7 +42,7 @@ namespace team_development.UI.InqueryEmploy
             if (RIndex == 0 && CIndex == 0)
             {
 
-                TransfEvent("Employ");
+                //TransfEvent("Employ");
                 this.Close();
 
             }

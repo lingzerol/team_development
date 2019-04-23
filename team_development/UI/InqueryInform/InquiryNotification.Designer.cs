@@ -1,12 +1,9 @@
-﻿
-
-
-namespace team_development
+﻿namespace team_development.UI.InqueryInform
 {
 
     struct Notification
     {
-        string Title,PublishAgency,PublishDate;
+        string Title, PublishAgency, PublishDate;
         public Notification(string MyTitle, string MyPublishAgencty, string MyPublishDate)
         {
             Title = MyTitle;

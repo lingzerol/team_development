@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development.UI.Inquery
+namespace team_development.UI.InqueryInform
 {
     public partial class NotificationArticle : Form
     {

@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using team_development.UI.CourseSelection;
 using team_development.UI.UserInfo;
+using team_development.UI.InqueryEmploy;
+using team_development.UI.InqueryInform;
 namespace team_development.Lib
 {
     enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
