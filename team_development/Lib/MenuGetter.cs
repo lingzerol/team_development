@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace team_development
+using team_development.UI.CourseSelection;
+using team_development.UI.UserInfo;
+namespace team_development.Lib
 {
-    enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
-    enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Inform_Article,Q_Employ, Q_Employ_Article, Q_MealCard,Q_Cost}
-    class MenuGetter
+    public enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
+    public enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
+    public class MenuGetter
     {
         
         static MenuGetter() {
@@ -36,16 +38,8 @@ namespace team_development
                         case SubMenuType.Q_Mark:
                             break;
                         case SubMenuType.Q_Inform:
-                            result = new InquiryNotification();
-                            break;
-                        case SubMenuType.Q_Inform_Article:
-                            result = new NotificationArticle();
                             break;
                         case SubMenuType.Q_Employ:
-                            result = new InquiryOffer();
-                            break;
-                        case SubMenuType.Q_Employ_Article:
-                            result = new OfferArticle();
                             break;
                         case SubMenuType.Q_MealCard:
                             break;
@@ -57,6 +51,7 @@ namespace team_development
                     }
                     break;
                 case MenuType.UserInfo:
+                    result = new UserInfoDisplay();
                     break;
                 default:
                     //error processing

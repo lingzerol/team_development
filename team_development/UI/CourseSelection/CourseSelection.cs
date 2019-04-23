@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development
+namespace team_development.UI.CourseSelection
 {
     public partial class CourseSelection : Form
     {
@@ -36,7 +36,8 @@ namespace team_development
 
         private void TimingSelection_Click(object sender, EventArgs e)
         {
-           
+            Form ts = new TimeSetting();
+            ts.ShowDialog();
         }
 
 
@@ -48,12 +49,12 @@ namespace team_development
         private void Selection_Click(object sender, EventArgs e)
         {
             MessageBoxButtons btn = MessageBoxButtons.OKCancel;
-            DialogResult dlr = MessageBox.Show("您选择了：", "...", btn);
-        }
-
-        private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
+            DialogResult dlr = MessageBox.Show("...", "确认选课？", btn);
+            if (dlr == DialogResult.OK)
+            {
+                dlr = MessageBox.Show("...", "已成功选课", btn);
+            }
+            
         }
 
         

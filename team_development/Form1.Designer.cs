@@ -145,6 +145,7 @@
             this.用户信息ToolStripMenuItem.Name = "用户信息ToolStripMenuItem";
             this.用户信息ToolStripMenuItem.Size = new System.Drawing.Size(81, 24);
             this.用户信息ToolStripMenuItem.Text = "用户信息";
+            this.用户信息ToolStripMenuItem.Click += new System.EventHandler(this.UserInfoToolStripMenuItem_Click);
             // 
             // 帮助ToolStripMenuItem
             // 
@@ -170,6 +171,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
