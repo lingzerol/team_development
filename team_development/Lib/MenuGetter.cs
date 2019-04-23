@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using team_development.UI.CourseSelection;
 using team_development.UI.UserInfo;
 using team_development.UI.Absence;
+using team_development.UI.GPAandCardInquiry;
 namespace team_development.Lib
 {
     public enum MenuType { JWXT, Absence, Forum, Query, UserInfo };
@@ -25,7 +26,7 @@ namespace team_development.Lib
                             result = new CourseSelection();
                             break;
                         case SubMenuType.MatchScheme:
-                            result = new MatchScheme();
+                            //result = new MatchScheme();
                             break;
                         default:break;
                             //error processing
@@ -45,6 +46,7 @@ namespace team_development.Lib
                         case SubMenuType.Q_Employ:
                             break;
                         case SubMenuType.Q_MealCard:
+                            result = new MealcardInquiry();
                             break;
                         case SubMenuType.Q_Cost:
                             break;
