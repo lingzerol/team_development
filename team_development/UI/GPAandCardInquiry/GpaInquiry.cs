@@ -15,7 +15,6 @@ namespace team_development.UI.GPAandCardInquiry
         public GpaInquiry()
         {
             InitializeComponent();
-            InitializeComponent();
             choose_semester.SelectedIndex = 0;
             choose_academic_year.SelectedIndex = 3;
             table_load();
