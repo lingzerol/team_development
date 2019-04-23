@@ -9,9 +9,11 @@ using team_development.UI.UserInfo;
 using team_development.UI.Absence;
 using team_development.UI.InqueryEmploy;
 using team_development.UI.InqueryInform;
+using team_development.UI.WaterElectricity;
+
 namespace team_development.Lib
 {
-    public enum MenuType { JWXT, Absence, Forum, Query, UserInfo };
+    public enum MenuType { JWXT, Absence, Forum, Query, UserInfo};
     public enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
     public class MenuGetter
     {
@@ -50,6 +52,7 @@ namespace team_development.Lib
                         case SubMenuType.Q_MealCard:
                             break;
                         case SubMenuType.Q_Cost:
+                            result = new WaterElectricitySearch();
                             break;
                         default:
                             //error processing

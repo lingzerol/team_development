@@ -141,6 +141,7 @@
             this.查询ToolStripMenuItem1.Name = "查询ToolStripMenuItem1";
             this.查询ToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
             this.查询ToolStripMenuItem1.Text = "查询水电费";
+            this.查询ToolStripMenuItem1.Click += new System.EventHandler(this.InqueryCostToolStripMenuItem1_Click);
             // 
             // 用户信息ToolStripMenuItem
             // 

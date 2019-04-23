@@ -132,6 +132,12 @@
     <Compile Include="UI\GPAandCardInquiry\MealcardInquiry.Designer.cs">
       <DependentUpon>MealcardInquiry.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Search\Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Search\Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserInfo\UserInfoDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,18 @@
     </Compile>
     <Compile Include="UI\UserInfo\UserInfoSetting.Designer.cs">
       <DependentUpon>UserInfoSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WaterElectricity\WaterElectricitySearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WaterElectricity\WaterElectricitySearch.Designer.cs">
+      <DependentUpon>WaterElectricitySearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\WaterElectricity\WaterElectricityShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\WaterElectricity\WaterElectricityShow.Designer.cs">
+      <DependentUpon>WaterElectricityShow.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UI\InqueryEmploy\OfferArticle.resx" />
     <EmbeddedResource Include="UI\InqueryInform\InquiryNotification.resx">
@@ -202,6 +220,9 @@
     <EmbeddedResource Include="UI\GPAandCardInquiry\MealcardInquiry.resx">
       <DependentUpon>MealcardInquiry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Search\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UserInfo\UserInfoDisplay.resx">
       <DependentUpon>UserInfoDisplay.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +237,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Absence\WordPreview.resx">
       <DependentUpon>WordPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WaterElectricity\WaterElectricitySearch.resx">
+      <DependentUpon>WaterElectricitySearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\WaterElectricity\WaterElectricityShow.resx">
+      <DependentUpon>WaterElectricityShow.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
