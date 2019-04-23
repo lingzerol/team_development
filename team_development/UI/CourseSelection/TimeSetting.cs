@@ -24,7 +24,7 @@ namespace team_development.UI.CourseSelection
 
         private void OKButton_Click(object sender, EventArgs e)
         {
-            Form lt = new LeftTime();
+            Form lt = new LeftTime();//show left time
             lt.Show();
             this.Close();
         }

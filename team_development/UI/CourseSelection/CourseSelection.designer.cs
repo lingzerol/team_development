@@ -28,21 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CourseInfo = new System.Windows.Forms.DataGridView();
             this.TimingSelection = new System.Windows.Forms.Button();
             this.Selection = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.CourseInfo)).BeginInit();
+            this.CourseInfo = new System.Windows.Forms.ListView();
             this.SuspendLayout();
-            // 
-            // CourseInfo
-            // 
-            this.CourseInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CourseInfo.Location = new System.Drawing.Point(33, 0);
-            this.CourseInfo.Name = "CourseInfo";
-            this.CourseInfo.RowTemplate.Height = 27;
-            this.CourseInfo.Size = new System.Drawing.Size(1009, 450);
-            this.CourseInfo.TabIndex = 1;
-            this.CourseInfo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CourseInfo_CellContentClick);
             // 
             // TimingSelection
             // 
@@ -66,26 +55,33 @@
             this.Selection.UseVisualStyleBackColor = true;
             this.Selection.Click += new System.EventHandler(this.Selection_Click);
             // 
+            // CourseInfo
+            // 
+            this.CourseInfo.Location = new System.Drawing.Point(12, 12);
+            this.CourseInfo.Name = "CourseInfo";
+            this.CourseInfo.Size = new System.Drawing.Size(1030, 500);
+            this.CourseInfo.TabIndex = 4;
+            this.CourseInfo.UseCompatibleStateImageBehavior = false;
+            // 
             // CourseSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 568);
+            this.Controls.Add(this.CourseInfo);
             this.Controls.Add(this.Selection);
             this.Controls.Add(this.TimingSelection);
-            this.Controls.Add(this.CourseInfo);
             this.Name = "CourseSelection";
             this.Text = "course_selection";
             this.Load += new System.EventHandler(this.Course_selection_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.CourseInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView CourseInfo;
         private System.Windows.Forms.Button TimingSelection;
         private System.Windows.Forms.Button Selection;
+        private System.Windows.Forms.ListView CourseInfo;
     }
 
 }
