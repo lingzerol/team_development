@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +58,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="search.Designer.cs">
+      <DependentUpon>search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="searchWaterElectricity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchWaterElectricity.Designer.cs">
+      <DependentUpon>searchWaterElectricity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="showWaterElectricity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showWaterElectricity.Designer.cs">
+      <DependentUpon>showWaterElectricity.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -66,6 +85,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="search.resx">
+      <DependentUpon>search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchWaterElectricity.resx">
+      <DependentUpon>searchWaterElectricity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="showWaterElectricity.resx">
+      <DependentUpon>showWaterElectricity.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
