@@ -40,6 +40,7 @@ namespace team_development.Lib
                 case MenuType.Query:
                     switch (SubMenu) {
                         case SubMenuType.Q_Mark:
+                            result = new GpaInquiry();
                             break;
                         case SubMenuType.Q_Inform:
                             break;

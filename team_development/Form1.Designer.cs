@@ -115,6 +115,7 @@
             this.查询成绩ToolStripMenuItem.Name = "查询成绩ToolStripMenuItem";
             this.查询成绩ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询成绩ToolStripMenuItem.Text = "查询成绩";
+            this.查询成绩ToolStripMenuItem.Click += new System.EventHandler(this.GpaInquiryToolStripMenuItem_Click);
             // 
             // 查询通知ToolStripMenuItem
             // 
