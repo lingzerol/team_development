@@ -10,8 +10,6 @@ using System.Windows.Forms;
 
 namespace team_development.UI.InqueryEmploy
 {
-    //声明委托和事件
-    public delegate void TransfDelegate(String value);
     public partial class InquiryOffer : Form
     {
         public InquiryOffer()
@@ -34,18 +32,20 @@ namespace team_development.UI.InqueryEmploy
         {
             
         }
-        public event TransfDelegate TransfEvent;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int RIndex = e.RowIndex;
             int CIndex = e.ColumnIndex;
             if (RIndex == 0 && CIndex == 0)
             {
-               
-                TransfEvent("Employ");
-                this.Close();
-
+                TurnToForm(new OfferArticle());
             }
         }
+        private void TurnToForm(Form f)
+        {
+            //TODO 会不会出现null的情况
+            ((Form1)(this.ParentForm)).TurnForm(f);
+        }
+
     }
 }

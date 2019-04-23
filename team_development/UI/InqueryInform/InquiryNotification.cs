@@ -10,10 +10,6 @@ using System.Windows.Forms;
 
 namespace team_development.UI.InqueryInform
 {
-
-    //声明委托和事件
-    public delegate void TransfDelegate(String value);   
-
     public partial class InquiryNotification : Form
     {
         public Form1 form1;
@@ -36,7 +32,6 @@ namespace team_development.UI.InqueryInform
         {
           
         }
-        public event TransfDelegate TransfEvent;
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -44,9 +39,7 @@ namespace team_development.UI.InqueryInform
             int CIndex = e.ColumnIndex;
             if (RIndex == 0&& CIndex == 0)
             {
-                //触发跳转事件
-                TransfEvent("Inform");
-                this.Close();
+                TurnToForm(new NotificationArticle());   
             }
         }
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -56,6 +49,11 @@ namespace team_development.UI.InqueryInform
         private void InquiryNotification_Load(object sender, EventArgs e)
         {
            
+        }
+        private void TurnToForm(Form f)
+        {
+            //TODO 会不会出现null的情况
+            ((Form1)(this.ParentForm)).TurnForm(f);
         }
     }
 }

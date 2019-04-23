@@ -48,18 +48,24 @@ namespace team_development.UI.InqueryInform
         {
 
         }
-        public event TransfDelegate TransfEvent;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*    InquiryNotification h = new InquiryNotification();
-                this.Hide();
-                h.ShowDialog();
-                Application.ExitThread();
-            */
-            //this.Close();
-            TransfEvent("InformReturn");
-            this.Close();
+            TurnToForm(new InquiryNotification());
+        }
+        private void TurnToForm(Form f)
+        {
+            //TODO 会不会出现null的情况
+            Panel parent = (Panel)this.Parent;
+            parent.Controls.Clear();
+
+            //Form templateSelect = new TemplateSelect();
+            f.TopLevel = false;
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.Dock = System.Windows.Forms.DockStyle.Fill;
+
+            parent.Controls.Add(f);
+            f.Show();
         }
     }
 }

@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using team_development.UI.CourseSelection;
 using team_development.UI.UserInfo;
 using team_development.UI.Absence;
+using team_development.UI.InqueryEmploy;
+using team_development.UI.InqueryInform;
 namespace team_development.Lib
 {
     public enum MenuType { JWXT, Absence, Forum, Query, UserInfo };
@@ -40,8 +42,10 @@ namespace team_development.Lib
                         case SubMenuType.Q_Mark:
                             break;
                         case SubMenuType.Q_Inform:
+                            result = new InquiryNotification();
                             break;
                         case SubMenuType.Q_Employ:
+                            result = new InquiryOffer();
                             break;
                         case SubMenuType.Q_MealCard:
                             break;

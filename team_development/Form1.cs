@@ -54,5 +54,15 @@ namespace team_development
         {
             TurnForm(MenuType.Absence);
         }
+
+        private void InqueryEmployToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Query, SubMenuType.Q_Employ);
+        }
+
+        private void InqueryInformToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Query, SubMenuType.Q_Inform);
+        }
     }
 }
