@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
             this.student_id = new System.Windows.Forms.Label();
             this.student_id_text = new System.Windows.Forms.TextBox();
             this.student_name = new System.Windows.Forms.Label();
@@ -123,6 +122,7 @@
             this.show_gpa.Size = new System.Drawing.Size(1048, 440);
             this.show_gpa.TabIndex = 8;
             this.show_gpa.UseCompatibleStateImageBehavior = false;
+            this.show_gpa.SelectedIndexChanged += new System.EventHandler(this.Show_gpa_SelectedIndexChanged);
             // 
             // GpaInquiry
             // 
@@ -143,6 +143,7 @@
             this.Load += new System.EventHandler(this.GpaInquiry_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

@@ -42,5 +42,10 @@ namespace team_development.UI.GPAandCardInquiry
         {
 
         }
+
+        private void Show_gpa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
