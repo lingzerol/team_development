@@ -122,12 +122,14 @@
             this.查询通知ToolStripMenuItem.Name = "查询通知ToolStripMenuItem";
             this.查询通知ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询通知ToolStripMenuItem.Text = "查询通知";
+            this.查询通知ToolStripMenuItem.Click += new System.EventHandler(this.InqueryInformToolStripMenuItem_Click);
             // 
             // 查询就业ToolStripMenuItem
             // 
             this.查询就业ToolStripMenuItem.Name = "查询就业ToolStripMenuItem";
             this.查询就业ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询就业ToolStripMenuItem.Text = "查询就业";
+            this.查询就业ToolStripMenuItem.Click += new System.EventHandler(this.InqueryEmployToolStripMenuItem_Click);
             // 
             // 查询饭卡ToolStripMenuItem
             // 

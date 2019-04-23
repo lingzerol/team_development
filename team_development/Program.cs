@@ -4,15 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using log4net;
+
 namespace team_development
 {
     static class Program
-    {
-       
+    {        
         //testwhw
         //testlzp
         /// <summary>
-    
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
@@ -21,7 +20,10 @@ namespace team_development
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+           
         }
         
     }
 }
+
+
