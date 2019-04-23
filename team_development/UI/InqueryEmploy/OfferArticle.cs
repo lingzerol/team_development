@@ -48,11 +48,11 @@ namespace team_development.UI.InqueryEmploy
 
 
         }
-      //  public event TransfDelegate TransfEvent;
+        public event TransfDelegate TransfEvent;
         private void button1_Click(object sender, EventArgs e)
         {
 
-      //      TransfEvent("InformReturn");
+            TransfEvent("EmployReturn");
             this.Close();
 
         }

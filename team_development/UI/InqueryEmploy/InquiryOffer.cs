@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace team_development.UI.InqueryEmploy
 {
+    //声明委托和事件
+    public delegate void TransfDelegate(String value);
     public partial class InquiryOffer : Form
     {
         public InquiryOffer()
@@ -32,17 +34,15 @@ namespace team_development.UI.InqueryEmploy
         {
             
         }
-     //   public event TransfDelegate TransfEvent;
-
-
+        public event TransfDelegate TransfEvent;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int RIndex = e.RowIndex;
             int CIndex = e.ColumnIndex;
             if (RIndex == 0 && CIndex == 0)
             {
-
-                //TransfEvent("Employ");
+               
+                TransfEvent("Employ");
                 this.Close();
 
             }
