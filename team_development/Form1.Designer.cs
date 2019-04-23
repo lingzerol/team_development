@@ -74,14 +74,14 @@
             // 选课ToolStripMenuItem
             // 
             this.选课ToolStripMenuItem.Name = "选课ToolStripMenuItem";
-            this.选课ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.选课ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.选课ToolStripMenuItem.Text = "选课";
             this.选课ToolStripMenuItem.Click += new System.EventHandler(this.CourseSelectionToolStripMenuItem_Click);
             // 
             // 查询培养方案ToolStripMenuItem
             // 
             this.查询培养方案ToolStripMenuItem.Name = "查询培养方案ToolStripMenuItem";
-            this.查询培养方案ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.查询培养方案ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.查询培养方案ToolStripMenuItem.Text = "查询培养方案";
             // 
             // 写请假条ToolStripMenuItem
@@ -111,33 +111,33 @@
             // 查询成绩ToolStripMenuItem
             // 
             this.查询成绩ToolStripMenuItem.Name = "查询成绩ToolStripMenuItem";
-            this.查询成绩ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.查询成绩ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.查询成绩ToolStripMenuItem.Text = "查询成绩";
             // 
             // 查询通知ToolStripMenuItem
             // 
             this.查询通知ToolStripMenuItem.Name = "查询通知ToolStripMenuItem";
-            this.查询通知ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.查询通知ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.查询通知ToolStripMenuItem.Text = "查询通知";
             this.查询通知ToolStripMenuItem.Click += new System.EventHandler(this.QueryInformToolStripMenuItem_Click);
             // 
             // 查询就业ToolStripMenuItem
             // 
             this.查询就业ToolStripMenuItem.Name = "查询就业ToolStripMenuItem";
-            this.查询就业ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.查询就业ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.查询就业ToolStripMenuItem.Text = "查询就业";
             this.查询就业ToolStripMenuItem.Click += new System.EventHandler(this.QueryEmployToolStripMenuItem_Click);
             // 
             // 查询饭卡ToolStripMenuItem
             // 
             this.查询饭卡ToolStripMenuItem.Name = "查询饭卡ToolStripMenuItem";
-            this.查询饭卡ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.查询饭卡ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.查询饭卡ToolStripMenuItem.Text = "查询饭卡";
             // 
             // 查询ToolStripMenuItem1
             // 
             this.查询ToolStripMenuItem1.Name = "查询ToolStripMenuItem1";
-            this.查询ToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.查询ToolStripMenuItem1.Size = new System.Drawing.Size(159, 26);
             this.查询ToolStripMenuItem1.Text = "查询水电费";
             // 
             // 用户信息ToolStripMenuItem
@@ -154,6 +154,7 @@
             // 
             // Form1Content
             // 
+            this.Form1Content.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Form1Content.Location = new System.Drawing.Point(12, 55);
             this.Form1Content.Name = "Form1Content";
             this.Form1Content.Size = new System.Drawing.Size(1072, 565);

@@ -48,14 +48,18 @@ namespace team_development
         {
 
         }
+        public event TransfDelegate TransfEvent;
 
         private void button1_Click(object sender, EventArgs e)
         {
-            InquiryNotification h = new InquiryNotification();
-            this.Hide();
-            h.ShowDialog();
-            Application.ExitThread();
-            
-    }
+            /*    InquiryNotification h = new InquiryNotification();
+                this.Hide();
+                h.ShowDialog();
+                Application.ExitThread();
+            */
+            //this.Close();
+            TransfEvent("InformReturn");
+            this.Close();
+        }
     }
 }

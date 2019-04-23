@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace team_development
 {
     enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
-    enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
+    enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Inform_Article,Q_Employ, Q_Employ_Article, Q_MealCard,Q_Cost}
     class MenuGetter
     {
         
@@ -38,8 +38,14 @@ namespace team_development
                         case SubMenuType.Q_Inform:
                             result = new InquiryNotification();
                             break;
+                        case SubMenuType.Q_Inform_Article:
+                            result = new NotificationArticle();
+                            break;
                         case SubMenuType.Q_Employ:
-                            result=new InquiryOffer();
+                            result = new InquiryOffer();
+                            break;
+                        case SubMenuType.Q_Employ_Article:
+                            result = new OfferArticle();
                             break;
                         case SubMenuType.Q_MealCard:
                             break;

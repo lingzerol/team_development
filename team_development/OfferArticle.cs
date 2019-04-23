@@ -48,14 +48,12 @@ namespace team_development
 
 
         }
-
+        public event TransfDelegate TransfEvent;
         private void button1_Click(object sender, EventArgs e)
         {
 
-            InquiryOffer h = new InquiryOffer();
-            this.Hide();
-            h.ShowDialog();
-            Application.ExitThread();
+            TransfEvent("InformReturn");
+            this.Close();
 
         }
     }
