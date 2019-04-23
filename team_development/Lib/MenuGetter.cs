@@ -6,55 +6,42 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using team_development.UI.CourseSelection;
 using team_development.UI.UserInfo;
-using team_development.UI.InqueryEmploy;
-using team_development.UI.InqueryInform;
+using team_development.UI.Absence;
 namespace team_development.Lib
 {
-    enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
-    enum SubMenuType { C_S, MatchScheme, Q_Mark, Q_Inform, Q_Inform_Article, Q_Employ, Q_Employ_Article, Q_MealCard, Q_Cost }
-    class MenuGetter
+    public enum MenuType { JWXT, Absence, Forum, Query, UserInfo };
+    public enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
+    public class MenuGetter
     {
-
-        static MenuGetter()
-        {
+        
+        static MenuGetter() {
         }
-        public static Form GetMenu(MenuType MenuId, SubMenuType SubMenu = 0)
-        {
-            Form result = new Form();
-            switch (MenuId)
-            {
+        public static Form GetMenu(MenuType MenuId,SubMenuType SubMenu=0) {
+            Form result=new Form();
+            switch (MenuId) {
                 case MenuType.JWXT:
-                    switch (SubMenu)
-                    {
+                    switch (SubMenu) {
                         case SubMenuType.C_S:
                             result = new CourseSelection();
                             break;
                         case SubMenuType.MatchScheme:
                             break;
-                        default: break;
+                        default:break;
                             //error processing
                     }
                     break;
-                case MenuType.AFL:
+                case MenuType.Absence:
+                    result = new AbsenceInput();
                     break;
                 case MenuType.Forum:
                     break;
                 case MenuType.Query:
-                    switch (SubMenu)
-                    {
+                    switch (SubMenu) {
                         case SubMenuType.Q_Mark:
                             break;
                         case SubMenuType.Q_Inform:
-                            result = new InquiryNotification();
-                            break;
-                        case SubMenuType.Q_Inform_Article:
-                            result = new NotificationArticle();
                             break;
                         case SubMenuType.Q_Employ:
-                            result = new InquiryOffer();
-                            break;
-                        case SubMenuType.Q_Employ_Article:
-                            result = new OfferArticle();
                             break;
                         case SubMenuType.Q_MealCard:
                             break;
@@ -72,12 +59,9 @@ namespace team_development.Lib
                     //error processing
                     break;
             }
-            result.TopLevel = false;
-            result.FormBorderStyle = FormBorderStyle.None;
-            result.Dock = System.Windows.Forms.DockStyle.Fill;
             return result;
         }
 
     }
-
+   
 }
