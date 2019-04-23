@@ -64,6 +64,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\InqueryInform\InquiryNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InqueryInform\InquiryNotification.Designer.cs">
+      <DependentUpon>InquiryNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InqueryEmploy\InquiryOffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InqueryEmploy\InquiryOffer.Designer.cs">
+      <DependentUpon>InquiryOffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InqueryInform\NotificationArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\InqueryInform\NotificationArticle.Designer.cs">
+      <DependentUpon>NotificationArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\InqueryEmploy\OfferArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI\CourseSelection\CourseSelection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +124,18 @@
     <Compile Include="UI\UserInfo\UserInfoSetting.Designer.cs">
       <DependentUpon>UserInfoSetting.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\InqueryInform\InquiryNotification.resx">
+      <DependentUpon>InquiryNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InqueryEmploy\InquiryOffer.resx">
+      <DependentUpon>InquiryOffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InqueryInform\NotificationArticle.resx">
+      <DependentUpon>NotificationArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\InqueryEmploy\OfferArticle.resx">
+      <DependentUpon>OfferArticle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\CourseSelection\CourseSelection.resx">
       <DependentUpon>CourseSelection.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,5 +189,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
