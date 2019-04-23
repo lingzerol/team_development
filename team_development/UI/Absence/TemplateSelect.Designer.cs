@@ -30,18 +30,18 @@
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
+            this.btn_templatePreview = new System.Windows.Forms.Button();
+            this.btn_confirm = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.textBox1.Location = new System.Drawing.Point(76, 57);
+            this.textBox1.Location = new System.Drawing.Point(111, 40);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(936, 35);
+            this.textBox1.Size = new System.Drawing.Size(957, 35);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "学生标准请假条";
             // 
@@ -63,64 +63,64 @@
             "Item Template",
             "Item Template",
             "Item Template"});
-            this.listBox1.Location = new System.Drawing.Point(76, 133);
+            this.listBox1.Location = new System.Drawing.Point(111, 117);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(936, 334);
+            this.listBox1.Size = new System.Drawing.Size(957, 334);
             this.listBox1.TabIndex = 2;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // button2
+            // btn_update
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.button2.Location = new System.Drawing.Point(76, 510);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(199, 41);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "更新数据库";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_update.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.btn_update.Location = new System.Drawing.Point(111, 494);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(199, 41);
+            this.btn_update.TabIndex = 7;
+            this.btn_update.Text = "更新数据库";
+            this.btn_update.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_templatePreview
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.button1.Location = new System.Drawing.Point(321, 510);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 41);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "预览";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_templatePreview.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.btn_templatePreview.Location = new System.Drawing.Point(356, 494);
+            this.btn_templatePreview.Name = "btn_templatePreview";
+            this.btn_templatePreview.Size = new System.Drawing.Size(199, 41);
+            this.btn_templatePreview.TabIndex = 8;
+            this.btn_templatePreview.Text = "预览";
+            this.btn_templatePreview.UseVisualStyleBackColor = true;
+            this.btn_templatePreview.Click += new System.EventHandler(this.btn_templatePreview_Click);
             // 
-            // button3
+            // btn_confirm
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.button3.Location = new System.Drawing.Point(571, 510);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(199, 41);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "确认";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_confirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.btn_confirm.Location = new System.Drawing.Point(615, 494);
+            this.btn_confirm.Name = "btn_confirm";
+            this.btn_confirm.Size = new System.Drawing.Size(199, 41);
+            this.btn_confirm.TabIndex = 9;
+            this.btn_confirm.Text = "确认";
+            this.btn_confirm.UseVisualStyleBackColor = true;
+            this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
             // 
-            // button4
+            // btn_cancel
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.button4.Location = new System.Drawing.Point(813, 510);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(199, 41);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "取消";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_cancel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.btn_cancel.Location = new System.Drawing.Point(869, 494);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(199, 41);
+            this.btn_cancel.TabIndex = 10;
+            this.btn_cancel.Text = "取消";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // TemplateSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 623);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(1186, 682);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_confirm);
+            this.Controls.Add(this.btn_templatePreview);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox1);
             this.Name = "TemplateSelect";
@@ -134,9 +134,9 @@
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.Button btn_templatePreview;
+        private System.Windows.Forms.Button btn_confirm;
+        private System.Windows.Forms.Button btn_cancel;
     }
 }

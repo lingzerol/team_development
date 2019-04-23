@@ -45,5 +45,10 @@ namespace team_development
         {
 
         }
+
+        private void AbsenceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Absence);
+        }
     }
 }

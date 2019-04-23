@@ -8,7 +8,7 @@ using team_development.UI.CourseSelection;
 using team_development.UI.UserInfo;
 namespace team_development.Lib
 {
-    public enum MenuType { JWXT, AFL, Forum, Query, UserInfo };
+    public enum MenuType { JWXT, Absence, Forum, Query, UserInfo };
     public enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
     public class MenuGetter
     {
@@ -29,7 +29,8 @@ namespace team_development.Lib
                             //error processing
                     }
                     break;
-                case MenuType.AFL:
+                case MenuType.Absence:
+                    result = new AbsenceInput();
                     break;
                 case MenuType.Forum:
                     break;
