@@ -11,7 +11,7 @@ using team_development.UI.GPAandCardInquiry;
 using team_development.UI.InqueryEmploy;
 using team_development.UI.InqueryInform;
 using team_development.UI.WaterElectricity;
-
+using team_development.UI.MatchScheme;
 namespace team_development.Lib
 {
     public enum MenuType { JWXT, Absence, Forum, Query, UserInfo};
@@ -30,7 +30,7 @@ namespace team_development.Lib
                             result = new CourseSelection();
                             break;
                         case SubMenuType.MatchScheme:
-                            //result = new MatchScheme();
+                            result = new MatchScheme();
                             break;
                         default:break;
                             //error processing
