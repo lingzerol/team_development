@@ -19,7 +19,7 @@ namespace team_development
 
         private void CourseSelectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TurnForm(MenuType.JWXT, SubMenuType.C_S);
+            TurnForm(MenuType.JWXT, SubMenuType.CourseSelection);
         }
 
 
@@ -57,17 +57,17 @@ namespace team_development
 
         private void InqueryEmployToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TurnForm(MenuType.Query, SubMenuType.Q_Employ);
+            TurnForm(MenuType.Query, SubMenuType.QueryEmploy);
         }
 
         private void InqueryInformToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TurnForm(MenuType.Query, SubMenuType.Q_Inform);
+            TurnForm(MenuType.Query, SubMenuType.QueryInform);
         }
 
         private void InqueryCostToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            TurnForm(MenuType.Query, SubMenuType.Q_Cost);
+            TurnForm(MenuType.Query, SubMenuType.QueryCost);
         }
 
         private void MatchSchemeToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -75,11 +75,11 @@ namespace team_development
             TurnForm(MenuType.JWXT, SubMenuType.MatchScheme);
         }
         private void GpaInquiryToolStripMenuItem_Click(object sender, EventArgs e) {
-            TurnForm(MenuType.Query, SubMenuType.Q_Mark);
+            TurnForm(MenuType.Query, SubMenuType.QueryMark);
         }
         private void MealcardInquiryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TurnForm(MenuType.Query, SubMenuType.Q_MealCard);
+            TurnForm(MenuType.Query, SubMenuType.QueryMealCard);
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

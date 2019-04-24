@@ -56,5 +56,10 @@ namespace team_development.UI.Absence
             // 选择模板->填写请假条
             TurnToForm(new AbsenceInput());
         }
+
+        private void TemplateSelect_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

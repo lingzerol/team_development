@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development.UI.WaterElectricity
+namespace team_development.UI.QueryWaterElectricity
 {
-    public partial class WaterElectricitySearch : Form
+    public partial class QueryWaterElectricity : Form
     {
-        public WaterElectricitySearch()
+        public QueryWaterElectricity()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace team_development.UI.WaterElectricity
         private void btn_confirm_Click(object sender, EventArgs e)
         {
             //确定进入显示水电费页面
-            TurnToForm(new WaterElectricityShow());
+            TurnToForm(new ShowWaterElectricity());
         }
         private void TurnToForm(Form f)
         {
@@ -38,6 +38,11 @@ namespace team_development.UI.WaterElectricity
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WaterElectricitySearch_Load(object sender, EventArgs e)
         {
 
         }

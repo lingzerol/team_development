@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development.UI.InqueryInform
+namespace team_development.UI.QueryInform
 {
-    public partial class NotificationArticle : Form
+    public partial class QueryInformArticle : Form
     {
-        public NotificationArticle()
+        public QueryInformArticle()
         {
             InitializeComponent();
             textBox1.Text += "  \r\n暨南大学党政办公室关于2019年清明节放假的通知\r\n";
@@ -51,7 +51,7 @@ namespace team_development.UI.InqueryInform
 
         private void button1_Click(object sender, EventArgs e)
         {
-            TurnToForm(new InquiryNotification());
+            TurnToForm(new QueryNotification());
         }
         private void TurnToForm(Form f)
         {

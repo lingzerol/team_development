@@ -1,4 +1,4 @@
-﻿namespace team_development.UI.InqueryEmploy
+﻿namespace team_development.UI.QueryEmploy
 {
     partial class OfferArticle
     {

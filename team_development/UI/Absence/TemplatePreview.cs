@@ -44,5 +44,10 @@ namespace team_development.UI.Absence
             //预览模板 -> 选择模板
             TurnToForm(new TemplateSelect());
         }
+
+        private void TemplatePreview_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

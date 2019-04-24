@@ -1,6 +1,6 @@
-﻿namespace team_development.UI.InqueryEmploy
+﻿namespace team_development.UI.QueryEmploy
 {
-    partial class InquiryOffer
+    partial class QueryEmploy
     {
         /// <summary>
         /// Required designer variable.
@@ -86,15 +86,16 @@
             this.ColumnEducation.HeaderText = "学历";
             this.ColumnEducation.Name = "ColumnEducation";
             // 
-            // InquiryOffer
+            // QueryEmploy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 568);
             this.Controls.Add(this.dataGridViewOffer);
             this.Controls.Add(this.label1);
-            this.Name = "InquiryOffer";
-            this.Text = "InquiryOffer";
+            this.Name = "QueryEmploy";
+            this.Text = "QueryEmploy";
+            this.Load += new System.EventHandler(this.InquiryOffer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOffer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,6 +1,6 @@
-﻿namespace team_development.UI.GPAandCardInquiry
+﻿namespace team_development.UI.QueryMealCard
 {
-    partial class MealcardInquiry
+    partial class QueryMealcard
     {
         /// <summary>
         /// Required designer variable.
@@ -72,7 +72,7 @@
             this.report_loss.Text = "挂失";
             this.report_loss.UseVisualStyleBackColor = true;
             // 
-            // MealcardInquiry
+            // QueryMealcard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -81,8 +81,9 @@
             this.Controls.Add(this.balance_status);
             this.Controls.Add(this.college_name);
             this.Controls.Add(this.rice_card);
-            this.Name = "MealcardInquiry";
+            this.Name = "QueryMealcard";
             this.Text = "s";
+            this.Load += new System.EventHandler(this.MealcardInquiry_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

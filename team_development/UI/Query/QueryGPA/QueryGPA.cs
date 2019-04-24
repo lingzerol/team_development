@@ -8,19 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development.UI.GPAandCardInquiry
+namespace team_development.UI.QueryGPA
 {
-    public partial class GpaInquiry : Form
+    public partial class QueryMark : Form
     {
-        public GpaInquiry()
+        public QueryMark()
         {
             InitializeComponent();
             choose_semester.SelectedIndex = 0;
             choose_academic_year.SelectedIndex = 3;
-            table_load();
+            TableLoad();
         }
 
-        public void table_load()
+        public void TableLoad()
         {
             show_gpa.GridLines = true;//表格是否显示网格线
 

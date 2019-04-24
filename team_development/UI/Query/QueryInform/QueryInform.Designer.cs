@@ -1,4 +1,4 @@
-﻿namespace team_development.UI.InqueryInform
+﻿namespace team_development.UI.QueryInform
 {
 
     struct Notification
@@ -12,7 +12,7 @@
         }
     }
 
-    partial class InquiryNotification
+    partial class QueryNotification
     {
         /// <summary>
         /// Required designer variable.
@@ -91,15 +91,15 @@
             this.ColumnPublishDate.HeaderText = "发布日期";
             this.ColumnPublishDate.Name = "ColumnPublishDate";
             // 
-            // InquiryNotification
+            // QueryNotification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 568);
             this.Controls.Add(this.dataGridViewNotifocation);
             this.Controls.Add(this.label1);
-            this.Name = "InquiryNotification";
-            this.Text = "InquiryNotification";
+            this.Name = "QueryNotification";
+            this.Text = "QueryNotification";
             this.Load += new System.EventHandler(this.InquiryNotification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotifocation)).EndInit();
             this.ResumeLayout(false);

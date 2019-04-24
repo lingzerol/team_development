@@ -1,6 +1,6 @@
-﻿namespace team_development.UI.InqueryInform
+﻿namespace team_development.UI.QueryInform
 {
-    partial class NotificationArticle
+    partial class QueryInformArticle
     {
         /// <summary>
         /// Required designer variable.

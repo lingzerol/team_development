@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development.UI.InqueryInform
+namespace team_development.UI.QueryInform
 {
-    public partial class InquiryNotification : Form
+    public partial class QueryNotification : Form
     {
         public Form1 form1;
-        public InquiryNotification()
+        public QueryNotification()
         {
             InitializeComponent();          
             DataGridViewRowCollection rows = dataGridViewNotifocation.Rows;
@@ -39,7 +39,7 @@ namespace team_development.UI.InqueryInform
             int CIndex = e.ColumnIndex;
             if (RIndex == 0&& CIndex == 0)
             {
-                TurnToForm(new NotificationArticle());   
+                TurnToForm(new QueryInformArticle());   
             }
         }
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

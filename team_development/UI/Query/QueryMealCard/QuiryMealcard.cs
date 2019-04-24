@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development.UI.GPAandCardInquiry
+namespace team_development.UI.QueryMealCard
 {
-    public partial class MealcardInquiry : Form
+    public partial class QueryMealcard : Form
     {
-        public MealcardInquiry()
+        public QueryMealcard()
         {
             InitializeComponent();
         }
 
         private void MealcardInquiry_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MealcardInquiry_Load_1(object sender, EventArgs e)
         {
 
         }
