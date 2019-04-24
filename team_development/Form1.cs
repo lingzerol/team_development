@@ -81,5 +81,10 @@ namespace team_development
         {
             TurnForm(MenuType.Query, SubMenuType.Q_MealCard);
         }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

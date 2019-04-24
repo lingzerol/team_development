@@ -62,6 +62,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1096, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // 教务系统ToolStripMenuItem
             // 
@@ -75,14 +76,14 @@
             // 选课ToolStripMenuItem
             // 
             this.选课ToolStripMenuItem.Name = "选课ToolStripMenuItem";
-            this.选课ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.选课ToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.选课ToolStripMenuItem.Text = "选课";
             this.选课ToolStripMenuItem.Click += new System.EventHandler(this.CourseSelectionToolStripMenuItem_Click);
             // 
             // MatchSchemeToolStripMenuItem
             // 
             this.MatchSchemeToolStripMenuItem.Name = "MatchSchemeToolStripMenuItem";
-            this.MatchSchemeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.MatchSchemeToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.MatchSchemeToolStripMenuItem.Text = "查询培养方案";
             this.MatchSchemeToolStripMenuItem.Click += new System.EventHandler(this.MatchSchemeToolStripMenuItem_Click_1);
             // 
