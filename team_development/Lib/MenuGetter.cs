@@ -16,6 +16,7 @@ using team_development.UI.QueryGPA;
 using team_development.UI.Search;
 using System.Net;
 
+
 namespace team_development.Lib
 {
     public enum MenuType { JWXT, Absence, Forum, Query, UserInfo, Search };
@@ -37,6 +38,7 @@ namespace team_development.Lib
             UserInfoInstance= new UserInfoDisplay();
         }
         public static Form GetMenu(MenuType MenuId,SubMenuType SubMenuId=0) {
+            Log.Info("Require Turn From");
             switch (MenuId) {
                 case MenuType.JWXT:
                     switch (SubMenuId) {
@@ -73,6 +75,7 @@ namespace team_development.Lib
                             return QueryCostInstance;
                             break;
                         default:
+                            Log.Error("ERROR Menu!!!");
                             //error processing
                             break;
                     }
@@ -84,6 +87,7 @@ namespace team_development.Lib
                     return UserInfoInstance;
                     break;
                 default:
+                    Log.Error("ERROR SubMenu!!!");
                     break;
             }
             return null;
