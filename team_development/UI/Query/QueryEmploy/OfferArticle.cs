@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development.UI.InqueryEmploy
+namespace team_development.UI.QueryEmploy
 {
     public partial class OfferArticle : Form
     {
@@ -50,7 +50,7 @@ namespace team_development.UI.InqueryEmploy
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            TurnToForm(new InquiryOffer());           
+            TurnToForm(new QueryEmploy());           
         }
         private void TurnToForm(Form f)
         {

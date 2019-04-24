@@ -15,7 +15,7 @@ namespace team_development.UI.CourseSelection
         public CourseSelection()
         {
             InitializeComponent();
-            Tabel_Load();
+            TableLoad();
         }
 
         private void Course_selection_Load(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace team_development.UI.CourseSelection
             
         }
 
-        private void Tabel_Load() {
+        private void TableLoad() {
             this.CourseInfo.GridLines = true;
 
             this.CourseInfo.View = View.Details;

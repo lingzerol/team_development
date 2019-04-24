@@ -7,56 +7,65 @@ using System.Windows.Forms;
 using team_development.UI.CourseSelection;
 using team_development.UI.UserInfo;
 using team_development.UI.Absence;
-using team_development.UI.GPAandCardInquiry;
-using team_development.UI.InqueryEmploy;
-using team_development.UI.InqueryInform;
-using team_development.UI.WaterElectricity;
-
+using team_development.UI.QueryMealCard;
+using team_development.UI.QueryEmploy;
+using team_development.UI.QueryInform;
+using team_development.UI.QueryWaterElectricity;
+using team_development.UI.MatchScheme;
+using team_development.UI.QueryGPA;
 namespace team_development.Lib
 {
     public enum MenuType { JWXT, Absence, Forum, Query, UserInfo};
-    public enum SubMenuType { C_S,MatchScheme,Q_Mark,Q_Inform,Q_Employ,Q_MealCard,Q_Cost}
+    public enum SubMenuType { CourseSelection,MatchScheme,QueryMark,QueryInform,QueryEmploy,QueryMealCard,QueryCost}
     public class MenuGetter
     {
-        
+        public static Form CourseSelectionInstance, MatchSchemeInstance, QueryMarkInstance,
+            QueryInformInstance, QueryEmployInstance, QueryMealCardInstance, QueryCostInstance, AbsenceInstance, QueryInstance, UserInfoInstance;
         static MenuGetter() {
+            CourseSelectionInstance = new CourseSelection();
+            MatchSchemeInstance = new MatchScheme();
+            QueryMarkInstance = new QueryMark();
+            QueryInformInstance = new QueryNotification();
+            QueryEmployInstance = new QueryEmploy();
+            QueryMealCardInstance = new QueryMealcard();
+            QueryCostInstance = new QueryWaterElectricity();
+            AbsenceInstance = new AbsenceInput(); 
+            UserInfoInstance= new UserInfoDisplay();
         }
-        public static Form GetMenu(MenuType MenuId,SubMenuType SubMenu=0) {
-            Form result=new Form();
+        public static Form GetMenu(MenuType MenuId,SubMenuType SubMenuId=0) {
             switch (MenuId) {
                 case MenuType.JWXT:
-                    switch (SubMenu) {
-                        case SubMenuType.C_S:
-                            result = new CourseSelection();
+                    switch (SubMenuId) {
+                        case SubMenuType.CourseSelection:
+                            return CourseSelectionInstance;
                             break;
                         case SubMenuType.MatchScheme:
-                            //result = new MatchScheme();
+                            return MatchSchemeInstance;
                             break;
                         default:break;
-                            //error processing
                     }
                     break;
                 case MenuType.Absence:
-                    result = new AbsenceInput();
+                    return AbsenceInstance;
                     break;
                 case MenuType.Forum:
                     break;
                 case MenuType.Query:
-                    switch (SubMenu) {
-                        case SubMenuType.Q_Mark:
-                            result = new GpaInquiry();
+                    switch (SubMenuId) {
+                        case SubMenuType.QueryMark:
+                            return QueryMarkInstance;
                             break;
-                        case SubMenuType.Q_Inform:
-                            result = new InquiryNotification();
+                        case SubMenuType.QueryInform:
+                            return QueryInformInstance;
                             break;
-                        case SubMenuType.Q_Employ:
-                            result = new InquiryOffer();
+                        case SubMenuType.QueryEmploy:
+                            return QueryEmployInstance;
                             break;
-                        case SubMenuType.Q_MealCard:
-                            result = new MealcardInquiry();
+                        case SubMenuType.QueryMealCard:
+                            return QueryMealCardInstance;
                             break;
-                        case SubMenuType.Q_Cost:
-                            result = new WaterElectricitySearch();
+                        case SubMenuType.QueryCost:
+                            return QueryCostInstance;
                             break;
                         default:
                             //error processing
@@ -64,13 +73,12 @@ namespace team_development.Lib
                     }
                     break;
                 case MenuType.UserInfo:
-                    result = new UserInfoDisplay();
+                    return UserInfoInstance;
                     break;
                 default:
-                    //error processing
                     break;
             }
-            return result;
+            return null;
         }
 
     }

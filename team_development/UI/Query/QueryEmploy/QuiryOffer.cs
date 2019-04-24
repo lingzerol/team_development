@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace team_development.UI.InqueryEmploy
+namespace team_development.UI.QueryEmploy
 {
-    public partial class InquiryOffer : Form
+    public partial class QueryEmploy : Form
     {
-        public InquiryOffer()
+        public QueryEmploy()
         {
             InitializeComponent();
             DataGridViewRowCollection rows = dataGridViewOffer.Rows;
@@ -47,5 +47,9 @@ namespace team_development.UI.InqueryEmploy
             ((Form1)(this.ParentForm)).TurnForm(f);
         }
 
+        private void InquiryOffer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

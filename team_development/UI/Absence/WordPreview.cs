@@ -53,5 +53,10 @@ namespace team_development.UI.Absence
             }
 
         }
+
+        private void WordPreview_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

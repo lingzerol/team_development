@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using team_development.UI.CourseSelection;
+using System.Windows.Forms;
 
 namespace team_development.Lib.Tests
 {
@@ -14,7 +16,7 @@ namespace team_development.Lib.Tests
         [TestMethod()]
         public void GetMenuTest()
         {
-            
+            Assert.AreEqual(MenuGetter.GetMenu(MenuType.JWXT,SubMenuType.CourseSelection), MenuGetter.CourseSelectionInstance);
         }
     }
 }

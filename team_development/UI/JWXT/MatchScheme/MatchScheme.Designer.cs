@@ -1,4 +1,4 @@
-﻿namespace team_development
+﻿namespace team_development.UI.MatchScheme
 {
     partial class MatchScheme
     {

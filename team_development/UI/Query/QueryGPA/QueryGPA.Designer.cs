@@ -1,6 +1,6 @@
-﻿namespace team_development.UI.GPAandCardInquiry
+﻿namespace team_development.UI.QueryGPA
 {
-    partial class GpaInquiry
+    partial class QueryMark
     {
         /// <summary>
         /// Required designer variable.
@@ -124,7 +124,7 @@
             this.show_gpa.UseCompatibleStateImageBehavior = false;
             this.show_gpa.SelectedIndexChanged += new System.EventHandler(this.Show_gpa_SelectedIndexChanged);
             // 
-            // GpaInquiry
+            // QueryMark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,8 +138,8 @@
             this.Controls.Add(this.student_name);
             this.Controls.Add(this.student_id_text);
             this.Controls.Add(this.student_id);
-            this.Name = "GpaInquiry";
-            this.Text = "GpaInquiry";
+            this.Name = "QueryMark";
+            this.Text = "QueryMark";
             this.Load += new System.EventHandler(this.GpaInquiry_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
