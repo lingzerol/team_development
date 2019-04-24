@@ -74,5 +74,12 @@ namespace team_development
         {
             TurnForm(MenuType.JWXT, SubMenuType.MatchScheme);
         }
+        private void GpaInquiryToolStripMenuItem_Click(object sender, EventArgs e) {
+            TurnForm(MenuType.Query, SubMenuType.Q_Mark);
+        }
+        private void MealcardInquiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Query, SubMenuType.Q_MealCard);
+        }
     }
 }
