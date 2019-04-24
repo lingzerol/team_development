@@ -13,14 +13,17 @@ using team_development.UI.QueryInform;
 using team_development.UI.QueryWaterElectricity;
 using team_development.UI.MatchScheme;
 using team_development.UI.QueryGPA;
+using team_development.UI.Search;
+using System.Net;
+
 namespace team_development.Lib
 {
-    public enum MenuType { JWXT, Absence, Forum, Query, UserInfo};
-    public enum SubMenuType { CourseSelection,MatchScheme,QueryMark,QueryInform,QueryEmploy,QueryMealCard,QueryCost}
+    public enum MenuType { JWXT, Absence, Forum, Query, UserInfo, Search };
+    public enum SubMenuType { CourseSelection,MatchScheme,QueryMark,QueryInform,QueryEmploy,QueryMealCard,QueryCost }
     public class MenuGetter
     {
         public static Form CourseSelectionInstance, MatchSchemeInstance, QueryMarkInstance,
-            QueryInformInstance, QueryEmployInstance, QueryMealCardInstance, QueryCostInstance, AbsenceInstance, QueryInstance, UserInfoInstance;
+            QueryInformInstance, QueryEmployInstance, QueryMealCardInstance, QueryCostInstance, SearchInstance, AbsenceInstance, QueryInstance, UserInfoInstance;
         static MenuGetter() {
             CourseSelectionInstance = new CourseSelection();
             MatchSchemeInstance = new MatchScheme();
@@ -29,6 +32,7 @@ namespace team_development.Lib
             QueryEmployInstance = new QueryEmploy();
             QueryMealCardInstance = new QueryMealcard();
             QueryCostInstance = new QueryWaterElectricity();
+            SearchInstance = new Search();
             AbsenceInstance = new AbsenceInput(); 
             UserInfoInstance= new UserInfoDisplay();
         }
@@ -49,6 +53,7 @@ namespace team_development.Lib
                     return AbsenceInstance;
                     break;
                 case MenuType.Forum:
+                    
                     break;
                 case MenuType.Query:
                     switch (SubMenuId) {
@@ -71,6 +76,9 @@ namespace team_development.Lib
                             //error processing
                             break;
                     }
+                    break;
+                case MenuType.Search:
+                    return SearchInstance;
                     break;
                 case MenuType.UserInfo:
                     return UserInfoInstance;
