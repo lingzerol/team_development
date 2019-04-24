@@ -62,6 +62,7 @@
             this.CourseInfo.Size = new System.Drawing.Size(1030, 500);
             this.CourseInfo.TabIndex = 4;
             this.CourseInfo.UseCompatibleStateImageBehavior = false;
+            this.CourseInfo.SelectedIndexChanged += new System.EventHandler(this.CourseInfo_SelectedIndexChanged);
             // 
             // CourseSelection
             // 

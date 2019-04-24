@@ -64,19 +64,23 @@ namespace team_development.UI.CourseSelection
             this.CourseInfo.View = View.Details;
             this.CourseInfo.Scrollable = true;
 
-            this.CourseInfo.Columns.Add("课程编号", 50, HorizontalAlignment.Center);
+            this.CourseInfo.Columns.Add("课程编号", 100, HorizontalAlignment.Center);
             this.CourseInfo.Columns.Add("课程", 50, HorizontalAlignment.Center);
             this.CourseInfo.Columns.Add("学分", 50, HorizontalAlignment.Center);
             this.CourseInfo.Columns.Add("修学", 50, HorizontalAlignment.Center);
             this.CourseInfo.Columns.Add("类别", 50, HorizontalAlignment.Center);
-            this.CourseInfo.Columns.Add("时间安排", 50, HorizontalAlignment.Center);
+            this.CourseInfo.Columns.Add("时间安排", 90, HorizontalAlignment.Center);
             this.CourseInfo.Columns.Add("教师", 50, HorizontalAlignment.Center);
-            this.CourseInfo.Columns.Add("上课地点", 50, HorizontalAlignment.Center);
+            this.CourseInfo.Columns.Add("上课地点", 90, HorizontalAlignment.Center);
             this.CourseInfo.Columns.Add("备注", 50, HorizontalAlignment.Center);
-            this.CourseInfo.Columns.Add("考试时间", 50, HorizontalAlignment.Center);
+            this.CourseInfo.Columns.Add("考试时间", 90, HorizontalAlignment.Center);
             this.CourseInfo.Columns.Add("阶段", 50, HorizontalAlignment.Center);
             this.CourseInfo.Columns.Add("状态", 50, HorizontalAlignment.Center);
         }
 
+        private void CourseInfo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
