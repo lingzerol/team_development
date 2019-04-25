@@ -26,5 +26,25 @@ namespace team_development.UI.Search
             //TODO 会不会出现null的情况
             ((Form1)(this.ParentForm)).TurnForm(f);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -45,8 +45,10 @@
             this.用户信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Form1Content = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.Form1Content.SuspendLayout();
             this.SuspendLayout();
@@ -104,6 +106,7 @@
             this.进入学校论坛ToolStripMenuItem.Name = "进入学校论坛ToolStripMenuItem";
             this.进入学校论坛ToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
             this.进入学校论坛ToolStripMenuItem.Text = "进入学校论坛";
+            this.进入学校论坛ToolStripMenuItem.Click += new System.EventHandler(this.ForumInqueryToolStripMenuItem_Click);
             // 
             // 查询ToolStripMenuItem
             // 
@@ -167,13 +170,41 @@
             // 
             // Form1Content
             // 
+            this.Form1Content.Controls.Add(this.button1);
+            this.Form1Content.Controls.Add(this.textBox1);
             this.Form1Content.Controls.Add(this.panel1);
             this.Form1Content.Controls.Add(this.label1);
-            this.Form1Content.Location = new System.Drawing.Point(12, 55);
+            this.Form1Content.Location = new System.Drawing.Point(12, 51);
             this.Form1Content.Name = "Form1Content";
-            this.Form1Content.Size = new System.Drawing.Size(1072, 565);
+            this.Form1Content.Size = new System.Drawing.Size(1072, 569);
             this.Form1Content.TabIndex = 2;
             this.Form1Content.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1Content_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(714, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(84, 25);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "搜索";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(246, 18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(469, 25);
+            this.textBox1.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(246, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(552, 352);
+            this.panel1.TabIndex = 2;
             // 
             // label1
             // 
@@ -184,15 +215,6 @@
             this.label1.Size = new System.Drawing.Size(625, 60);
             this.label1.TabIndex = 1;
             this.label1.Text = "暨南大学学生自助软件";
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(246, 22);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(552, 395);
-            this.panel1.TabIndex = 2;
             // 
             // Form1
             // 
@@ -233,6 +255,8 @@
         private System.Windows.Forms.Panel Form1Content;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

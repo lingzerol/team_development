@@ -86,5 +86,17 @@ namespace team_development
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TurnForm(MenuType.Search);
+        }
+
+        private void ForumInqueryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", "http://www.ijnu.cn/");
+        }
+
+        
     }
 }
