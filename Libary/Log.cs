@@ -7,7 +7,7 @@ using log4net;
 using log4net.Config;
 using System.IO;
 
-namespace team_development.Lib
+namespace Lib
 {
     public static class Log
     {

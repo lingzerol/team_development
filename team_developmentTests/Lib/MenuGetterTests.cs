@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using team_development.Lib;
+using team_development.FormLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using team_development.UI.CourseSelection;
 using System.Windows.Forms;
 
-namespace team_development.Lib.Tests
+namespace team_development.FormLib.Tests
 {
     [TestClass()]
     public class MenuGetterTests

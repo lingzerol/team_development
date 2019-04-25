@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-namespace team_development.Lib
+namespace Lib
 {
     public static class Storage
     {

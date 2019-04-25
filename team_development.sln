@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "team_developmentTests", "te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "team_development", "team_development\team_development.csproj", "{FD42231D-F988-4873-908F-8A4E9FC23932}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libary", "Libary\Libary.csproj", "{159FCBB7-0F23-4AC2-A5AF-B4E366188683}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libary", "Libary\Libary.csproj", "{BDAA33A0-F471-4EBE-B257-2328129E4749}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{FD42231D-F988-4873-908F-8A4E9FC23932}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD42231D-F988-4873-908F-8A4E9FC23932}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD42231D-F988-4873-908F-8A4E9FC23932}.Release|Any CPU.Build.0 = Release|Any CPU
-		{159FCBB7-0F23-4AC2-A5AF-B4E366188683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{159FCBB7-0F23-4AC2-A5AF-B4E366188683}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{159FCBB7-0F23-4AC2-A5AF-B4E366188683}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{159FCBB7-0F23-4AC2-A5AF-B4E366188683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDAA33A0-F471-4EBE-B257-2328129E4749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDAA33A0-F471-4EBE-B257-2328129E4749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDAA33A0-F471-4EBE-B257-2328129E4749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDAA33A0-F471-4EBE-B257-2328129E4749}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

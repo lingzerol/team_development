@@ -1,18 +1,19 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using team_development.Lib;
+using Lib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-namespace team_development.Lib.Tests
+namespace Lib.Tests
 {
     [TestClass()]
     public class StorageTests
     {
         [TestInitialize]
-        public void TestInitialize() {
+        public void TestInitialize()
+        {
             int a = 3;
             Storage.Save(a, "./testload.xml");
         }
@@ -27,8 +28,9 @@ namespace team_development.Lib.Tests
         [TestMethod()]
         public void LoadTest()
         {
-            int a=(int)Storage.Load("./testload.xml");
-            if (3 != a) {
+            int a = (int)Storage.Load("./testload.xml");
+            if (3 != a)
+            {
                 Assert.Fail();
             }
         }

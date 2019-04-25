@@ -58,13 +58,17 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Lib\MenuGetterTests.cs" />
-    <Compile Include="Lib\StorageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StorageTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Libary\Libary.csproj">
+      <Project>{BDAA33A0-F471-4EBE-B257-2328129E4749}</Project>
+      <Name>Libary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\team_development\team_development.csproj">
       <Project>{FD42231D-F988-4873-908F-8A4E9FC23932}</Project>
       <Name>team_development</Name>

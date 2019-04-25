@@ -14,10 +14,11 @@ using team_development.UI.QueryWaterElectricity;
 using team_development.UI.MatchScheme;
 using team_development.UI.QueryGPA;
 using team_development.UI.Search;
+using Lib;
 using System.Net;
 
 
-namespace team_development.Lib
+namespace team_development.FormLib
 {
     public enum MenuType { JWXT, Absence, Forum, Query, UserInfo, Search };
     public enum SubMenuType { CourseSelection,MatchScheme,QueryMark,QueryInform,QueryEmploy,QueryMealCard,QueryCost }

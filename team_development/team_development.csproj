@@ -67,8 +67,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Lib\Log.cs" />
-    <Compile Include="Lib\Storage.cs" />
     <Compile Include="UI\Query\QueryEmploy\OfferArticle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,7 +113,7 @@
     <Compile Include="UI\JWXT\CourseSelection\LeftTime.Designer.cs">
       <DependentUpon>LeftTime.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lib\MenuGetter.cs" />
+    <Compile Include="FormLib\MenuGetter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\JWXT\CourseSelection\TimeSetting.cs">
@@ -283,6 +281,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Libary\Libary.csproj">
+      <Project>{bdaa33a0-f471-4ebe-b257-2328129e4749}</Project>
+      <Name>Libary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
