@@ -58,6 +58,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Lib\MenuGetterTests.cs" />
+    <Compile Include="Lib\StorageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
