@@ -37,11 +37,6 @@ namespace team_development.UI.QueryWaterElectricity
             ((Form1)(this.ParentForm)).TurnForm(f);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void WaterElectricitySearch_Load(object sender, EventArgs e)
         {
 

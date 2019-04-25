@@ -87,7 +87,7 @@ namespace team_development
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Search_Click(object sender, EventArgs e)
         {
             TurnForm(MenuType.Search);
         }
