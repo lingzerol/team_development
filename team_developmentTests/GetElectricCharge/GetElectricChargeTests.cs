@@ -22,8 +22,6 @@ namespace Lib.GetElectricCharge.Tests
         [TestMethod()]
         public void GetChargeTest1()
         {
-            string ret=GetElectricCharge.Login("3307");
-            
             
         }
     }

@@ -31,7 +31,8 @@ namespace Lib.GetElectricCharge
             header.userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36";
             header.maxTry = 5;
             header.contentType = "application/x-www-form-urlencoded";
-            CookieContainer cookieContainer = HTMLHelper.GetCooKie("http://202.116.25.12/login.aspx", "__LASTFOCUS=&__VIEWSTATE=%2FwEPDwULLTE5ODQ5MTY3NDlkZM4DISokA1JscbtlCdiUVQMwykIc&__VIEWSTATEGENERATOR=C2EE9ABB&__EVENTTARGET=&__EVENTARGUMENT=&__EVENTVALIDATION=%2FwEWBQLz%2BM6SBQK4tY3uAgLEhISACwKd%2B7q4BwKiwImNC7oxDnFDxrZR6l5WlUJDrpGZXrmN&hidtime=2019-04-26+19%3A53%3A31&txtname=3307&txtpwd=&ctl01=", header);
+            string data = "__LASTFOCUS=&__VIEWSTATE=%2FwEPDwULLTE5ODQ5MTY3NDlkZM4DISokA1JscbtlCdiUVQMwykIc&__VIEWSTATEGENERATOR=C2EE9ABB&__EVENTTARGET=&__EVENTARGUMENT=&__EVENTVALIDATION=%2FwEWBQLz%2BM6SBQK4tY3uAgLEhISACwKd%2B7q4BwKiwImNC7oxDnFDxrZR6l5WlUJDrpGZXrmN&hidtime=2019-04-26+19%3A53%3A31&txtname=" + dormNum + "&txtpwd=&ctl01=";
+            CookieContainer cookieContainer = HTMLHelper.GetCooKie("http://202.116.25.12/login.aspx",data , header);
             return cookieContainer;
         }
     }
