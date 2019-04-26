@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using log4net;
-
+using Lib.GetElectricCharge;
 namespace team_development
 {
     static class Program
@@ -17,6 +17,7 @@ namespace team_development
         [STAThread]
         static void Main()
         {
+            GetElectricCharge.Login("3307");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

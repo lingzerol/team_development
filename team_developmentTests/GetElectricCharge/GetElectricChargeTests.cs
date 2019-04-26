@@ -1,12 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Libary.GetElectricCharge;
+using Lib.GetElectricCharge;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using Lib;
 
-namespace Libary.GetElectricCharge.Tests
+namespace Lib.GetElectricCharge.Tests
 {
     [TestClass()]
     public class GetElectricChargeTests
@@ -15,6 +17,14 @@ namespace Libary.GetElectricCharge.Tests
         public void GetChargeTest()
         {
             Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void GetChargeTest1()
+        {
+            string ret=GetElectricCharge.Login("3307");
+            
+            
         }
     }
 }
