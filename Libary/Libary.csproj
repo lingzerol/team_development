@@ -45,8 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CourseHttp.cs" />
     <Compile Include="GetElectricCharge\GetElectricCharge.cs" />
+    <Compile Include="GetJWXT\GetJWXT.cs" />
     <Compile Include="HTMLhelper.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
