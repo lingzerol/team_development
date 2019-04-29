@@ -37,48 +37,52 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 18);
+            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox1.Location = new System.Drawing.Point(59, 72);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(542, 25);
+            this.textBox1.Size = new System.Drawing.Size(542, 31);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(565, 18);
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(605, 72);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 25);
+            this.button1.Size = new System.Drawing.Size(93, 31);
             this.button1.TabIndex = 1;
             this.button1.Text = "搜索";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(30, 56);
+            this.listView1.Location = new System.Drawing.Point(59, 129);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(602, 201);
+            this.listView1.Size = new System.Drawing.Size(639, 237);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(466, 280);
+            this.button2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Location = new System.Drawing.Point(501, 392);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 24);
+            this.button2.Size = new System.Drawing.Size(91, 32);
             this.button2.TabIndex = 3;
             this.button2.Text = "上一页";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(564, 280);
+            this.button3.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button3.Location = new System.Drawing.Point(607, 392);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(67, 24);
+            this.button3.Size = new System.Drawing.Size(91, 32);
             this.button3.TabIndex = 4;
             this.button3.Text = "下一页";
             this.button3.UseVisualStyleBackColor = true;

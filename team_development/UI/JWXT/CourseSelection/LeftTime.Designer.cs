@@ -192,6 +192,7 @@
             this.Controls.Add(this.DayLabel);
             this.Controls.Add(this.MonthLabel);
             this.Controls.Add(this.YearLabel);
+            this.Location = new System.Drawing.Point(99, 61);
             this.Name = "LeftTime";
             this.Text = "LeftTime";
             this.Load += new System.EventHandler(this.LeftTime_Load);

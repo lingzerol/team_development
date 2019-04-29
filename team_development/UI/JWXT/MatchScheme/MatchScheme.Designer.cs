@@ -94,7 +94,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label12, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.label13, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.label14, 2, 7);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(179, 128);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(183, 105);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 14;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.9952F));
@@ -373,7 +373,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(853, 98);
+            this.button1.Location = new System.Drawing.Point(857, 75);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(32, 31);
             this.button1.TabIndex = 1;

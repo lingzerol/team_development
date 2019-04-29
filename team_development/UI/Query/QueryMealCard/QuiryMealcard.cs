@@ -26,5 +26,10 @@ namespace team_development.UI.QueryMealCard
         {
 
         }
+
+        private void college_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
