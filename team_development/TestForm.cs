@@ -18,7 +18,7 @@ namespace team_development
             InitializeComponent();
         }
 
-        Lib.GetJWXT.GetJWXT getJWXT= new Lib.GetJWXT.GetJWXT();
+        Lib.GetJWXT._GetJWXT getJWXT= new Lib.GetJWXT._GetJWXT();
         private void button1_Click(object sender, EventArgs e)
         {
             this.pictureBox1.Image = getJWXT.GetValidateImage();
