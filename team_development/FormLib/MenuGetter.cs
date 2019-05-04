@@ -16,7 +16,7 @@ using team_development.UI.QueryGPA;
 using team_development.UI.Search;
 using Lib;
 using System.Net;
-
+using team_development.UI.Forum;
 
 namespace team_development.FormLib
 {
@@ -25,7 +25,7 @@ namespace team_development.FormLib
     public class MenuGetter
     {
         public static Form CourseSelectionInstance, MatchSchemeInstance, QueryMarkInstance,
-            QueryInformInstance, QueryEmployInstance, QueryMealCardInstance, QueryCostInstance, SearchInstance, AbsenceInstance, QueryInstance, UserInfoInstance;
+            QueryInformInstance, QueryEmployInstance, QueryMealCardInstance, QueryCostInstance, SearchInstance, AbsenceInstance, QueryInstance, UserInfoInstance, ForumInstance;
         static MenuGetter() {
             CourseSelectionInstance = new CourseSelection();
             MatchSchemeInstance = new MatchScheme();
@@ -37,6 +37,7 @@ namespace team_development.FormLib
             SearchInstance = new Search();
             AbsenceInstance = new AbsenceInput(); 
             UserInfoInstance= new UserInfoDisplay();
+            ForumInstance = new Forum();
         }
         public static Form GetMenu(MenuType MenuId,SubMenuType SubMenuId=0) {
             Log.Info("Require Turn From");
@@ -56,7 +57,7 @@ namespace team_development.FormLib
                     return AbsenceInstance;
                     break;
                 case MenuType.Forum:
-                    
+                    return ForumInstance;
                     break;
                 case MenuType.Query:
                     switch (SubMenuId) {
