@@ -29,7 +29,8 @@ namespace team_development.UI.QueryWaterElectricity
         private void btn_confirm_Click(object sender, EventArgs e)
         {
             //确定进入显示水电费页面
-            TurnToForm(new ShowWaterElectricity());
+            //TurnToForm(new ShowWaterElectricity());
+            
         }
         private void TurnToForm(Form f)
         {
@@ -38,6 +39,11 @@ namespace team_development.UI.QueryWaterElectricity
         }
 
         private void WaterElectricitySearch_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

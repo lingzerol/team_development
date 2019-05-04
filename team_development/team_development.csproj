@@ -158,23 +158,11 @@
     <Compile Include="UI\UserInfo\UserInfoDisplay.Designer.cs">
       <DependentUpon>UserInfoDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UserInfo\UserInfoSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\UserInfo\UserInfoSetting.Designer.cs">
-      <DependentUpon>UserInfoSetting.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Query\QueryWaterElectricity\QueryWaterElectricity.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Query\QueryWaterElectricity\QueryWaterElectricity.Designer.cs">
       <DependentUpon>QueryWaterElectricity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Query\QueryWaterElectricity\ShowWaterElectricity.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Query\QueryWaterElectricity\ShowWaterElectricity.Designer.cs">
-      <DependentUpon>ShowWaterElectricity.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
@@ -246,9 +234,6 @@
     <EmbeddedResource Include="UI\UserInfo\UserInfoDisplay.resx">
       <DependentUpon>UserInfoDisplay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UserInfo\UserInfoSetting.resx">
-      <DependentUpon>UserInfoSetting.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Absence\TemplatePreview.resx">
       <DependentUpon>TemplatePreview.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,9 +245,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Query\QueryWaterElectricity\QueryWaterElectricity.resx">
       <DependentUpon>QueryWaterElectricity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\Query\QueryWaterElectricity\ShowWaterElectricity.resx">
-      <DependentUpon>ShowWaterElectricity.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
