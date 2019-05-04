@@ -17,11 +17,11 @@ namespace team_development
         [STAThread]
         static void Main()
         {
-            GetElectricCharge.Login("3307");
+            //GetElectricCharge.Login("3307");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-           
+            //Application.Run(new TestForm());
         }
         
     }

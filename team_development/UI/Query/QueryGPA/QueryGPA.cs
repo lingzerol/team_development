@@ -27,8 +27,8 @@ namespace team_development.UI.QueryGPA
             show_gpa.View = View.Details;//设置显示方式
             show_gpa.Scrollable = true;//是否自动显示滚动条
 
-            this.show_gpa.Columns.Add("课程代码", 100, HorizontalAlignment.Center);
-            this.show_gpa.Columns.Add("课程名称", 160, HorizontalAlignment.Center);
+            this.show_gpa.Columns.Add("课程代码", 90, HorizontalAlignment.Center);
+            this.show_gpa.Columns.Add("课程名称", 120, HorizontalAlignment.Center);
             this.show_gpa.Columns.Add("课程成绩", 80, HorizontalAlignment.Center);
             this.show_gpa.Columns.Add("课程绩点", 80, HorizontalAlignment.Center);
             this.show_gpa.Columns.Add("课程状态", 80, HorizontalAlignment.Center);

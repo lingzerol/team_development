@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewOffer = new System.Windows.Forms.DataGridView();
             this.ColumnJob = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,10 +41,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 32F);
-            this.label1.Location = new System.Drawing.Point(28, 24);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(49, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 54);
+            this.label1.Size = new System.Drawing.Size(201, 57);
             this.label1.TabIndex = 1;
             this.label1.Text = "就业信息";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -53,13 +54,21 @@
             // 
             this.dataGridViewOffer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewOffer.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewOffer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewOffer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOffer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnJob,
             this.ColumnSalary,
             this.ColumnCity,
             this.ColumnEducation});
-            this.dataGridViewOffer.Location = new System.Drawing.Point(58, 87);
+            this.dataGridViewOffer.Location = new System.Drawing.Point(49, 114);
             this.dataGridViewOffer.Name = "dataGridViewOffer";
             this.dataGridViewOffer.RowTemplate.Height = 27;
             this.dataGridViewOffer.Size = new System.Drawing.Size(939, 395);

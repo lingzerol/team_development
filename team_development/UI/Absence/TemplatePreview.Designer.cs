@@ -38,10 +38,10 @@
             // btn_confirm
             // 
             this.btn_confirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.btn_confirm.Location = new System.Drawing.Point(757, 453);
+            this.btn_confirm.Location = new System.Drawing.Point(846, 479);
             this.btn_confirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_confirm.Name = "btn_confirm";
-            this.btn_confirm.Size = new System.Drawing.Size(202, 34);
+            this.btn_confirm.Size = new System.Drawing.Size(119, 32);
             this.btn_confirm.TabIndex = 6;
             this.btn_confirm.Text = "确认";
             this.btn_confirm.UseVisualStyleBackColor = true;
@@ -50,10 +50,10 @@
             // btn_cancel
             // 
             this.btn_cancel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.btn_cancel.Location = new System.Drawing.Point(99, 453);
+            this.btn_cancel.Location = new System.Drawing.Point(710, 479);
             this.btn_cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(202, 34);
+            this.btn_cancel.Size = new System.Drawing.Size(119, 32);
             this.btn_cancel.TabIndex = 5;
             this.btn_cancel.Text = "取消";
             this.btn_cancel.UseVisualStyleBackColor = true;
@@ -63,10 +63,10 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(99, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(86, 27);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(860, 395);
+            this.pictureBox1.Size = new System.Drawing.Size(879, 439);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 

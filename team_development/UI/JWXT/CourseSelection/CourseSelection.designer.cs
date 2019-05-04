@@ -36,9 +36,9 @@
             // TimingSelection
             // 
             this.TimingSelection.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.TimingSelection.Location = new System.Drawing.Point(787, 518);
+            this.TimingSelection.Location = new System.Drawing.Point(710, 479);
             this.TimingSelection.Name = "TimingSelection";
-            this.TimingSelection.Size = new System.Drawing.Size(111, 38);
+            this.TimingSelection.Size = new System.Drawing.Size(119, 32);
             this.TimingSelection.TabIndex = 2;
             this.TimingSelection.Text = "定时选课";
             this.TimingSelection.UseVisualStyleBackColor = true;
@@ -47,9 +47,9 @@
             // Selection
             // 
             this.Selection.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Selection.Location = new System.Drawing.Point(935, 518);
+            this.Selection.Location = new System.Drawing.Point(846, 479);
             this.Selection.Name = "Selection";
-            this.Selection.Size = new System.Drawing.Size(107, 38);
+            this.Selection.Size = new System.Drawing.Size(119, 32);
             this.Selection.TabIndex = 3;
             this.Selection.Text = "立即选课";
             this.Selection.UseVisualStyleBackColor = true;
@@ -57,9 +57,10 @@
             // 
             // CourseInfo
             // 
-            this.CourseInfo.Location = new System.Drawing.Point(12, 12);
+            this.CourseInfo.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CourseInfo.Location = new System.Drawing.Point(86, 27);
             this.CourseInfo.Name = "CourseInfo";
-            this.CourseInfo.Size = new System.Drawing.Size(1030, 500);
+            this.CourseInfo.Size = new System.Drawing.Size(879, 439);
             this.CourseInfo.TabIndex = 4;
             this.CourseInfo.UseCompatibleStateImageBehavior = false;
             this.CourseInfo.SelectedIndexChanged += new System.EventHandler(this.CourseInfo_SelectedIndexChanged);

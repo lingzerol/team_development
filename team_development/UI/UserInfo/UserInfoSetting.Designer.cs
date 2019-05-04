@@ -148,9 +148,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(547, 504);
+            this.button2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button2.Location = new System.Drawing.Point(846, 479);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 41);
+            this.button2.Size = new System.Drawing.Size(119, 32);
             this.button2.TabIndex = 19;
             this.button2.Text = "取消";
             this.button2.UseVisualStyleBackColor = true;
@@ -158,9 +159,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(414, 504);
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.Location = new System.Drawing.Point(710, 479);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 41);
+            this.button1.Size = new System.Drawing.Size(119, 32);
             this.button1.TabIndex = 18;
             this.button1.Text = "保存";
             this.button1.UseVisualStyleBackColor = true;
