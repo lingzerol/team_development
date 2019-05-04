@@ -61,8 +61,10 @@
     <Compile Include="Lib\MenuGetterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StorageTests.cs" />
+    <Compile Include="OCRTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
