@@ -73,6 +73,12 @@
     <Compile Include="TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Forum\Forum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forum\Forum.Designer.cs">
+      <DependentUpon>Forum.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Query\QueryEmploy\OfferArticle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </Compile>
     <EmbeddedResource Include="TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forum\Forum.resx">
+      <DependentUpon>Forum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Query\QueryEmploy\OfferArticle.resx" />
     <EmbeddedResource Include="UI\Query\QueryInform\QueryInform.resx">

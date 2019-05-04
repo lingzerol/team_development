@@ -43,12 +43,11 @@
             this.查询饭卡ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.用户信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Form1Content = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.搜索ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.Form1Content.SuspendLayout();
             this.SuspendLayout();
@@ -63,13 +62,13 @@
             this.进入学校论坛ToolStripMenuItem,
             this.查询ToolStripMenuItem,
             this.用户信息ToolStripMenuItem,
+            this.搜索ToolStripMenuItem,
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1096, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // 教务系统ToolStripMenuItem
             // 
@@ -123,35 +122,35 @@
             // 查询成绩ToolStripMenuItem
             // 
             this.查询成绩ToolStripMenuItem.Name = "查询成绩ToolStripMenuItem";
-            this.查询成绩ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询成绩ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询成绩ToolStripMenuItem.Text = "查询成绩";
             this.查询成绩ToolStripMenuItem.Click += new System.EventHandler(this.GpaInquiryToolStripMenuItem_Click);
             // 
             // 查询通知ToolStripMenuItem
             // 
             this.查询通知ToolStripMenuItem.Name = "查询通知ToolStripMenuItem";
-            this.查询通知ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询通知ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询通知ToolStripMenuItem.Text = "查询通知";
             this.查询通知ToolStripMenuItem.Click += new System.EventHandler(this.InqueryInformToolStripMenuItem_Click);
             // 
             // 查询就业ToolStripMenuItem
             // 
             this.查询就业ToolStripMenuItem.Name = "查询就业ToolStripMenuItem";
-            this.查询就业ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询就业ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询就业ToolStripMenuItem.Text = "查询就业";
             this.查询就业ToolStripMenuItem.Click += new System.EventHandler(this.InqueryEmployToolStripMenuItem_Click);
             // 
             // 查询饭卡ToolStripMenuItem
             // 
             this.查询饭卡ToolStripMenuItem.Name = "查询饭卡ToolStripMenuItem";
-            this.查询饭卡ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询饭卡ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询饭卡ToolStripMenuItem.Text = "查询饭卡";
             this.查询饭卡ToolStripMenuItem.Click += new System.EventHandler(this.MealcardInquiryToolStripMenuItem_Click);
             // 
             // 查询ToolStripMenuItem1
             // 
             this.查询ToolStripMenuItem1.Name = "查询ToolStripMenuItem1";
-            this.查询ToolStripMenuItem1.Size = new System.Drawing.Size(159, 26);
+            this.查询ToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
             this.查询ToolStripMenuItem1.Text = "查询水电费";
             this.查询ToolStripMenuItem1.Click += new System.EventHandler(this.InqueryCostToolStripMenuItem1_Click);
             // 
@@ -162,16 +161,8 @@
             this.用户信息ToolStripMenuItem.Text = "用户信息";
             this.用户信息ToolStripMenuItem.Click += new System.EventHandler(this.UserInfoToolStripMenuItem_Click);
             // 
-            // 帮助ToolStripMenuItem
-            // 
-            this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
-            this.帮助ToolStripMenuItem.Text = "帮助";
-            // 
             // Form1Content
             // 
-            this.Form1Content.Controls.Add(this.button1);
-            this.Form1Content.Controls.Add(this.textBox1);
             this.Form1Content.Controls.Add(this.panel1);
             this.Form1Content.Controls.Add(this.label1);
             this.Form1Content.Location = new System.Drawing.Point(12, 51);
@@ -179,23 +170,6 @@
             this.Form1Content.Size = new System.Drawing.Size(1072, 569);
             this.Form1Content.TabIndex = 2;
             this.Form1Content.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1Content_Paint);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(714, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 25);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "搜索";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Search_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(246, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(469, 25);
-            this.textBox1.TabIndex = 3;
             // 
             // panel1
             // 
@@ -215,6 +189,19 @@
             this.label1.Size = new System.Drawing.Size(625, 60);
             this.label1.TabIndex = 1;
             this.label1.Text = "暨南大学学生自助软件";
+            // 
+            // 搜索ToolStripMenuItem
+            // 
+            this.搜索ToolStripMenuItem.Name = "搜索ToolStripMenuItem";
+            this.搜索ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.搜索ToolStripMenuItem.Text = "搜索";
+            this.搜索ToolStripMenuItem.Click += new System.EventHandler(this.Search_Click);
+            // 
+            // 帮助ToolStripMenuItem
+            // 
+            this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // Form1
             // 
@@ -251,12 +238,11 @@
         private System.Windows.Forms.ToolStripMenuItem 查询饭卡ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查询ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 用户信息ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
         private System.Windows.Forms.Panel Form1Content;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ToolStripMenuItem 搜索ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
     }
 }
 
