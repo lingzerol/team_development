@@ -41,16 +41,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(259, 9);
+            this.label1.Location = new System.Drawing.Point(189, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 25);
+            this.label1.Size = new System.Drawing.Size(88, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "输入宿舍号：";
+            this.label1.Text = "宿舍号：";
             // 
             // Dorm
             // 
             this.Dorm.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Dorm.Location = new System.Drawing.Point(372, 9);
+            this.Dorm.Location = new System.Drawing.Point(359, 120);
             this.Dorm.Margin = new System.Windows.Forms.Padding(2);
             this.Dorm.Name = "Dorm";
             this.Dorm.Size = new System.Drawing.Size(147, 31);
@@ -59,7 +59,7 @@
             // btn_confirm
             // 
             this.btn_confirm.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_confirm.Location = new System.Drawing.Point(303, 44);
+            this.btn_confirm.Location = new System.Drawing.Point(501, 120);
             this.btn_confirm.Margin = new System.Windows.Forms.Padding(2);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(119, 32);
@@ -80,7 +80,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.label2.Location = new System.Drawing.Point(220, 146);
+            this.label2.Location = new System.Drawing.Point(152, 192);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(202, 25);
             this.label2.TabIndex = 4;
@@ -89,16 +89,16 @@
             // result
             // 
             this.result.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.result.Location = new System.Drawing.Point(397, 143);
+            this.result.Location = new System.Drawing.Point(360, 189);
             this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(137, 31);
+            this.result.Size = new System.Drawing.Size(260, 31);
             this.result.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.label3.Location = new System.Drawing.Point(284, 188);
+            this.label3.Location = new System.Drawing.Point(355, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(164, 25);
             this.label3.TabIndex = 6;
