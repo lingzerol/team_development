@@ -68,6 +68,7 @@ namespace team_development
         private void InqueryCostToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             TurnForm(MenuType.Query, SubMenuType.QueryCost);
+            
         }
 
         private void MatchSchemeToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -82,21 +83,15 @@ namespace team_development
             TurnForm(MenuType.Query, SubMenuType.QueryMealCard);
         }
 
-        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void ForumInqueryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            TurnForm(MenuType.Forum);
+            //System.Diagnostics.Process.Start("explorer.exe", "http://www.ijnu.cn/");
         }
 
         private void Search_Click(object sender, EventArgs e)
         {
             TurnForm(MenuType.Search);
         }
-
-        private void ForumInqueryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("explorer.exe", "http://www.ijnu.cn/");
-        }
-
-        
     }
 }
