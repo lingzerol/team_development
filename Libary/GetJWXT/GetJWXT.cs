@@ -11,7 +11,7 @@ namespace Lib.GetJWXT
     public delegate void ValidateImageEventHandler(Bitmap bitmap);
     public delegate void HTMLEventHandler(string html);
 
-    class GetJWXT
+    public class GetJWXT
     {
         WebBrowser web = new WebBrowser();
         System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);

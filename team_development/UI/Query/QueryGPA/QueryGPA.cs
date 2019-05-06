@@ -47,5 +47,6 @@ namespace team_development.UI.QueryGPA
         {
 
         }
+        
     }
 }
