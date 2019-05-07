@@ -4,10 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NumSharp;
+using IronOcr;
+using System.Drawing;
+
 namespace Lib
 {
-    public class OCR
+    public static class OCR
     {
-        
+        public static string GetValidateCode(Bitmap img) {
+            Threshold(ref img, 100);
+            var Ocr = new AdvancedOcr() { Language = IronOcr.Languages.English.OcrLanguagePack };
+            var Results = Ocr.Read(img);
+            return Results.Text;
+        }
+        private static void Threshold(ref Bitmap img, int bounce)
+        {
+            for (int i = 0; i < img.Width; ++i)
+            {
+                for (int j = 0; j < img.Height; ++j)
+                {
+                    Color pixelcolor = img.GetPixel(i, j);
+                    int grey = ((int)pixelcolor.R + pixelcolor.G + pixelcolor.B) / 3;
+                    if (grey > bounce)
+                    {
+                        grey = 255;
+                    }
+                    else grey = 0;
+                    img.SetPixel(i, j, Color.FromArgb(255, grey, grey, grey));
+                }
+            }
+        }
     }
 }
