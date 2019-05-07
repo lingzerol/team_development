@@ -27,6 +27,5 @@ namespace team_development.UI.Query.QueryGPA
             this.gp = gp;
             this.coursecategory = coursecategory;
         }
-
     }
 }

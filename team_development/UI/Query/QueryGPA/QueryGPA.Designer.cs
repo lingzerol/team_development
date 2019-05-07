@@ -98,6 +98,7 @@
             this.choose_academic_year.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.choose_academic_year.FormattingEnabled = true;
             this.choose_academic_year.Items.AddRange(new object[] {
+            "ALL",
             "2015-2016",
             "2016-2017",
             "2017-2018",
@@ -105,7 +106,7 @@
             this.choose_academic_year.Location = new System.Drawing.Point(606, 65);
             this.choose_academic_year.Name = "choose_academic_year";
             this.choose_academic_year.Size = new System.Drawing.Size(120, 28);
-            this.choose_academic_year.TabIndex = 5; 
+            this.choose_academic_year.TabIndex = 5;
             // 
             // semester
             // 
@@ -122,12 +123,13 @@
             this.choose_semester.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.choose_semester.FormattingEnabled = true;
             this.choose_semester.Items.AddRange(new object[] {
+            "ALL",
             "上",
             "下"});
             this.choose_semester.Location = new System.Drawing.Point(854, 65);
             this.choose_semester.Name = "choose_semester";
             this.choose_semester.Size = new System.Drawing.Size(121, 28);
-            this.choose_semester.TabIndex = 7;  
+            this.choose_semester.TabIndex = 7;
             // 
             // show_gpa
             // 
@@ -141,7 +143,7 @@
             // 
             // validate
             // 
-            this.validate.Location = new System.Drawing.Point(943, 39);
+            this.validate.Location = new System.Drawing.Point(57, 12);
             this.validate.Name = "validate";
             this.validate.Size = new System.Drawing.Size(75, 23);
             this.validate.TabIndex = 9;
@@ -151,7 +153,7 @@
             // 
             // ShowValidate
             // 
-            this.ShowValidate.Location = new System.Drawing.Point(789, 35);
+            this.ShowValidate.Location = new System.Drawing.Point(201, 9);
             this.ShowValidate.Name = "ShowValidate";
             this.ShowValidate.Size = new System.Drawing.Size(100, 50);
             this.ShowValidate.TabIndex = 10;
@@ -159,14 +161,14 @@
             // 
             // GetValide
             // 
-            this.GetValide.Location = new System.Drawing.Point(789, 109);
+            this.GetValide.Location = new System.Drawing.Point(348, 13);
             this.GetValide.Name = "GetValide";
             this.GetValide.Size = new System.Drawing.Size(100, 25);
             this.GetValide.TabIndex = 11;
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(533, 111);
+            this.login.Location = new System.Drawing.Point(529, 12);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(75, 23);
             this.login.TabIndex = 12;
@@ -176,7 +178,7 @@
             // 
             // getgpa
             // 
-            this.getgpa.Location = new System.Drawing.Point(192, 111);
+            this.getgpa.Location = new System.Drawing.Point(670, 12);
             this.getgpa.Name = "getgpa";
             this.getgpa.Size = new System.Drawing.Size(75, 23);
             this.getgpa.TabIndex = 13;
