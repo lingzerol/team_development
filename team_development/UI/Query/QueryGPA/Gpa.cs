@@ -8,8 +8,25 @@ namespace team_development.UI.Query.QueryGPA
 {
     public class Gpa
     {
-        string Schoolyear;
-        string Semester;
+        public string schoolyear;
+        public string semester;
+        public  string coursename;
+        public float credit;
+        public float mark;
+        public float gp;
+        public string coursecategory;
+
+       public Gpa(string schoolyear, string semester, string coursename, float credit, float mark,
+            float gp, string coursecategory)
+        {
+            this.schoolyear = schoolyear;
+            this.semester = semester;
+            this.coursename = coursename;
+            this.credit = credit;
+            this.mark = mark;
+            this.gp = gp;
+            this.coursecategory = coursecategory;
+        }
 
     }
 }
