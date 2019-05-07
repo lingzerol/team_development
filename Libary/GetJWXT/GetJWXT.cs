@@ -22,7 +22,6 @@ namespace Lib.GetJWXT
             
         }
 
-
         public Bitmap GetValidateImage()
         {
             web.Navigate("https://jwxt.jnu.edu.cn/");

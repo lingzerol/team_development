@@ -105,7 +105,7 @@
             this.choose_academic_year.Location = new System.Drawing.Point(192, 78);
             this.choose_academic_year.Name = "choose_academic_year";
             this.choose_academic_year.Size = new System.Drawing.Size(120, 28);
-            this.choose_academic_year.TabIndex = 5;
+            this.choose_academic_year.TabIndex = 5; 
             // 
             // semester
             // 
@@ -127,7 +127,7 @@
             this.choose_semester.Location = new System.Drawing.Point(532, 78);
             this.choose_semester.Name = "choose_semester";
             this.choose_semester.Size = new System.Drawing.Size(121, 28);
-            this.choose_semester.TabIndex = 7;
+            this.choose_semester.TabIndex = 7;  
             // 
             // show_gpa
             // 
