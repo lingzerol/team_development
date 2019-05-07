@@ -8,26 +8,22 @@ using System.Windows.Forms;
 
 namespace Lib.GetJWXT
 {
-    public delegate void ValidateImageEventHandler(Bitmap bitmap);
-    public delegate void HTMLEventHandler(string html);
+
 
     public class GetJWXT
     {
         WebBrowser web = new WebBrowser();
         System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
 
-        ValidateImageEventHandler validateImageEventHandler;
-        HTMLEventHandler htmlEventHandler;
 
-        public GetJWXT(ValidateImageEventHandler validateImageEventHandler, HTMLEventHandler htmlEventHandler)
+        public GetJWXT()
         {
             web.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(Web_DocumentCompleted);
-            this.validateImageEventHandler = validateImageEventHandler;
-            this.htmlEventHandler = htmlEventHandler;
+            
         }
 
 
-        public void GetValidateImage()
+        public Bitmap GetValidateImage()
         {
             web.Navigate("https://jwxt.jnu.edu.cn/");
 
@@ -37,7 +33,8 @@ namespace Lib.GetJWXT
             validateImg.Style = "position: absolute; z-index: 9999; top: 0px; left: 0px";
             Bitmap clip = new Bitmap(validateImg.ClientRectangle.Width, validateImg.ClientRectangle.Height);
             web.DrawToBitmap(clip, new Rectangle(new Point(), validateImg.ClientRectangle.Size));
-            validateImageEventHandler(clip);
+            //validateImageEventHandler(clip);
+            return clip;
         }
 
         public void Login(string username, string pwd, string validate)
@@ -50,14 +47,14 @@ namespace Lib.GetJWXT
             Wait();
         }
 
-        public void GetCourseList()
+        public HtmlDocument GetCourseList()
         {
             web.Navigate("https://jwxt.jnu.edu.cn/Secure/PaiKeXuanKe/wfrm_XK_MainCX.aspx");
             Wait();
-            htmlEventHandler(web.Document.Body.InnerHtml);
+            return web.Document;
         }
 
-        public void GetGPA()
+        public HtmlDocument GetGPA()
         {
             web.Navigate("https://jwxt.jnu.edu.cn/Secure/Cjgl/Cjgl_Cjcx_WdCj.aspx");
             Wait();
@@ -65,7 +62,7 @@ namespace Lib.GetJWXT
             web.Document.GetElementById("lbtnQuery").InvokeMember("click");
             Wait();
 
-            htmlEventHandler(web.Document.Body.InnerHtml);
+            return web.Document;
         }
 
         private void Web_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
