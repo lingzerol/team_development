@@ -106,7 +106,7 @@ namespace team_development.UI.QueryGPA
                         case 5:
                             gp = Convert.ToSingle(Ru);
                             break;
-                        case 9:
+                        case 8:
                             coursecategory = Ru;
 
                         Gpa  gpa = new Gpa(schoolyear, semester, coursename, credit, mark, gp, coursecategory);
