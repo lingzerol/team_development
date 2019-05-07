@@ -9,6 +9,7 @@ namespace team_development.UI.Query.QueryGPA
     public class Gpa
     {
         string Schoolyear;
+        string Semester;
 
     }
 }
