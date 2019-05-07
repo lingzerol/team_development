@@ -36,7 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_stuNumber = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_autoComplete = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_toName = new System.Windows.Forms.TextBox();
             this.txt_reason = new System.Windows.Forms.TextBox();
@@ -56,7 +55,7 @@
             this.txt_selectedTemplate.Location = new System.Drawing.Point(99, 61);
             this.txt_selectedTemplate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_selectedTemplate.Name = "txt_selectedTemplate";
-            this.txt_selectedTemplate.Size = new System.Drawing.Size(617, 27);
+            this.txt_selectedTemplate.Size = new System.Drawing.Size(736, 27);
             this.txt_selectedTemplate.TabIndex = 0;
             this.txt_selectedTemplate.Text = "学生标准请假条";
             this.txt_selectedTemplate.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -64,10 +63,10 @@
             // btn_selectTemplate
             // 
             this.btn_selectTemplate.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.btn_selectTemplate.Location = new System.Drawing.Point(764, 60);
+            this.btn_selectTemplate.Location = new System.Drawing.Point(841, 56);
             this.btn_selectTemplate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_selectTemplate.Name = "btn_selectTemplate";
-            this.btn_selectTemplate.Size = new System.Drawing.Size(202, 34);
+            this.btn_selectTemplate.Size = new System.Drawing.Size(125, 35);
             this.btn_selectTemplate.TabIndex = 1;
             this.btn_selectTemplate.Text = "浏览模板";
             this.btn_selectTemplate.UseVisualStyleBackColor = true;
@@ -77,7 +76,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.label1.Location = new System.Drawing.Point(96, 105);
+            this.label1.Location = new System.Drawing.Point(96, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 25);
             this.label1.TabIndex = 2;
@@ -86,7 +85,7 @@
             // txt_name
             // 
             this.txt_name.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_name.Location = new System.Drawing.Point(212, 105);
+            this.txt_name.Location = new System.Drawing.Point(212, 118);
             this.txt_name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(354, 27);
@@ -96,7 +95,7 @@
             // txt_department
             // 
             this.txt_department.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_department.Location = new System.Drawing.Point(212, 142);
+            this.txt_department.Location = new System.Drawing.Point(212, 162);
             this.txt_department.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_department.Name = "txt_department";
             this.txt_department.Size = new System.Drawing.Size(354, 27);
@@ -107,7 +106,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.label3.Location = new System.Drawing.Point(96, 142);
+            this.label3.Location = new System.Drawing.Point(96, 162);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 25);
             this.label3.TabIndex = 6;
@@ -116,7 +115,7 @@
             // txt_stuNumber
             // 
             this.txt_stuNumber.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_stuNumber.Location = new System.Drawing.Point(212, 180);
+            this.txt_stuNumber.Location = new System.Drawing.Point(212, 207);
             this.txt_stuNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_stuNumber.Name = "txt_stuNumber";
             this.txt_stuNumber.Size = new System.Drawing.Size(354, 27);
@@ -128,28 +127,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.label5.Location = new System.Drawing.Point(96, 180);
+            this.label5.Location = new System.Drawing.Point(96, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 25);
             this.label5.TabIndex = 10;
             this.label5.Text = "院系";
             // 
-            // btn_autoComplete
-            // 
-            this.btn_autoComplete.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.btn_autoComplete.Location = new System.Drawing.Point(98, 225);
-            this.btn_autoComplete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_autoComplete.Name = "btn_autoComplete";
-            this.btn_autoComplete.Size = new System.Drawing.Size(868, 36);
-            this.btn_autoComplete.TabIndex = 14;
-            this.btn_autoComplete.Text = "自动填写";
-            this.btn_autoComplete.UseVisualStyleBackColor = true;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.label7.Location = new System.Drawing.Point(96, 280);
+            this.label7.Location = new System.Drawing.Point(96, 263);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 25);
             this.label7.TabIndex = 15;
@@ -158,7 +146,7 @@
             // txt_toName
             // 
             this.txt_toName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_toName.Location = new System.Drawing.Point(212, 276);
+            this.txt_toName.Location = new System.Drawing.Point(212, 259);
             this.txt_toName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_toName.Name = "txt_toName";
             this.txt_toName.Size = new System.Drawing.Size(754, 27);
@@ -168,7 +156,7 @@
             // txt_reason
             // 
             this.txt_reason.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_reason.Location = new System.Drawing.Point(212, 323);
+            this.txt_reason.Location = new System.Drawing.Point(212, 311);
             this.txt_reason.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_reason.Multiline = true;
             this.txt_reason.Name = "txt_reason";
@@ -180,7 +168,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.label8.Location = new System.Drawing.Point(96, 323);
+            this.label8.Location = new System.Drawing.Point(96, 311);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 25);
             this.label8.TabIndex = 18;
@@ -201,7 +189,7 @@
             // txt_phoneNumber
             // 
             this.txt_phoneNumber.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txt_phoneNumber.Location = new System.Drawing.Point(732, 180);
+            this.txt_phoneNumber.Location = new System.Drawing.Point(732, 207);
             this.txt_phoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_phoneNumber.Name = "txt_phoneNumber";
             this.txt_phoneNumber.Size = new System.Drawing.Size(233, 27);
@@ -212,7 +200,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.label2.Location = new System.Drawing.Point(617, 180);
+            this.label2.Location = new System.Drawing.Point(617, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 25);
             this.label2.TabIndex = 24;
@@ -222,7 +210,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.label4.Location = new System.Drawing.Point(617, 142);
+            this.label4.Location = new System.Drawing.Point(617, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 25);
             this.label4.TabIndex = 22;
@@ -232,7 +220,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.label6.Location = new System.Drawing.Point(617, 105);
+            this.label6.Location = new System.Drawing.Point(617, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 25);
             this.label6.TabIndex = 20;
@@ -241,7 +229,7 @@
             // dtp_startTime
             // 
             this.dtp_startTime.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtp_startTime.Location = new System.Drawing.Point(732, 105);
+            this.dtp_startTime.Location = new System.Drawing.Point(732, 118);
             this.dtp_startTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_startTime.Name = "dtp_startTime";
             this.dtp_startTime.Size = new System.Drawing.Size(233, 27);
@@ -250,7 +238,7 @@
             // dtp_endTime
             // 
             this.dtp_endTime.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dtp_endTime.Location = new System.Drawing.Point(732, 142);
+            this.dtp_endTime.Location = new System.Drawing.Point(732, 162);
             this.dtp_endTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_endTime.Name = "dtp_endTime";
             this.dtp_endTime.Size = new System.Drawing.Size(233, 27);
@@ -260,6 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
             this.Controls.Add(this.dtp_endTime);
             this.Controls.Add(this.dtp_startTime);
@@ -272,7 +261,6 @@
             this.Controls.Add(this.txt_reason);
             this.Controls.Add(this.txt_toName);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btn_autoComplete);
             this.Controls.Add(this.txt_stuNumber);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_department);
@@ -300,7 +288,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_stuNumber;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btn_autoComplete;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_toName;
         private System.Windows.Forms.TextBox txt_reason;
