@@ -19,8 +19,8 @@ namespace team_development.UI.QueryGPA
         public QueryMark()
         {
             InitializeComponent();
-            choose_semester.SelectedIndex = 0;
-            choose_academic_year.SelectedIndex = 3;
+            //choose_semester.SelectedIndex = 0;
+            //choose_academic_year.SelectedIndex = 3;
             TableLoad();
  
         }
