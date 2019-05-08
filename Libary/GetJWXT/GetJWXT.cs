@@ -77,13 +77,12 @@ namespace Lib.GetJWXT
             while (obj.WaitOne(10, false) == false)
             { Application.DoEvents(); }
         }
-        public List<Gpa> GetGpaList(string str) {
+        public  List<Gpa> GetGpaList(string str) {
             List<Gpa> Gpas = new List<Gpa>();
             Regex reg = new Regex(@"<TD>[^<]*</TD>", RegexOptions.IgnoreCase);
             MatchCollection mc = reg.Matches(str);
             string item;
             int i = 0;
-            string a = "";
             string schoolyear = "";
             string semester = "";
             string coursename = "";
@@ -117,7 +116,7 @@ namespace Lib.GetJWXT
                         case 5:
                             gp = Convert.ToSingle(Ru);
                             break;
-                        case 9:
+                        case 8:
                             coursecategory = Ru;
 
                             Gpa gpa = new Gpa(schoolyear, semester, coursename, credit, mark, gp, coursecategory);

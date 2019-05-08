@@ -11,7 +11,7 @@ namespace Lib.Tests
     [TestClass()]
     public class StorageTests
     {
-        [TestInitialize]-+
+        [TestInitialize]
         public void TestInitialize()
         {
             int a = 3;
