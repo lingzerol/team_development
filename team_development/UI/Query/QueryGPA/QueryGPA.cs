@@ -68,62 +68,15 @@ namespace team_development.UI.QueryGPA
 
             string str = (string)GpaDoc.Body.InnerHtml;
             string itemlist=null;
-            Regex reg = new Regex(@"<TD>[^<]*</TD>", RegexOptions.IgnoreCase); 
-            MatchCollection mc = reg.Matches(str);
-            string item;
-             int i = 0;
-            string a="";
-            string schoolyear="" ;
-            string semester="";
-            string coursename ="";
-            float credit=0, mark=0,gp=0;
-            string coursecategory="";
-            foreach (Match m in mc)
-            {
-                item = m.Value;
-                int IndexofA = item.IndexOf(">");
-                int IndexofB = item.IndexOf("</TD>");
-                string Ru = item.Substring(IndexofA + 1, IndexofB - IndexofA - 1);
-                if (!Ru.Equals(""))
-                {
-                    switch (i)
-                    {
-                        case 0:
-                            schoolyear = Ru;
-                            break;
-                        case 1:
-                            semester = Ru;
-                            break;
-                        case 2:
-                            coursename = Ru;
-                            break;
-                        case 3:
-                            credit =Convert.ToSingle(Ru);
-                            break;
-                        case 4:
-                            mark = Convert.ToSingle(Ru);
-                            break;
-                        case 5:
-                            gp = Convert.ToSingle(Ru);
-                            break;
-                        case 9:
-                            coursecategory = Ru;
+            List<Gpa> Gpas;
+            Gpas = jwxt.GetGpaList(str);
 
-                        Gpa  gpa = new Gpa(schoolyear, semester, coursename, credit, mark, gp, coursecategory);
-                            Gpas.Add(gpa);
-                            break;
-                    }
-                    i++;
-                    i = i % 11;
-                   
-                   }
-            }
             foreach (Gpa g in Gpas)
             {
                 itemlist += g.mark + "\r\n";
 
             }
-            ListViewItem temp;
+            ListViewItem temp=new ListViewItem();
             int flag = 0;
             if (choose_academic_year.Text !="ALL")
                 flag++;
@@ -135,15 +88,7 @@ namespace team_development.UI.QueryGPA
                 case 0:
                     foreach (Gpa g in Gpas)
                     {
-                        temp = new ListViewItem();
-                        temp.Text = g.schoolyear;
-                        temp.SubItems.Add(g.semester);
-                        temp.SubItems.Add(g.coursename);
-                        temp.SubItems.Add(g.credit.ToString());
-                        temp.SubItems.Add(g.mark.ToString());
-                        temp.SubItems.Add(g.gp.ToString());
-                        temp.SubItems.Add(g.coursecategory);
-                        this.show_gpa.Items.Add(temp);
+                        ShowGpa(temp, g);
                     }
                     break;
                 case 1:
@@ -151,15 +96,7 @@ namespace team_development.UI.QueryGPA
                     {
                         if (g.schoolyear == choose_academic_year.Text)
                         {
-                            temp = new ListViewItem();
-                            temp.Text = g.schoolyear;
-                            temp.SubItems.Add(g.semester);
-                            temp.SubItems.Add(g.coursename);
-                            temp.SubItems.Add(g.credit.ToString());
-                            temp.SubItems.Add(g.mark.ToString());
-                            temp.SubItems.Add(g.gp.ToString());
-                            temp.SubItems.Add(g.coursecategory);
-                            this.show_gpa.Items.Add(temp);
+                            ShowGpa(temp, g);
                         }
                     }
                     break;
@@ -168,15 +105,7 @@ namespace team_development.UI.QueryGPA
                     {
                         if (g.semester==choose_semester.Text)
                         {
-                            temp = new ListViewItem();
-                            temp.Text = g.schoolyear;
-                            temp.SubItems.Add(g.semester);
-                            temp.SubItems.Add(g.coursename);
-                            temp.SubItems.Add(g.credit.ToString());
-                            temp.SubItems.Add(g.mark.ToString());
-                            temp.SubItems.Add(g.gp.ToString());
-                            temp.SubItems.Add(g.coursecategory);
-                            this.show_gpa.Items.Add(temp);
+                            ShowGpa(temp, g);
                         }
                     }
                     break;
@@ -186,15 +115,7 @@ namespace team_development.UI.QueryGPA
                         if ((g.schoolyear == choose_academic_year.Text)&& 
                             (g.semester == choose_semester.Text))
                         {
-                            temp = new ListViewItem();
-                            temp.Text = g.schoolyear;
-                            temp.SubItems.Add(g.semester);
-                            temp.SubItems.Add(g.coursename);
-                            temp.SubItems.Add(g.credit.ToString());
-                            temp.SubItems.Add(g.mark.ToString());
-                            temp.SubItems.Add(g.gp.ToString());
-                            temp.SubItems.Add(g.coursecategory);
-                            this.show_gpa.Items.Add(temp);
+                            ShowGpa(temp, g);
                         }
                     }
                     break;
@@ -203,6 +124,17 @@ namespace team_development.UI.QueryGPA
                     break;
             }//end of switch
             this.show_gpa.EndUpdate();
+        }
+        public void ShowGpa(ListViewItem temp,Gpa g) {
+            temp = new ListViewItem();
+            temp.Text = g.schoolyear;
+            temp.SubItems.Add(g.semester);
+            temp.SubItems.Add(g.coursename);
+            temp.SubItems.Add(g.credit.ToString());
+            temp.SubItems.Add(g.mark.ToString());
+            temp.SubItems.Add(g.gp.ToString());
+            temp.SubItems.Add(g.coursecategory);
+            this.show_gpa.Items.Add(temp);
         }
     }
 }
