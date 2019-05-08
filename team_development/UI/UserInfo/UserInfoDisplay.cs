@@ -21,15 +21,17 @@ namespace team_development.UI.UserInfo
         public UserInfoDisplay()
         {
             InitializeComponent();
-
-            UserInfo user=(UserInfo)Storage.Load("UserInfo.xml");
-            GlobalData.userInfo = user;
+            if (File.Exists("UserInfo.xml"))
+            {
+                UserInfo user = (UserInfo)Storage.Load("UserInfo.xml");
+                GlobalData.userInfo = user;
                 StudentNumberTextBox.Text = GlobalData.userInfo.StudentNumber;
                 StudentNameTextBox.Text = GlobalData.userInfo.StudentName;
                 DormNumberTextBox.Text = GlobalData.userInfo.DormNumber;
                 MealCardTextBox.Text = GlobalData.userInfo.MealCard;
                 SZJDPasswordTextBox.Text = "******";
                 JWXTPasswordTextBox.Text = "******";
+            }
             
 
         }
