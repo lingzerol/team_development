@@ -16,12 +16,27 @@ namespace team_development.UI.QueryGPA
     {
         Lib.GetJWXT.GetJWXT jwxt = new Lib.GetJWXT.GetJWXT();
         public List<Gpa> Gpas = new List<Gpa>();
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         public QueryMark()
         {
             InitializeComponent();
             choose_semester.SelectedIndex = 0;
             choose_academic_year.SelectedIndex = 0;
             TableLoad();
+            timer.Interval = 3000;
+            timer.Tick += new EventHandler(timerTick);
+            timer.Start();
+        }
+
+        private void timerTick(object sender, EventArgs e)
+        {
+            if (jwxt.GetStatus())
+            {
+                SetGpa();
+            }
+            else {
+                jwxt.Login("2016052351", "liangzp1818");
+            }
         }
 
         public void TableLoad()
@@ -42,7 +57,7 @@ namespace team_development.UI.QueryGPA
 
         private void GpaInquiry_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void Show_gpa_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,10 +72,10 @@ namespace team_development.UI.QueryGPA
 
         private void login_Click(object sender, EventArgs e)
         {
-            jwxt.Login("2016052351", "liangzp1818", GetValide.Text);
+            jwxt.Login("2016052351", "liangzp1818");
         }
 
-        private void getgpa_Click(object sender, EventArgs e)
+        private void SetGpa()
         {
             HtmlDocument GpaDoc = jwxt.GetGPA();
             show_gpa.Clear();
