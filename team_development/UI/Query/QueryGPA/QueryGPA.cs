@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using team_development.UI.Query.QueryGPA;
+using Lib;
 
 namespace team_development.UI.QueryGPA
 {
@@ -53,11 +54,13 @@ namespace team_development.UI.QueryGPA
         private void validate_Click(object sender, EventArgs e)
         {
             ShowValidate.Image = jwxt.GetValidateImage();
+            Log.log.Info("click validate");
         }
 
         private void login_Click(object sender, EventArgs e)
         {
             jwxt.Login("2016052351", "liangzp1818", GetValide.Text);
+            Log.log.Info("click login");
         }
 
         private void getgpa_Click(object sender, EventArgs e)
@@ -65,11 +68,13 @@ namespace team_development.UI.QueryGPA
             HtmlDocument GpaDoc = jwxt.GetGPA();
             show_gpa.Clear();
             TableLoad();
+            Log.log.Info("click query");
 
             string str = (string)GpaDoc.Body.InnerHtml;
             string itemlist=null;
             List<Gpa> Gpas;
             Gpas = jwxt.GetGpaList(str);
+            Log.log.Info("gpas list formed");
 
             foreach (Gpa g in Gpas)
             {
@@ -125,6 +130,8 @@ namespace team_development.UI.QueryGPA
             }//end of switch
             this.show_gpa.EndUpdate();
         }
+
+
         public void ShowGpa(ListViewItem temp,Gpa g) {
             temp = new ListViewItem();
             temp.Text = g.schoolyear;
