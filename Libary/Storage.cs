@@ -22,7 +22,7 @@ namespace Lib
                 outStream.Close();
             }
             catch (Exception e) {
-                Log.Error(e.ToString());
+                Log.log.Error(e.ToString());
             }
         }
         public static Object Load(string file) {
@@ -35,7 +35,7 @@ namespace Lib
             }
             catch (Exception e)
             {
-                Log.Error(e.ToString());
+                Log.log.Error(e.ToString());
             }
             return result;
         }
