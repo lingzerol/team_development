@@ -74,20 +74,6 @@ namespace team_development.UI.QueryWaterElectricity
                     catch { }                   
                 }
             }
-
-            //读取电量
-            /*while(webBrowser1.Document.GetElementById("RegionPanel1_Region2_GroupPanel1_ContentPanel1_L_监视屏1").InnerText!= "当前剩余电量")
-            {
-                Thread.Sleep(1000);
-                if (webBrowser1.Document.GetElementById("RegionPanel1_Region2_GroupPanel1_ContentPanel1_L_监视屏1").InnerText == "当前剩余电量")
-                    break;
-                continue;
-            }*/
-            try
-            {  
-                 result.Text = webBrowser1.Document.GetElementById("RegionPanel1_Region2_GroupPanel1_ContentPanel1_L_监视屏").InnerText;
-            }
-            catch { }
         }
 
         private void TurnToForm(Form f)
@@ -100,6 +86,15 @@ namespace team_development.UI.QueryWaterElectricity
         {
             webBrowser1.ScriptErrorsSuppressed = true;//屏蔽脚本错误
             obj.Set();
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                result.Text = webBrowser1.Document.GetElementById("RegionPanel1_Region2_GroupPanel1_ContentPanel1_L_监视屏").InnerText + "度（如果数值不对，请重新点击刷新）";
+            }
+            catch { }
         }
     }
 }
