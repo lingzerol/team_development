@@ -76,6 +76,7 @@
     <Compile Include="UI\Forum\Forum.Designer.cs">
       <DependentUpon>Forum.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\GlobalData.cs" />
     <Compile Include="UI\Query\QueryEmploy\OfferArticle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +156,8 @@
     <Compile Include="UI\Search\Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UserInfo\Cryptography.cs" />
+    <Compile Include="UI\UserInfo\UserInfo.cs" />
     <Compile Include="UI\UserInfo\UserInfoDisplay.cs">
       <SubType>Form</SubType>
     </Compile>

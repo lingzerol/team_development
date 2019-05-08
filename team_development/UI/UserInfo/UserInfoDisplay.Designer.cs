@@ -1,4 +1,8 @@
-﻿namespace team_development.UI.UserInfo
+﻿using System;
+using System.IO;
+using System.Xml.Serialization;
+
+namespace team_development.UI.UserInfo
 {
     partial class UserInfoDisplay
     {
@@ -35,14 +39,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.StudentNumberTextBox = new System.Windows.Forms.TextBox();
+            this.StudentNameTextBox = new System.Windows.Forms.TextBox();
+            this.DormNumberTextBox = new System.Windows.Forms.TextBox();
+            this.MealCardTextBox = new System.Windows.Forms.TextBox();
+            this.SZJDPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.JWXTPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.infochange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+
+          
             // 
             // label1
             // 
@@ -112,53 +119,70 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // StudentNumberTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.textBox1.Location = new System.Drawing.Point(443, 116);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(312, 31);
-            this.textBox1.TabIndex = 14;
+            this.StudentNumberTextBox.Font = new System.Drawing.Font("微软雅黑", 10.8F);
+            this.StudentNumberTextBox.Location = new System.Drawing.Point(443, 116);
+            this.StudentNumberTextBox.Name = "StudentNumberTextBox";
+            this.StudentNumberTextBox.Size = new System.Drawing.Size(312, 31);
+            this.StudentNumberTextBox.TabIndex = 14;
+
             // 
-            // textBox2
+            // StudentNameTextBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.textBox2.Location = new System.Drawing.Point(443, 168);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(312, 31);
-            this.textBox2.TabIndex = 15;
+            this.StudentNameTextBox.Font = new System.Drawing.Font("微软雅黑", 10.8F);
+            this.StudentNameTextBox.Location = new System.Drawing.Point(443, 168);
+            this.StudentNameTextBox.Name = "StudentNameTextBox";
+            this.StudentNameTextBox.Size = new System.Drawing.Size(312, 31);
+            this.StudentNameTextBox.TabIndex = 15;
+
             // 
-            // textBox3
+            // DormNumberTextBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.textBox3.Location = new System.Drawing.Point(443, 217);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(312, 31);
-            this.textBox3.TabIndex = 16;
+            this.DormNumberTextBox.Font = new System.Drawing.Font("微软雅黑", 10.8F);
+            this.DormNumberTextBox.Location = new System.Drawing.Point(443, 217);
+            this.DormNumberTextBox.Name = "DormNumberTextBox";
+            this.DormNumberTextBox.Size = new System.Drawing.Size(312, 31);
+            this.DormNumberTextBox.TabIndex = 16;
+
             // 
-            // textBox4
+            // MealCardTextBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.textBox4.Location = new System.Drawing.Point(443, 267);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(312, 31);
-            this.textBox4.TabIndex = 17;
+            this.MealCardTextBox.Font = new System.Drawing.Font("微软雅黑", 10.8F);
+            this.MealCardTextBox.Location = new System.Drawing.Point(443, 267);
+            this.MealCardTextBox.Name = "MealCardTextBox";
+            this.MealCardTextBox.Size = new System.Drawing.Size(312, 31);
+            this.MealCardTextBox.TabIndex = 17;
+
             // 
-            // textBox5
+            // SZJDPasswordTextBox
             // 
-            this.textBox5.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.textBox5.Location = new System.Drawing.Point(443, 319);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(312, 31);
-            this.textBox5.TabIndex = 18;
+            this.SZJDPasswordTextBox.Font = new System.Drawing.Font("微软雅黑", 10.8F);
+            this.SZJDPasswordTextBox.Location = new System.Drawing.Point(443, 319);
+            this.SZJDPasswordTextBox.Name = "SZJDPasswordTextBox";
+            this.SZJDPasswordTextBox.Size = new System.Drawing.Size(312, 31);
+            this.SZJDPasswordTextBox.TabIndex = 18;
+
             // 
-            // textBox6
+            // JWXTPasswordTextBox
             // 
-            this.textBox6.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.textBox6.Location = new System.Drawing.Point(443, 371);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(312, 31);
-            this.textBox6.TabIndex = 19;
+            this.JWXTPasswordTextBox.Font = new System.Drawing.Font("微软雅黑", 10.8F);
+            this.JWXTPasswordTextBox.Location = new System.Drawing.Point(443, 371);
+            this.JWXTPasswordTextBox.Name = "JWXTPasswordTextBox";
+            this.JWXTPasswordTextBox.Size = new System.Drawing.Size(312, 31);
+            this.JWXTPasswordTextBox.TabIndex = 19;
+
+            // 
+            // infochange
+            // 
+            this.infochange.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.infochange.Location = new System.Drawing.Point(664, 449);
+            this.infochange.Name = "infochange";
+            this.infochange.Size = new System.Drawing.Size(91, 37);
+            this.infochange.TabIndex = 20;
+            this.infochange.Text = "修改";
+            this.infochange.UseVisualStyleBackColor = true;
+            this.infochange.Click += new System.EventHandler(this.infochange_Click);
             // 
             // UserInfoDisplay
             // 
@@ -166,12 +190,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1054, 568);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.infochange);
+            this.Controls.Add(this.JWXTPasswordTextBox);
+            this.Controls.Add(this.SZJDPasswordTextBox);
+            this.Controls.Add(this.MealCardTextBox);
+            this.Controls.Add(this.DormNumberTextBox);
+            this.Controls.Add(this.StudentNameTextBox);
+            this.Controls.Add(this.StudentNumberTextBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -197,11 +222,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox StudentNumberTextBox;
+        private System.Windows.Forms.TextBox StudentNameTextBox;
+        private System.Windows.Forms.TextBox DormNumberTextBox;
+        private System.Windows.Forms.TextBox MealCardTextBox;
+        private System.Windows.Forms.TextBox SZJDPasswordTextBox;
+        private System.Windows.Forms.TextBox JWXTPasswordTextBox;
+        private System.Windows.Forms.Button infochange;
     }
 }

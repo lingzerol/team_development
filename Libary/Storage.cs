@@ -17,6 +17,7 @@ namespace Lib
         {
             try
             {
+                Log.log.Info("Save file into path");
                 Stream outStream = new FileStream(file, FileMode.OpenOrCreate);
                 bf.Serialize(outStream, obj);
                 outStream.Close();
@@ -29,6 +30,7 @@ namespace Lib
             Object result = null;
             try
             {
+                Log.log.Info("Load file from path");
                 Stream inStream = new FileStream(file, FileMode.Open);
                 result=bf.Deserialize(inStream);
                 inStream.Close();
