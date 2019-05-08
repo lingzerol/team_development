@@ -161,11 +161,11 @@
     <Compile Include="UI\UserInfo\UserInfoDisplay.Designer.cs">
       <DependentUpon>UserInfoDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Query\QueryWaterElectricity\QueryWaterElectricity.cs">
+    <Compile Include="UI\Query\QueryElectricity\QueryElectricity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Query\QueryWaterElectricity\QueryWaterElectricity.Designer.cs">
-      <DependentUpon>QueryWaterElectricity.cs</DependentUpon>
+    <Compile Include="UI\Query\QueryElectricity\QueryElectricity.Designer.cs">
+      <DependentUpon>QueryElectricity.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UI\Forum\Forum.resx">
       <DependentUpon>Forum.cs</DependentUpon>
@@ -246,8 +246,8 @@
     <EmbeddedResource Include="UI\Absence\WordPreview.resx">
       <DependentUpon>WordPreview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Query\QueryWaterElectricity\QueryWaterElectricity.resx">
-      <DependentUpon>QueryWaterElectricity.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Query\QueryElectricity\QueryElectricity.resx">
+      <DependentUpon>QueryElectricity.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
