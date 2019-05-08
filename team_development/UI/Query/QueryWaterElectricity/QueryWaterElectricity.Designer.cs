@@ -77,7 +77,6 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(0, 0);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted_1);
             // 
             // label2
             // 
@@ -108,7 +107,6 @@
             this.btn_Search.TabIndex = 7;
             this.btn_Search.Text = "查询";
             this.btn_Search.UseVisualStyleBackColor = true;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // label4
             // 
@@ -157,6 +155,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "QueryWaterElectricity";
             this.Text = "QueryWaterElectricity";
+            this.Load += new System.EventHandler(this.QueryWaterElectricity_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
