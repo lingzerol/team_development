@@ -28,70 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WordPreview));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_cancel = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Cancel = new System.Windows.Forms.Button();
+            this.Save = new System.Windows.Forms.Button();
+            this.ContentBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // Cancel
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(86, 27);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(879, 439);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Cancel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.Cancel.Location = new System.Drawing.Point(799, 575);
+            this.Cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(134, 38);
+            this.Cancel.TabIndex = 2;
+            this.Cancel.Text = "取消";
+            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
-            // btn_cancel
+            // Save
             // 
-            this.btn_cancel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.btn_cancel.Location = new System.Drawing.Point(710, 479);
-            this.btn_cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(119, 32);
-            this.btn_cancel.TabIndex = 2;
-            this.btn_cancel.Text = "取消";
-            this.btn_cancel.UseVisualStyleBackColor = true;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            this.Save.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.Save.Location = new System.Drawing.Point(952, 575);
+            this.Save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(134, 38);
+            this.Save.TabIndex = 3;
+            this.Save.Text = "保存";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
-            // btn_save
+            // ContentBox
             // 
-            this.btn_save.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.btn_save.Location = new System.Drawing.Point(846, 479);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(119, 32);
-            this.btn_save.TabIndex = 3;
-            this.btn_save.Text = "保存";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            this.ContentBox.Location = new System.Drawing.Point(97, 32);
+            this.ContentBox.Name = "ContentBox";
+            this.ContentBox.Size = new System.Drawing.Size(989, 527);
+            this.ContentBox.TabIndex = 4;
+            this.ContentBox.Text = "";
             // 
             // WordPreview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1054, 568);
-            this.Controls.Add(this.btn_save);
-            this.Controls.Add(this.btn_cancel);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(1186, 682);
+            this.Controls.Add(this.ContentBox);
+            this.Controls.Add(this.Save);
+            this.Controls.Add(this.Cancel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "WordPreview";
             this.Text = "预览word文档";
             this.Load += new System.EventHandler(this.WordPreview_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_cancel;
-        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.RichTextBox ContentBox;
     }
 }
