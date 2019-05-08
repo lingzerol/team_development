@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Lib;
 namespace team_development.UI.CourseSelection
 {
     public partial class TimeSetting : Form
     {
         public TimeSetting()
         {
+            Log.log.Info("LOADING form TimeSetting.");
             InitializeComponent();
         }
 
@@ -24,6 +25,7 @@ namespace team_development.UI.CourseSelection
 
         private void OKButton_Click(object sender, EventArgs e)
         {
+            Log.log.Info("Click OKButton in TimeSetting Form.");
             Form lt = new LeftTime();//show left time
             lt.Show();
             this.Close();
@@ -36,6 +38,7 @@ namespace team_development.UI.CourseSelection
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
+            Log.log.Info("Click CancelButton in TimeSetting Form.");
             this.Close();
         }
     }

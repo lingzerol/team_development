@@ -40,7 +40,7 @@ namespace team_development.FormLib
             ForumInstance = new Forum();
         }
         public static Form GetMenu(MenuType MenuId,SubMenuType SubMenuId=0) {
-            Log.Info("Require Turn From");
+            Log.log.Info("Require Turn From");
             switch (MenuId) {
                 case MenuType.JWXT:
                     switch (SubMenuId) {
@@ -77,7 +77,7 @@ namespace team_development.FormLib
                             return QueryCostInstance;
                             break;
                         default:
-                            Log.Error("ERROR Menu!!!");
+                            Log.log.Error("ERROR Menu!!!");
                             //error processing
                             break;
                     }
@@ -89,7 +89,7 @@ namespace team_development.FormLib
                     return UserInfoInstance;
                     break;
                 default:
-                    Log.Error("ERROR SubMenu!!!");
+                    Log.log.Error("ERROR SubMenu!!!");
                     break;
             }
             return null;

@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Lib;
+using Lib.GetJWXT;
 namespace team_development.UI.CourseSelection
 {
     public partial class CourseSelection : Form
@@ -38,6 +39,7 @@ namespace team_development.UI.CourseSelection
         private void TimingSelection_Click(object sender, EventArgs e)
         {
             Form ts = new TimeSetting();
+            Log.log.Info("Click TimeSelection Button In CourseSelection Form.");
             ts.ShowDialog();
         }
 
@@ -49,16 +51,23 @@ namespace team_development.UI.CourseSelection
 
         private void Selection_Click(object sender, EventArgs e)
         {
+            Log.log.Info("Click Selection button In CourseSelection Form.");
             MessageBoxButtons btn = MessageBoxButtons.OKCancel;
             DialogResult dlr = MessageBox.Show("...", "确认选课？", btn);
             if (dlr == DialogResult.OK)
             {
+                Log.log.Debug("dlr == DialogResult.OK - select courses successfully.");
                 dlr = MessageBox.Show("...", "已成功选课", btn);
+            }
+            else {
+                Log.log.Debug("dlr != DialogResult.OK - select courses successfully.");
             }
             
         }
 
         private void TableLoad() {
+            Log.log.Info("CALL TableLoad function.");
+
             this.CourseInfo.GridLines = true;
 
             this.CourseInfo.View = View.Details;
@@ -81,6 +90,13 @@ namespace team_development.UI.CourseSelection
         private void CourseInfo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void GetCourse() {
+            GetJWXT jwxt = new GetJWXT();
+            
+            HtmlDocument document=jwxt.GetCourseList();
+            return;
         }
     }
 }
