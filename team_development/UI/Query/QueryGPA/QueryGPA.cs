@@ -9,6 +9,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lib.GetJWXT;
+using Lib;
 
 namespace team_development.UI.QueryGPA
 {
@@ -17,6 +18,7 @@ namespace team_development.UI.QueryGPA
         Lib.GetJWXT.GetJWXT jwxt = new Lib.GetJWXT.GetJWXT();
         public List<Gpa> Gpas = new List<Gpa>();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        private bool isGet = false;
         public QueryMark()
         {
             InitializeComponent();
@@ -30,9 +32,10 @@ namespace team_development.UI.QueryGPA
 
         private void timerTick(object sender, EventArgs e)
         {
-            if (jwxt.GetStatus())
+            if (jwxt.GetStatus() )
             {
                 SetGpa();
+//                isGet = true;
             }
             else {
                 jwxt.Login("2016052351", "liangzp1818");
@@ -73,6 +76,8 @@ namespace team_development.UI.QueryGPA
         private void login_Click(object sender, EventArgs e)
         {
             jwxt.Login("2016052351", "liangzp1818");
+            Log.log.Info("CLICK LOGIN_BUTTON IN QueryGPA");
+            
         }
 
         private void SetGpa()

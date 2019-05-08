@@ -50,6 +50,8 @@ namespace Lib.GetJWXT
             win.execScript(s, "javascript");
             if (e.Url.AbsolutePath == "/areaTopLogo.aspx")
                 SetStatus(true);
+            else
+                Log.log.Error("Get a null object from e.Url.AbsolutePath");
         }
 
         public Bitmap GetValidateImage()

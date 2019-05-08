@@ -37,11 +37,9 @@
             this.semester = new System.Windows.Forms.Label();
             this.choose_semester = new System.Windows.Forms.ComboBox();
             this.show_gpa = new System.Windows.Forms.ListView();
-            this.validate = new System.Windows.Forms.Button();
-            this.ShowValidate = new System.Windows.Forms.PictureBox();
-            this.GetValide = new System.Windows.Forms.TextBox();
             this.login = new System.Windows.Forms.Button();
             this.getgpa = new System.Windows.Forms.Button();
+            this.ShowValidate = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ShowValidate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,34 +139,9 @@
             this.show_gpa.UseCompatibleStateImageBehavior = false;
             this.show_gpa.SelectedIndexChanged += new System.EventHandler(this.Show_gpa_SelectedIndexChanged);
             // 
-            // validate
-            // 
-            this.validate.Location = new System.Drawing.Point(57, 12);
-            this.validate.Name = "validate";
-            this.validate.Size = new System.Drawing.Size(75, 23);
-            this.validate.TabIndex = 9;
-            this.validate.Text = "验证码";
-            this.validate.UseVisualStyleBackColor = true;
-            this.validate.Click += new System.EventHandler(this.validate_Click);
-            // 
-            // ShowValidate
-            // 
-            this.ShowValidate.Location = new System.Drawing.Point(201, 9);
-            this.ShowValidate.Name = "ShowValidate";
-            this.ShowValidate.Size = new System.Drawing.Size(100, 50);
-            this.ShowValidate.TabIndex = 10;
-            this.ShowValidate.TabStop = false;
-            // 
-            // GetValide
-            // 
-            this.GetValide.Location = new System.Drawing.Point(348, 13);
-            this.GetValide.Name = "GetValide";
-            this.GetValide.Size = new System.Drawing.Size(100, 25);
-            this.GetValide.TabIndex = 11;
-            // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(529, 12);
+            this.login.Location = new System.Drawing.Point(363, 12);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(75, 23);
             this.login.TabIndex = 12;
@@ -184,7 +157,14 @@
             this.getgpa.TabIndex = 13;
             this.getgpa.Text = "查询";
             this.getgpa.UseVisualStyleBackColor = true;
-
+            // 
+            // ShowValidate
+            // 
+            this.ShowValidate.Location = new System.Drawing.Point(201, 9);
+            this.ShowValidate.Name = "ShowValidate";
+            this.ShowValidate.Size = new System.Drawing.Size(100, 50);
+            this.ShowValidate.TabIndex = 10;
+            this.ShowValidate.TabStop = false;
             // 
             // QueryMark
             // 
@@ -194,9 +174,7 @@
             this.ClientSize = new System.Drawing.Size(1054, 568);
             this.Controls.Add(this.getgpa);
             this.Controls.Add(this.login);
-            this.Controls.Add(this.GetValide);
             this.Controls.Add(this.ShowValidate);
-            this.Controls.Add(this.validate);
             this.Controls.Add(this.show_gpa);
             this.Controls.Add(this.choose_semester);
             this.Controls.Add(this.semester);
@@ -225,10 +203,8 @@
         private System.Windows.Forms.Label semester;
         private System.Windows.Forms.ComboBox choose_semester;
         private System.Windows.Forms.ListView show_gpa;
-        private System.Windows.Forms.Button validate;
-        private System.Windows.Forms.PictureBox ShowValidate;
-        private System.Windows.Forms.TextBox GetValide;
         private System.Windows.Forms.Button login;
         private System.Windows.Forms.Button getgpa;
+        private System.Windows.Forms.PictureBox ShowValidate;
     }
 }
