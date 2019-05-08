@@ -75,6 +75,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Libary\Libary.csproj">
+      <Project>{bdaa33a0-f471-4ebe-b257-2328129e4749}</Project>
+      <Name>Libary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\team_development\team_development.csproj">
       <Project>{fd42231d-f988-4873-908f-8a4e9fc23932}</Project>
       <Name>team_development</Name>
