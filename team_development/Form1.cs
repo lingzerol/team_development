@@ -1,13 +1,19 @@
-﻿using System;
+﻿using Lib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
 using team_development.FormLib;
+using team_development.UI.UserInfo;
+
 namespace team_development
 {
     public partial class Form1 : Form
@@ -15,6 +21,8 @@ namespace team_development
         public Form1()
         {
             InitializeComponent();
+            //UserInfo u = new UserInfo();
+           // u=(UserInfo)Storage.Load("UserInfo.xml");
         }
 
         private void CourseSelectionToolStripMenuItem_Click(object sender, EventArgs e)

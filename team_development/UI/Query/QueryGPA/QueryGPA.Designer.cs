@@ -57,6 +57,7 @@
             this.student_id_text.Size = new System.Drawing.Size(120, 27);
             this.student_id_text.TabIndex = 1;
             this.student_id_text.Text = "2016052351";
+            this.student_id_text.TextChanged += new System.EventHandler(this.student_id_text_TextChanged);
             // 
             // student_name
             // 

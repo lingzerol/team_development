@@ -47,6 +47,10 @@ namespace team_development.UI.QueryGPA
         {
 
         }
-        
+
+        private void student_id_text_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
