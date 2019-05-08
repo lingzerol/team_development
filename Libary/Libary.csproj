@@ -52,9 +52,6 @@
   <ItemGroup>
     <Compile Include="GetElectricCharge\GetElectricCharge.cs" />
     <Compile Include="GetJWXT\GetJWXT.cs" />
-    <Compile Include="GetJWXT\Gpa.cs" />
-    <Compile Include="GetJWXT\_GetJWXT.cs" />
-    <Compile Include="HTMLhelper.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="OCR.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

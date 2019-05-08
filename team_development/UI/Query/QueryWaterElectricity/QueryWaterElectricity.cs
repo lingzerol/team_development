@@ -16,6 +16,7 @@ namespace team_development.UI.QueryWaterElectricity
     public partial class QueryWaterElectricity : Form
     {
         AutoResetEvent obj = new AutoResetEvent(false);//使用信号量
+        private GetElectricCharge gec = new GetElectricCharge();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         //使页面加载完毕
 
@@ -29,7 +30,7 @@ namespace team_development.UI.QueryWaterElectricity
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            GetElectricCharge.Login(Dorm.Text,new Lib.GetElectricCharge.SetElectricity(this.SetElectricity));
+            gec.Login(Dorm.Text);
             timer.Start();
 
         }
@@ -37,7 +38,7 @@ namespace team_development.UI.QueryWaterElectricity
         private void timerTick(object sender, EventArgs e)
         {
             timer.Stop();
-            result.Text=GetElectricCharge.GetElectric();
+            result.Text=gec.GetElectric();
         }
 
         private void TurnToForm(Form f)
@@ -47,10 +48,6 @@ namespace team_development.UI.QueryWaterElectricity
         }
 
 
-        private void SetElectricity(string degree)
-        {
-
-        }
 
         private void QueryWaterElectricity_Load(object sender, EventArgs e)
         {
