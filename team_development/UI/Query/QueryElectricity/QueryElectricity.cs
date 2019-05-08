@@ -15,10 +15,9 @@ namespace team_development.UI.QueryElectricity
 {
     public partial class QueryElectricity : Form
     {
-        AutoResetEvent obj = new AutoResetEvent(false);//使用信号量
+        AutoResetEvent obj = new AutoResetEvent(false);
         private GetElectricCharge gec = new GetElectricCharge();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        //使页面加载完毕
 
         public QueryElectricity()
         {
@@ -55,7 +54,6 @@ namespace team_development.UI.QueryElectricity
 
         private void TurnToForm(Form f)
         {
-            //TODO 会不会出现null的情况
             ((Form1)(this.ParentForm)).TurnForm(f);
         }
 
