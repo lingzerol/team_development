@@ -32,12 +32,12 @@ namespace team_development.UI.QueryGPA
 
         private void timerTick(object sender, EventArgs e)
         {
-            if (jwxt.GetStatus() )
+            if (jwxt.GetStatus()&& !isGet )
             {
                 SetGpa();
-//                isGet = true;
+                isGet = true;
             }
-            else {
+            else if (!isGet){
                 jwxt.Login("2016052351", "liangzp1818");
             }
         }
