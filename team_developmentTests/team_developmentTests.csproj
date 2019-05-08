@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IronOcr, Version=4.4.0.21181, Culture=neutral, PublicKeyToken=5f366048dc436899, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libary\obj\Debug\IronOcr.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -46,6 +50,7 @@
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Choose>
@@ -59,19 +64,22 @@
   <ItemGroup>
     <Compile Include="GetElectricCharge\GetElectricChargeTests.cs" />
     <Compile Include="Lib\MenuGetterTests.cs" />
+    <Compile Include="OCRTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StorageTests.cs" />
+    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Libary\Libary.csproj">
-      <Project>{BDAA33A0-F471-4EBE-B257-2328129E4749}</Project>
+      <Project>{bdaa33a0-f471-4ebe-b257-2328129e4749}</Project>
       <Name>Libary</Name>
     </ProjectReference>
     <ProjectReference Include="..\team_development\team_development.csproj">
-      <Project>{FD42231D-F988-4873-908F-8A4E9FC23932}</Project>
+      <Project>{fd42231d-f988-4873-908f-8a4e9fc23932}</Project>
       <Name>team_development</Name>
     </ProjectReference>
   </ItemGroup>
