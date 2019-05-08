@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lib;
+using Lib.GetJWXT;
 namespace team_development.UI.CourseSelection
 {
     public partial class CourseSelection : Form
@@ -89,6 +90,13 @@ namespace team_development.UI.CourseSelection
         private void CourseInfo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void GetCourse() {
+            GetJWXT jwxt = new GetJWXT();
+            
+            HtmlDocument document=jwxt.GetCourseList();
+            return;
         }
     }
 }
