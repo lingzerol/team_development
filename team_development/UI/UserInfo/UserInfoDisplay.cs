@@ -28,10 +28,8 @@ namespace team_development.UI.UserInfo
                 StudentNameTextBox.Text = GlobalData.userInfo.StudentName;
                 DormNumberTextBox.Text = GlobalData.userInfo.DormNumber;
                 MealCardTextBox.Text = GlobalData.userInfo.MealCard;
-
-                Cryptography g = new Cryptography();
-                SZJDPasswordTextBox.Text = g.Decrypt(GlobalData.userInfo.SZJDPassword);
-                JWXTPasswordTextBox.Text = g.Decrypt(GlobalData.userInfo.JWXTPassword);
+                SZJDPasswordTextBox.Text = "******";
+                JWXTPasswordTextBox.Text = "******";
             
 
         }
@@ -48,7 +46,8 @@ namespace team_development.UI.UserInfo
 
         private void infochange_Click(object sender, EventArgs e)
         {
-            Log.log.Info("click infochange");
+            Log.log.Info("Click infochange");
+            Log.log.Info("Save UserInfo ");
             UserInfo user = new UserInfo();
             user.StudentNumber = StudentNumberTextBox.Text;
             user.StudentName = StudentNameTextBox.Text;
