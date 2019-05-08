@@ -11,6 +11,7 @@ namespace Lib
     public static class OCR
     {
         public static string GetValidateCode(Bitmap img) {
+            Log.log.Info("Getting validateCode from image");
             Threshold(ref img, 100);
             var Ocr = new AdvancedOcr() { Language = IronOcr.Languages.English.OcrLanguagePack };
             var Results = Ocr.Read(img);
@@ -18,6 +19,7 @@ namespace Lib
         }
         private static void Threshold(ref Bitmap img, int bounce)
         {
+            Log.log.Info("Processing the Image : transform an image into a binary image.");
             for (int i = 0; i < img.Width; ++i)
             {
                 for (int j = 0; j < img.Height; ++j)
