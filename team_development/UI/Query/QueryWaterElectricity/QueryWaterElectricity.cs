@@ -22,7 +22,7 @@ namespace team_development.UI.QueryWaterElectricity
         public QueryWaterElectricity()
         {
             InitializeComponent();
-            timer.Interval = 30000;
+            timer.Interval = 10000;
             timer.Tick += new EventHandler(timerTick);
             timer.Stop();
         }
