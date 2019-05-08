@@ -184,7 +184,7 @@
             this.getgpa.TabIndex = 13;
             this.getgpa.Text = "查询";
             this.getgpa.UseVisualStyleBackColor = true;
-            this.getgpa.Click += new System.EventHandler(this.getgpa_Click);
+
             // 
             // QueryMark
             // 
