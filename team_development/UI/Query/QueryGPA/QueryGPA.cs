@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using team_development.UI.Query.QueryGPA;
+using Lib.GetJWXT;
 
 namespace team_development.UI.QueryGPA
 {
