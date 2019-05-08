@@ -22,14 +22,16 @@ namespace team_development.UI.UserInfo
         {
             InitializeComponent();
 
-            UserInfo user=(UserInfo)Storage.Load("UserInfo.txt");
+            UserInfo user=(UserInfo)Storage.Load("UserInfo.xml");
             GlobalData.userInfo = user;
                 StudentNumberTextBox.Text = GlobalData.userInfo.StudentNumber;
                 StudentNameTextBox.Text = GlobalData.userInfo.StudentName;
                 DormNumberTextBox.Text = GlobalData.userInfo.DormNumber;
                 MealCardTextBox.Text = GlobalData.userInfo.MealCard;
-                SZJDPasswordTextBox.Text = GlobalData.userInfo.SZJDPassword;
-                JWXTPasswordTextBox.Text = GlobalData.userInfo.JWXTPassword;
+
+                Cryptography g = new Cryptography();
+                SZJDPasswordTextBox.Text = g.Decrypt(GlobalData.userInfo.SZJDPassword);
+                JWXTPasswordTextBox.Text = g.Decrypt(GlobalData.userInfo.JWXTPassword);
             
 
         }
@@ -46,6 +48,7 @@ namespace team_development.UI.UserInfo
 
         private void infochange_Click(object sender, EventArgs e)
         {
+            Log.log.Info("click infochange");
             UserInfo user = new UserInfo();
             user.StudentNumber = StudentNumberTextBox.Text;
             user.StudentName = StudentNameTextBox.Text;
@@ -55,7 +58,11 @@ namespace team_development.UI.UserInfo
             user.JWXTPassword = JWXTPasswordTextBox.Text;
             MessageBox.Show("修改成功！");
 
-            Storage.Save(user, "UserInfo.txt");
+            Cryptography g = new Cryptography();
+            user.SZJDPassword=g.Encryption(user.SZJDPassword);
+            user.JWXTPassword=g.Encryption(user.JWXTPassword);
+
+            Storage.Save(user, "UserInfo.xml");
         }
     }
 }
