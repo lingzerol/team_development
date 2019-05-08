@@ -15,16 +15,22 @@ using System.Threading;
 namespace Lib.GetElectricCharge
 {
 
-    public class GetElectricCharge
+    public delegate void SetElectricity(string degree);
+    public static class GetElectricCharge
     {
 
-
-        public void Login(string username, WebBrowser web)
+        private static WebBrowser webBrowser = new WebBrowser();
+        private static System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
+        static GetElectricCharge() {
+            webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(GetElectricCharge.WebBrowserDocumentCompleted);
+        }
+        public static void Login(string username, SetElectricity se)
         {
             //定义html元素 通过ID获取控件值
-            HtmlElement tbUserId = web.Document.GetElementById("txtname");
-            HtmlElement btnSubmit = web.Document.GetElementById("ctl01");
-
+            webBrowser.Navigate("http://202.116.25.12/login.aspx");
+            Wait();
+            HtmlElement tbUserId = webBrowser.Document.GetElementById("txtname");
+            HtmlElement btnSubmit = webBrowser.Document.GetElementById("ctl01");
             try
             {
                 //设置元素value属性值 (用户名 密码值)
@@ -32,13 +38,17 @@ namespace Lib.GetElectricCharge
                 //执行元素的方法：如click submit
                 btnSubmit.InvokeMember("click");
             }
-            catch { }
+            catch {
+                //set error handling
+            }
+            DropList();
         }
 
-        public void DropList(WebBrowser web)
-        { 
+        public static void DropList()
+        {
             //下拉框切换至当前剩余电量
-            HtmlElement dropList = web.Document.GetElementById("RegionPanel1_Region2_GroupPanel1_ContentPanel1_DDL_监控项目");
+            Wait();
+            HtmlElement dropList = webBrowser.Document.GetElementById("RegionPanel1_Region2_GroupPanel1_ContentPanel1_DDL_监控项目");
             try
             {
                 dropList.InvokeMember("click");
@@ -46,7 +56,7 @@ namespace Lib.GetElectricCharge
             catch { }
 
             //遍历一下集合获取OuterHtml
-            HtmlElementCollection htmlele = web.Document.GetElementsByTagName("div");
+            HtmlElementCollection htmlele = webBrowser.Document.GetElementsByTagName("div");
             foreach (HtmlElement item in htmlele)
             {
                 if (item.InnerText == "当前剩余电量")
@@ -55,15 +65,32 @@ namespace Lib.GetElectricCharge
                     {
                         item.InvokeMember("click");
                     }
-                    catch { }
+                    catch {
+                    }
+                    break;
                 }
             }
         }
         
-        public string GetElectric(WebBrowser web)
+        public static string GetElectric()
         {
-            string Text = web.Document.GetElementById("RegionPanel1_Region2_GroupPanel1_ContentPanel1_L_监视屏").InnerText + "度";
+            string Text = webBrowser.Document.GetElementById("RegionPanel1_Region2_GroupPanel1_ContentPanel1_L_监视屏").InnerText + "度";
             return Text;
+        }
+
+        public static void WebBrowserDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            webBrowser.ScriptErrorsSuppressed = true;//屏蔽脚本错误
+            obj.Set();
+        }
+
+        public static void Wait()
+        {
+            obj.Reset();
+            while (obj.WaitOne(10, false) == false)
+            {
+                Application.DoEvents();
+            }
         }
     }
 }
