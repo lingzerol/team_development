@@ -15,16 +15,15 @@ using System.Threading;
 namespace Lib.GetElectricCharge
 {
 
-    public delegate void SetElectricity(string degree);
-    public static class GetElectricCharge
+    public class GetElectricCharge
     {
 
-        private static WebBrowser webBrowser = new WebBrowser();
-        private static System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
-        static GetElectricCharge() {
-            webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(GetElectricCharge.WebBrowserDocumentCompleted);
+        private WebBrowser webBrowser = new WebBrowser();
+        private System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
+        public GetElectricCharge() {
+            webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(this.WebBrowserDocumentCompleted);
         }
-        public static void Login(string username, SetElectricity se)
+        public void Login(string username)
         {
             //定义html元素 通过ID获取控件值
             webBrowser.Navigate("http://202.116.25.12/login.aspx");
@@ -44,7 +43,7 @@ namespace Lib.GetElectricCharge
             DropList();
         }
 
-        public static void DropList()
+        public void DropList()
         {
             //下拉框切换至当前剩余电量
             Wait();
@@ -72,19 +71,19 @@ namespace Lib.GetElectricCharge
             }
         }
         
-        public static string GetElectric()
+        public string GetElectric()
         {
             string Text = webBrowser.Document.GetElementById("RegionPanel1_Region2_GroupPanel1_ContentPanel1_L_监视屏").InnerText + "度";
             return Text;
         }
 
-        public static void WebBrowserDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        public void WebBrowserDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             webBrowser.ScriptErrorsSuppressed = true;//屏蔽脚本错误
             obj.Set();
         }
 
-        public static void Wait()
+        public void Wait()
         {
             obj.Reset();
             while (obj.WaitOne(10, false) == false)

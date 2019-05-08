@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btn_update = new System.Windows.Forms.Button();
-            this.btn_templatePreview = new System.Windows.Forms.Button();
-            this.btn_confirm = new System.Windows.Forms.Button();
-            this.btn_cancel = new System.Windows.Forms.Button();
+            this.SearchLine = new System.Windows.Forms.TextBox();
+            this.TemplateList = new System.Windows.Forms.ListBox();
+            this.Update = new System.Windows.Forms.Button();
+            this.TemplatePreview = new System.Windows.Forms.Button();
+            this.Confirm = new System.Windows.Forms.Button();
+            this.Cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // SearchLine
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(99, 61);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(866, 27);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "学生标准请假条";
+            this.SearchLine.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SearchLine.Location = new System.Drawing.Point(111, 73);
+            this.SearchLine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SearchLine.Name = "SearchLine";
+            this.SearchLine.Size = new System.Drawing.Size(974, 30);
+            this.SearchLine.TabIndex = 1;
+            this.SearchLine.Text = "未实现的搜索框";
             // 
-            // listBox1
+            // TemplateList
             // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Items.AddRange(new object[] {
+            this.TemplateList.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.TemplateList.FormattingEnabled = true;
+            this.TemplateList.ItemHeight = 24;
+            this.TemplateList.Items.AddRange(new object[] {
             "学生标准请假条",
             "Item Template",
             "Item Template",
@@ -64,72 +64,73 @@
             "Item Template",
             "Item Template",
             "Item Template"});
-            this.listBox1.Location = new System.Drawing.Point(99, 151);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(866, 224);
-            this.listBox1.TabIndex = 2;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.TemplateList.Location = new System.Drawing.Point(111, 181);
+            this.TemplateList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TemplateList.Name = "TemplateList";
+            this.TemplateList.Size = new System.Drawing.Size(974, 268);
+            this.TemplateList.TabIndex = 2;
+            this.TemplateList.SelectedIndexChanged += new System.EventHandler(this.TemplateList_SelectedIndexChanged);
             // 
-            // btn_update
+            // Update
             // 
-            this.btn_update.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.btn_update.Location = new System.Drawing.Point(392, 479);
-            this.btn_update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(165, 34);
-            this.btn_update.TabIndex = 7;
-            this.btn_update.Text = "更新数据库";
-            this.btn_update.UseVisualStyleBackColor = true;
+            this.Update.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.Update.Location = new System.Drawing.Point(441, 575);
+            this.Update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Update.Name = "Update";
+            this.Update.Size = new System.Drawing.Size(186, 41);
+            this.Update.TabIndex = 7;
+            this.Update.Text = "更新数据库";
+            this.Update.UseVisualStyleBackColor = true;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
-            // btn_templatePreview
+            // TemplatePreview
             // 
-            this.btn_templatePreview.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.btn_templatePreview.Location = new System.Drawing.Point(574, 479);
-            this.btn_templatePreview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_templatePreview.Name = "btn_templatePreview";
-            this.btn_templatePreview.Size = new System.Drawing.Size(119, 32);
-            this.btn_templatePreview.TabIndex = 8;
-            this.btn_templatePreview.Text = "预览";
-            this.btn_templatePreview.UseVisualStyleBackColor = true;
-            this.btn_templatePreview.Click += new System.EventHandler(this.btn_templatePreview_Click);
+            this.TemplatePreview.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.TemplatePreview.Location = new System.Drawing.Point(646, 575);
+            this.TemplatePreview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TemplatePreview.Name = "TemplatePreview";
+            this.TemplatePreview.Size = new System.Drawing.Size(134, 38);
+            this.TemplatePreview.TabIndex = 8;
+            this.TemplatePreview.Text = "预览";
+            this.TemplatePreview.UseVisualStyleBackColor = true;
+            this.TemplatePreview.Click += new System.EventHandler(this.TemplatePreview_Click);
             // 
-            // btn_confirm
+            // Confirm
             // 
-            this.btn_confirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.btn_confirm.Location = new System.Drawing.Point(710, 479);
-            this.btn_confirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_confirm.Name = "btn_confirm";
-            this.btn_confirm.Size = new System.Drawing.Size(119, 32);
-            this.btn_confirm.TabIndex = 9;
-            this.btn_confirm.Text = "确认";
-            this.btn_confirm.UseVisualStyleBackColor = true;
-            this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
+            this.Confirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.Confirm.Location = new System.Drawing.Point(799, 575);
+            this.Confirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Confirm.Name = "Confirm";
+            this.Confirm.Size = new System.Drawing.Size(134, 38);
+            this.Confirm.TabIndex = 9;
+            this.Confirm.Text = "确认";
+            this.Confirm.UseVisualStyleBackColor = true;
+            this.Confirm.Click += new System.EventHandler(this.Confirm_Click);
             // 
-            // btn_cancel
+            // Cancel
             // 
-            this.btn_cancel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
-            this.btn_cancel.Location = new System.Drawing.Point(846, 479);
-            this.btn_cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(119, 32);
-            this.btn_cancel.TabIndex = 10;
-            this.btn_cancel.Text = "取消";
-            this.btn_cancel.UseVisualStyleBackColor = true;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            this.Cancel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F);
+            this.Cancel.Location = new System.Drawing.Point(952, 575);
+            this.Cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(134, 38);
+            this.Cancel.TabIndex = 10;
+            this.Cancel.Text = "取消";
+            this.Cancel.UseVisualStyleBackColor = true;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // TemplateSelect
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1054, 568);
-            this.Controls.Add(this.btn_cancel);
-            this.Controls.Add(this.btn_confirm);
-            this.Controls.Add(this.btn_templatePreview);
-            this.Controls.Add(this.btn_update);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1186, 682);
+            this.Controls.Add(this.Cancel);
+            this.Controls.Add(this.Confirm);
+            this.Controls.Add(this.TemplatePreview);
+            this.Controls.Add(this.Update);
+            this.Controls.Add(this.TemplateList);
+            this.Controls.Add(this.SearchLine);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TemplateSelect";
             this.Text = "选择请假条模板";
@@ -141,11 +142,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button btn_update;
-        private System.Windows.Forms.Button btn_templatePreview;
-        private System.Windows.Forms.Button btn_confirm;
-        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.TextBox SearchLine;
+        private System.Windows.Forms.ListBox TemplateList;
+        private System.Windows.Forms.Button Update;
+        private System.Windows.Forms.Button TemplatePreview;
+        private System.Windows.Forms.Button Confirm;
+        private System.Windows.Forms.Button Cancel;
     }
 }
