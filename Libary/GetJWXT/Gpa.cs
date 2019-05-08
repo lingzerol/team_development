@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace team_development.UI.Query.QueryGPA
+namespace Lib.GetJWXT
 {
     public class Gpa
     {

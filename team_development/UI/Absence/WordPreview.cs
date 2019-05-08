@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,16 +18,22 @@ namespace team_development.UI.Absence
             InitializeComponent();
         }
 
-        private void btn_cancel_Click(object sender, EventArgs e)
+        private void Cancel_Click(object sender, EventArgs e)
         {
+            Log.log.Info("Click Cancel Button In WordPreview Form");
             //word预览 -> 填写请假条
             TurnToForm(new AbsenceInput());
         }
 
         private void TurnToForm(Form f)
         {
-            //TODO 会不会出现null的情况
+            Log.log.Info("Call TurnToForm Function");
             Panel parent = (Panel)this.Parent;
+            if (parent == null)
+            {
+                Log.log.Error("Panel Widget Is Null In Function TurnToForm In TemplateSelect Form");
+                return;
+            }
             parent.Controls.Clear();
 
             //Form templateSelect = new TemplateSelect();
@@ -38,8 +45,9 @@ namespace team_development.UI.Absence
             f.Show();
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
+            Log.log.Info("Click Save Button In WordPreview Form");
             //打开文件保存对话框
             SaveFileDialog saveDialog = new SaveFileDialog();
             saveDialog.Filter = "word文档(*.docx)|*.docx|测试用(*.txt)|*.txt";
@@ -51,12 +59,11 @@ namespace team_development.UI.Absence
                 string localFilePath = saveDialog.FileName.ToString(); //文件路径
                 string fileNameExt = localFilePath.Substring(localFilePath.LastIndexOf("\\")+1);
             }
-
         }
 
         private void WordPreview_Load(object sender, EventArgs e)
         {
-
+            Log.log.Info("Loading WordPreview Form");
         }
     }
 }

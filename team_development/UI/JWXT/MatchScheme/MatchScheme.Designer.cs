@@ -55,7 +55,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Refresh_button = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -368,17 +368,18 @@
             this.label14.TabIndex = 15;
             this.label14.Text = "生命类";
             // 
-            // button1
+            // Refresh_button
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(857, 84);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 42);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
+            this.Refresh_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Refresh_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Refresh_button.ForeColor = System.Drawing.Color.White;
+            this.Refresh_button.Image = ((System.Drawing.Image)(resources.GetObject("Refresh_button.Image")));
+            this.Refresh_button.Location = new System.Drawing.Point(857, 84);
+            this.Refresh_button.Name = "Refresh_button";
+            this.Refresh_button.Size = new System.Drawing.Size(48, 42);
+            this.Refresh_button.TabIndex = 1;
+            this.Refresh_button.UseVisualStyleBackColor = true;
+            this.Refresh_button.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // MatchScheme
             // 
@@ -386,7 +387,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Refresh_button);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MatchScheme";
             this.Text = "ds fsd ";
@@ -443,6 +444,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Refresh_button;
     }
 }
