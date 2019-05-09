@@ -37,8 +37,6 @@
             this.semester = new System.Windows.Forms.Label();
             this.choose_semester = new System.Windows.Forms.ComboBox();
             this.show_gpa = new System.Windows.Forms.ListView();
-            this.login = new System.Windows.Forms.Button();
-            this.getgpa = new System.Windows.Forms.Button();
             this.ShowValidate = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ShowValidate)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +59,6 @@
             this.student_id_text.Size = new System.Drawing.Size(120, 27);
             this.student_id_text.TabIndex = 1;
             this.student_id_text.Text = "2016052351";
-          //  this.student_id_text.TextChanged += new System.EventHandler(this.student_id_text_TextChanged);
             // 
             // student_name
             // 
@@ -133,31 +130,12 @@
             // show_gpa
             // 
             this.show_gpa.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.show_gpa.Location = new System.Drawing.Point(57, 133);
+            this.show_gpa.Location = new System.Drawing.Point(92, 114);
             this.show_gpa.Name = "show_gpa";
-            this.show_gpa.Size = new System.Drawing.Size(845, 428);
+            this.show_gpa.Size = new System.Drawing.Size(868, 428);
             this.show_gpa.TabIndex = 8;
             this.show_gpa.UseCompatibleStateImageBehavior = false;
             this.show_gpa.SelectedIndexChanged += new System.EventHandler(this.Show_gpa_SelectedIndexChanged);
-            // 
-            // login
-            // 
-            this.login.Location = new System.Drawing.Point(363, 12);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(75, 23);
-            this.login.TabIndex = 12;
-            this.login.Text = "登陆";
-            this.login.UseVisualStyleBackColor = true;
-            this.login.Click += new System.EventHandler(this.login_Click);
-            // 
-            // getgpa
-            // 
-            this.getgpa.Location = new System.Drawing.Point(670, 12);
-            this.getgpa.Name = "getgpa";
-            this.getgpa.Size = new System.Drawing.Size(75, 23);
-            this.getgpa.TabIndex = 13;
-            this.getgpa.Text = "查询";
-            this.getgpa.UseVisualStyleBackColor = true;
             // 
             // ShowValidate
             // 
@@ -173,8 +151,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
-            this.Controls.Add(this.getgpa);
-            this.Controls.Add(this.login);
             this.Controls.Add(this.ShowValidate);
             this.Controls.Add(this.show_gpa);
             this.Controls.Add(this.choose_semester);
@@ -204,8 +180,6 @@
         private System.Windows.Forms.Label semester;
         private System.Windows.Forms.ComboBox choose_semester;
         private System.Windows.Forms.ListView show_gpa;
-        private System.Windows.Forms.Button login;
-        private System.Windows.Forms.Button getgpa;
         private System.Windows.Forms.PictureBox ShowValidate;
     }
 }
