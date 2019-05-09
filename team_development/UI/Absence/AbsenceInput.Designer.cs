@@ -84,22 +84,24 @@
             // StuName
             // 
             this.StuName.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.StuName.Location = new System.Drawing.Point(238, 142);
+            this.StuName.Location = new System.Drawing.Point(238, 194);
             this.StuName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StuName.Name = "StuName";
             this.StuName.Size = new System.Drawing.Size(398, 31);
             this.StuName.TabIndex = 3;
             this.StuName.Text = "请假人姓名";
+            this.StuName.TextChanged += new System.EventHandler(this.StuName_TextChanged);
             // 
             // Department
             // 
             this.Department.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Department.Location = new System.Drawing.Point(238, 194);
+            this.Department.Location = new System.Drawing.Point(238, 248);
             this.Department.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Department.Name = "Department";
             this.Department.Size = new System.Drawing.Size(398, 31);
             this.Department.TabIndex = 7;
             this.Department.Text = "请假人院系";
+            this.Department.TextChanged += new System.EventHandler(this.Department_TextChanged);
             // 
             // label3
             // 
@@ -114,12 +116,13 @@
             // StuNumber
             // 
             this.StuNumber.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.StuNumber.Location = new System.Drawing.Point(238, 248);
+            this.StuNumber.Location = new System.Drawing.Point(238, 142);
             this.StuNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StuNumber.Name = "StuNumber";
             this.StuNumber.Size = new System.Drawing.Size(398, 31);
             this.StuNumber.TabIndex = 11;
             this.StuNumber.Text = "请假人学号";
+            this.StuNumber.TextChanged += new System.EventHandler(this.StuNumber_TextChanged);
             // 
             // label5
             // 
@@ -150,6 +153,7 @@
             this.ToName.Size = new System.Drawing.Size(848, 31);
             this.ToName.TabIndex = 16;
             this.ToName.Text = "向谁请假，单位名，或是人(如李老师，暨南大学)";
+            this.ToName.TextChanged += new System.EventHandler(this.ToName_TextChanged);
             // 
             // Reason
             // 
@@ -161,6 +165,7 @@
             this.Reason.Size = new System.Drawing.Size(848, 161);
             this.Reason.TabIndex = 17;
             this.Reason.Text = "请假理由";
+            this.Reason.TextChanged += new System.EventHandler(this.Reason_TextChanged);
             // 
             // label8
             // 
@@ -193,6 +198,7 @@
             this.PhoneNumber.Size = new System.Drawing.Size(262, 31);
             this.PhoneNumber.TabIndex = 25;
             this.PhoneNumber.Text = "138147775";
+            this.PhoneNumber.TextChanged += new System.EventHandler(this.PhoneNumber_TextChanged);
             // 
             // label2
             // 
@@ -232,6 +238,7 @@
             this.StartTime.Name = "StartTime";
             this.StartTime.Size = new System.Drawing.Size(262, 31);
             this.StartTime.TabIndex = 26;
+            this.StartTime.ValueChanged += new System.EventHandler(this.StartTime_ValueChanged);
             // 
             // EndTime
             // 
@@ -241,6 +248,7 @@
             this.EndTime.Name = "EndTime";
             this.EndTime.Size = new System.Drawing.Size(262, 31);
             this.EndTime.TabIndex = 27;
+            this.EndTime.ValueChanged += new System.EventHandler(this.EndTime_ValueChanged);
             // 
             // AbsenceInput
             // 

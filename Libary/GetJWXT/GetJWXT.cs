@@ -132,6 +132,7 @@ namespace Lib.GetJWXT
             foreach (Match m in mc)
             {
                 item = m.Value;
+                Console.WriteLine(item);//
                 int IndexofA = item.IndexOf(">");
                 int IndexofB = item.IndexOf("</TD>");
                 string Ru = item.Substring(IndexofA + 1, IndexofB - IndexofA - 1);

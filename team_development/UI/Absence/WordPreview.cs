@@ -49,21 +49,26 @@ namespace team_development.UI.Absence
         {
             Log.log.Info("Click Save Button In WordPreview Form");
             //打开文件保存对话框
-            SaveFileDialog saveDialog = new SaveFileDialog();
-            saveDialog.Filter = "word文档(*.docx)|*.docx|测试用(*.txt)|*.txt";
-            saveDialog.FilterIndex = 1;
-            saveDialog.RestoreDirectory = true; //保存上次打开目录
-            
-            if(saveDialog.ShowDialog() == DialogResult.OK)
-            {
-                string localFilePath = saveDialog.FileName.ToString(); //文件路径
-                string fileNameExt = localFilePath.Substring(localFilePath.LastIndexOf("\\")+1);
-            }
+            string dayLast = ((AbsenceWordManager.EndTime - AbsenceWordManager.StartTime).Days + 1).ToString();
+            AbsenceWordManager.GenerateWord(AbsenceWordManager.GetSelectedTemplatePath(),
+                AbsenceWordManager.ToName, AbsenceWordManager.Reason, AbsenceWordManager.Department, dayLast, AbsenceWordManager.StartTime.Month.ToString(),
+                AbsenceWordManager.StartTime.Day.ToString(), AbsenceWordManager.EndTime.Month.ToString(), AbsenceWordManager.EndTime.Day.ToString(),
+                AbsenceWordManager.FromName, AbsenceWordManager.StudentNum, AbsenceWordManager.Phone,
+                DateTime.Now.Year.ToString(), DateTime.Now.Month.ToString(), DateTime.Now.Day.ToString(), true, ContentBox);
         }
 
         private void WordPreview_Load(object sender, EventArgs e)
         {
             Log.log.Info("Loading WordPreview Form");
+
+            AbsenceWordManager.DeleteTemporaryFile();
+
+            string dayLast = ((AbsenceWordManager.EndTime - AbsenceWordManager.StartTime).Days + 1).ToString();
+            AbsenceWordManager.GenerateWord(AbsenceWordManager.GetSelectedTemplatePath(),
+                AbsenceWordManager.ToName, AbsenceWordManager.Reason, AbsenceWordManager.Department, dayLast, AbsenceWordManager.StartTime.Month.ToString(),
+                AbsenceWordManager.StartTime.Day.ToString(), AbsenceWordManager.EndTime.Month.ToString(), AbsenceWordManager.EndTime.Day.ToString(),
+                AbsenceWordManager.FromName, AbsenceWordManager.StudentNum, AbsenceWordManager.Phone,
+                DateTime.Now.Year.ToString(), DateTime.Now.Month.ToString(), DateTime.Now.Day.ToString(), false, ContentBox);
         }
     }
 }

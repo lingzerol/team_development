@@ -22,7 +22,9 @@ namespace team_development.UI.Absence
         {
             Log.log.Info("Click Confirm Button In TemplatePreview Form");
             //预览模板 -> 选择模板
+            AbsenceWordManager.SelectedIndex = AbsenceWordManager.OldSelectedIndex;
             TurnToForm(new TemplateSelect());
+            
         }
 
 
@@ -57,9 +59,12 @@ namespace team_development.UI.Absence
         {
             Log.log.Info("Loading TemplatePreview Form");
 
-            if(AbsenceWordManager.GetSelectedFile() != "")
+            if(AbsenceWordManager.GetOldSelectedTemplatePath() != "")
             {
-                AbsenceWordManager.OpenTemplate(AbsenceWordManager.GetSelectedFile(), ContentBox);
+                AbsenceWordManager.OpenTemplate(AbsenceWordManager.GetOldSelectedTemplatePath(), ContentBox);
+            } else
+            {
+                MessageBox.Show("未选中模板");
             }
             
         }
