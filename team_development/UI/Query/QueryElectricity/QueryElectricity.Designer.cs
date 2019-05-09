@@ -1,6 +1,6 @@
-﻿namespace team_development.UI.QueryWaterElectricity
+﻿namespace team_development.UI.QueryElectricity
 {
-    partial class QueryWaterElectricity
+    partial class QueryElectricity
     {
         /// <summary>
         /// Required designer variable.
@@ -33,11 +33,9 @@
             this.btn_Login = new System.Windows.Forms.Button();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btn_Search = new System.Windows.Forms.Button();
+            this.btn_Refresh = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.result = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -67,9 +65,9 @@
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(119, 32);
             this.btn_Login.TabIndex = 3;
-            this.btn_Login.Text = "登录";
+            this.btn_Login.Text = "查询";
             this.btn_Login.UseVisualStyleBackColor = true;
-            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
+            this.btn_Login.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // webBrowser1
             // 
@@ -88,25 +86,16 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "该宿舍的剩余电量为：";
             // 
-            // label3
+            // btn_Refresh
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.label3.Location = new System.Drawing.Point(300, 317);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 25);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "暂无查询水费途径";
-            // 
-            // btn_Search
-            // 
-            this.btn_Search.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.btn_Search.Location = new System.Drawing.Point(578, 204);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(119, 30);
-            this.btn_Search.TabIndex = 7;
-            this.btn_Search.Text = "查询";
-            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Refresh.Font = new System.Drawing.Font("微软雅黑", 10.8F);
+            this.btn_Refresh.Location = new System.Drawing.Point(578, 204);
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(119, 30);
+            this.btn_Refresh.TabIndex = 7;
+            this.btn_Refresh.Text = "刷新";
+            this.btn_Refresh.UseVisualStyleBackColor = true;
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // label4
             // 
@@ -114,9 +103,9 @@
             this.label4.Font = new System.Drawing.Font("幼圆", 25.8F);
             this.label4.Location = new System.Drawing.Point(41, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(239, 43);
+            this.label4.Size = new System.Drawing.Size(195, 43);
             this.label4.TabIndex = 8;
-            this.label4.Text = "查询水电费";
+            this.label4.Text = "查询电费";
             // 
             // result
             // 
@@ -126,25 +115,14 @@
             this.result.Size = new System.Drawing.Size(319, 31);
             this.result.TabIndex = 5;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(120, 267);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(592, 15);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "温馨提示：在点击登录后请稍等一会儿再点击查询，如若数值不对，可点击查询重新刷新";
-            // 
-            // QueryWaterElectricity
+            // QueryElectricity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btn_Search);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_Refresh);
             this.Controls.Add(this.result);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.webBrowser1);
@@ -153,9 +131,9 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("宋体", 9F);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Name = "QueryWaterElectricity";
-            this.Text = "QueryWaterElectricity";
-            this.Load += new System.EventHandler(this.QueryWaterElectricity_Load);
+            this.Name = "QueryElectricity";
+            this.Text = "QueryElectricity";
+            this.Load += new System.EventHandler(this.QueryElectricity_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,10 +145,8 @@
         private System.Windows.Forms.Button btn_Login;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btn_Search;
+        private System.Windows.Forms.Button btn_Refresh;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox result;
-        private System.Windows.Forms.Label label5;
     }
 }

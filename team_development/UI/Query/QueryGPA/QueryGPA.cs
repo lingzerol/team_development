@@ -44,10 +44,10 @@ namespace team_development.UI.QueryGPA
 
         public void TableLoad()
         {
-            show_gpa.GridLines = true;//表格是否显示网格线
+            show_gpa.GridLines = true;
 
-            show_gpa.View = View.Details;//设置显示方式
-            show_gpa.Scrollable = true;//是否自动显示滚动条
+            show_gpa.View = View.Details;
+            show_gpa.Scrollable = true;
             
             this.show_gpa.Columns.Add("学年", 90, HorizontalAlignment.Center);
             this.show_gpa.Columns.Add("学期", 60, HorizontalAlignment.Center);
