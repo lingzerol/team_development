@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +18,9 @@ namespace team_development.UI.Absence
             InitializeComponent();
         }
 
-        private void btn_confirm_Click(object sender, EventArgs e)
+        private void Confirm_Click(object sender, EventArgs e)
         {
+            Log.log.Info("Click Confirm Button In TemplatePreview Form");
             //预览模板 -> 选择模板
             TurnToForm(new TemplateSelect());
         }
@@ -26,8 +28,13 @@ namespace team_development.UI.Absence
 
         private void TurnToForm(Form f)
         {
-            //TODO 会不会出现null的情况
+            Log.log.Info("Call TurnToForm Function");
             Panel parent = (Panel)this.Parent;
+            if(parent == null)
+            {
+                Log.log.Error("Panel Widget Is Null In Function TurnToForm In TemplatePreview Form");
+                return;
+            }
             parent.Controls.Clear();
 
             //Form templateSelect = new TemplateSelect();
@@ -39,15 +46,22 @@ namespace team_development.UI.Absence
             f.Show();
         }
 
-        private void btn_cancel_Click(object sender, EventArgs e)
+        private void Cancel_Click(object sender, EventArgs e)
         {
+            Log.log.Info("Click Cancel Button In TemplatePreview Form");
             //预览模板 -> 选择模板
             TurnToForm(new TemplateSelect());
         }
 
         private void TemplatePreview_Load(object sender, EventArgs e)
         {
+            Log.log.Info("Loading TemplatePreview Form");
 
+            if(AbsenceWordManager.GetSelectedFile() != "")
+            {
+                AbsenceWordManager.OpenTemplate(AbsenceWordManager.GetSelectedFile(), ContentBox);
+            }
+            
         }
     }
 }

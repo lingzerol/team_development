@@ -15,47 +15,52 @@ using System.Threading;
 namespace Lib.GetElectricCharge
 {
 
-    public delegate void SetElectricity(string degree);
-    public static class GetElectricCharge
+    public class GetElectricCharge
     {
 
-        private static WebBrowser webBrowser = new WebBrowser();
-        private static System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
-        static GetElectricCharge() {
-            webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(GetElectricCharge.WebBrowserDocumentCompleted);
+        private WebBrowser webBrowser = new WebBrowser();
+        private System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
+        public GetElectricCharge() {
+            webBrowser.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(this.WebBrowserDocumentCompleted);
         }
-        public static void Login(string username, SetElectricity se)
+        public void Login(string username)
         {
-            //定义html元素 通过ID获取控件值
+            Log.log.Info("Loading the electricity charge enquiry website.");
             webBrowser.Navigate("http://202.116.25.12/login.aspx");
             Wait();
+
             HtmlElement tbUserId = webBrowser.Document.GetElementById("txtname");
             HtmlElement btnSubmit = webBrowser.Document.GetElementById("ctl01");
             try
             {
-                //设置元素value属性值 (用户名 密码值)
+                Log.log.Info("Input username into username box in the electricity charge enquiry website.");
                 tbUserId.SetAttribute("value", username);
-                //执行元素的方法：如click submit
+                
+                Log.log.Info("Click the login button in the electricity charge enquiry website and load the logined website.");
                 btnSubmit.InvokeMember("click");
             }
-            catch {
-                //set error handling
+            catch (Exception e)
+            {
+                Log.log.Error(e.ToString());
             }
             DropList();
         }
 
-        public static void DropList()
+        public void DropList()
         {
-            //下拉框切换至当前剩余电量
             Wait();
+            
             HtmlElement dropList = webBrowser.Document.GetElementById("RegionPanel1_Region2_GroupPanel1_ContentPanel1_DDL_监控项目");
             try
             {
+                Log.log.Info("Click the drop-down box in the electricity charge enquiry website.");
                 dropList.InvokeMember("click");
             }
-            catch { }
+            catch (Exception e)
+            {
+                Log.log.Error(e.ToString());
+            }
 
-            //遍历一下集合获取OuterHtml
             HtmlElementCollection htmlele = webBrowser.Document.GetElementsByTagName("div");
             foreach (HtmlElement item in htmlele)
             {
@@ -63,28 +68,31 @@ namespace Lib.GetElectricCharge
                 {
                     try
                     {
+                        Log.log.Info("Click the remained electric button in the electricity charge enquiry website and load the remained electric page");
                         item.InvokeMember("click");
                     }
                     catch {
+
                     }
                     break;
                 }
             }
         }
         
-        public static string GetElectric()
+        public string GetElectric()
         {
+            Log.log.Info("Receive the electric data from the electricity charge enquiry website.");
             string Text = webBrowser.Document.GetElementById("RegionPanel1_Region2_GroupPanel1_ContentPanel1_L_监视屏").InnerText + "度";
             return Text;
         }
 
-        public static void WebBrowserDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        public void WebBrowserDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            webBrowser.ScriptErrorsSuppressed = true;//屏蔽脚本错误
+            webBrowser.ScriptErrorsSuppressed = true;
             obj.Set();
         }
 
-        public static void Wait()
+        public void Wait()
         {
             obj.Reset();
             while (obj.WaitOne(10, false) == false)

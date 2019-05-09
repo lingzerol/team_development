@@ -123,36 +123,36 @@
             // 查询成绩ToolStripMenuItem
             // 
             this.查询成绩ToolStripMenuItem.Name = "查询成绩ToolStripMenuItem";
-            this.查询成绩ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询成绩ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询成绩ToolStripMenuItem.Text = "查询成绩";
             this.查询成绩ToolStripMenuItem.Click += new System.EventHandler(this.QuiryGpaToolStripMenuItem_Click);
             // 
             // 查询通知ToolStripMenuItem
             // 
             this.查询通知ToolStripMenuItem.Name = "查询通知ToolStripMenuItem";
-            this.查询通知ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询通知ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询通知ToolStripMenuItem.Text = "查询通知";
             this.查询通知ToolStripMenuItem.Click += new System.EventHandler(this.QueryInformToolStripMenuItem_Click);
             // 
             // 查询就业ToolStripMenuItem
             // 
             this.查询就业ToolStripMenuItem.Name = "查询就业ToolStripMenuItem";
-            this.查询就业ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询就业ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询就业ToolStripMenuItem.Text = "查询就业";
             this.查询就业ToolStripMenuItem.Click += new System.EventHandler(this.QueryEmployToolStripMenuItem_Click);
             // 
             // 查询饭卡ToolStripMenuItem
             // 
             this.查询饭卡ToolStripMenuItem.Name = "查询饭卡ToolStripMenuItem";
-            this.查询饭卡ToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.查询饭卡ToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.查询饭卡ToolStripMenuItem.Text = "查询饭卡";
             this.查询饭卡ToolStripMenuItem.Click += new System.EventHandler(this.QuiryMealCardToolStripMenuItem_Click);
             // 
             // 查询ToolStripMenuItem1
             // 
             this.查询ToolStripMenuItem1.Name = "查询ToolStripMenuItem1";
-            this.查询ToolStripMenuItem1.Size = new System.Drawing.Size(159, 26);
-            this.查询ToolStripMenuItem1.Text = "查询水电费";
+            this.查询ToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.查询ToolStripMenuItem1.Text = "查询电费";
             this.查询ToolStripMenuItem1.Click += new System.EventHandler(this.QueryCostToolStripMenuItem1_Click);
             // 
             // 用户信息ToolStripMenuItem

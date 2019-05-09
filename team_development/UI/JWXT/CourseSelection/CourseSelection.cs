@@ -62,7 +62,6 @@ namespace team_development.UI.CourseSelection
             else {
                 Log.log.Debug("dlr != DialogResult.OK - select courses successfully.");
             }
-            
         }
 
         private void TableLoad() {

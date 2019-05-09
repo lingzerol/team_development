@@ -37,11 +37,7 @@
             this.semester = new System.Windows.Forms.Label();
             this.choose_semester = new System.Windows.Forms.ComboBox();
             this.show_gpa = new System.Windows.Forms.ListView();
-            this.validate = new System.Windows.Forms.Button();
             this.ShowValidate = new System.Windows.Forms.PictureBox();
-            this.GetValide = new System.Windows.Forms.TextBox();
-            this.login = new System.Windows.Forms.Button();
-            this.getgpa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ShowValidate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,22 +130,12 @@
             // show_gpa
             // 
             this.show_gpa.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.show_gpa.Location = new System.Drawing.Point(93, 128);
+            this.show_gpa.Location = new System.Drawing.Point(92, 114);
             this.show_gpa.Name = "show_gpa";
-            this.show_gpa.Size = new System.Drawing.Size(860, 428);
+            this.show_gpa.Size = new System.Drawing.Size(868, 428);
             this.show_gpa.TabIndex = 8;
             this.show_gpa.UseCompatibleStateImageBehavior = false;
             this.show_gpa.SelectedIndexChanged += new System.EventHandler(this.Show_gpa_SelectedIndexChanged);
-            // 
-            // validate
-            // 
-            this.validate.Location = new System.Drawing.Point(57, 12);
-            this.validate.Name = "validate";
-            this.validate.Size = new System.Drawing.Size(75, 23);
-            this.validate.TabIndex = 9;
-            this.validate.Text = "验证码";
-            this.validate.UseVisualStyleBackColor = true;
-            this.validate.Click += new System.EventHandler(this.validate_Click);
             // 
             // ShowValidate
             // 
@@ -159,44 +145,13 @@
             this.ShowValidate.TabIndex = 10;
             this.ShowValidate.TabStop = false;
             // 
-            // GetValide
-            // 
-            this.GetValide.Location = new System.Drawing.Point(348, 13);
-            this.GetValide.Name = "GetValide";
-            this.GetValide.Size = new System.Drawing.Size(100, 25);
-            this.GetValide.TabIndex = 11;
-            // 
-            // login
-            // 
-            this.login.Location = new System.Drawing.Point(529, 12);
-            this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(75, 23);
-            this.login.TabIndex = 12;
-            this.login.Text = "登陆";
-            this.login.UseVisualStyleBackColor = true;
-            this.login.Click += new System.EventHandler(this.login_Click);
-            // 
-            // getgpa
-            // 
-            this.getgpa.Location = new System.Drawing.Point(670, 12);
-            this.getgpa.Name = "getgpa";
-            this.getgpa.Size = new System.Drawing.Size(75, 23);
-            this.getgpa.TabIndex = 13;
-            this.getgpa.Text = "查询";
-            this.getgpa.UseVisualStyleBackColor = true;
-            this.getgpa.Click += new System.EventHandler(this.getgpa_Click);
-            // 
             // QueryMark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
-            this.Controls.Add(this.getgpa);
-            this.Controls.Add(this.login);
-            this.Controls.Add(this.GetValide);
             this.Controls.Add(this.ShowValidate);
-            this.Controls.Add(this.validate);
             this.Controls.Add(this.show_gpa);
             this.Controls.Add(this.choose_semester);
             this.Controls.Add(this.semester);
@@ -225,10 +180,6 @@
         private System.Windows.Forms.Label semester;
         private System.Windows.Forms.ComboBox choose_semester;
         private System.Windows.Forms.ListView show_gpa;
-        private System.Windows.Forms.Button validate;
         private System.Windows.Forms.PictureBox ShowValidate;
-        private System.Windows.Forms.TextBox GetValide;
-        private System.Windows.Forms.Button login;
-        private System.Windows.Forms.Button getgpa;
     }
 }

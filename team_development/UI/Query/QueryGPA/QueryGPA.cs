@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using team_development.UI.Query.QueryGPA;
+using Lib.GetJWXT;
 using Lib;
 
 namespace team_development.UI.QueryGPA
@@ -17,20 +17,37 @@ namespace team_development.UI.QueryGPA
     {
         Lib.GetJWXT.GetJWXT jwxt = new Lib.GetJWXT.GetJWXT();
         public List<Gpa> Gpas = new List<Gpa>();
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        private bool isGet = false;
         public QueryMark()
         {
             InitializeComponent();
             choose_semester.SelectedIndex = 0;
             choose_academic_year.SelectedIndex = 0;
             TableLoad();
+            timer.Interval = 3000;
+            timer.Tick += new EventHandler(timerTick);
+            timer.Start();
+        }
+
+        private void timerTick(object sender, EventArgs e)
+        {
+            if (jwxt.GetStatus()&& !isGet )
+            {
+                SetGpa();
+                isGet = true;
+            }
+            else if (!isGet){
+                jwxt.Login("2016052351", "liangzp1818");
+            }
         }
 
         public void TableLoad()
         {
-            show_gpa.GridLines = true;//表格是否显示网格线
+            show_gpa.GridLines = true;
 
-            show_gpa.View = View.Details;//设置显示方式
-            show_gpa.Scrollable = true;//是否自动显示滚动条
+            show_gpa.View = View.Details;
+            show_gpa.Scrollable = true;
             
             this.show_gpa.Columns.Add("学年", 90, HorizontalAlignment.Center);
             this.show_gpa.Columns.Add("学期", 60, HorizontalAlignment.Center);
@@ -43,7 +60,7 @@ namespace team_development.UI.QueryGPA
 
         private void GpaInquiry_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void Show_gpa_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,27 +71,25 @@ namespace team_development.UI.QueryGPA
         private void validate_Click(object sender, EventArgs e)
         {
             ShowValidate.Image = jwxt.GetValidateImage();
-            Log.log.Info("click validate");
         }
 
         private void login_Click(object sender, EventArgs e)
         {
-            jwxt.Login("2016052351", "liangzp1818", GetValide.Text);
-            Log.log.Info("click login");
+            jwxt.Login("2016052351", "liangzp1818");
+            Log.log.Info("CLICK LOGIN_BUTTON IN QueryGPA");
+            
         }
 
-        private void getgpa_Click(object sender, EventArgs e)
+        private void SetGpa()
         {
             HtmlDocument GpaDoc = jwxt.GetGPA();
             show_gpa.Clear();
             TableLoad();
-            Log.log.Info("click query");
 
             string str = (string)GpaDoc.Body.InnerHtml;
             string itemlist=null;
             List<Gpa> Gpas;
             Gpas = jwxt.GetGpaList(str);
-            Log.log.Info("gpas list formed");
 
             foreach (Gpa g in Gpas)
             {
@@ -130,8 +145,6 @@ namespace team_development.UI.QueryGPA
             }//end of switch
             this.show_gpa.EndUpdate();
         }
-
-
         public void ShowGpa(ListViewItem temp,Gpa g) {
             temp = new ListViewItem();
             temp.Text = g.schoolyear;

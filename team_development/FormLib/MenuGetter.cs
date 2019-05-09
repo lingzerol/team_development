@@ -10,7 +10,7 @@ using team_development.UI.Absence;
 using team_development.UI.QueryMealCard;
 using team_development.UI.QueryEmploy;
 using team_development.UI.QueryInform;
-using team_development.UI.QueryWaterElectricity;
+using team_development.UI.QueryElectricity;
 using team_development.UI.MatchScheme;
 using team_development.UI.QueryGPA;
 using team_development.UI.Search;
@@ -33,7 +33,7 @@ namespace team_development.FormLib
             QueryInformInstance = new QueryNotification();
             QueryEmployInstance = new QueryEmploy();
             QueryMealCardInstance = new QueryMealcard();
-            QueryCostInstance = new QueryWaterElectricity();
+            QueryCostInstance = new QueryElectricity();
             SearchInstance = new Search();
             AbsenceInstance = new AbsenceInput(); 
             UserInfoInstance= new UserInfoDisplay();

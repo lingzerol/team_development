@@ -70,18 +70,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestForm.Designer.cs">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Forum\Forum.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Forum\Forum.Designer.cs">
       <DependentUpon>Forum.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\GlobalData.cs" />
     <Compile Include="UI\Query\QueryEmploy\OfferArticle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,21 +156,20 @@
     <Compile Include="UI\Search\Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UserInfo\Cryptography.cs" />
+    <Compile Include="UI\UserInfo\UserInfo.cs" />
     <Compile Include="UI\UserInfo\UserInfoDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\UserInfo\UserInfoDisplay.Designer.cs">
       <DependentUpon>UserInfoDisplay.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Query\QueryWaterElectricity\QueryWaterElectricity.cs">
+    <Compile Include="UI\Query\QueryElectricity\QueryElectricity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Query\QueryWaterElectricity\QueryWaterElectricity.Designer.cs">
-      <DependentUpon>QueryWaterElectricity.cs</DependentUpon>
+    <Compile Include="UI\Query\QueryElectricity\QueryElectricity.Designer.cs">
+      <DependentUpon>QueryElectricity.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="TestForm.resx">
-      <DependentUpon>TestForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Forum\Forum.resx">
       <DependentUpon>Forum.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,8 +249,8 @@
     <EmbeddedResource Include="UI\Absence\WordPreview.resx">
       <DependentUpon>WordPreview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Query\QueryWaterElectricity\QueryWaterElectricity.resx">
-      <DependentUpon>QueryWaterElectricity.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Query\QueryElectricity\QueryElectricity.resx">
+      <DependentUpon>QueryElectricity.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
