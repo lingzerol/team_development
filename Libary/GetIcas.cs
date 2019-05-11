@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,14 +47,32 @@ namespace Lib
             else
                 Log.log.Error("Get a null object from e.Url.AbsolutePath");
         }
+
+        [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern bool InternetSetCookie(string lpszUrlName, string lbszCookieName, string lpszCookieData);
         public HtmlDocument Login(string username, string pwd)
             {
-            web.Navigate("https://icas.jnu.edu.cn/cas/login?service=http%3A%2F%2Fi.jnu.edu.cn%2Fdcp%2Findex.jsp");
+            string url = "https://icas.jnu.edu.cn/cas/login?service=http%3A%2F%2Fi.jnu.edu.cn%2Fdcp%2Findex.jsp";
+            web.Navigate(url);
             Wait();
             web.Document.GetElementById("un").SetAttribute("value", username);
             web.Document.GetElementById("pd").SetAttribute("value", pwd);
             web.Document.GetElementById("index_login_btn").InvokeMember("click");
-            MessageBox.Show("click");
+            Wait();
+            string cookieStr = web.Document.Cookie;
+            //string[] cookstr = cookieStr.Split(';');
+            foreach (string c in cookieStr.Split(';'))
+            {
+                string[] item = c.Split('=');
+                if (item.Length == 2)
+                {
+                    InternetSetCookie(url, null, new Cookie(System.Web.HttpUtility.UrlEncode(item[0]).Replace("+", ""), System.Web.HttpUtility.UrlEncode(item[1]), "; expires = Session GMT", "/").ToString());
+                }
+            }//end of for
+            web.Navigate(url);
+
+            Wait();
+            MessageBox.Show(cookieStr);
             //Wait();
 
             return web.Document;
