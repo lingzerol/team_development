@@ -39,6 +39,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.query = new System.Windows.Forms.Button();
+            this.htmlcontent = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // rice_card
@@ -63,10 +65,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Adobe 繁黑體 Std B", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(239, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 30);
+            this.label1.Size = new System.Drawing.Size(206, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "Card Information";
             // 
@@ -138,12 +140,32 @@
             this.textBox4.Size = new System.Drawing.Size(339, 25);
             this.textBox4.TabIndex = 12;
             // 
+            // query
+            // 
+            this.query.Location = new System.Drawing.Point(616, 68);
+            this.query.Name = "query";
+            this.query.Size = new System.Drawing.Size(75, 23);
+            this.query.TabIndex = 13;
+            this.query.Text = "查询";
+            this.query.UseVisualStyleBackColor = true;
+            this.query.Click += new System.EventHandler(this.query_Click);
+            // 
+            // htmlcontent
+            // 
+            this.htmlcontent.Location = new System.Drawing.Point(26, 105);
+            this.htmlcontent.Name = "htmlcontent";
+            this.htmlcontent.Size = new System.Drawing.Size(740, 451);
+            this.htmlcontent.TabIndex = 14;
+            this.htmlcontent.Text = "";
+            // 
             // QueryMealcard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
+            this.Controls.Add(this.htmlcontent);
+            this.Controls.Add(this.query);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
@@ -157,7 +179,6 @@
             this.Controls.Add(this.rice_card);
             this.Name = "QueryMealcard";
             this.Text = "s";
-            this.Load += new System.EventHandler(this.MealcardInquiry_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +197,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button query;
+        private System.Windows.Forms.RichTextBox htmlcontent;
     }
 }

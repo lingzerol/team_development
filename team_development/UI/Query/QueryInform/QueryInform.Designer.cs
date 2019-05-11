@@ -47,6 +47,7 @@
             this.ColumnPublishAgency = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPublishDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
+            this.infocontent = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotifocation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,12 +105,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Adobe 繁黑體 Std B", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(239, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(160, 30);
+            this.label2.Size = new System.Drawing.Size(177, 29);
             this.label2.TabIndex = 2;
             this.label2.Text = "School Notice";
+            // 
+            // infocontent
+            // 
+            this.infocontent.Location = new System.Drawing.Point(29, 95);
+            this.infocontent.Name = "infocontent";
+            this.infocontent.Size = new System.Drawing.Size(924, 414);
+            this.infocontent.TabIndex = 3;
+            this.infocontent.Text = "";
             // 
             // QueryNotification
             // 
@@ -117,6 +126,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
+            this.Controls.Add(this.infocontent);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewNotifocation);
             this.Controls.Add(this.label1);
@@ -137,5 +147,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPublishAgency;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPublishDate;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RichTextBox infocontent;
     }
 }
