@@ -15,24 +15,10 @@ namespace Lib.GetElectricCharge.Tests
     {
         GetElectricCharge electric = new GetElectricCharge();
 
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            string dorm = "3305";
-            electric.Login(dorm);
-        }
-
-        [TestMethod()]
-        public void LoginTest()
-        {
-            string dorm = "3305";
-            electric.Login(dorm);
-        }
-
         [TestMethod()]
         public void GetElectric()
         {
-            string electricity = electric.GetElectric();
+            string electricity = electric.GetElectric("3305");
             if (electricity == null)
             {
                 Assert.Fail();
