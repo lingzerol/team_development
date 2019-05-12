@@ -12,8 +12,6 @@ using mshtml;
 
 namespace Lib.GetJWXT
 {
-
-
     public class GetJWXT
     {
         private WebBrowser web = new WebBrowser();
@@ -74,10 +72,11 @@ namespace Lib.GetJWXT
 
         public void Login(string username, string pwd)
         {
-            string validate = OCR.GetValidateCode(GetValidateImage());
+            //string validate = OCR.GetValidateCode(GetValidateImage());
+            
             web.Document.GetElementById("txtYHBS").SetAttribute("value", username);
             web.Document.GetElementById("txtYHMM").SetAttribute("value", pwd);
-            web.Document.GetElementById("txtFJM").SetAttribute("value", validate);
+            //web.Document.GetElementById("txtFJM").SetAttribute("value", validate);
             web.Document.GetElementById("btnLogin").InvokeMember("click");
             
             Wait();

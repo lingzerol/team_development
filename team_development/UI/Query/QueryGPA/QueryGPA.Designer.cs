@@ -38,6 +38,9 @@
             this.choose_semester = new System.Windows.Forms.ComboBox();
             this.show_gpa = new System.Windows.Forms.ListView();
             this.ShowValidate = new System.Windows.Forms.PictureBox();
+            this.validate = new System.Windows.Forms.Button();
+            this.login = new System.Windows.Forms.Button();
+            this.getvalidate = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ShowValidate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,12 +148,40 @@
             this.ShowValidate.TabIndex = 10;
             this.ShowValidate.TabStop = false;
             // 
+            // validate
+            // 
+            this.validate.Location = new System.Drawing.Point(50, 13);
+            this.validate.Name = "validate";
+            this.validate.Size = new System.Drawing.Size(75, 23);
+            this.validate.TabIndex = 11;
+            this.validate.Text = "验证码";
+            this.validate.UseVisualStyleBackColor = true;
+            // 
+            // login
+            // 
+            this.login.Location = new System.Drawing.Point(532, 9);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(75, 23);
+            this.login.TabIndex = 12;
+            this.login.Text = "登陆";
+            this.login.UseVisualStyleBackColor = true;
+            // 
+            // getvalidate
+            // 
+            this.getvalidate.Location = new System.Drawing.Point(329, 14);
+            this.getvalidate.Name = "getvalidate";
+            this.getvalidate.Size = new System.Drawing.Size(100, 25);
+            this.getvalidate.TabIndex = 13;
+            // 
             // QueryMark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
+            this.Controls.Add(this.getvalidate);
+            this.Controls.Add(this.login);
+            this.Controls.Add(this.validate);
             this.Controls.Add(this.ShowValidate);
             this.Controls.Add(this.show_gpa);
             this.Controls.Add(this.choose_semester);
@@ -181,5 +212,8 @@
         private System.Windows.Forms.ComboBox choose_semester;
         private System.Windows.Forms.ListView show_gpa;
         private System.Windows.Forms.PictureBox ShowValidate;
+        private System.Windows.Forms.Button validate;
+        private System.Windows.Forms.Button login;
+        private System.Windows.Forms.TextBox getvalidate;
     }
 }

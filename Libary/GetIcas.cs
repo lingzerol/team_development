@@ -16,6 +16,7 @@ namespace Lib
         private System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
         private System.Threading.AutoResetEvent statusObj = new System.Threading.AutoResetEvent(false);
         private bool isGetInto = false;
+        string url = "https://icas.jnu.edu.cn/cas/login";
 
         public Geticas(){
             web.DocumentCompleted += new WebBrowserDocumentCompletedEventHandler(WebDocumentCompleted);
@@ -52,15 +53,19 @@ namespace Lib
         public static extern bool InternetSetCookie(string lpszUrlName, string lbszCookieName, string lpszCookieData);
         public HtmlDocument Login(string username, string pwd)
             {
-            string url = "https://icas.jnu.edu.cn/cas/login?service=http%3A%2F%2Fi.jnu.edu.cn%2Fdcp%2Findex.jsp";
             web.Navigate(url);
             Wait();
             web.Document.GetElementById("un").SetAttribute("value", username);
             web.Document.GetElementById("pd").SetAttribute("value", pwd);
             web.Document.GetElementById("index_login_btn").InvokeMember("click");
+            //MessageBox.Show("click");
             Wait();
+
+            return web.Document;
+        }
+
+        public HtmlDocument Query() {
             string cookieStr = web.Document.Cookie;
-            //string[] cookstr = cookieStr.Split(';');
             foreach (string c in cookieStr.Split(';'))
             {
                 string[] item = c.Split('=');
@@ -69,14 +74,17 @@ namespace Lib
                     InternetSetCookie(url, null, new Cookie(System.Web.HttpUtility.UrlEncode(item[0]).Replace("+", ""), System.Web.HttpUtility.UrlEncode(item[1]), "; expires = Session GMT", "/").ToString());
                 }
             }//end of for
-            web.Navigate(url);
+            web.Navigate("https://i.jnu.edu.cn/dcp/forward.action?path=/portal/portal&p=home");
 
-            Wait();
             MessageBox.Show(cookieStr);
-            //Wait();
+            HtmlDocument html = web.Document;
+            //web.Navigate(url);
 
-            return web.Document;
+            return html;
+            //return web.Document;
         }
+
+
 
         private void WebDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {

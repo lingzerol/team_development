@@ -27,7 +27,13 @@ namespace team_development.UI.QueryMealCard
         private void query_Click(object sender, EventArgs e)
         {
             HtmlDocument html = getIcas.Login("2016052351", "104213");
-            htmlcontent.Text=html.Body.InnerHtml;
+            //htmlcontent.Text=html.Body.InnerHtml;
+        }
+
+        private void realquery_Click(object sender, EventArgs e)
+        {
+            HtmlDocument html = getIcas.Query();
+            htmlcontent.Text = html.Body.InnerHtml;
         }
     }
 }

@@ -41,6 +41,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.query = new System.Windows.Forms.Button();
             this.htmlcontent = new System.Windows.Forms.RichTextBox();
+            this.realquery = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rice_card
@@ -146,7 +147,7 @@
             this.query.Name = "query";
             this.query.Size = new System.Drawing.Size(75, 23);
             this.query.TabIndex = 13;
-            this.query.Text = "查询";
+            this.query.Text = "登陆";
             this.query.UseVisualStyleBackColor = true;
             this.query.Click += new System.EventHandler(this.query_Click);
             // 
@@ -158,12 +159,23 @@
             this.htmlcontent.TabIndex = 14;
             this.htmlcontent.Text = "";
             // 
+            // realquery
+            // 
+            this.realquery.Location = new System.Drawing.Point(728, 68);
+            this.realquery.Name = "realquery";
+            this.realquery.Size = new System.Drawing.Size(75, 23);
+            this.realquery.TabIndex = 15;
+            this.realquery.Text = "查询";
+            this.realquery.UseVisualStyleBackColor = true;
+            this.realquery.Click += new System.EventHandler(this.realquery_Click);
+            // 
             // QueryMealcard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
+            this.Controls.Add(this.realquery);
             this.Controls.Add(this.htmlcontent);
             this.Controls.Add(this.query);
             this.Controls.Add(this.textBox4);
@@ -199,5 +211,6 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button query;
         private System.Windows.Forms.RichTextBox htmlcontent;
+        private System.Windows.Forms.Button realquery;
     }
 }

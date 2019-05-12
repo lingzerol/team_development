@@ -25,12 +25,12 @@ namespace team_development.UI.QueryGPA
             choose_semester.SelectedIndex = 0;
             choose_academic_year.SelectedIndex = 0;
             TableLoad();
-            timer.Interval = 3000;
+            /*timer.Interval = 3000;
             timer.Tick += new EventHandler(timerTick);
-            timer.Start();
+            timer.Start();*/
         }
 
-        private void timerTick(object sender, EventArgs e)
+        /*private void timerTick(object sender, EventArgs e)
         {
             if (jwxt.GetStatus()&& !isGet )
             {
@@ -40,7 +40,7 @@ namespace team_development.UI.QueryGPA
             else if (!isGet){
                 jwxt.Login("2016052351", "liangzp1818");
             }
-        }
+        }*/
 
         public void TableLoad()
         {
