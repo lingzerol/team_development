@@ -78,7 +78,7 @@ namespace Lib.GetJWXT
             web.Document.GetElementById("txtFJM").SetAttribute("value", validate);
             web.Document.GetElementById("btnLogin").InvokeMember("click");
             
-            Wait();
+            //Wait();
 
         }
 
@@ -94,7 +94,7 @@ namespace Lib.GetJWXT
             web.Navigate("https://jwxt.jnu.edu.cn/Secure/Cjgl/Cjgl_Cjcx_WdCj.aspx");
             Wait();
             
-            web.Document.GetElementById("lbtnQuery ").InvokeMember("click");
+            web.Document.GetElementById("lbtnQuery").InvokeMember("click");
             Wait();
             return web.Document;
         }

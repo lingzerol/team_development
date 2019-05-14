@@ -41,7 +41,7 @@
             this.validate = new System.Windows.Forms.Button();
             this.login = new System.Windows.Forms.Button();
             this.getvalidate = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.gpaquery = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ShowValidate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,13 +176,15 @@
             this.getvalidate.Size = new System.Drawing.Size(100, 25);
             this.getvalidate.TabIndex = 13;
             // 
-            // textBox1
+            // gpaquery
             // 
-            this.textBox1.Location = new System.Drawing.Point(732, 10);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 49);
-            this.textBox1.TabIndex = 14;
+            this.gpaquery.Location = new System.Drawing.Point(679, 9);
+            this.gpaquery.Name = "gpaquery";
+            this.gpaquery.Size = new System.Drawing.Size(75, 23);
+            this.gpaquery.TabIndex = 14;
+            this.gpaquery.Text = "查询";
+            this.gpaquery.UseVisualStyleBackColor = true;
+            this.gpaquery.Click += new System.EventHandler(this.gpaquery_Click);
             // 
             // QueryMark
             // 
@@ -190,7 +192,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.gpaquery);
             this.Controls.Add(this.getvalidate);
             this.Controls.Add(this.login);
             this.Controls.Add(this.validate);
@@ -227,6 +229,6 @@
         private System.Windows.Forms.Button validate;
         private System.Windows.Forms.Button login;
         private System.Windows.Forms.TextBox getvalidate;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button gpaquery;
     }
 }
