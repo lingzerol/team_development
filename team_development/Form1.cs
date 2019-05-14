@@ -72,8 +72,6 @@ namespace team_development
         {
             Log.log.Info("CLICK Menu AbsenceTool.");
             TurnForm(MenuType.Absence);
-//test
-new TestForm().Show();
         }
 
         private void QueryEmployToolStripMenuItem_Click(object sender, EventArgs e)

@@ -57,11 +57,11 @@ namespace Lib.GetJWXT
         public Bitmap GetValidateImage()
         {
             //if (!isNavigate)
-           // {
-                web.Navigate("https://jwxt.jnu.edu.cn/");
-                Wait();
-                isNavigate = true;
-            }
+            // {
+            web.Navigate("https://jwxt.jnu.edu.cn/");
+            Wait();
+            isNavigate = true;
+            //}
 
             Bitmap clip = null;
             try
