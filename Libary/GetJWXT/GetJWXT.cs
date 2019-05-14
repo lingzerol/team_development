@@ -14,6 +14,8 @@ namespace Lib.GetJWXT
 {
     public class GetJWXT
     {
+
+        public static GetJWXT jwxt = new GetJWXT();
         private WebBrowser web = new WebBrowser();
         private System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
         private bool isNavigate = false;
@@ -59,14 +61,22 @@ namespace Lib.GetJWXT
                 web.Navigate("https://jwxt.jnu.edu.cn/");
                 Wait();
                 isNavigate = true;
-            //}
-            
+            }
 
-            HtmlElement validateImg = web.Document.Images[1];
-            validateImg.Style = "position: absolute; z-index: 9999; top: 0px; left: 0px";
-            Bitmap clip = new Bitmap(validateImg.ClientRectangle.Width, validateImg.ClientRectangle.Height);
-            web.DrawToBitmap(clip, new Rectangle(new Point(), validateImg.ClientRectangle.Size));
-            //validateImageEventHandler(clip);
+            Bitmap clip = null;
+            try
+            {
+                HtmlElement validateImg = web.Document.Images[1];
+                validateImg.Style = "position: absolute; z-index: 9999; top: 0px; left: 0px";
+                clip = new Bitmap(validateImg.ClientRectangle.Width, validateImg.ClientRectangle.Height);
+                web.DrawToBitmap(clip, new Rectangle(new Point(), validateImg.ClientRectangle.Size));
+                //validateImageEventHandler(clip);
+               
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("登陆失败");
+            }
             return clip;
         }
 
@@ -98,6 +108,14 @@ namespace Lib.GetJWXT
             Wait();
             return web.Document;
         }
+
+        public HtmlDocument GetMatchScheme()
+        {
+            web.Navigate("https://jwxt.jnu.edu.cn/default.aspx");
+            Wait();
+            return web.Document;
+        }
+
         private void WebDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             obj.Set();
@@ -110,6 +128,51 @@ namespace Lib.GetJWXT
             while (obj.WaitOne(10, false) == false) {
                 Application.DoEvents();
             }
+            
+        }
+
+        public MatchSchemeItem GetMatchSchemeItem(string str)
+        {
+
+            List<string> needs = new List<string>();
+            List<string> study = new List<string>();
+            List<string> lefts = new List<string>();
+
+            Regex reg = new Regex(@"<TD class=needs>[\d|.]*</TD>", RegexOptions.IgnoreCase);
+            MatchCollection mc = reg.Matches(str);
+            foreach (Match m in mc)
+            {
+                string item = m.Value;
+                int IndexofA = item.IndexOf(">");
+                int IndexofB = item.IndexOf("</TD>");
+                string Ru = item.Substring(IndexofA + 1, IndexofB - IndexofA - 1);
+                needs.Add(Ru);
+            }
+
+            reg = new Regex(@"<TD class=study>[\d|.]*</TD>", RegexOptions.IgnoreCase);
+            mc = reg.Matches(str);
+            foreach (Match m in mc)
+            {
+                string item = m.Value;
+                int IndexofA = item.IndexOf(">");
+                int IndexofB = item.IndexOf("</TD>");
+                string Ru = item.Substring(IndexofA + 1, IndexofB - IndexofA - 1);
+                study.Add(Ru);
+            }
+
+            reg = new Regex(@"<TD class=lefts>[\d|.]*</TD>", RegexOptions.IgnoreCase);
+            mc = reg.Matches(str);
+            foreach (Match m in mc)
+            {
+                string item = m.Value;
+                int IndexofA = item.IndexOf(">");
+                int IndexofB = item.IndexOf("</TD>");
+                string Ru = item.Substring(IndexofA + 1, IndexofB - IndexofA - 1);
+                lefts.Add(Ru);
+            }
+
+            MatchSchemeItem matchSchemeItem = new MatchSchemeItem(needs, study, lefts);
+            return matchSchemeItem;
             
         }
 

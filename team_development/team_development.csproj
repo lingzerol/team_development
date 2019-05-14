@@ -77,6 +77,12 @@
       <DependentUpon>Forum.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\GlobalData.cs" />
+    <Compile Include="UI\JWXT\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\JWXT\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Query\QueryEmploy\OfferArticle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Forum\Forum.resx">
       <DependentUpon>Forum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\JWXT\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Query\QueryEmploy\OfferArticle.resx" />
     <EmbeddedResource Include="UI\Query\QueryInform\QueryInform.resx">

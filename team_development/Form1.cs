@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 using team_development.FormLib;
+using team_development.UI.JWXT;
 using team_development.UI.UserInfo;
 
 namespace team_development
@@ -71,6 +72,8 @@ namespace team_development
         {
             Log.log.Info("CLICK Menu AbsenceTool.");
             TurnForm(MenuType.Absence);
+//test
+new TestForm().Show();
         }
 
         private void QueryEmployToolStripMenuItem_Click(object sender, EventArgs e)
