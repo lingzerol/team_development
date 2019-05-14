@@ -60,11 +60,10 @@ namespace Lib
             web.Document.GetElementById("index_login_btn").InvokeMember("click");
             //MessageBox.Show("click");
             Wait();
-
             return web.Document;
         }
 
-        public HtmlDocument Query() {
+        public String Query() {
             string cookieStr = web.Document.Cookie;
             foreach (string c in cookieStr.Split(';'))
             {
@@ -76,11 +75,13 @@ namespace Lib
             }//end of for
             web.Navigate("https://i.jnu.edu.cn/dcp/forward.action?path=/portal/portal&p=home");
 
-            MessageBox.Show(cookieStr);
-            HtmlDocument html = web.Document;
-            //web.Navigate(url);
+            MessageBox.Show("获取的Cookie为"+cookieStr);
 
-            return html;
+            String  str = web.Document.Body.InnerHtml;
+            //web.Navigate(url);
+            
+            
+            return str;
             //return web.Document;
         }
 

@@ -75,17 +75,19 @@ namespace team_development.UI.QueryGPA
 
         private void login_Click(object sender, EventArgs e)
         {
-            jwxt.Login("2016052351", "liangzp1818");
+            jwxt.Login("2016052351", "liangzp1818",getvalidate.Text);
             Log.log.Info("CLICK LOGIN_BUTTON IN QueryGPA");
-            
+           
+            SetGpa();
+
         }
 
         private void SetGpa()
         {
+           
             HtmlDocument GpaDoc = jwxt.GetGPA();
             show_gpa.Clear();
             TableLoad();
-
             string str = (string)GpaDoc.Body.InnerHtml;
             string itemlist=null;
             List<Gpa> Gpas;
@@ -155,6 +157,11 @@ namespace team_development.UI.QueryGPA
             temp.SubItems.Add(g.gp.ToString());
             temp.SubItems.Add(g.coursecategory);
             this.show_gpa.Items.Add(temp);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

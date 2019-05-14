@@ -40,7 +40,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.query = new System.Windows.Forms.Button();
-            this.htmlcontent = new System.Windows.Forms.RichTextBox();
             this.realquery = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -151,14 +150,6 @@
             this.query.UseVisualStyleBackColor = true;
             this.query.Click += new System.EventHandler(this.query_Click);
             // 
-            // htmlcontent
-            // 
-            this.htmlcontent.Location = new System.Drawing.Point(26, 105);
-            this.htmlcontent.Name = "htmlcontent";
-            this.htmlcontent.Size = new System.Drawing.Size(740, 451);
-            this.htmlcontent.TabIndex = 14;
-            this.htmlcontent.Text = "";
-            // 
             // realquery
             // 
             this.realquery.Location = new System.Drawing.Point(728, 68);
@@ -176,7 +167,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
             this.Controls.Add(this.realquery);
-            this.Controls.Add(this.htmlcontent);
             this.Controls.Add(this.query);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -210,7 +200,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button query;
-        private System.Windows.Forms.RichTextBox htmlcontent;
         private System.Windows.Forms.Button realquery;
     }
 }

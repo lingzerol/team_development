@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.choose_semester = new System.Windows.Forms.ComboBox();
             this.student_id = new System.Windows.Forms.Label();
             this.student_id_text = new System.Windows.Forms.TextBox();
             this.student_name = new System.Windows.Forms.Label();
@@ -35,14 +36,27 @@
             this.academic_year = new System.Windows.Forms.Label();
             this.choose_academic_year = new System.Windows.Forms.ComboBox();
             this.semester = new System.Windows.Forms.Label();
-            this.choose_semester = new System.Windows.Forms.ComboBox();
             this.show_gpa = new System.Windows.Forms.ListView();
             this.ShowValidate = new System.Windows.Forms.PictureBox();
             this.validate = new System.Windows.Forms.Button();
             this.login = new System.Windows.Forms.Button();
             this.getvalidate = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ShowValidate)).BeginInit();
             this.SuspendLayout();
+            // 
+            // choose_semester
+            // 
+            this.choose_semester.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.choose_semester.FormattingEnabled = true;
+            this.choose_semester.Items.AddRange(new object[] {
+            "ALL",
+            "上",
+            "下"});
+            this.choose_semester.Location = new System.Drawing.Point(854, 65);
+            this.choose_semester.Name = "choose_semester";
+            this.choose_semester.Size = new System.Drawing.Size(121, 28);
+            this.choose_semester.TabIndex = 7;
             // 
             // student_id
             // 
@@ -117,19 +131,6 @@
             this.semester.TabIndex = 6;
             this.semester.Text = "学期";
             // 
-            // choose_semester
-            // 
-            this.choose_semester.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.choose_semester.FormattingEnabled = true;
-            this.choose_semester.Items.AddRange(new object[] {
-            "ALL",
-            "上",
-            "下"});
-            this.choose_semester.Location = new System.Drawing.Point(854, 65);
-            this.choose_semester.Name = "choose_semester";
-            this.choose_semester.Size = new System.Drawing.Size(121, 28);
-            this.choose_semester.TabIndex = 7;
-            // 
             // show_gpa
             // 
             this.show_gpa.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -156,6 +157,7 @@
             this.validate.TabIndex = 11;
             this.validate.Text = "验证码";
             this.validate.UseVisualStyleBackColor = true;
+            this.validate.Click += new System.EventHandler(this.validate_Click);
             // 
             // login
             // 
@@ -165,6 +167,7 @@
             this.login.TabIndex = 12;
             this.login.Text = "登陆";
             this.login.UseVisualStyleBackColor = true;
+            this.login.Click += new System.EventHandler(this.login_Click);
             // 
             // getvalidate
             // 
@@ -173,12 +176,21 @@
             this.getvalidate.Size = new System.Drawing.Size(100, 25);
             this.getvalidate.TabIndex = 13;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(732, 10);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(189, 49);
+            this.textBox1.TabIndex = 14;
+            // 
             // QueryMark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.getvalidate);
             this.Controls.Add(this.login);
             this.Controls.Add(this.validate);
@@ -202,6 +214,7 @@
         }
 
         #endregion
+        private System.Windows.Forms.ComboBox choose_semester;
         private System.Windows.Forms.Label student_id;
         private System.Windows.Forms.TextBox student_id_text;
         private System.Windows.Forms.Label student_name;
@@ -209,11 +222,11 @@
         private System.Windows.Forms.Label academic_year;
         private System.Windows.Forms.ComboBox choose_academic_year;
         private System.Windows.Forms.Label semester;
-        private System.Windows.Forms.ComboBox choose_semester;
         private System.Windows.Forms.ListView show_gpa;
         private System.Windows.Forms.PictureBox ShowValidate;
         private System.Windows.Forms.Button validate;
         private System.Windows.Forms.Button login;
         private System.Windows.Forms.TextBox getvalidate;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

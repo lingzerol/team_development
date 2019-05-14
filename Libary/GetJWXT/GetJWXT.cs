@@ -54,12 +54,12 @@ namespace Lib.GetJWXT
 
         public Bitmap GetValidateImage()
         {
-            if (!isNavigate)
-            {
+            //if (!isNavigate)
+           // {
                 web.Navigate("https://jwxt.jnu.edu.cn/");
                 Wait();
                 isNavigate = true;
-            }
+            //}
             
 
             HtmlElement validateImg = web.Document.Images[1];
@@ -70,13 +70,12 @@ namespace Lib.GetJWXT
             return clip;
         }
 
-        public void Login(string username, string pwd)
+        public void Login(string username, string pwd,string validate)
         {
-            //string validate = OCR.GetValidateCode(GetValidateImage());
-            
+            //string validate = OCR.GetValidateCode(GetValidateImage());            
             web.Document.GetElementById("txtYHBS").SetAttribute("value", username);
             web.Document.GetElementById("txtYHMM").SetAttribute("value", pwd);
-            //web.Document.GetElementById("txtFJM").SetAttribute("value", validate);
+            web.Document.GetElementById("txtFJM").SetAttribute("value", validate);
             web.Document.GetElementById("btnLogin").InvokeMember("click");
             
             Wait();
@@ -94,13 +93,11 @@ namespace Lib.GetJWXT
         {
             web.Navigate("https://jwxt.jnu.edu.cn/Secure/Cjgl/Cjgl_Cjcx_WdCj.aspx");
             Wait();
-
-            web.Document.GetElementById("lbtnQuery").InvokeMember("click");
+            
+            web.Document.GetElementById("lbtnQuery ").InvokeMember("click");
             Wait();
-
             return web.Document;
         }
-
         private void WebDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             obj.Set();
