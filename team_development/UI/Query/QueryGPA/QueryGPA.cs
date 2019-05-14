@@ -15,7 +15,7 @@ namespace team_development.UI.QueryGPA
 {
     public partial class QueryMark : Form
     {
-        Lib.GetJWXT.GetJWXT jwxt = new Lib.GetJWXT.GetJWXT();
+        Lib.GetJWXT.GetJWXT jwxt = GetJWXT.jwxt;//new Lib.GetJWXT.GetJWXT();
         public List<Gpa> Gpas = new List<Gpa>();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         private bool isGet = false;
