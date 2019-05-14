@@ -18,7 +18,7 @@ namespace team_development.UI.QueryGPA
         Lib.GetJWXT.GetJWXT jwxt = new Lib.GetJWXT.GetJWXT();
         public List<Gpa> Gpas = new List<Gpa>();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        private bool isGet = false;
+        //private bool isGet = false;
         public QueryMark()
         {
             InitializeComponent();
@@ -78,16 +78,15 @@ namespace team_development.UI.QueryGPA
             jwxt.Login("2016052351", "liangzp1818",getvalidate.Text);
             Log.log.Info("CLICK LOGIN_BUTTON IN QueryGPA");
            
-            SetGpa();
-
+            //SetGpa();
         }
 
         private void SetGpa()
         {
-           
-            HtmlDocument GpaDoc = jwxt.GetGPA();
             show_gpa.Clear();
             TableLoad();
+
+            HtmlDocument GpaDoc = jwxt.GetGPA();
             string str = (string)GpaDoc.Body.InnerHtml;
             string itemlist=null;
             List<Gpa> Gpas;
@@ -159,9 +158,9 @@ namespace team_development.UI.QueryGPA
             this.show_gpa.Items.Add(temp);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void gpaquery_Click(object sender, EventArgs e)
         {
-
+            SetGpa();
         }
     }
 }
