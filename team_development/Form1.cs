@@ -12,7 +12,6 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 using team_development.FormLib;
-using team_development.UI.JWXT;
 using team_development.UI.UserInfo;
 
 namespace team_development
