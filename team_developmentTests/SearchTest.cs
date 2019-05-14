@@ -24,11 +24,17 @@ namespace Lib.Tests
         [TestMethod]
         public void getTextTest()
         {
-            if (search.getText().Equals(null))
+            try
             {
-                Assert.Fail();
+                if (search.getText().Equals(null))
+                {
+                    Assert.Fail();
+                }
             }
-            
+            catch (Exception E)
+            {
+                Log.log.Error(E.ToString());
+            }
         }
     }
 }
