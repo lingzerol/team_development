@@ -58,6 +58,7 @@
             // CourseInfo
             // 
             this.CourseInfo.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.CourseInfo.FullRowSelect = true;
             this.CourseInfo.Location = new System.Drawing.Point(86, 27);
             this.CourseInfo.Name = "CourseInfo";
             this.CourseInfo.Size = new System.Drawing.Size(879, 439);
