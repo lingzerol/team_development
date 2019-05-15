@@ -38,7 +38,7 @@ namespace team_development.UI.QueryElectricity
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             gec.GetElectric(Dorm.Text, new SetCharge(this.SetElectricCharge));
-            wait.StartKiller(3000,IsOK);
+            wait.StartKiller(1000,IsOK);
         }
 
 

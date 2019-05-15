@@ -63,9 +63,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="GetElectricCharge\GetElectricChargeTests.cs" />
     <Compile Include="Lib\MenuGetterTests.cs" />
-    <Compile Include="OCRTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StorageTests.cs" />
     <Compile Include="SearchTest.cs" />
