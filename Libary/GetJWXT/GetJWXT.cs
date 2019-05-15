@@ -22,16 +22,18 @@ namespace Lib.GetJWXT
         private bool isGetInto = false;
         private System.Threading.AutoResetEvent statusObj = new System.Threading.AutoResetEvent(false);
 
-        public bool GetStatus() {
+        public bool GetStatus()
+        {
             bool result = false;
             statusObj.WaitOne();
             result = isGetInto;
             statusObj.Set();
             return result;
         }
-        public void SetStatus(bool status) {
+        public void SetStatus(bool status)
+        {
             statusObj.WaitOne();
-            isGetInto=status;
+            isGetInto = status;
             statusObj.Set();
         }
 
@@ -99,6 +101,19 @@ namespace Lib.GetJWXT
             return web.Document;
         }
 
+        public HtmlDocument SelectCourse()
+        {
+            web.Navigate("https://jwxt.jnu.edu.cn/Secure/PaiKeXuanKe/wfrm_Pk_RlRscx.aspx");
+            Wait();
+
+            web.Document.GetElementById("dlstKclb").SetAttribute("value", "122");
+            web.Document.GetElementById("dlstXqu").SetAttribute("value", "珠海校区");
+            web.Document.GetElementById("lbtnSearch").InvokeMember("click");
+            Wait();
+
+            return web.Document;
+        }
+
         public HtmlDocument GetGPA()
         {
             web.Navigate("https://jwxt.jnu.edu.cn/Secure/Cjgl/Cjgl_Cjcx_WdCj.aspx");
@@ -125,7 +140,8 @@ namespace Lib.GetJWXT
         private void Wait()
         {
             obj.Reset();
-            while (obj.WaitOne(10, false) == false) {
+            while (obj.WaitOne(10, false) == false)
+            {
                 Application.DoEvents();
             }
             
@@ -176,7 +192,8 @@ namespace Lib.GetJWXT
             
         }
 
-        public List<Gpa> GetGpaList(string str) {
+        public List<Gpa> GetGpaList(string str)
+        {
             List<Gpa> Gpas = new List<Gpa>();
             Regex reg = new Regex(@"<TD>[^<]*</TD>", RegexOptions.IgnoreCase);
             MatchCollection mc = reg.Matches(str);
@@ -231,5 +248,10 @@ namespace Lib.GetJWXT
             }
             return Gpas;
         }
+
     }
+
+
+
+    
 }
