@@ -63,9 +63,16 @@ namespace team_development.UI.QueryGPA
 
         private void login_Click(object sender, EventArgs e)
         {
-            jwxt.Login("2016052351", "liangzp1818",getvalidate.Text);
-            Log.log.Info("CLICK LOGIN_BUTTON IN QueryGPA");
-           
+            try
+            {
+                jwxt.Login("2016052351", "liangzp1818", getvalidate.Text);
+                Log.log.Info("CLICK LOGIN_BUTTON IN QueryGPA");
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("登陆失败，请重新尝试");
+            }
             //SetGpa();
         }
 
@@ -149,8 +156,14 @@ namespace team_development.UI.QueryGPA
         private void gpaquery_Click(object sender, EventArgs e)
         {
             //jwxt.Login("2016052351", "liangzp1818", getvalidate.Text);
-
-            SetGpa();
-        }
+            try
+            {
+                SetGpa();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("查询失败，请重新尝试");
+            }
+         }
     }
 }

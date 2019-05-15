@@ -33,20 +33,33 @@ namespace team_development.UI.QueryMealCard
 
         private void realquery_Click(object sender, EventArgs e)
         {
-            HtmlDocument html = getIcas.Login("2016052349", "191032");
+            try
+            {
+                HtmlDocument html = getIcas.Login("2016052349", "191032");
 
-            String str = getIcas.Query();             
-            
-            str =str.Substring(str.IndexOf("更换头像"));
-            str = str.Substring(str.IndexOf("t01>"));
-            textBox2.Text = str.Substring(str.IndexOf("t01>")+4,str.IndexOf("</S")-str.IndexOf("t01>")-4);
-            str = str.Substring(str.IndexOf("t02>"));
-            textBox1.Text = str.Substring(str.IndexOf("t02>")+4, str.IndexOf("</S")-str.IndexOf("t02>")-4);
-           
-            str = str.Substring(str.IndexOf("余额"));
-            textBox3.Text = str.Substring(str.IndexOf("nt>") + 3, str.IndexOf("</S") - str.IndexOf("nt>") - 3);
-           str=str.Substring(str.IndexOf("<FONT class=green>"));
-            textBox4.Text = str.Substring(str.IndexOf("reen>") + 5, str.IndexOf("/F") - str.IndexOf("reen>") - 6);
-        }
+               
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("登陆失败，数字暨大账户密码可能错误");
+            }
+            try
+            {
+                String str = getIcas.Query();
+                str = str.Substring(str.IndexOf("更换头像"));
+                str = str.Substring(str.IndexOf("t01>"));
+                textBox2.Text = str.Substring(str.IndexOf("t01>") + 4, str.IndexOf("</S") - str.IndexOf("t01>") - 4);
+                str = str.Substring(str.IndexOf("t02>"));
+                textBox1.Text = str.Substring(str.IndexOf("t02>") + 4, str.IndexOf("</S") - str.IndexOf("t02>") - 4);
+                str = str.Substring(str.IndexOf("余额"));
+                textBox3.Text = str.Substring(str.IndexOf("nt>") + 3, str.IndexOf("</S") - str.IndexOf("nt>") - 3);
+                str = str.Substring(str.IndexOf("<FONT class=green>"));
+                textBox4.Text = str.Substring(str.IndexOf("reen>") + 5, str.IndexOf("/F") - str.IndexOf("reen>") - 6);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("查询失败");
+            }
+         }
     }
 }
