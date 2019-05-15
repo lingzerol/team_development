@@ -39,7 +39,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.query = new System.Windows.Forms.Button();
             this.realquery = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -140,16 +139,6 @@
             this.textBox4.Size = new System.Drawing.Size(339, 25);
             this.textBox4.TabIndex = 12;
             // 
-            // query
-            // 
-            this.query.Location = new System.Drawing.Point(616, 68);
-            this.query.Name = "query";
-            this.query.Size = new System.Drawing.Size(75, 23);
-            this.query.TabIndex = 13;
-            this.query.Text = "登陆";
-            this.query.UseVisualStyleBackColor = true;
-            this.query.Click += new System.EventHandler(this.query_Click);
-            // 
             // realquery
             // 
             this.realquery.Location = new System.Drawing.Point(728, 68);
@@ -167,7 +156,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
             this.Controls.Add(this.realquery);
-            this.Controls.Add(this.query);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
@@ -199,7 +187,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button query;
         private System.Windows.Forms.Button realquery;
     }
 }

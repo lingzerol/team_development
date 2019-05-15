@@ -33,7 +33,9 @@ namespace team_development.UI.QueryMealCard
 
         private void realquery_Click(object sender, EventArgs e)
         {
-             String str = getIcas.Query();             
+            HtmlDocument html = getIcas.Login("2016052349", "191032");
+
+            String str = getIcas.Query();             
             
             str =str.Substring(str.IndexOf("更换头像"));
             str = str.Substring(str.IndexOf("t01>"));

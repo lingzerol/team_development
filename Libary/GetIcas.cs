@@ -109,15 +109,11 @@ namespace Lib
             web.Navigate("https://i.jnu.edu.cn/dcp/forward.action?path=/portal/portal&p=home");
 
             StartKiller();
-            //MessageBox.Show("获取的Cookie为"+cookieStr, "MessageBox");
+            //MessageBox.Show(cookieStr, "MessageBox");
             MessageBox.Show("请稍等", "MessageBox");
-            //StartKiller();
 
-            String  str = web.Document.Body.InnerHtml;
-            //web.Navigate(url);
-            
-            
-            return str;
+            //web.Navigate(url);                       
+            return web.Document.Body.InnerHtml;
             //return web.Document;
         }
 

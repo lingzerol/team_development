@@ -30,18 +30,6 @@ namespace team_development.UI.QueryGPA
             timer.Start();*/
         }
 
-        /*private void timerTick(object sender, EventArgs e)
-        {
-            if (jwxt.GetStatus()&& !isGet )
-            {
-                SetGpa();
-                isGet = true;
-            }
-            else if (!isGet){
-                jwxt.Login("2016052351", "liangzp1818");
-            }
-        }*/
-
         public void TableLoad()
         {
             show_gpa.GridLines = true;
@@ -160,6 +148,8 @@ namespace team_development.UI.QueryGPA
 
         private void gpaquery_Click(object sender, EventArgs e)
         {
+            //jwxt.Login("2016052351", "liangzp1818", getvalidate.Text);
+
             SetGpa();
         }
     }
