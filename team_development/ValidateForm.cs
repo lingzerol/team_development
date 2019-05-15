@@ -34,7 +34,8 @@ namespace team_development
             getIcas.Login("2016052351", "104213");
             this.Hide();
             wait.StartKiller();
-            MenuGetter.GetMenu(MenuType.Nothing);  
+            MenuGetter.GetMenu(MenuType.Nothing);
+            string str = jwxt.GetCourseList().Body.InnerHtml;
             new Form1().ShowDialog();
             Application.ExitThread();
         }

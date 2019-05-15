@@ -105,7 +105,6 @@ namespace Lib.GetJWXT
         {
             web.Navigate("https://jwxt.jnu.edu.cn/Secure/PaiKeXuanKe/wfrm_Pk_RlRscx.aspx");
             Wait();
-
             web.Document.GetElementById("dlstKclb").SetAttribute("value", "122");
             web.Document.GetElementById("dlstXqu").SetAttribute("value", "珠海校区");
             web.Document.GetElementById("lbtnSearch").InvokeMember("click");
@@ -118,7 +117,6 @@ namespace Lib.GetJWXT
         {
             web.Navigate("https://jwxt.jnu.edu.cn/Secure/Cjgl/Cjgl_Cjcx_WdCj.aspx");
             Wait();
-            
             web.Document.GetElementById("lbtnQuery").InvokeMember("click");
             Wait();
             return web.Document;
