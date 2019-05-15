@@ -47,12 +47,13 @@ namespace team_development.UI.QueryElectricity
 
         }
 
-        private void SetElectricCharge(string charge) {
+        public void SetElectricCharge(string charge) {
             charge_mtx.WaitOne();
             result.Text = charge;
             charge_mtx.ReleaseMutex();
         }
-        private bool IsOK() {
+
+        public bool IsOK() {
             bool ok = false;
             charge_mtx.WaitOne();
             if (result.Text.Length > 0)
