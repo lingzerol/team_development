@@ -19,6 +19,7 @@ namespace team_development.UI.CourseSelection
             InitializeComponent();
             TableLoad();
             GetCourse();
+            Console.WriteLine(this.CourseInfo.Items[0]);
         }
 
         private void Course_selection_Load(object sender, EventArgs e)
@@ -94,10 +95,10 @@ namespace team_development.UI.CourseSelection
 
         }
 
-        private void GetCourse() {
+        public void GetCourse() {
             Log.log.Info("CALL GetCourse function.");
 
-            string json = System.IO.File.ReadAllText("course.txt", Encoding.Default);
+            string json = System.IO.File.ReadAllText(@"C:\Users\zz\Desktop\course.txt", Encoding.Default);
             string value;
             string[] list = new string[15];
 
