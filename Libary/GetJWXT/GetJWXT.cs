@@ -82,7 +82,7 @@ namespace Lib.GetJWXT
             return clip;
         }
 
-        public void Login(string username, string pwd,string validate)
+        public bool Login(string username, string pwd,string validate)
         {
             //string validate = OCR.GetValidateCode(GetValidateImage());            
             web.Document.GetElementById("txtYHBS").SetAttribute("value", username);
@@ -90,8 +90,14 @@ namespace Lib.GetJWXT
             web.Document.GetElementById("txtFJM").SetAttribute("value", validate);
             web.Document.GetElementById("btnLogin").InvokeMember("click");
             
-            //Wait();
-
+            Wait();
+            web.Navigate("https://jwxt.jnu.edu.cn/IndexPage.aspx");
+            string str = "\r\n<!DOCTYPE html PUBLIC \"-//W3C//Dtd html 4.0 transitional//EN\">\r\n<html>\r\n\t<head>\r\n\t\t<title>����ܹ�</title>\r\n\t\t<meta content=\"Microsoft Visual Studio .NET 7.1\" name=\"GENERATOR\"/>\r\n\t\t<meta content=\"Visual Basic .NET 7.1\" name=\"CODE_LANGUAGE\"/>\r\n\t\t<meta content=\"JavaScript\" name=\"vs_defaultClientScript\"/>\r\n\t\t<meta content=\"http://schemas.microsoft.com/intellisense/ie5\" name=\"vs_targetSchema\"/>\r\n\t\t<script  type=\"text/javascript\" language=\"javascript\">\r\n\t\t\tfunction doHideLeftWindow()\r\n\t\t\t{\r\n\t\t\t    window.mainFrameSet.rows=\"0,*,0\";\r\n\t\t\t\twindow.contentFrameSet.cols=\"0,15,*\";\r\n\t\t\t}\r\n\t\t\tfunction doShowLeftWindow()\r\n\t\t\t{\r\n\t\t\t   window.mainFrameSet.rows=\"58,*,26\";\r\n\t\t\t   window.contentFrameSet.cols=\"220,15,*\";\r\n\t\t\t}\t\t\r\n\t\t</script>\r\n\t</head>\r\n\t\t<frameset id=\"mainFrameSet\" rows=\"58,*,26\" >\r\n\t\t\t<frame id=\"topFrameLogo\"  src=\"areaTopLogo.aspx\"  frameborder=\"0\"\r\n\t\t\t\tscrolling=\"no\"/>\r\n\t\t\t<frameset id=\"contentFrameSet\" style=\"\" cols=\"220,15,*\" >\r\n\t\t\t\t<frame id=\"leftFrame\"  src=\"areaLeft.aspx\" frameborder=\"0\" scrolling=\"no\"/>\t\t\t\t\r\n\t\t\t    <frame id=\"middleFrame\"  src=\"areaMiddle.aspx\" frameborder=\"0\" scrolling=\"no\"/>\r\n\t\t\t\t<frame id=\"mainFrame\" src=\"areaMain.aspx\" frameborder=\"0\"scrolling=\"no\"/>\t\t\t\t\t\r\n\t\t\t</frameset>\r\n\t\t\t<frame id=\"footFrame\"  src=\"areaFoot.aspx\" frameborder=\"0\" scrolling=\"no\"/>\r\n\t    </frameset>\r\n</html>\r\n";
+            if (web.DocumentText == str)
+            {
+                return true;
+            }
+            else return false;
         }
 
         public HtmlDocument GetCourseList()
