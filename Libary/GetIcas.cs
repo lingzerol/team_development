@@ -63,6 +63,39 @@ namespace Lib
             return web.Document;
         }
 
+        [DllImport("user32.dll", EntryPoint = "FindWindow", CharSet = CharSet.Auto)]
+        private extern static IntPtr FindWindow(string lpClassName, string lpWindowName);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int PostMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+
+        public const int WM_CLOSE = 0x10;
+
+        private void StartKiller()
+        {
+            Timer timer = new Timer();
+            timer.Interval = 3000; //3秒启动 
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            KillMessageBox();
+            //停止Timer 
+            ((Timer)sender).Stop();
+        }
+
+        private void KillMessageBox()
+        {
+            //按照MessageBox的标题，找到MessageBox的窗口 
+            IntPtr ptr = FindWindow(null, "MessageBox");
+            if (ptr != IntPtr.Zero)
+            {
+                //找到则关闭MessageBox窗口 
+                PostMessage(ptr, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+            }
+        }
         public String Query() {
             string cookieStr = web.Document.Cookie;
             foreach (string c in cookieStr.Split(';'))
@@ -75,7 +108,10 @@ namespace Lib
             }//end of for
             web.Navigate("https://i.jnu.edu.cn/dcp/forward.action?path=/portal/portal&p=home");
 
-            MessageBox.Show("获取的Cookie为"+cookieStr);
+            StartKiller();
+            //MessageBox.Show("获取的Cookie为"+cookieStr, "MessageBox");
+            MessageBox.Show("请稍等", "MessageBox");
+            //StartKiller();
 
             String  str = web.Document.Body.InnerHtml;
             //web.Navigate(url);
@@ -84,8 +120,6 @@ namespace Lib
             return str;
             //return web.Document;
         }
-
-
 
         private void WebDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
