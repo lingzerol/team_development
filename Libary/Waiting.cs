@@ -8,18 +8,21 @@ using System.Windows.Forms;
 
 namespace Lib
 {
+    public delegate bool IsOK();
     public class Waiting
     {
         [DllImport("user32.dll", EntryPoint = "FindWindow", CharSet = CharSet.Auto)]
-        private static extern  IntPtr FindWindow(string lpClassName, string lpWindowName);
+        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         public static extern int PostMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
 
         public const int WM_CLOSE = 0x10;
         public Waiting() { }
-        public void StartKiller(int span=3000)
+        private IsOK ok = null;
+        public void StartKiller(int span = 3000, IsOK ok = null)
         {
+            this.ok = ok;
             Timer timer = new Timer();
             timer.Interval = span; //3秒启动 
             timer.Tick += new EventHandler(Timer_Tick);
@@ -29,9 +32,12 @@ namespace Lib
 
         public void Timer_Tick(object sender, EventArgs e)
         {
-            KillMessageBox();
-            //停止Timer 
-            ((Timer)sender).Stop();
+            if (null == ok || ok())
+            {
+                KillMessageBox();
+                //停止Timer 
+                ((Timer)sender).Stop();
+            }
         }
 
         public void KillMessageBox()

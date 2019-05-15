@@ -96,8 +96,8 @@ namespace team_development.UI.CourseSelection
 
         private void GetCourse() {
             Log.log.Info("CALL GetCourse function.");
-
-            string json = System.IO.File.ReadAllText("course.txt", Encoding.Default);
+            string path = System.AppContext.BaseDirectory.Substring(0, System.AppContext.BaseDirectory.LastIndexOf(@"\team_development")) + @"\Libary\CourseFile\course.txt";
+            string json = System.IO.File.ReadAllText(path, Encoding.Default);
             string value;
             string[] list = new string[15];
 
