@@ -114,7 +114,7 @@ namespace Lib.GetJWXT
         }
 
         public HtmlDocument GetGPA()
-        {
+        {            
             web.Navigate("https://jwxt.jnu.edu.cn/Secure/Cjgl/Cjgl_Cjcx_WdCj.aspx");
             Wait();
             web.Document.GetElementById("lbtnQuery").InvokeMember("click");
