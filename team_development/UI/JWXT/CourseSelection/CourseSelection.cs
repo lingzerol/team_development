@@ -97,7 +97,7 @@ namespace team_development.UI.CourseSelection
         private void GetCourse() {
             Log.log.Info("CALL GetCourse function.");
 
-            string json = System.IO.File.ReadAllText(@"C:\Users\zz\Desktop\course.txt", Encoding.Default);
+            string json = System.IO.File.ReadAllText("course.txt", Encoding.Default);
             string value;
             string[] list = new string[15];
 
