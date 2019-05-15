@@ -15,22 +15,22 @@ namespace team_development.UI.QueryGPA
 {
     public partial class QueryMark : Form
     {
-        Lib.GetJWXT.GetJWXT jwxt = new Lib.GetJWXT.GetJWXT();
+        Lib.GetJWXT.GetJWXT jwxt = GetJWXT.jwxt;//new Lib.GetJWXT.GetJWXT();
         public List<Gpa> Gpas = new List<Gpa>();
         private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-        private bool isGet = false;
+        //private bool isGet = false;
         public QueryMark()
         {
             InitializeComponent();
             choose_semester.SelectedIndex = 0;
             choose_academic_year.SelectedIndex = 0;
             TableLoad();
-            timer.Interval = 3000;
+            /*timer.Interval = 3000;
             timer.Tick += new EventHandler(timerTick);
-            timer.Start();
+            timer.Start();*/
         }
 
-        private void timerTick(object sender, EventArgs e)
+        /*private void timerTick(object sender, EventArgs e)
         {
             if (jwxt.GetStatus()&& !isGet )
             {
@@ -40,7 +40,7 @@ namespace team_development.UI.QueryGPA
             else if (!isGet){
                 jwxt.Login("2016052351", "liangzp1818");
             }
-        }
+        }*/
 
         public void TableLoad()
         {
@@ -75,17 +75,18 @@ namespace team_development.UI.QueryGPA
 
         private void login_Click(object sender, EventArgs e)
         {
-            jwxt.Login("2016052351", "liangzp1818");
+            jwxt.Login("2016052351", "liangzp1818",getvalidate.Text);
             Log.log.Info("CLICK LOGIN_BUTTON IN QueryGPA");
-            
+           
+            //SetGpa();
         }
 
         private void SetGpa()
         {
-            HtmlDocument GpaDoc = jwxt.GetGPA();
             show_gpa.Clear();
             TableLoad();
 
+            HtmlDocument GpaDoc = jwxt.GetGPA();
             string str = (string)GpaDoc.Body.InnerHtml;
             string itemlist=null;
             List<Gpa> Gpas;
@@ -155,6 +156,11 @@ namespace team_development.UI.QueryGPA
             temp.SubItems.Add(g.gp.ToString());
             temp.SubItems.Add(g.coursecategory);
             this.show_gpa.Items.Add(temp);
+        }
+
+        private void gpaquery_Click(object sender, EventArgs e)
+        {
+            SetGpa();
         }
     }
 }

@@ -15,41 +15,16 @@ namespace team_development.UI.QueryElectricity
 {
     public partial class QueryElectricity : Form
     {
-        AutoResetEvent obj = new AutoResetEvent(false);
         private GetElectricCharge gec = new GetElectricCharge();
-        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
         public QueryElectricity()
         {
             InitializeComponent();
-            timer.Interval = 2000;
-            timer.Tick += new EventHandler(timerTick);
-            timer.Stop();
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            gec.Login(Dorm.Text);
-            timer.Start();
-        }
-
-        private void timerTick(object sender, EventArgs e)
-        {
-            try
-            {
-                int num;
-                string elec = gec.GetElectric();
-                int.TryParse(elec, out num);
-                while (num >= 1000)
-                {
-                    timer.Stop();
-                }
-                result.Text = gec.GetElectric();
-            }
-            catch (Exception E)
-            {
-                Log.log.Error(E.ToString());
-            }
+            result.Text = gec.GetElectric(Dorm.Text);
         }
 
         private void TurnToForm(Form f)
@@ -59,14 +34,7 @@ namespace team_development.UI.QueryElectricity
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-            try
-            {
-                result.Text = gec.GetElectric();
-            }
-            catch (Exception E)
-            {
-                Log.log.Error(E.ToString());
-            }
+
         }
 
 
