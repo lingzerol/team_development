@@ -20,7 +20,7 @@ namespace Lib
         public const int WM_CLOSE = 0x10;
         public Waiting() { }
         private IsOK ok = null;
-        public void StartKiller(int span = 3000, IsOK ok = null)
+        public void StartKiller(int span = 5000, IsOK ok = null)
         {
             this.ok = ok;
             Timer timer = new Timer();

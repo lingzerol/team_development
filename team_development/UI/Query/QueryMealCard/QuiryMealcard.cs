@@ -33,7 +33,7 @@ namespace team_development.UI.QueryMealCard
             }
             catch(Exception)
             {
-                MessageBox.Show("登陆失败");
+                MessageBox.Show("登陆失败,请确认数字暨大用户名和密码");
             }
            }
 
@@ -58,7 +58,7 @@ namespace team_development.UI.QueryMealCard
             }
             catch (Exception)
             {
-                MessageBox.Show("查询失败");
+                MessageBox.Show("查询失败，请稍后再试");
             }
            }
         private void QueryMealcard_Load(object sender, EventArgs e)
