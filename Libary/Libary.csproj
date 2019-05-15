@@ -69,6 +69,7 @@
     <Compile Include="OCR.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Storage.cs" />
+    <Compile Include="Waiting.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

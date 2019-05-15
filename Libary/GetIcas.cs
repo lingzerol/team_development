@@ -12,6 +12,8 @@ namespace Lib
 {
     public class Geticas
     {
+        private Waiting wait = new Waiting();
+        public static Geticas Icas=new Geticas();
         private WebBrowser web = new WebBrowser();
         private System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
         private System.Threading.AutoResetEvent statusObj = new System.Threading.AutoResetEvent(false);
@@ -60,43 +62,16 @@ namespace Lib
             web.Document.GetElementById("index_login_btn").InvokeMember("click");
             //MessageBox.Show("click");
             Wait();
+           
             return web.Document;
         }
 
-        [DllImport("user32.dll", EntryPoint = "FindWindow", CharSet = CharSet.Auto)]
-        private extern static IntPtr FindWindow(string lpClassName, string lpWindowName);
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        public static extern int PostMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
-
-        public const int WM_CLOSE = 0x10;
-
-        private void StartKiller()
-        {
-            Timer timer = new Timer();
-            timer.Interval = 3000; //3秒启动 
-            timer.Tick += new EventHandler(Timer_Tick);
-            timer.Start();
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            KillMessageBox();
-            //停止Timer 
-            ((Timer)sender).Stop();
-        }
-
-        private void KillMessageBox()
-        {
-            //按照MessageBox的标题，找到MessageBox的窗口 
-            IntPtr ptr = FindWindow(null, "MessageBox");
-            if (ptr != IntPtr.Zero)
-            {
-                //找到则关闭MessageBox窗口 
-                PostMessage(ptr, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
-            }
-        }
+        
         public String Query() {
+
+            //MessageBox.Show("获取的Cookie为"+cookieStr, "MessageBox");
+            //MessageBox.Show("请稍等", "MessageBox");
+            //StartKiller();
             string cookieStr = web.Document.Cookie;
             foreach (string c in cookieStr.Split(';'))
             {
@@ -107,13 +82,8 @@ namespace Lib
                 }
             }//end of for
             web.Navigate("https://i.jnu.edu.cn/dcp/forward.action?path=/portal/portal&p=home");
-
-            StartKiller();
-            //MessageBox.Show("获取的Cookie为"+cookieStr, "MessageBox");
-            MessageBox.Show("请稍等", "MessageBox");
-            //StartKiller();
-
-            String  str = web.Document.Body.InnerHtml;
+            wait.StartKiller();
+            String str = web.Document.Body.InnerHtml;
             //web.Navigate(url);
             
             

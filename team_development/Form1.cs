@@ -18,11 +18,13 @@ namespace team_development
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
             //UserInfo u = new UserInfo();
            // u=(UserInfo)Storage.Load("UserInfo.xml");
+        
         }
 
         private void CourseSelectionToolStripMenuItem_Click(object sender, EventArgs e)
