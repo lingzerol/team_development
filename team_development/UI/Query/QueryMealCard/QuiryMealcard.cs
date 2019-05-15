@@ -42,7 +42,6 @@ namespace team_development.UI.QueryMealCard
             textBox2.Text = str.Substring(str.IndexOf("t01>") + 4, str.IndexOf("</S") - str.IndexOf("t01>") - 4);
             str = str.Substring(str.IndexOf("t02>"));
             textBox1.Text = str.Substring(str.IndexOf("t02>") + 4, str.IndexOf("</S") - str.IndexOf("t02>") - 4);
-
             str = str.Substring(str.IndexOf("余额"));
             textBox3.Text = str.Substring(str.IndexOf("nt>") + 3, str.IndexOf("</S") - str.IndexOf("nt>") - 3);
             str = str.Substring(str.IndexOf("<FONT class=green>"));
