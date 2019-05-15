@@ -58,7 +58,7 @@ namespace team_development.UI.QueryMealCard
             }
             catch (Exception)
             {
-                MessageBox.Show("查询失败");
+                MessageBox.Show("查询失败，请稍后再试");
             }
          }
     }
