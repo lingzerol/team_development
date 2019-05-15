@@ -30,14 +30,17 @@ namespace team_development
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            jwxt.Login("2016052351", "liangzp1818", getValidate.Text);
+            bool result=jwxt.Login("2016052351", "liangzp1818", getValidate.Text);
             getIcas.Login("2016052351", "104213");
-            this.Hide();
             wait.StartKiller();
-            MenuGetter.GetMenu(MenuType.Nothing);
-            string str = jwxt.GetCourseList().Body.InnerHtml;
-            new Form1().ShowDialog();
-            Application.ExitThread();
+            if (result)
+            {
+                this.Hide();
+                MenuGetter.GetMenu(MenuType.Nothing);
+                string str = jwxt.GetCourseList().Body.InnerHtml;
+                new Form1().ShowDialog();
+                Application.ExitThread();
+            }
         }
 
         private void ValidateImage_Click(object sender, EventArgs e)
