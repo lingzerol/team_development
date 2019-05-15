@@ -27,7 +27,7 @@ namespace team_development.UI.QueryElectricity
         private void btn_Search_Click(object sender, EventArgs e)
         {
             gec.GetElectric(Dorm.Text,new SetCharge(this.SetElectricCharge));
-            wait.StartKiller(7000);
+            wait.StartKiller(3000, IsOK);
         }
 
         private void TurnToForm(Form f)
@@ -38,7 +38,7 @@ namespace team_development.UI.QueryElectricity
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             gec.GetElectric(Dorm.Text, new SetCharge(this.SetElectricCharge));
-            wait.StartKiller(5000);
+            wait.StartKiller(3000,IsOK);
         }
 
 
@@ -51,6 +51,14 @@ namespace team_development.UI.QueryElectricity
             charge_mtx.WaitOne();
             result.Text = charge;
             charge_mtx.ReleaseMutex();
+        }
+        private bool IsOK() {
+            bool ok = false;
+            charge_mtx.WaitOne();
+            if (result.Text.Length > 0)
+                ok = true;
+            charge_mtx.ReleaseMutex();
+            return ok;
         }
     }
 }
