@@ -85,7 +85,7 @@
         #endregion
         private System.Windows.Forms.Button TimingSelection;
         private System.Windows.Forms.Button Selection;
-        private System.Windows.Forms.ListView CourseInfo;
+        public System.Windows.Forms.ListView CourseInfo;
     }
 
 }
