@@ -61,5 +61,15 @@ namespace team_development.UI.QueryElectricity
             charge_mtx.ReleaseMutex();
             return ok;
         }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

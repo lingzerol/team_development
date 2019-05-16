@@ -135,5 +135,14 @@ namespace team_development.UI.QueryGPA
             this.show_gpa.Items.Add(temp);
         }
 
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
