@@ -55,7 +55,7 @@ namespace Lib
         public static extern bool InternetSetCookie(string lpszUrlName, string lbszCookieName, string lpszCookieData);
         public HtmlDocument Login(string username, string pwd)
             {
-            web.Navigate(url);
+            web.Navigate("https://icas.jnu.edu.cn/cas/login");
             Wait();
             web.Document.GetElementById("un").SetAttribute("value", username);
             web.Document.GetElementById("pd").SetAttribute("value", pwd);
