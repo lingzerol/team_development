@@ -39,7 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.realquery = new System.Windows.Forms.Button();
+            this.QueryButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rice_card
@@ -54,7 +54,7 @@
             // report_loss
             // 
             this.report_loss.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.report_loss.Location = new System.Drawing.Point(799, 446);
+            this.report_loss.Location = new System.Drawing.Point(604, 446);
             this.report_loss.Name = "report_loss";
             this.report_loss.Size = new System.Drawing.Size(119, 32);
             this.report_loss.TabIndex = 3;
@@ -139,15 +139,16 @@
             this.textBox4.Size = new System.Drawing.Size(339, 25);
             this.textBox4.TabIndex = 12;
             // 
-            // realquery
+            // QueryButton
             // 
-            this.realquery.Location = new System.Drawing.Point(728, 68);
-            this.realquery.Name = "realquery";
-            this.realquery.Size = new System.Drawing.Size(75, 23);
-            this.realquery.TabIndex = 15;
-            this.realquery.Text = "查询";
-            this.realquery.UseVisualStyleBackColor = true;
-            this.realquery.Click += new System.EventHandler(this.realquery_Click);
+            this.QueryButton.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.QueryButton.Location = new System.Drawing.Point(370, 446);
+            this.QueryButton.Name = "QueryButton";
+            this.QueryButton.Size = new System.Drawing.Size(119, 32);
+            this.QueryButton.TabIndex = 13;
+            this.QueryButton.Text = "查询";
+            this.QueryButton.UseVisualStyleBackColor = true;
+            this.QueryButton.Click += new System.EventHandler(this.QueryButton_Click);
             // 
             // QueryMealcard
             // 
@@ -155,7 +156,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
-            this.Controls.Add(this.realquery);
+            this.Controls.Add(this.QueryButton);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
@@ -169,6 +170,7 @@
             this.Controls.Add(this.rice_card);
             this.Name = "QueryMealcard";
             this.Text = "s";
+            this.Load += new System.EventHandler(this.QueryMealcard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +189,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button realquery;
+        private System.Windows.Forms.Button QueryButton;
     }
 }

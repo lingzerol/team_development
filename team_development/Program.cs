@@ -21,7 +21,7 @@ namespace team_development
             //GetElectricCharge.Login("3307");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new ValidateForm());
             //Application.Run(new TestForm());
         }
         

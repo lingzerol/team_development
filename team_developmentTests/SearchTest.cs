@@ -9,31 +9,16 @@ namespace Lib.Tests
     {
         NoticeSearch search = new NoticeSearch();
 
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            search.getHtml("6");
-        }
-
         [TestMethod]
         public void getHtmlTest()
         {
-            search.getHtml("6");
-        }
-
-        [TestMethod]
-        public void getTextTest()
-        {
             try
             {
-                if (search.getText().Equals(null))
-                {
-                    Assert.Fail();
-                }
+                search.getHtml("6");
             }
             catch (Exception E)
             {
-                Log.log.Error(E.ToString());
+                Assert.Fail();
             }
         }
     }

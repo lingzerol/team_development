@@ -17,7 +17,6 @@ namespace team_development.UI.QueryGPA
     {
         Lib.GetJWXT.GetJWXT jwxt = GetJWXT.jwxt;//new Lib.GetJWXT.GetJWXT();
         public List<Gpa> Gpas = new List<Gpa>();
-        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         //private bool isGet = false;
         public QueryMark()
         {
@@ -28,7 +27,9 @@ namespace team_development.UI.QueryGPA
             /*timer.Interval = 3000;
             timer.Tick += new EventHandler(timerTick);
             timer.Start();*/
+            SetGpa();
         }
+
 
         public void TableLoad()
         {
@@ -56,25 +57,6 @@ namespace team_development.UI.QueryGPA
 
         }
 
-        private void validate_Click(object sender, EventArgs e)
-        {
-            ShowValidate.Image = jwxt.GetValidateImage();
-        }
-
-        private void login_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                jwxt.Login("2016052351", "liangzp1818", getvalidate.Text);
-                Log.log.Info("CLICK LOGIN_BUTTON IN QueryGPA");
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("登陆失败，请重新尝试");
-            }
-            //SetGpa();
-        }
 
         private void SetGpa()
         {
@@ -153,17 +135,5 @@ namespace team_development.UI.QueryGPA
             this.show_gpa.Items.Add(temp);
         }
 
-        private void gpaquery_Click(object sender, EventArgs e)
-        {
-            //jwxt.Login("2016052351", "liangzp1818", getvalidate.Text);
-            try
-            {
-                SetGpa();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("查询失败，请重新尝试");
-            }
-         }
     }
 }
