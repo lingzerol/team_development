@@ -64,7 +64,7 @@
             this.ContentBox.Name = "ContentBox";
             this.ContentBox.Size = new System.Drawing.Size(989, 527);
             this.ContentBox.TabIndex = 4;
-            this.ContentBox.Text = "d";
+            this.ContentBox.Text = "";
             // 
             // WordPreview
             // 
