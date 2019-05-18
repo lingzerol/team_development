@@ -53,6 +53,7 @@ namespace team_development.UI.Search
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             webBrowser1.ScriptErrorsSuppressed = true;
+            webBrowser1.Document.Body.Style = "zoom:0.73";
             foreach (HtmlElement archor in webBrowser1.Document.Links)
             {
                 archor.SetAttribute("target", "_self");

@@ -140,7 +140,7 @@ namespace Lib
         }
 
         public static void GenerateWord(string templatePath, string toName, string reason, string department,
-            string dayLast, string startMonth, string startDay, string endMonth, string endDay,
+            string dayLast, string startYear,string startMonth, string startDay, string endYear,string endMonth, string endDay,
             string fromName, string studentNum, string phone, string year, string month,
             string day, bool isSave, RichTextBox richTextBox)
         {
@@ -151,7 +151,7 @@ namespace Lib
             }
 
             string dir = System.AppDomain.CurrentDomain.BaseDirectory + @"\";// templatePath.Substring(0, templatePath.LastIndexOf(@"\") + 1);
-            string temporatyFile = dir + "temp.docx";
+            string temporatyFile = dir + "temp.doc";
             File.Copy(templatePath, temporatyFile, true);
 
             Word.Application app = new Word.Application(); //创建一个Word应用程序实例
@@ -176,12 +176,22 @@ namespace Lib
                 SetBookMark(doc, "ToName", toName);
                 SetBookMark(doc, "Reason", reason);
                 SetBookMark(doc, "DayLast", dayLast);
+                SetBookMark(doc, "DayLast2", dayLast);
                 SetBookMark(doc, "Department", department);
+                SetBookMark(doc, "StartYear", startYear);
                 SetBookMark(doc, "StartMonth", startMonth);
                 SetBookMark(doc, "StartDay", startDay);
+                SetBookMark(doc, "StartYear2", startYear);
+                SetBookMark(doc, "StartMonth2", startMonth);
+                SetBookMark(doc, "StartDay2", startDay);
+                SetBookMark(doc, "EndYear", endYear);
                 SetBookMark(doc, "EndMonth", endMonth);
                 SetBookMark(doc, "EndDay", endDay);
+                SetBookMark(doc, "EndYear2", endYear);
+                SetBookMark(doc, "EndMonth2", endMonth);
+                SetBookMark(doc, "EndDay2", endDay);
                 SetBookMark(doc, "FromName", fromName);
+                SetBookMark(doc, "FromName2", fromName);
                 SetBookMark(doc, "StudentNum", studentNum);
                 SetBookMark(doc, "Phone", phone);
                 SetBookMark(doc, "Year", year);
@@ -191,7 +201,7 @@ namespace Lib
                 if (isSave)
                 {
                     SaveFileDialog sfd = new SaveFileDialog();
-                    sfd.Filter = "Word Document(*.docx)|*.docx";
+                    sfd.Filter = "Word Document(*.doc)|*.doc";
                     if (sfd.ShowDialog() == DialogResult.OK)
                     {
                         string wordName = sfd.FileName;
@@ -231,7 +241,7 @@ namespace Lib
         public static void DeleteTemporaryFile()
         {
             string dir = System.AppDomain.CurrentDomain.BaseDirectory + @"\";// templatePath.Substring(0, templatePath.LastIndexOf(@"\") + 1);
-            string temporatyFile = dir + "temp.docx";
+            string temporatyFile = dir + "temp.doc";
             if (File.Exists(temporatyFile))
             {
                 File.Delete(temporatyFile);

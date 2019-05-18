@@ -51,8 +51,9 @@ namespace team_development.UI.Absence
             //打开文件保存对话框
             string dayLast = ((AbsenceWordManager.EndTime - AbsenceWordManager.StartTime).Days + 1).ToString();
             AbsenceWordManager.GenerateWord(AbsenceWordManager.GetSelectedTemplatePath(),
-                AbsenceWordManager.ToName, AbsenceWordManager.Reason, AbsenceWordManager.Department, dayLast, AbsenceWordManager.StartTime.Month.ToString(),
-                AbsenceWordManager.StartTime.Day.ToString(), AbsenceWordManager.EndTime.Month.ToString(), AbsenceWordManager.EndTime.Day.ToString(),
+                AbsenceWordManager.ToName, AbsenceWordManager.Reason, AbsenceWordManager.Department, dayLast,
+                AbsenceWordManager.StartTime.Year.ToString(), AbsenceWordManager.StartTime.Month.ToString(),AbsenceWordManager.StartTime.Day.ToString(),
+                AbsenceWordManager.EndTime.Year.ToString(), AbsenceWordManager.EndTime.Month.ToString(), AbsenceWordManager.EndTime.Day.ToString(),
                 AbsenceWordManager.FromName, AbsenceWordManager.StudentNum, AbsenceWordManager.Phone,
                 DateTime.Now.Year.ToString(), DateTime.Now.Month.ToString(), DateTime.Now.Day.ToString(), true, ContentBox);
         }
@@ -65,8 +66,9 @@ namespace team_development.UI.Absence
 
             string dayLast = ((AbsenceWordManager.EndTime - AbsenceWordManager.StartTime).Days + 1).ToString();
             AbsenceWordManager.GenerateWord(AbsenceWordManager.GetSelectedTemplatePath(),
-                AbsenceWordManager.ToName, AbsenceWordManager.Reason, AbsenceWordManager.Department, dayLast, AbsenceWordManager.StartTime.Month.ToString(),
-                AbsenceWordManager.StartTime.Day.ToString(), AbsenceWordManager.EndTime.Month.ToString(), AbsenceWordManager.EndTime.Day.ToString(),
+                AbsenceWordManager.ToName, AbsenceWordManager.Reason, AbsenceWordManager.Department, dayLast,
+                AbsenceWordManager.StartTime.Year.ToString(), AbsenceWordManager.StartTime.Month.ToString(), AbsenceWordManager.StartTime.Day.ToString(),
+                AbsenceWordManager.EndTime.Year.ToString(), AbsenceWordManager.EndTime.Month.ToString(), AbsenceWordManager.EndTime.Day.ToString(),
                 AbsenceWordManager.FromName, AbsenceWordManager.StudentNum, AbsenceWordManager.Phone,
                 DateTime.Now.Year.ToString(), DateTime.Now.Month.ToString(), DateTime.Now.Day.ToString(), false, ContentBox);
         }
