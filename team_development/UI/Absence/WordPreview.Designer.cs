@@ -59,11 +59,12 @@
             // 
             // ContentBox
             // 
+            this.ContentBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ContentBox.Location = new System.Drawing.Point(97, 32);
             this.ContentBox.Name = "ContentBox";
             this.ContentBox.Size = new System.Drawing.Size(989, 527);
             this.ContentBox.TabIndex = 4;
-            this.ContentBox.Text = "";
+            this.ContentBox.Text = "dadf";
             // 
             // WordPreview
             // 
