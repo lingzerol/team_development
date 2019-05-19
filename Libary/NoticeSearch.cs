@@ -44,15 +44,6 @@ namespace Lib
         public void WebBrowserDocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             webBrowser.ScriptErrorsSuppressed = true;
-            foreach (HtmlElement archor in this.webBrowser.Document.Links)
-            {
-                archor.SetAttribute("target", "_self");
-            }
-
-            foreach (HtmlElement form in this.webBrowser.Document.Forms)
-            {
-                form.SetAttribute("target", "_self");
-            }
         }
     }
 }

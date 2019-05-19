@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using Lib;
+using team_development.UI.QueryElectricity;
 
 namespace Lib.GetElectricCharge.Tests
 {
@@ -14,15 +15,20 @@ namespace Lib.GetElectricCharge.Tests
     public class GetElectricChargeTests
     {
         GetElectricCharge electric = new GetElectricCharge();
+        QueryElectricity query = new QueryElectricity();
 
         [TestMethod()]
         public void GetElectric()
-        {
-            string electricity = electric.GetElectric("3305");
-            if (electricity == null)
+        {                        
+            try
+            {
+                electric.GetElectric("3305", new SetCharge(query.SetElectricCharge));
+            }
+            catch (Exception E)
             {
                 Assert.Fail();
             }
+
         }
     }
 }

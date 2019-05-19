@@ -24,7 +24,7 @@ namespace team_development.UI.Search
             timer.Interval = 2000;
             timer.Tick += new EventHandler(timerTick);
             timer.Stop();
-            notice.getHtml("%E6%9A%A8%E5%8D%97%E5%A4%A7%E5%AD%A6");
+            notice.getHtml("%E6%9A%A8%E5%8D%97%E5%A4%A7%E5%AD%A6%E7%8F%A0%E6%B5%B7%E6%A0%A1%E5%8C%BA");
             timer.Start();
         }
 
@@ -32,7 +32,7 @@ namespace team_development.UI.Search
         {
             try
             {
-                webBrowser1.DocumentText = notice.getText();
+                webBrowser1.DocumentText = notice.getText();               
                 timer.Stop();
             }
             catch (Exception E)
@@ -52,7 +52,9 @@ namespace team_development.UI.Search
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            foreach (HtmlElement archor in this.webBrowser1.Document.Links)
+            webBrowser1.ScriptErrorsSuppressed = true;
+            webBrowser1.Document.Body.Style = "zoom:0.73";
+            foreach (HtmlElement archor in webBrowser1.Document.Links)
             {
                 archor.SetAttribute("target", "_self");
             }
@@ -69,6 +71,7 @@ namespace team_development.UI.Search
             string content = Uri.EscapeDataString(searchBox.Text);
             notice.getHtml(content);
             timer.Start();
+            
         }
 
         private void btn_back_Click(object sender, EventArgs e)

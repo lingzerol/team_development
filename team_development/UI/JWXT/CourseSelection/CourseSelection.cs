@@ -17,6 +17,7 @@ namespace team_development.UI.CourseSelection
         public CourseSelection()
         {
             InitializeComponent();
+            CourseInfo.CheckBoxes = true;
             TableLoad();
             GetCourse();
             Console.WriteLine(this.CourseInfo.Items[0]);
@@ -56,11 +57,30 @@ namespace team_development.UI.CourseSelection
         {
             Log.log.Info("Click Selection button In CourseSelection Form.");
             MessageBoxButtons btn = MessageBoxButtons.OKCancel;
-            DialogResult dlr = MessageBox.Show("确认选课？", "", btn);
+            
+            int m = CourseInfo.CheckedItems.Count;
+            int k = 0;
+            string[] name = new string[16];
+            string[] time = new string[16];
+            for(int i = 0; i < m; i++)
+            {
+                if (CourseInfo.CheckedItems[i].Checked)
+                {
+                    name[i] = CourseInfo.CheckedItems[i].SubItems[2].Text;
+                    time[i] = CourseInfo.CheckedItems[i].SubItems[4].Text.Substring(1);
+                }
+            }
+            string str = null;
+            for(int i = 0; i < m; i++)
+            {
+                str += "所选课程：" + name[i] + "\n上课时间：" + time[i];
+                str += "\n";
+            }
+            DialogResult dlr = MessageBox.Show(str +"确认选课？","", btn);
             if (dlr == DialogResult.OK)
             {
                 Log.log.Debug("dlr == DialogResult.OK - select courses successfully.");
-                dlr = MessageBox.Show("选课成功", "", btn);
+                dlr = MessageBox.Show("选课成功！", "", btn);
             }
             else {
                 Log.log.Debug("dlr != DialogResult.OK - select courses successfully.");
@@ -92,7 +112,7 @@ namespace team_development.UI.CourseSelection
 
         private void CourseInfo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         public void GetCourse() {

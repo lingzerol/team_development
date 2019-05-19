@@ -35,7 +35,7 @@ namespace team_development.UI.QueryMealCard
             {
                 MessageBox.Show("登陆失败,请确认数字暨大用户名和密码");
             }
-           }
+        }
 
         private void realquery_Click(object sender, EventArgs e)
         {
