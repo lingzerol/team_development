@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.YearListBox = new System.Windows.Forms.ListBox();
-            this.YearLabel = new System.Windows.Forms.Label();
             this.MonthListBox = new System.Windows.Forms.ListBox();
             this.MonthLabel = new System.Windows.Forms.Label();
             this.DayLabel = new System.Windows.Forms.Label();
@@ -42,35 +40,30 @@
             this.SecondLabel = new System.Windows.Forms.Label();
             this.OKButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.YearLabel = new System.Windows.Forms.Label();
+            this.YearListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // YearListBox
-            // 
-            this.YearListBox.FormattingEnabled = true;
-            this.YearListBox.ItemHeight = 15;
-            this.YearListBox.Location = new System.Drawing.Point(38, 63);
-            this.YearListBox.Name = "YearListBox";
-            this.YearListBox.Size = new System.Drawing.Size(41, 34);
-            this.YearListBox.TabIndex = 0;
-            this.YearListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
-            // 
-            // YearLabel
-            // 
-            this.YearLabel.AutoSize = true;
-            this.YearLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.YearLabel.Location = new System.Drawing.Point(85, 63);
-            this.YearLabel.Name = "YearLabel";
-            this.YearLabel.Size = new System.Drawing.Size(31, 25);
-            this.YearLabel.TabIndex = 1;
-            this.YearLabel.Text = "年";
             // 
             // MonthListBox
             // 
             this.MonthListBox.FormattingEnabled = true;
             this.MonthListBox.ItemHeight = 15;
-            this.MonthListBox.Location = new System.Drawing.Point(112, 63);
+            this.MonthListBox.Items.AddRange(new object[] {
+            "一",
+            "二",
+            "三",
+            "四",
+            "五",
+            "六",
+            "七",
+            "八",
+            "九",
+            "十",
+            "十一",
+            "十二"});
+            this.MonthListBox.Location = new System.Drawing.Point(90, 63);
             this.MonthListBox.Name = "MonthListBox";
-            this.MonthListBox.Size = new System.Drawing.Size(41, 34);
+            this.MonthListBox.Size = new System.Drawing.Size(68, 34);
             this.MonthListBox.TabIndex = 2;
             // 
             // MonthLabel
@@ -97,15 +90,72 @@
             // 
             this.DayListBox.FormattingEnabled = true;
             this.DayListBox.ItemHeight = 15;
+            this.DayListBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
             this.DayListBox.Location = new System.Drawing.Point(187, 63);
             this.DayListBox.Name = "DayListBox";
-            this.DayListBox.Size = new System.Drawing.Size(41, 34);
+            this.DayListBox.Size = new System.Drawing.Size(53, 34);
             this.DayListBox.TabIndex = 5;
             // 
             // HourListBox
             // 
             this.HourListBox.FormattingEnabled = true;
             this.HourListBox.ItemHeight = 15;
+            this.HourListBox.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23"});
             this.HourListBox.Location = new System.Drawing.Point(260, 63);
             this.HourListBox.Name = "HourListBox";
             this.HourListBox.Size = new System.Drawing.Size(41, 34);
@@ -126,16 +176,77 @@
             this.MinuteListBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MinuteListBox.FormattingEnabled = true;
             this.MinuteListBox.ItemHeight = 15;
-            this.MinuteListBox.Location = new System.Drawing.Point(332, 63);
+            this.MinuteListBox.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.MinuteListBox.Location = new System.Drawing.Point(344, 63);
             this.MinuteListBox.Name = "MinuteListBox";
-            this.MinuteListBox.Size = new System.Drawing.Size(41, 34);
+            this.MinuteListBox.Size = new System.Drawing.Size(51, 34);
             this.MinuteListBox.TabIndex = 8;
             // 
             // MinuteLabel
             // 
             this.MinuteLabel.AutoSize = true;
             this.MinuteLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MinuteLabel.Location = new System.Drawing.Point(379, 63);
+            this.MinuteLabel.Location = new System.Drawing.Point(393, 63);
             this.MinuteLabel.Name = "MinuteLabel";
             this.MinuteLabel.Size = new System.Drawing.Size(31, 25);
             this.MinuteLabel.TabIndex = 9;
@@ -145,16 +256,77 @@
             // 
             this.SecondListBox.FormattingEnabled = true;
             this.SecondListBox.ItemHeight = 15;
-            this.SecondListBox.Location = new System.Drawing.Point(407, 63);
+            this.SecondListBox.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.SecondListBox.Location = new System.Drawing.Point(430, 63);
             this.SecondListBox.Name = "SecondListBox";
-            this.SecondListBox.Size = new System.Drawing.Size(41, 34);
+            this.SecondListBox.Size = new System.Drawing.Size(44, 34);
             this.SecondListBox.TabIndex = 10;
             // 
             // SecondLabel
             // 
             this.SecondLabel.AutoSize = true;
             this.SecondLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SecondLabel.Location = new System.Drawing.Point(455, 63);
+            this.SecondLabel.Location = new System.Drawing.Point(480, 63);
             this.SecondLabel.Name = "SecondLabel";
             this.SecondLabel.Size = new System.Drawing.Size(31, 25);
             this.SecondLabel.TabIndex = 11;
@@ -181,6 +353,28 @@
             this.CancelButton.Text = "取消";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            // 
+            // YearLabel
+            // 
+            this.YearLabel.AutoSize = true;
+            this.YearLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.YearLabel.Location = new System.Drawing.Point(59, 63);
+            this.YearLabel.Name = "YearLabel";
+            this.YearLabel.Size = new System.Drawing.Size(31, 25);
+            this.YearLabel.TabIndex = 1;
+            this.YearLabel.Text = "年";
+            // 
+            // YearListBox
+            // 
+            this.YearListBox.FormattingEnabled = true;
+            this.YearListBox.ItemHeight = 15;
+            this.YearListBox.Items.AddRange(new object[] {
+            "2019"});
+            this.YearListBox.Location = new System.Drawing.Point(12, 63);
+            this.YearListBox.Name = "YearListBox";
+            this.YearListBox.Size = new System.Drawing.Size(41, 34);
+            this.YearListBox.TabIndex = 0;
+            this.YearListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
             // 
             // TimeSetting
             // 
@@ -210,9 +404,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox YearListBox;
-        private System.Windows.Forms.Label YearLabel;
         private System.Windows.Forms.ListBox MonthListBox;
         private System.Windows.Forms.Label MonthLabel;
         private System.Windows.Forms.Label DayLabel;
@@ -225,5 +416,7 @@
         private System.Windows.Forms.Label SecondLabel;
         private System.Windows.Forms.Button OKButton;
         private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Label YearLabel;
+        private System.Windows.Forms.ListBox YearListBox;
     }
 }
