@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using Lib.GetJWXT;
 using Lib;
 using team_development.FormLib;
+using team_development.UI.UserInfo;
+using team_development.UI;
+
 namespace team_development
 {
     public partial class ValidateForm : Form
@@ -30,8 +33,12 @@ namespace team_development
 
         private void Confirm_Click(object sender, EventArgs e)
         {
-            bool result=jwxt.Login("2016052351", "liangzp1818", getValidate.Text);
-            getIcas.Login("2016052351", "104213");
+
+            Cryptography g = new Cryptography();
+            bool result =jwxt.Login(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), getValidate.Text);
+            getIcas.Login(GlobalData.userInfo.StudentNumber,g.Decrypt(GlobalData.userInfo.SZJDPassword));
+            
+
             wait.StartKiller();
             if (result)
             {
