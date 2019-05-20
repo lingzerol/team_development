@@ -28,314 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.MonthListBox = new System.Windows.Forms.ListBox();
-            this.MonthLabel = new System.Windows.Forms.Label();
-            this.DayLabel = new System.Windows.Forms.Label();
-            this.DayListBox = new System.Windows.Forms.ListBox();
-            this.HourListBox = new System.Windows.Forms.ListBox();
-            this.HourLabel = new System.Windows.Forms.Label();
-            this.MinuteListBox = new System.Windows.Forms.ListBox();
-            this.MinuteLabel = new System.Windows.Forms.Label();
-            this.SecondListBox = new System.Windows.Forms.ListBox();
-            this.SecondLabel = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
             this.OKButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.YearLabel = new System.Windows.Forms.Label();
-            this.YearListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TimeNow = new System.Windows.Forms.TextBox();
+            this.EndTime = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // MonthListBox
-            // 
-            this.MonthListBox.FormattingEnabled = true;
-            this.MonthListBox.ItemHeight = 15;
-            this.MonthListBox.Items.AddRange(new object[] {
-            "一",
-            "二",
-            "三",
-            "四",
-            "五",
-            "六",
-            "七",
-            "八",
-            "九",
-            "十",
-            "十一",
-            "十二"});
-            this.MonthListBox.Location = new System.Drawing.Point(90, 63);
-            this.MonthListBox.Name = "MonthListBox";
-            this.MonthListBox.Size = new System.Drawing.Size(68, 34);
-            this.MonthListBox.TabIndex = 2;
-            // 
-            // MonthLabel
-            // 
-            this.MonthLabel.AutoSize = true;
-            this.MonthLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MonthLabel.Location = new System.Drawing.Point(159, 63);
-            this.MonthLabel.Name = "MonthLabel";
-            this.MonthLabel.Size = new System.Drawing.Size(31, 25);
-            this.MonthLabel.TabIndex = 3;
-            this.MonthLabel.Text = "月";
-            // 
-            // DayLabel
-            // 
-            this.DayLabel.AutoSize = true;
-            this.DayLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.DayLabel.Location = new System.Drawing.Point(234, 63);
-            this.DayLabel.Name = "DayLabel";
-            this.DayLabel.Size = new System.Drawing.Size(31, 25);
-            this.DayLabel.TabIndex = 4;
-            this.DayLabel.Text = "日";
-            // 
-            // DayListBox
-            // 
-            this.DayListBox.FormattingEnabled = true;
-            this.DayListBox.ItemHeight = 15;
-            this.DayListBox.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31"});
-            this.DayListBox.Location = new System.Drawing.Point(187, 63);
-            this.DayListBox.Name = "DayListBox";
-            this.DayListBox.Size = new System.Drawing.Size(53, 34);
-            this.DayListBox.TabIndex = 5;
-            // 
-            // HourListBox
-            // 
-            this.HourListBox.FormattingEnabled = true;
-            this.HourListBox.ItemHeight = 15;
-            this.HourListBox.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23"});
-            this.HourListBox.Location = new System.Drawing.Point(260, 63);
-            this.HourListBox.Name = "HourListBox";
-            this.HourListBox.Size = new System.Drawing.Size(41, 34);
-            this.HourListBox.TabIndex = 6;
-            // 
-            // HourLabel
-            // 
-            this.HourLabel.AutoSize = true;
-            this.HourLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.HourLabel.Location = new System.Drawing.Point(307, 63);
-            this.HourLabel.Name = "HourLabel";
-            this.HourLabel.Size = new System.Drawing.Size(31, 25);
-            this.HourLabel.TabIndex = 7;
-            this.HourLabel.Text = "时";
-            // 
-            // MinuteListBox
-            // 
-            this.MinuteListBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MinuteListBox.FormattingEnabled = true;
-            this.MinuteListBox.ItemHeight = 15;
-            this.MinuteListBox.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "56",
-            "57",
-            "58",
-            "59"});
-            this.MinuteListBox.Location = new System.Drawing.Point(344, 63);
-            this.MinuteListBox.Name = "MinuteListBox";
-            this.MinuteListBox.Size = new System.Drawing.Size(51, 34);
-            this.MinuteListBox.TabIndex = 8;
-            // 
-            // MinuteLabel
-            // 
-            this.MinuteLabel.AutoSize = true;
-            this.MinuteLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.MinuteLabel.Location = new System.Drawing.Point(393, 63);
-            this.MinuteLabel.Name = "MinuteLabel";
-            this.MinuteLabel.Size = new System.Drawing.Size(31, 25);
-            this.MinuteLabel.TabIndex = 9;
-            this.MinuteLabel.Text = "分";
-            // 
-            // SecondListBox
-            // 
-            this.SecondListBox.FormattingEnabled = true;
-            this.SecondListBox.ItemHeight = 15;
-            this.SecondListBox.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "56",
-            "57",
-            "58",
-            "59"});
-            this.SecondListBox.Location = new System.Drawing.Point(430, 63);
-            this.SecondListBox.Name = "SecondListBox";
-            this.SecondListBox.Size = new System.Drawing.Size(44, 34);
-            this.SecondListBox.TabIndex = 10;
-            // 
-            // SecondLabel
-            // 
-            this.SecondLabel.AutoSize = true;
-            this.SecondLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.SecondLabel.Location = new System.Drawing.Point(480, 63);
-            this.SecondLabel.Name = "SecondLabel";
-            this.SecondLabel.Size = new System.Drawing.Size(31, 25);
-            this.SecondLabel.TabIndex = 11;
-            this.SecondLabel.Text = "秒";
             // 
             // OKButton
             // 
             this.OKButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.OKButton.Location = new System.Drawing.Point(90, 163);
+            this.OKButton.Location = new System.Drawing.Point(103, 191);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(128, 34);
             this.OKButton.TabIndex = 12;
@@ -346,7 +54,7 @@
             // CancelButton
             // 
             this.CancelButton.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CancelButton.Location = new System.Drawing.Point(282, 163);
+            this.CancelButton.Location = new System.Drawing.Point(281, 191);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(128, 34);
             this.CancelButton.TabIndex = 13;
@@ -354,47 +62,77 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // YearLabel
+            // label1
             // 
-            this.YearLabel.AutoSize = true;
-            this.YearLabel.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.YearLabel.Location = new System.Drawing.Point(59, 63);
-            this.YearLabel.Name = "YearLabel";
-            this.YearLabel.Size = new System.Drawing.Size(31, 25);
-            this.YearLabel.TabIndex = 1;
-            this.YearLabel.Text = "年";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(66, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 25);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "当前时间";
             // 
-            // YearListBox
+            // label2
             // 
-            this.YearListBox.FormattingEnabled = true;
-            this.YearListBox.ItemHeight = 15;
-            this.YearListBox.Items.AddRange(new object[] {
-            "2019"});
-            this.YearListBox.Location = new System.Drawing.Point(12, 63);
-            this.YearListBox.Name = "YearListBox";
-            this.YearListBox.Size = new System.Drawing.Size(41, 34);
-            this.YearListBox.TabIndex = 0;
-            this.YearListBox.SelectedIndexChanged += new System.EventHandler(this.ListBox1_SelectedIndexChanged);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(66, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 25);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "选课时间";
+            // 
+            // TimeNow
+            // 
+            this.TimeNow.Location = new System.Drawing.Point(178, 38);
+            this.TimeNow.Name = "TimeNow";
+            this.TimeNow.Size = new System.Drawing.Size(243, 25);
+            this.TimeNow.TabIndex = 16;
+            // 
+            // EndTime
+            // 
+            this.EndTime.Location = new System.Drawing.Point(178, 85);
+            this.EndTime.Name = "EndTime";
+            this.EndTime.Size = new System.Drawing.Size(243, 25);
+            this.EndTime.TabIndex = 17;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(179, 135);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 25);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(66, 135);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 25);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "剩余时间：";
             // 
             // TimeSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 262);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.EndTime);
+            this.Controls.Add(this.TimeNow);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OKButton);
-            this.Controls.Add(this.SecondLabel);
-            this.Controls.Add(this.SecondListBox);
-            this.Controls.Add(this.MinuteLabel);
-            this.Controls.Add(this.MinuteListBox);
-            this.Controls.Add(this.HourLabel);
-            this.Controls.Add(this.HourListBox);
-            this.Controls.Add(this.DayListBox);
-            this.Controls.Add(this.DayLabel);
-            this.Controls.Add(this.MonthLabel);
-            this.Controls.Add(this.MonthListBox);
-            this.Controls.Add(this.YearLabel);
-            this.Controls.Add(this.YearListBox);
             this.Name = "TimeSetting";
             this.Text = "SettingTime";
             this.Load += new System.EventHandler(this.TimeSetting_Load);
@@ -404,19 +142,14 @@
         }
 
         #endregion
-        private System.Windows.Forms.ListBox MonthListBox;
-        private System.Windows.Forms.Label MonthLabel;
-        private System.Windows.Forms.Label DayLabel;
-        private System.Windows.Forms.ListBox DayListBox;
-        private System.Windows.Forms.ListBox HourListBox;
-        private System.Windows.Forms.Label HourLabel;
-        private System.Windows.Forms.ListBox MinuteListBox;
-        private System.Windows.Forms.Label MinuteLabel;
-        private System.Windows.Forms.ListBox SecondListBox;
-        private System.Windows.Forms.Label SecondLabel;
         private System.Windows.Forms.Button OKButton;
         private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.Label YearLabel;
-        private System.Windows.Forms.ListBox YearListBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TimeNow;
+        private System.Windows.Forms.TextBox EndTime;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

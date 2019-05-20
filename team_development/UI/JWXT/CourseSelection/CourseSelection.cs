@@ -44,6 +44,26 @@ namespace team_development.UI.CourseSelection
         {
             Form ts = new TimeSetting();
             Log.log.Info("Click TimeSelection Button In CourseSelection Form.");
+            MessageBoxButtons btn = MessageBoxButtons.OKCancel;
+            int m = CourseInfo.CheckedItems.Count;
+            int k = 0;
+            string[] name = new string[16];
+            string[] time = new string[16];
+            for (int i = 0; i < m; i++)
+            {
+                if (CourseInfo.CheckedItems[i].Checked)
+                {
+                    name[i] = CourseInfo.CheckedItems[i].SubItems[2].Text;
+                    time[i] = CourseInfo.CheckedItems[i].SubItems[4].Text.Substring(1);
+                }
+            }
+            string str = null;
+            for (int i = 0; i < m; i++)
+            {
+                str += "所选课程：" + name[i] + "\n上课时间：" + time[i];
+                str += "\n";
+            }
+            DialogResult dlr = MessageBox.Show(str + "确认定时选课？", "", btn);
             ts.ShowDialog();
         }
 

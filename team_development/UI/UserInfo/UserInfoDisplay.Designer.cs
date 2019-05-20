@@ -48,8 +48,6 @@ namespace team_development.UI.UserInfo
             this.infochange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-
-          
             // 
             // label1
             // 
@@ -126,7 +124,6 @@ namespace team_development.UI.UserInfo
             this.StudentNumberTextBox.Name = "StudentNumberTextBox";
             this.StudentNumberTextBox.Size = new System.Drawing.Size(312, 31);
             this.StudentNumberTextBox.TabIndex = 14;
-
             // 
             // StudentNameTextBox
             // 
@@ -135,7 +132,6 @@ namespace team_development.UI.UserInfo
             this.StudentNameTextBox.Name = "StudentNameTextBox";
             this.StudentNameTextBox.Size = new System.Drawing.Size(312, 31);
             this.StudentNameTextBox.TabIndex = 15;
-
             // 
             // DormNumberTextBox
             // 
@@ -144,7 +140,6 @@ namespace team_development.UI.UserInfo
             this.DormNumberTextBox.Name = "DormNumberTextBox";
             this.DormNumberTextBox.Size = new System.Drawing.Size(312, 31);
             this.DormNumberTextBox.TabIndex = 16;
-
             // 
             // MealCardTextBox
             // 
@@ -153,7 +148,6 @@ namespace team_development.UI.UserInfo
             this.MealCardTextBox.Name = "MealCardTextBox";
             this.MealCardTextBox.Size = new System.Drawing.Size(312, 31);
             this.MealCardTextBox.TabIndex = 17;
-
             // 
             // SZJDPasswordTextBox
             // 
@@ -162,7 +156,6 @@ namespace team_development.UI.UserInfo
             this.SZJDPasswordTextBox.Name = "SZJDPasswordTextBox";
             this.SZJDPasswordTextBox.Size = new System.Drawing.Size(312, 31);
             this.SZJDPasswordTextBox.TabIndex = 18;
-
             // 
             // JWXTPasswordTextBox
             // 
@@ -171,7 +164,6 @@ namespace team_development.UI.UserInfo
             this.JWXTPasswordTextBox.Name = "JWXTPasswordTextBox";
             this.JWXTPasswordTextBox.Size = new System.Drawing.Size(312, 31);
             this.JWXTPasswordTextBox.TabIndex = 19;
-
             // 
             // infochange
             // 

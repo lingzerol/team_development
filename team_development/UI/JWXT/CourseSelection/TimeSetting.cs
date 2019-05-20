@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 using Lib;
 namespace team_development.UI.CourseSelection
 {
@@ -26,20 +27,41 @@ namespace team_development.UI.CourseSelection
         private void OKButton_Click(object sender, EventArgs e)
         {
             Log.log.Info("Click OKButton in TimeSetting Form.");
-            Form lt = new LeftTime();//show left time
-            lt.Show();
-            this.Close();
+            DateTime timeend = Convert.ToDateTime(EndTime.Text);
+            TimeSpan ts = timeend.Subtract(DateTime.Now).Duration();
+            label3.Text = ts.Days.ToString() + "天" + ts.Hours.ToString() + "小时" + ts.Minutes.ToString() + "分钟" + ts.Seconds.ToString() + "秒";
+
         }
 
         private void TimeSetting_Load(object sender, EventArgs e)
         {
-            
+            TimeNow.Text = DateTime.Now.ToString();
+            EndTime.Text = "2019/5/21 20:00:00";           
+            TimeNow.ReadOnly = true;
+            timer1.Enabled = true;
+
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Log.log.Info("Click CancelButton in TimeSetting Form.");
             this.Close();
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+
+            this.timer1.Interval = 5000;
+            this.timer1.Start();//计时器开始运行
+            DateTime timeend = Convert.ToDateTime(EndTime.Text);
+            TimeSpan ts = timeend.Subtract(DateTime.Now).Duration();
+            TimeNow.Text = DateTime.Now.ToString();
+            label3.Text = ts.Days.ToString() + "天" + ts.Hours.ToString() + "小时" + ts.Minutes.ToString() + "分钟" + ts.Seconds.ToString() + "秒";
+            if (timeend<=DateTime.Now)
+            {
+                MessageBox.Show("选课成功");
+                this.Close();
+            }
         }
     }
 }
