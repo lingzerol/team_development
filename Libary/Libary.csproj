@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="WordTemplates\暨南大学学生请假申请表.dot" />
     <None Include="WordTemplates\简单请假条模板.dot" />
   </ItemGroup>
   <ItemGroup>
