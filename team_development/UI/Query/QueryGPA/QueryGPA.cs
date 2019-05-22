@@ -27,6 +27,8 @@ namespace team_development.UI.QueryGPA
             /*timer.Interval = 3000;
             timer.Tick += new EventHandler(timerTick);
             timer.Start();*/
+            student_id_text.Text = GlobalData.userInfo.StudentNumber;
+            student_name_text.Text = GlobalData.userInfo.StudentName;
             SetGpa();
         }
 

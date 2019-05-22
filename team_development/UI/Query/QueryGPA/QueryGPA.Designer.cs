@@ -71,7 +71,7 @@
             this.student_id_text.Name = "student_id_text";
             this.student_id_text.Size = new System.Drawing.Size(120, 27);
             this.student_id_text.TabIndex = 1;
-            this.student_id_text.Text = "2016052351";
+            this.student_id_text.Text = "";
             // 
             // student_name
             // 
@@ -90,7 +90,7 @@
             this.student_name_text.Name = "student_name_text";
             this.student_name_text.Size = new System.Drawing.Size(120, 27);
             this.student_name_text.TabIndex = 3;
-            this.student_name_text.Text = "lzp";
+            this.student_name_text.Text = "";
             // 
             // academic_year
             // 

@@ -22,6 +22,8 @@ namespace team_development
         static void Main()
         {
             //GetElectricCharge.Login("3307");
+            UserInfo user = (UserInfo)Storage.Load("UserInfo.xml");
+            GlobalData.userInfo = user; 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             UserInfo user = (UserInfo)Storage.Load("UserInfo.xml");

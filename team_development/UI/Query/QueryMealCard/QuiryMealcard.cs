@@ -22,30 +22,12 @@ namespace team_development.UI.QueryMealCard
         private void MealcardInquiry_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void query_Click(object sender, EventArgs e)
+        }            
+        private void QueryMealCard()
         {
-            try
-            {
-                HtmlDocument html = getIcas.Login("2016052351", "104213");
-                //htmlcontent.Text=html.Body.InnerHtml;
-            }
-            catch(Exception)
-            {
-                MessageBox.Show("登陆失败,请确认数字暨大用户名和密码");
-            }
-        }
-
-        private void realquery_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void QueryMealCard() {
             try
             {
                 String str = getIcas.Query();
-
                 str = str.Substring(str.IndexOf("更换头像"));
                 str = str.Substring(str.IndexOf("t01>"));
                 textBox2.Text = str.Substring(str.IndexOf("t01>") + 4, str.IndexOf("</S") - str.IndexOf("t01>") - 4);
