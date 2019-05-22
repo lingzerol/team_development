@@ -30,8 +30,14 @@ namespace team_development.UI.UserInfo
             using (RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(param))
             {
                 byte[] encryptdata = Convert.FromBase64String(ciphertext);
-                byte[] decryptdata = rsa.Decrypt(encryptdata, false);
-                return Encoding.Default.GetString(decryptdata);
+                if (encryptdata.Length > 0)
+                {
+                    byte[] decryptdata = rsa.Decrypt(encryptdata, false);
+                    return Encoding.Default.GetString(decryptdata);
+                }
+                else {
+                    return "";
+                }
             }
         }
     }

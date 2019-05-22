@@ -1,6 +1,7 @@
 ﻿using mshtml;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
@@ -26,6 +27,8 @@ namespace Lib
             web.Navigated += new WebBrowserNavigatedEventHandler(NavigatedEventHandler);
             statusObj.Set();
         }
+
+
         private void Wait()
             {
                 obj.Reset();
@@ -43,7 +46,7 @@ namespace Lib
         private void NavigatedEventHandler(object sender, WebBrowserNavigatedEventArgs e)
         {
             IHTMLWindow2 win = (IHTMLWindow2)web.Document.Window.DomWindow;
-            string s = "window.alert = null;";
+            string s = "window.alert = null;\r\nwindow.confirm = null;\r\nwindow.open = null;\r\nwindow.showModalDialog = null;";
             win.execScript(s, "javascript");
             if (e.Url.AbsolutePath == "/areaTopLogo.aspx")
                 SetStatus(true);
@@ -54,7 +57,12 @@ namespace Lib
         [DllImport("wininet.dll", CharSet = CharSet.Auto, SetLastError = true)]
         public static extern bool InternetSetCookie(string lpszUrlName, string lbszCookieName, string lpszCookieData);
         public HtmlDocument Login(string username, string pwd)
+        {
+            HtmlDocument document = web.Document;
+            if (document != null)
             {
+                document.ExecCommand("ClearAuthenticationCache", false, null);
+            }
             web.Navigate("https://icas.jnu.edu.cn/cas/login");
             Wait();
             web.Document.GetElementById("un").SetAttribute("value", username);
@@ -67,7 +75,7 @@ namespace Lib
         }
 
         
-        public String Query() {
+        public String Query(bool show=true) {
 
             //MessageBox.Show("获取的Cookie为"+cookieStr, "MessageBox");
             //MessageBox.Show("请稍等", "MessageBox");
@@ -82,7 +90,7 @@ namespace Lib
                 }
             }//end of for
             web.Navigate("https://i.jnu.edu.cn/dcp/forward.action?path=/portal/portal&p=home");
-            wait.StartKiller();
+            wait.StartKiller(show);
             String str = web.Document.Body.InnerHtml;
             //web.Navigate(url);
             

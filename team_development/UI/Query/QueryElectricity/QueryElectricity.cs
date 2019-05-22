@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using Lib.GetElectricCharge;
-
+using team_development.UI;
 namespace team_development.UI.QueryElectricity
 {
     public partial class QueryElectricity : Form
@@ -22,12 +22,14 @@ namespace team_development.UI.QueryElectricity
         {
             InitializeComponent();
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
+            Dorm.Text = GlobalData.userInfo.DormNumber;
+            gec.GetElectric(Dorm.Text, new SetCharge(this.SetElectricCharge));
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
             gec.GetElectric(Dorm.Text,new SetCharge(this.SetElectricCharge));
-            wait.StartKiller(3000, IsOK);
+            wait.StartKiller(true,3000, IsOK);
         }
 
         private void TurnToForm(Form f)
@@ -38,7 +40,7 @@ namespace team_development.UI.QueryElectricity
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             gec.GetElectric(Dorm.Text, new SetCharge(this.SetElectricCharge));
-            wait.StartKiller(1000,IsOK);
+            wait.StartKiller(true,1000,IsOK);
         }
 
 

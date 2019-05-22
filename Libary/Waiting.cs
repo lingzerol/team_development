@@ -20,14 +20,15 @@ namespace Lib
         public const int WM_CLOSE = 0x10;
         public Waiting() { }
         private IsOK ok = null;
-        public void StartKiller(int span = 5000, IsOK ok = null)
+        public void StartKiller(bool show=true,int span = 5000, IsOK ok = null)
         {
             this.ok = ok;
             Timer timer = new Timer();
             timer.Interval = span; //3秒启动 
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
-            MessageBox.Show("请稍等", "正在获取");
+            if(show)
+                MessageBox.Show("请稍等", "正在获取");
         }
 
         public void Timer_Tick(object sender, EventArgs e)

@@ -17,7 +17,7 @@ namespace Lib.GetJWXT
 
         public static GetJWXT jwxt = new GetJWXT();
         private WebBrowser web = new WebBrowser();
-        private System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
+        public System.Threading.AutoResetEvent obj = new System.Threading.AutoResetEvent(false);
         private bool isNavigate = false;
         private bool isGetInto = false;
         private System.Threading.AutoResetEvent statusObj = new System.Threading.AutoResetEvent(false);
@@ -45,10 +45,17 @@ namespace Lib.GetJWXT
             statusObj.Set();
         }
 
+        private void OnWebBrowserDocumentWindowError(object sender, HtmlElementErrorEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+
+
         private void NavigatedEventHandler(object sender, WebBrowserNavigatedEventArgs e)
         {
             IHTMLWindow2 win = (IHTMLWindow2)web.Document.Window.DomWindow;
-            string s = "window.alert = null;";
+            string s = "window.alert = null;\r\nwindow.confirm = null;\r\nwindow.open = null;\r\nwindow.showModalDialog = null;";
             win.execScript(s, "javascript");
             if (e.Url.AbsolutePath == "/areaTopLogo.aspx")
                 SetStatus(true);
@@ -60,7 +67,14 @@ namespace Lib.GetJWXT
         {
             //if (!isNavigate)
             // {
-            web.Navigate("https://jwxt.jnu.edu.cn/");
+            //isGetInto = false;
+            HtmlDocument document = web.Document;
+            if (document != null)
+            {
+                document.ExecCommand("ClearAuthenticationCache", false, null);
+            }
+            
+            web.Navigate("https://jwxt.jnu.edu.cn");
             Wait();
             isNavigate = true;
             //}
@@ -91,13 +105,7 @@ namespace Lib.GetJWXT
             web.Document.GetElementById("btnLogin").InvokeMember("click");
             
             Wait();
-            web.Navigate("https://jwxt.jnu.edu.cn/IndexPage.aspx");
-            string str = "\r\n<!DOCTYPE html PUBLIC \"-//W3C//Dtd html 4.0 transitional//EN\">\r\n<html>\r\n\t<head>\r\n\t\t<title>����ܹ�</title>\r\n\t\t<meta content=\"Microsoft Visual Studio .NET 7.1\" name=\"GENERATOR\"/>\r\n\t\t<meta content=\"Visual Basic .NET 7.1\" name=\"CODE_LANGUAGE\"/>\r\n\t\t<meta content=\"JavaScript\" name=\"vs_defaultClientScript\"/>\r\n\t\t<meta content=\"http://schemas.microsoft.com/intellisense/ie5\" name=\"vs_targetSchema\"/>\r\n\t\t<script  type=\"text/javascript\" language=\"javascript\">\r\n\t\t\tfunction doHideLeftWindow()\r\n\t\t\t{\r\n\t\t\t    window.mainFrameSet.rows=\"0,*,0\";\r\n\t\t\t\twindow.contentFrameSet.cols=\"0,15,*\";\r\n\t\t\t}\r\n\t\t\tfunction doShowLeftWindow()\r\n\t\t\t{\r\n\t\t\t   window.mainFrameSet.rows=\"58,*,26\";\r\n\t\t\t   window.contentFrameSet.cols=\"220,15,*\";\r\n\t\t\t}\t\t\r\n\t\t</script>\r\n\t</head>\r\n\t\t<frameset id=\"mainFrameSet\" rows=\"58,*,26\" >\r\n\t\t\t<frame id=\"topFrameLogo\"  src=\"areaTopLogo.aspx\"  frameborder=\"0\"\r\n\t\t\t\tscrolling=\"no\"/>\r\n\t\t\t<frameset id=\"contentFrameSet\" style=\"\" cols=\"220,15,*\" >\r\n\t\t\t\t<frame id=\"leftFrame\"  src=\"areaLeft.aspx\" frameborder=\"0\" scrolling=\"no\"/>\t\t\t\t\r\n\t\t\t    <frame id=\"middleFrame\"  src=\"areaMiddle.aspx\" frameborder=\"0\" scrolling=\"no\"/>\r\n\t\t\t\t<frame id=\"mainFrame\" src=\"areaMain.aspx\" frameborder=\"0\"scrolling=\"no\"/>\t\t\t\t\t\r\n\t\t\t</frameset>\r\n\t\t\t<frame id=\"footFrame\"  src=\"areaFoot.aspx\" frameborder=\"0\" scrolling=\"no\"/>\r\n\t    </frameset>\r\n</html>\r\n";
-            if (web.DocumentText == str)
-            {
-                return true;
-            }
-            else return false;
+            return isGetInto;
         }
 
         public HtmlDocument GetCourseList()
@@ -130,7 +138,7 @@ namespace Lib.GetJWXT
             }
             catch (Exception)
             {
-                MessageBox.Show("获取失败，请检查教务处用户名和密码");
+                Log.log.Error("Capture GPA Error,Please check your password.");
             }
             return web.Document;
         }
@@ -146,6 +154,7 @@ namespace Lib.GetJWXT
         {
             obj.Set();
             web.ScriptErrorsSuppressed = true;
+            this.web.Document.Window.Error += OnWebBrowserDocumentWindowError;
         }
 
         private void Wait()
