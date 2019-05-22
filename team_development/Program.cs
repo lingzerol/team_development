@@ -26,7 +26,6 @@ namespace team_development
             GlobalData.userInfo = user; 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            UserInfo user = (UserInfo)Storage.Load("UserInfo.xml");
             GlobalData.userInfo = user;
             Application.Run(new ValidateForm());
             //Application.Run(new TestForm());

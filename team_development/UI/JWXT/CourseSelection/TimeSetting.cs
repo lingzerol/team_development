@@ -36,7 +36,7 @@ namespace team_development.UI.CourseSelection
         private void TimeSetting_Load(object sender, EventArgs e)
         {
             TimeNow.Text = DateTime.Now.ToString();
-            EndTime.Text = "2019/5/21 20:00:00";           
+            EndTime.Text = "2019/5/25 20:00:00";           
             TimeNow.ReadOnly = true;
             timer1.Enabled = true;
 
