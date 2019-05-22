@@ -82,12 +82,12 @@ namespace Lib
         }
 
 
-        public static void OpenTemplate(string templatePath, RichTextBox richTextBox)
+        public static Boolean OpenTemplate(string templatePath, RichTextBox richTextBox)
         {
             if (!File.Exists(templatePath))
             {
                 MessageBox.Show(string.Format("{0}  模版文件不存在，请先设置模版文件。", templatePath));
-                return;
+                return false;
                 
             }
 
@@ -112,6 +112,7 @@ namespace Lib
                 doc.ActiveWindow.Selection.Copy();//复制数据到剪切板
                 richTextBox.Paste();//richTextBox粘贴数据
                                     //richTextBox1.Text = doc.Content.Text;//显示无格式数据
+                return true;
             }
             finally
             {
