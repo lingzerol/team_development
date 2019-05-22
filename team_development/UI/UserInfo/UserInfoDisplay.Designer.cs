@@ -46,6 +46,7 @@ namespace team_development.UI.UserInfo
             this.SZJDPasswordTextBox = new System.Windows.Forms.TextBox();
             this.JWXTPasswordTextBox = new System.Windows.Forms.TextBox();
             this.infochange = new System.Windows.Forms.Button();
+            this.LoginBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,12 +177,24 @@ namespace team_development.UI.UserInfo
             this.infochange.UseVisualStyleBackColor = true;
             this.infochange.Click += new System.EventHandler(this.infochange_Click);
             // 
+            // LoginBtn
+            // 
+            this.LoginBtn.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.LoginBtn.Location = new System.Drawing.Point(443, 449);
+            this.LoginBtn.Name = "LoginBtn";
+            this.LoginBtn.Size = new System.Drawing.Size(91, 37);
+            this.LoginBtn.TabIndex = 21;
+            this.LoginBtn.Text = "登录";
+            this.LoginBtn.UseVisualStyleBackColor = true;
+            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
+            // 
             // UserInfoDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1054, 568);
+            this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.infochange);
             this.Controls.Add(this.JWXTPasswordTextBox);
             this.Controls.Add(this.SZJDPasswordTextBox);
@@ -221,5 +234,6 @@ namespace team_development.UI.UserInfo
         private System.Windows.Forms.TextBox SZJDPasswordTextBox;
         private System.Windows.Forms.TextBox JWXTPasswordTextBox;
         private System.Windows.Forms.Button infochange;
+        private System.Windows.Forms.Button LoginBtn;
     }
 }

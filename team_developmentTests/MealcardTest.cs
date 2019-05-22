@@ -54,7 +54,7 @@ namespace Lib.Tests
             icastest.Login("2016052351", "104213");
             try
             {
-                icastest.Query();
+                icastest.Query(false);
                 s--;
             }
             catch (Exception E) {

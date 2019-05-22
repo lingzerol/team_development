@@ -139,7 +139,7 @@ namespace Lib
 
         }
 
-        public static void GenerateWord(string templatePath, string toName, string reason, string department,
+        public static Boolean GenerateWord(string templatePath, string toName, string reason, string department,
             string dayLast, string startYear,string startMonth, string startDay, string endYear,string endMonth, string endDay,
             string fromName, string studentNum, string phone, string year, string month,
             string day, bool isSave, RichTextBox richTextBox)
@@ -147,7 +147,7 @@ namespace Lib
             if (!File.Exists(templatePath))
             {
                 MessageBox.Show(string.Format("{0}  模版文件不存在，请先设置模版文件。", templatePath));
-                return;
+                return false;
             }
 
             string dir = System.AppDomain.CurrentDomain.BaseDirectory + @"\";// templatePath.Substring(0, templatePath.LastIndexOf(@"\") + 1);
@@ -217,9 +217,14 @@ namespace Lib
                 {
                     doc.ActiveWindow.Selection.WholeStory();//全选word文档中的数据
                     doc.ActiveWindow.Selection.Copy();//复制数据到剪切板
-                    richTextBox.Paste();//richTextBox粘贴数据
-                                        //richTextBox1.Text = doc.Content.Text;//显示无格式数据
+                    if(richTextBox != null)
+                    {
+                        richTextBox.Paste();//richTextBox粘贴数据
+                                            //richTextBox1.Text = doc.Content.Text;//显示无格式数据
+                    }
+
                 }
+                return true;
             }
             finally
             {

@@ -12,6 +12,7 @@ using Lib;
 using team_development.FormLib;
 using team_development.UI.UserInfo;
 using team_development.UI;
+using Lib.GetElectricCharge;
 
 namespace team_development
 {
@@ -24,6 +25,15 @@ namespace team_development
         {
             InitializeComponent();
             ValidateImage.Image = jwxt.GetValidateImage();
+            if(GlobalData.userInfo.JWXTPassword == null || GlobalData.userInfo.StudentNumber == null || GlobalData.userInfo.SZJDPassword == null || GlobalData.userInfo.DormNumber == null) {
+                MessageBox.Show("请完善您的个人信息", "出现错误");
+                this.Hide();
+                MenuGetter.GetMenu(MenuType.Nothing);
+                Form1 form = new Form1();
+                form.TurnForm(MenuType.UserInfo);
+                form.ShowDialog();
+                Application.ExitThread();
+            }
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -35,19 +45,21 @@ namespace team_development
         {
 
             Cryptography g = new Cryptography();
-            bool result =jwxt.Login(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), getValidate.Text);
+            bool result = jwxt.Login(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), getValidate.Text);
             getIcas.Login(GlobalData.userInfo.StudentNumber,g.Decrypt(GlobalData.userInfo.SZJDPassword));
             
 
             wait.StartKiller();
-            if (result)
+            this.Hide();
+            MenuGetter.GetMenu(MenuType.Nothing);
+            Form1 form = new Form1();
+            if (!result)
             {
-                this.Hide();
-                MenuGetter.GetMenu(MenuType.Nothing);
-                string str = jwxt.GetCourseList().Body.InnerHtml;
-                new Form1().ShowDialog();
-                Application.ExitThread();
+                MessageBox.Show("密码或验证码错误", "Error");
+                form.TurnForm(MenuType.UserInfo);
             }
+            form.ShowDialog();
+            Application.ExitThread();
         }
 
         private void ValidateImage_Click(object sender, EventArgs e)

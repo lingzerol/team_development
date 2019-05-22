@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
+using team_development.FormLib;
 
 namespace team_development.UI.UserInfo
 {
@@ -46,24 +48,36 @@ namespace team_development.UI.UserInfo
 
         }
 
-        private void infochange_Click(object sender, EventArgs e)
-        {
+        private void Save() {
             Log.log.Info("Click infochange");
             Log.log.Info("Save UserInfo ");
-            UserInfo user = new UserInfo();
-            user.StudentNumber = StudentNumberTextBox.Text;
-            user.StudentName = StudentNameTextBox.Text;
-            user.DormNumber = DormNumberTextBox.Text;
-            user.MealCard = MealCardTextBox.Text;
-            user.SZJDPassword = SZJDPasswordTextBox.Text;
-            user.JWXTPassword = JWXTPasswordTextBox.Text;
-            MessageBox.Show("修改成功！");
+
+            GlobalData.userInfo.StudentNumber = StudentNumberTextBox.Text;
+            GlobalData.userInfo.StudentName = StudentNameTextBox.Text;
+            GlobalData.userInfo.DormNumber = DormNumberTextBox.Text;
+            GlobalData.userInfo.MealCard = MealCardTextBox.Text;
+            GlobalData.userInfo.SZJDPassword = SZJDPasswordTextBox.Text;
+            GlobalData.userInfo.JWXTPassword = JWXTPasswordTextBox.Text;
 
             Cryptography g = new Cryptography();
-            user.SZJDPassword=g.Encryption(user.SZJDPassword);
-            user.JWXTPassword=g.Encryption(user.JWXTPassword);
+            GlobalData.userInfo.SZJDPassword = g.Encryption(GlobalData.userInfo.SZJDPassword);
+            GlobalData.userInfo.JWXTPassword = g.Encryption(GlobalData.userInfo.JWXTPassword);
 
-            Storage.Save(user, "UserInfo.xml");
+            Storage.Save(GlobalData.userInfo, "UserInfo.xml");
+        }
+        private void infochange_Click(object sender, EventArgs e)
+        {
+            Save();
+            MessageBox.Show("修改成功！");
+        }
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            Save();
+            Application.ExitThread();
+            Application.Exit();
+            Application.Restart();
+            Process.GetCurrentProcess().Kill();
         }
     }
 }

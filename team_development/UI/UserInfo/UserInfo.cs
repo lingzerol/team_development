@@ -15,7 +15,14 @@ namespace team_development.UI.UserInfo
         private string mealCard;
         private string sZJDPassword;
         private string jWXTPassword;
-
+        public UserInfo(){
+            studentNumber = null;
+            studentName = "";
+            dormNumber = null;
+            mealCard = "";
+            sZJDPassword = null;
+            jWXTPassword = null;
+        }
         public string StudentNumber { get => studentNumber; set => studentNumber = value; }
         public string StudentName { get => studentName; set => studentName = value; }
         public string DormNumber { get => dormNumber; set => dormNumber = value; }

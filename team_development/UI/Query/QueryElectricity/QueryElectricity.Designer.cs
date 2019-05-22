@@ -1,4 +1,6 @@
-﻿namespace team_development.UI.QueryElectricity
+﻿using System.Windows.Forms;
+
+namespace team_development.UI.QueryElectricity
 {
     partial class QueryElectricity
     {
@@ -163,5 +165,6 @@
         private System.Windows.Forms.TextBox result;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+
     }
 }
