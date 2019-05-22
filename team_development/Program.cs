@@ -25,7 +25,7 @@ namespace team_development
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            GlobalData.userInfo = user;
+            //GlobalData.userInfo = user;
             Application.Run(new ValidateForm());
             //Application.Run(new TestForm());
         }
