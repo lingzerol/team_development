@@ -70,7 +70,7 @@
     <Compile Include="StorageTests.cs" />
     <Compile Include="SearchTest.cs" />
     <Compile Include="CourseLoadTest.cs" />
-    <Compile Include="UnitTest2.cs" />
+    <Compile Include="AbsenceWordManagerTest.cs" />
     <Compile Include="UserInfoSaveTests.cs" />
   </ItemGroup>
   <ItemGroup>
