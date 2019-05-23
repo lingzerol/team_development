@@ -71,6 +71,7 @@
     <Compile Include="SearchTest.cs" />
     <Compile Include="CourseLoadTest.cs" />
     <Compile Include="AbsenceWordManagerTest.cs" />
+    <Compile Include="QueryEmployTest.cs" />
     <Compile Include="UserInfoSaveTests.cs" />
   </ItemGroup>
   <ItemGroup>
