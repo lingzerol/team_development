@@ -40,14 +40,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewNotifocation = new System.Windows.Forms.DataGridView();
             this.ColumnTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPublishAgency = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPublishDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.infocontent = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNotifocation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,14 +66,14 @@
             // 
             this.dataGridViewNotifocation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewNotifocation.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewNotifocation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewNotifocation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewNotifocation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewNotifocation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnTitle,
@@ -112,21 +111,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "School Notice";
             // 
-            // infocontent
-            // 
-            this.infocontent.Location = new System.Drawing.Point(29, 95);
-            this.infocontent.Name = "infocontent";
-            this.infocontent.Size = new System.Drawing.Size(924, 414);
-            this.infocontent.TabIndex = 3;
-            this.infocontent.Text = "";
-            // 
             // QueryNotification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
-            this.Controls.Add(this.infocontent);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewNotifocation);
             this.Controls.Add(this.label1);
@@ -147,6 +137,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPublishAgency;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPublishDate;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox infocontent;
     }
 }

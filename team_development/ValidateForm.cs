@@ -47,7 +47,7 @@ namespace team_development
             Cryptography g = new Cryptography();
             bool result = jwxt.Login(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), getValidate.Text);
             getIcas.Login(GlobalData.userInfo.StudentNumber,g.Decrypt(GlobalData.userInfo.SZJDPassword));
-            
+            PyNotifications getNoti = new PyNotifications();
 
             wait.StartKiller();
             this.Hide();

@@ -30,7 +30,7 @@ namespace team_development.UI.QueryInform
             rows.Add(new object[] { "关于升级电子邮箱系统的通知", "网络与教育技术中心", "2019 - 03 - 29" });
             rows.Add(new object[] { "关于参加第十届中外合作办学年会第二次筹备会议的通知", "国际交流合作处（港澳台侨事务办公室)", "2019 - 03 - 29" });
             HtmlDocument html = getInfo.EnterWeb();
-            infocontent.Text = html.Body.InnerHtml;
+            //infocontent.Text = html.Body.InnerHtml;
         }
         private void label1_Click(object sender, EventArgs e)
         {
