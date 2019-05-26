@@ -19,15 +19,16 @@ namespace team_development
         {
             InitializeComponent();
             //Process proc = new Process();
-
         }
 
-        public void Init()
+        public object Response { get; private set; }
+
+        public void Init(string url)
         {
             Log.log.Info("Receive notifications from official website.");
             Process proc = new Process();
-            proc.StartInfo.FileName = System.AppContext.BaseDirectory.Substring(0, System.AppContext.BaseDirectory.LastIndexOf(@"\team_development")) + @"\Libary\Get_Notifications.exe";
-            //proc.StartInfo.Arguments = username + " " + password;
+            proc.StartInfo.FileName = System.AppContext.BaseDirectory.Substring(0, System.AppContext.BaseDirectory.LastIndexOf(@"\team_development")) + @"\Libary\GetNotifications\Get_Article.exe";
+            proc.StartInfo.Arguments = url;
 
             proc.StartInfo.UseShellExecute = false;
 
@@ -38,14 +39,18 @@ namespace team_development
             proc.StartInfo.RedirectStandardError = true;
             proc.StartInfo.CreateNoWindow = true;
             proc.Start();
-
+            string output = proc.StandardOutput.ReadToEnd();
+            proc.WaitForExit();//关键，等待外部程序退出后才能往下执行}
+            //Response.Write(output);//输出
+            proc.Close();
             MessageBox.Show("跑完了");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string url = "https://zh.jnu.edu.cn/df/0d/c8379a319245/page.htm";
             Thread thread = null;
-            thread = new Thread(this.Init);
+            //thread = new Thread(Init(url));
             thread.Start();
 
         }

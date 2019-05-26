@@ -84,6 +84,7 @@
   <ItemGroup>
     <Content Include="CourseFile\course.txt" />
     <Content Include="GetJWXT\login.exe" />
+    <Content Include="GetNotifications\Get_Article.exe" />
     <Content Include="GetNotifications\Get_Notifications.exe" />
   </ItemGroup>
   <ItemGroup>

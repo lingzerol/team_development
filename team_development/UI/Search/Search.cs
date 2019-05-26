@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Lib;
 using System.Web;
 using System.Threading;
+using System.IO;
 
 namespace team_development.UI.Search
 {
@@ -21,6 +22,7 @@ namespace team_development.UI.Search
         public Search()
         {
             InitializeComponent();
+            
             timer.Interval = 2000;
             timer.Tick += new EventHandler(timerTick);
             timer.Stop();
@@ -28,11 +30,21 @@ namespace team_development.UI.Search
             timer.Start();
         }
 
+        private void TableLoad() {
+            showitem.GridLines = true;
+
+            showitem.View = View.Details;
+            showitem.Scrollable = true;
+
+            this.showitem.Columns.Add("标题", 650, HorizontalAlignment.Center);
+            this.showitem.Columns.Add("时间", 150, HorizontalAlignment.Center);
+        }
+
         private void timerTick(object sender, EventArgs e)
         {
             try
             {
-                webBrowser1.DocumentText = notice.getText();               
+                //webBrowser1.DocumentText = notice.getText();               
                 timer.Stop();
             }
             catch (Exception E)
@@ -50,7 +62,7 @@ namespace team_development.UI.Search
             ((Form1)(this.ParentForm)).TurnForm(f);
         }
 
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        /*private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             webBrowser1.ScriptErrorsSuppressed = true;
             webBrowser1.Document.Body.Style = "zoom:0.73";
@@ -63,7 +75,7 @@ namespace team_development.UI.Search
             {
                 form.SetAttribute("target", "_self");
             }
-        }
+        }*/
 
         private void btn_search_Click(object sender, EventArgs e)
         {
@@ -78,7 +90,77 @@ namespace team_development.UI.Search
         {
             Log.log.Info("Go back to the previous page.");
             timer.Start();
-            webBrowser1.GoBack();
+            //webBrowser1.GoBack();
+        }
+
+        List<Info> infos = new List<Info>();
+        private void choosetype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (choosetype.SelectedIndex != null) {
+                showitem.Clear();
+                TableLoad();
+                this.showitem.BeginUpdate();
+                switch (choosetype.SelectedIndex) {
+                    case 0:
+                        MessageBox.Show("nothing changed");
+                        break;
+                    case 1:
+                        //MessageBox.Show(choosetype.SelectedIndex.ToString());
+                        break;
+                    case 3:
+                        infos = GetInfo(@"Student_notification.txt");
+                        foreach (Info record in infos)
+                        {
+                            ListViewItem item = new ListViewItem();
+                            item.Text = record.getTitle();
+                            item.SubItems.Add(record.getTime());
+                            showitem.Items.Add(item);
+                        }
+                        break;
+                    case 4:
+                        infos = GetInfo(@"Teacher_notification.txt");
+                        foreach (Info record in infos) {
+                            ListViewItem item = new ListViewItem();
+                            item.Text = record.getTitle();
+                            item.SubItems.Add(record.getTime());
+                            showitem.Items.Add(item);
+                        }
+                        //MessageBox.Show(abc);
+                        break;
+                    default:
+                        break;
+                }//end of switch
+                this.showitem.EndUpdate();
+            }            
+        }
+
+        private List<Info> GetInfo(string path)
+        {
+            infos.Clear();
+            string filePath = path;
+            //FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            //StreamReader sr = new StreamReader(fileStream, Encoding.Default);
+            string content = File.ReadAllText(filePath, Encoding.UTF8);
+            string[] element = content.Split(new string[] { "\n" }, StringSplitOptions.None);
+            Info info;
+            for (int i = 0; i < element.Length - 3; i += 3)
+            {
+                info = new Info(element[i], element[i + 1], element[i + 2]);
+                infos.Add(info);
+            }
+            return infos;
+        }
+
+        private void showitem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void showitem_Click(object sender, EventArgs e)
+        {
+            if (showitem.SelectedItems.Count > 0) {
+                
+                MessageBox.Show(showitem.SelectedIndices[0].ToString());
+            }
         }
     }
 }

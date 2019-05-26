@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Lib
 {
@@ -37,6 +38,11 @@ namespace Lib
             proc.StartInfo.RedirectStandardError = true;
             proc.StartInfo.CreateNoWindow = true;
             proc.Start();
+            string output = proc.StandardOutput.ReadToEnd();
+            proc.WaitForExit();//关键，等待外部程序退出后才能往下执行}
+            //Response.Write(output);//输出
+            proc.Close();
+            //MessageBox.Show("跑完了");
 
         }
     }
