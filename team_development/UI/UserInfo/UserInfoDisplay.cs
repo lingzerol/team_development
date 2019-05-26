@@ -30,9 +30,9 @@ namespace team_development.UI.UserInfo
                 StudentNumberTextBox.Text = GlobalData.userInfo.StudentNumber;
                 StudentNameTextBox.Text = GlobalData.userInfo.StudentName;
                 DormNumberTextBox.Text = GlobalData.userInfo.DormNumber;
-                MealCardTextBox.Text = GlobalData.userInfo.MealCard;
-                SZJDPasswordTextBox.Text = "******";
-                JWXTPasswordTextBox.Text = "******";
+                Cryptography g = new Cryptography();
+                SZJDPasswordTextBox.Text = g.Decrypt(GlobalData.userInfo.SZJDPassword);
+                JWXTPasswordTextBox.Text = g.Decrypt(GlobalData.userInfo.JWXTPassword);
             }
             
 
@@ -55,7 +55,6 @@ namespace team_development.UI.UserInfo
             GlobalData.userInfo.StudentNumber = StudentNumberTextBox.Text;
             GlobalData.userInfo.StudentName = StudentNameTextBox.Text;
             GlobalData.userInfo.DormNumber = DormNumberTextBox.Text;
-            GlobalData.userInfo.MealCard = MealCardTextBox.Text;
             GlobalData.userInfo.SZJDPassword = SZJDPasswordTextBox.Text;
             GlobalData.userInfo.JWXTPassword = JWXTPasswordTextBox.Text;
 
@@ -78,6 +77,22 @@ namespace team_development.UI.UserInfo
             Application.Exit();
             Application.Restart();
             Process.GetCurrentProcess().Kill();
+        }
+
+        private void show_password_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (show_password.Checked)
+            {
+                //复选框被勾选，明文显示
+                JWXTPasswordTextBox.PasswordChar = new char();
+                SZJDPasswordTextBox.PasswordChar = new char();
+            }
+            else
+            {
+                //复选框被取消勾选，密文显示
+                JWXTPasswordTextBox.PasswordChar = '*';
+                SZJDPasswordTextBox.PasswordChar = '*';
+            }
         }
     }
 }

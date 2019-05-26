@@ -35,18 +35,17 @@ namespace team_development.UI.UserInfo
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.StudentNumberTextBox = new System.Windows.Forms.TextBox();
             this.StudentNameTextBox = new System.Windows.Forms.TextBox();
             this.DormNumberTextBox = new System.Windows.Forms.TextBox();
-            this.MealCardTextBox = new System.Windows.Forms.TextBox();
             this.SZJDPasswordTextBox = new System.Windows.Forms.TextBox();
             this.JWXTPasswordTextBox = new System.Windows.Forms.TextBox();
             this.infochange = new System.Windows.Forms.Button();
             this.LoginBtn = new System.Windows.Forms.Button();
+            this.show_password = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,21 +79,11 @@ namespace team_development.UI.UserInfo
             this.label3.TabIndex = 2;
             this.label3.Text = "宿舍号：";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(293, 268);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(126, 25);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "校园卡卡号：";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(274, 320);
+            this.label5.Location = new System.Drawing.Point(274, 275);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(145, 25);
             this.label5.TabIndex = 4;
@@ -104,7 +93,7 @@ namespace team_development.UI.UserInfo
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(274, 372);
+            this.label6.Location = new System.Drawing.Point(274, 330);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 25);
             this.label6.TabIndex = 5;
@@ -142,18 +131,10 @@ namespace team_development.UI.UserInfo
             this.DormNumberTextBox.Size = new System.Drawing.Size(312, 31);
             this.DormNumberTextBox.TabIndex = 16;
             // 
-            // MealCardTextBox
-            // 
-            this.MealCardTextBox.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.MealCardTextBox.Location = new System.Drawing.Point(443, 267);
-            this.MealCardTextBox.Name = "MealCardTextBox";
-            this.MealCardTextBox.Size = new System.Drawing.Size(312, 31);
-            this.MealCardTextBox.TabIndex = 17;
-            // 
             // SZJDPasswordTextBox
             // 
             this.SZJDPasswordTextBox.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.SZJDPasswordTextBox.Location = new System.Drawing.Point(443, 319);
+            this.SZJDPasswordTextBox.Location = new System.Drawing.Point(443, 275);
             this.SZJDPasswordTextBox.Name = "SZJDPasswordTextBox";
             this.SZJDPasswordTextBox.Size = new System.Drawing.Size(312, 31);
             this.SZJDPasswordTextBox.TabIndex = 18;
@@ -161,7 +142,7 @@ namespace team_development.UI.UserInfo
             // JWXTPasswordTextBox
             // 
             this.JWXTPasswordTextBox.Font = new System.Drawing.Font("微软雅黑", 10.8F);
-            this.JWXTPasswordTextBox.Location = new System.Drawing.Point(443, 371);
+            this.JWXTPasswordTextBox.Location = new System.Drawing.Point(443, 330);
             this.JWXTPasswordTextBox.Name = "JWXTPasswordTextBox";
             this.JWXTPasswordTextBox.Size = new System.Drawing.Size(312, 31);
             this.JWXTPasswordTextBox.TabIndex = 19;
@@ -188,24 +169,36 @@ namespace team_development.UI.UserInfo
             this.LoginBtn.UseVisualStyleBackColor = true;
             this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
+            // show_password
+            // 
+            this.show_password.AutoSize = true;
+            this.show_password.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.show_password.Location = new System.Drawing.Point(443, 392);
+            this.show_password.Name = "show_password";
+            this.show_password.Size = new System.Drawing.Size(110, 29);
+            this.show_password.TabIndex = 22;
+            this.show_password.Text = "显示密码";
+            this.show_password.UseVisualStyleBackColor = true;
+            this.show_password.Checked = true;
+            this.show_password.CheckedChanged += new System.EventHandler(this.show_password_CheckedChanged_1);
+            // 
             // UserInfoDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1054, 568);
+            this.Controls.Add(this.show_password);
             this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.infochange);
             this.Controls.Add(this.JWXTPasswordTextBox);
             this.Controls.Add(this.SZJDPasswordTextBox);
-            this.Controls.Add(this.MealCardTextBox);
             this.Controls.Add(this.DormNumberTextBox);
             this.Controls.Add(this.StudentNameTextBox);
             this.Controls.Add(this.StudentNumberTextBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -223,17 +216,16 @@ namespace team_development.UI.UserInfo
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox StudentNumberTextBox;
         private System.Windows.Forms.TextBox StudentNameTextBox;
         private System.Windows.Forms.TextBox DormNumberTextBox;
-        private System.Windows.Forms.TextBox MealCardTextBox;
         private System.Windows.Forms.TextBox SZJDPasswordTextBox;
         private System.Windows.Forms.TextBox JWXTPasswordTextBox;
         private System.Windows.Forms.Button infochange;
         private System.Windows.Forms.Button LoginBtn;
+        private System.Windows.Forms.CheckBox show_password;
     }
 }
