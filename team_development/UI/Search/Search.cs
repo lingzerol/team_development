@@ -36,8 +36,8 @@ namespace team_development.UI.Search
             showitem.View = View.Details;
             showitem.Scrollable = true;
 
-            this.showitem.Columns.Add("标题", 650, HorizontalAlignment.Center);
-            this.showitem.Columns.Add("时间", 150, HorizontalAlignment.Center);
+            this.showitem.Columns.Add("标题", 570, HorizontalAlignment.Center);
+            this.showitem.Columns.Add("时间", 130, HorizontalAlignment.Center);
         }
 
         private void timerTick(object sender, EventArgs e)
@@ -80,10 +80,23 @@ namespace team_development.UI.Search
         private void btn_search_Click(object sender, EventArgs e)
         {
             Log.log.Info("Search the Jinan University's news and notices.");
-            string content = Uri.EscapeDataString(searchBox.Text);
-            notice.getHtml(content);
-            timer.Start();
-            
+            //MessageBox.Show(searchBox.Text);
+            List<Info> searchinfos = new List<Info>();
+            foreach (Info record in infos)
+            {
+                if (record.getTitle().IndexOf(searchBox.Text) != -1)
+                    searchinfos.Add(record);
+            }
+            showitem.Clear();
+            TableLoad();
+            this.showitem.BeginUpdate();
+            if (searchinfos != null && searchinfos.Count > 0) {
+                Filllistview(searchinfos);
+                //MessageBox.Show(searchinfos.Count.ToString());
+            }
+            else
+                MessageBox.Show("不存在您要搜索的信息");
+            this.showitem.EndUpdate();
         }
 
         private void btn_back_Click(object sender, EventArgs e)
@@ -105,26 +118,20 @@ namespace team_development.UI.Search
                         MessageBox.Show("nothing changed");
                         break;
                     case 1:
-                        //MessageBox.Show(choosetype.SelectedIndex.ToString());
+                        infos = GetInfo(@"Campus_notification.txt");
+                        Filllistview(infos);
+                        break;
+                    case 2:
+                        infos = GetInfo(@"Lecture_notification.txt");
+                        Filllistview(infos);
                         break;
                     case 3:
                         infos = GetInfo(@"Student_notification.txt");
-                        foreach (Info record in infos)
-                        {
-                            ListViewItem item = new ListViewItem();
-                            item.Text = record.getTitle();
-                            item.SubItems.Add(record.getTime());
-                            showitem.Items.Add(item);
-                        }
+                        Filllistview(infos);
                         break;
                     case 4:
                         infos = GetInfo(@"Teacher_notification.txt");
-                        foreach (Info record in infos) {
-                            ListViewItem item = new ListViewItem();
-                            item.Text = record.getTitle();
-                            item.SubItems.Add(record.getTime());
-                            showitem.Items.Add(item);
-                        }
+                        Filllistview(infos);
                         //MessageBox.Show(abc);
                         break;
                     default:
@@ -132,6 +139,17 @@ namespace team_development.UI.Search
                 }//end of switch
                 this.showitem.EndUpdate();
             }            
+        }
+
+        private void Filllistview(List<Info> targetinfos)
+        {
+            foreach (Info record in targetinfos)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = record.getTitle();
+                item.SubItems.Add(record.getTime());
+                showitem.Items.Add(item);
+            }
         }
 
         private List<Info> GetInfo(string path)
@@ -158,8 +176,9 @@ namespace team_development.UI.Search
         private void showitem_Click(object sender, EventArgs e)
         {
             if (showitem.SelectedItems.Count > 0) {
-                
-                MessageBox.Show(showitem.SelectedIndices[0].ToString());
+                Notisditails notisditails = new Notisditails(infos[showitem.SelectedIndices[0]].getUrl());
+                notisditails.ShowDialog();
+                //MessageBox.Show(showitem.SelectedIndices[0].ToString());
             }
         }
     }

@@ -26,7 +26,7 @@ namespace Lib
         public void getHtml(string content)
         {
             Log.log.Info("Get the url of Jinan University.");
-            webBrowser.Navigate("https://news.jnu.edu.cn/search/s.aspx?c=&f=0&wd="+content+"&o=1");
+            webBrowser.Navigate("https://zh.jnu.edu.cn/" + content+"&o=1");
         }
 
         public string getText()

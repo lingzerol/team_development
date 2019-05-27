@@ -72,12 +72,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Forum\Forum.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +79,13 @@
       <DependentUpon>Forum.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\GlobalData.cs" />
+    <Compile Include="UI\JWXT\JwxtLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\JWXT\JwxtLogin.Designer.cs">
+      <DependentUpon>JwxtLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\JWXT\JwxtSingleton.cs" />
     <Compile Include="UI\Query\QueryEmploy\OfferArticle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +160,12 @@
     <Compile Include="UI\JWXT\MatchScheme\MatchScheme.Designer.cs">
       <DependentUpon>MatchScheme.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Search\Notisditails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Search\Notisditails.Designer.cs">
+      <DependentUpon>Notisditails.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Search\Search.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,11 +192,11 @@
     <Compile Include="ValidateForm.Designer.cs">
       <DependentUpon>ValidateForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\Forum\Forum.resx">
       <DependentUpon>Forum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\JWXT\JwxtLogin.resx">
+      <DependentUpon>JwxtLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Query\QueryEmploy\OfferArticle.resx" />
     <EmbeddedResource Include="UI\Query\QueryInform\QueryInform.resx">
@@ -251,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\JWXT\MatchScheme\MatchScheme.resx">
       <DependentUpon>MatchScheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Search\Notisditails.resx">
+      <DependentUpon>Notisditails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Search\Search.resx">
       <DependentUpon>Search.cs</DependentUpon>

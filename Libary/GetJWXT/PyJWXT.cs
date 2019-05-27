@@ -60,7 +60,7 @@ namespace Lib.GetJWXT
                 validateBox.Image = result;
             } else if(code == null)
             {
-                MessageBox.Show("请检查你的网络");
+                MessageBox.Show("网络异常或是用户密码为空");
             } else
             {
                 MessageBox.Show("获取验证码失败");
@@ -84,11 +84,11 @@ namespace Lib.GetJWXT
                 thread.Start();
             } catch(System.InvalidOperationException e)
             {
-                MessageBox.Show("你点的太快了~~");
+                //MessageBox.Show("你点的太快了~~");
             }
         }
 
-        public string GetAll(string validate)
+        public Boolean GetAll(string validate)
         {
             if (code.Equals("1002"))
             {
@@ -103,14 +103,15 @@ namespace Lib.GetJWXT
                 }
                 else
                 {
-                    MessageBox.Show("验证码错误，请重试");
+                    MessageBox.Show("验证码或用户密码错误，请重试");
                     Retry();
+                    return false;
                 }
-                return code;
+                return true;
             }
             else
             {
-                return code;
+                return false;
             }
         }
 
