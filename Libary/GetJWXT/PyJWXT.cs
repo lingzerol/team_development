@@ -60,7 +60,7 @@ namespace Lib.GetJWXT
                 validateBox.Image = result;
             } else if(code == null)
             {
-                MessageBox.Show("请检查你的网络");
+                MessageBox.Show("网络异常或是用户密码为空");
             } else
             {
                 MessageBox.Show("获取验证码失败");
@@ -84,7 +84,7 @@ namespace Lib.GetJWXT
                 thread.Start();
             } catch(System.InvalidOperationException e)
             {
-                MessageBox.Show("你点的太快了~~");
+                //MessageBox.Show("你点的太快了~~");
             }
         }
 

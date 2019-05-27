@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using Lib;
 using System.Windows.Forms;
 using Lib.GetJWXT;
+using team_development.FormLib;
+using team_development.UI.UserInfo;
+using team_development.UI.JWXT;
 
 namespace team_development.UI.MatchScheme
 {
@@ -72,6 +75,24 @@ namespace team_development.UI.MatchScheme
         private void button1_Click_1(object sender, EventArgs e)
         {
             Log.log.Info("Click Refresh button In MatchScheme Form.");
+            if (GlobalData.userInfo.StudentNumber == null || GlobalData.userInfo.JWXTPassword == null )
+            {
+                MessageBox.Show("请完善您的个人信息", "出现错误");
+                this.Hide();
+                MenuGetter.GetMenu(MenuType.Nothing);
+                ((Form1)(this.ParentForm)).TurnForm(MenuType.UserInfo);
+            } else
+            {
+                Cryptography g = new Cryptography();
+                //JwxtLogin jwxtLogin = new JwxtLogin(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), refresh);
+                JwxtLogin jwxtLogin = JwxtSingleton.GetInstance(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), refresh);
+                jwxtLogin.Show();
+            }
+        }
+
+        private void refresh()
+        {
+            //AddText("refresh", 4, 3);
         }
     }
 }
