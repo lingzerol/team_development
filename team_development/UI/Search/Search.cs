@@ -105,26 +105,20 @@ namespace team_development.UI.Search
                         MessageBox.Show("nothing changed");
                         break;
                     case 1:
-                        //MessageBox.Show(choosetype.SelectedIndex.ToString());
+                        infos = GetInfo(@"Campus_notification.txt");
+                        Filllistview();
+                        break;
+                    case 2:
+                        infos = GetInfo(@"Lecture_notification.txt");
+                        Filllistview();
                         break;
                     case 3:
                         infos = GetInfo(@"Student_notification.txt");
-                        foreach (Info record in infos)
-                        {
-                            ListViewItem item = new ListViewItem();
-                            item.Text = record.getTitle();
-                            item.SubItems.Add(record.getTime());
-                            showitem.Items.Add(item);
-                        }
+                        Filllistview();
                         break;
                     case 4:
                         infos = GetInfo(@"Teacher_notification.txt");
-                        foreach (Info record in infos) {
-                            ListViewItem item = new ListViewItem();
-                            item.Text = record.getTitle();
-                            item.SubItems.Add(record.getTime());
-                            showitem.Items.Add(item);
-                        }
+                        Filllistview();
                         //MessageBox.Show(abc);
                         break;
                     default:
@@ -132,6 +126,17 @@ namespace team_development.UI.Search
                 }//end of switch
                 this.showitem.EndUpdate();
             }            
+        }
+
+        private void Filllistview()
+        {
+            foreach (Info record in infos)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = record.getTitle();
+                item.SubItems.Add(record.getTime());
+                showitem.Items.Add(item);
+            }
         }
 
         private List<Info> GetInfo(string path)
@@ -158,8 +163,9 @@ namespace team_development.UI.Search
         private void showitem_Click(object sender, EventArgs e)
         {
             if (showitem.SelectedItems.Count > 0) {
-                
-                MessageBox.Show(showitem.SelectedIndices[0].ToString());
+                Notisditails notisditails = new Notisditails(infos[showitem.SelectedIndices[0]].getUrl());
+                notisditails.ShowDialog();
+                //MessageBox.Show(showitem.SelectedIndices[0].ToString());
             }
         }
     }
