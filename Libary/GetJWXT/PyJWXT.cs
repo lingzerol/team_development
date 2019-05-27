@@ -88,7 +88,7 @@ namespace Lib.GetJWXT
             }
         }
 
-        public string GetAll(string validate)
+        public Boolean GetAll(string validate)
         {
             if (code.Equals("1002"))
             {
@@ -103,14 +103,15 @@ namespace Lib.GetJWXT
                 }
                 else
                 {
-                    MessageBox.Show("验证码错误，请重试");
+                    MessageBox.Show("验证码或用户密码错误，请重试");
                     Retry();
+                    return false;
                 }
-                return code;
+                return true;
             }
             else
             {
-                return code;
+                return false;
             }
         }
 
