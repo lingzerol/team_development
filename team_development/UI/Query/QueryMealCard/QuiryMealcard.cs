@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lib;
+using Lib.GetMealCard;
 
 namespace team_development.UI.QueryMealCard
 {
@@ -50,7 +52,13 @@ namespace team_development.UI.QueryMealCard
 
         private void QueryButton_Click(object sender, EventArgs e)
         {
-            QueryMealCard();
+            //QueryMealCard();
+            string content = File.ReadAllText(@"mealcard.txt", Encoding.UTF8);
+            textBox1.Text = "电气信息学院";
+            textBox2.Text = GlobalData.userInfo.StudentName;
+            textBox3.Text = content;
+            textBox4.Text = "正常";
+
         }
     }
 }
