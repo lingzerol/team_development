@@ -45,24 +45,31 @@ namespace team_development.UI.MatchScheme
 
         private void MatchScheme_Load(object sender, EventArgs e)
         {
-            MatchSchemeItem matchSchemeItem = GetJWXT.jwxt.GetMatchSchemeItem(Lib.GetJWXT.GetJWXT.jwxt.GetMatchScheme().Body.InnerHtml);
-
-            for (int i = 0; i < matchSchemeItem.needs.Count; i++)
+            MatchSchemeItem matchSchemeItem = AnalyseJWXT.GetMatchSchemeItem();
+            if(matchSchemeItem != null)
             {
-                AddText(matchSchemeItem.needs[i], 3, i+1);
+                MessageBox.Show("加载匹配培养方案完成");
+                for (int i = 0; i < matchSchemeItem.needs.Count; i++)
+                {
+                    AddText(matchSchemeItem.needs[i], 3, i + 1);
+                }
+                for (int i = 0; i < matchSchemeItem.study.Count; i++)
+                {
+                    AddText(matchSchemeItem.study[i], 4, i + 1);
+                }
+                for (int i = 0; i < matchSchemeItem.lefts.Count; i++)
+                {
+                    AddText(matchSchemeItem.lefts[i], 5, i + 1);
+                }
             }
-
-            for (int i = 0; i < matchSchemeItem.study.Count; i++)
+            else
             {
-                AddText(matchSchemeItem.study[i], 4, i+1);
+                MessageBox.Show("请刷新");
             }
-
-            for (int i = 0; i < matchSchemeItem.lefts.Count; i++)
-            {
-                AddText(matchSchemeItem.lefts[i], 5, i + 1);
-            }
-
+         
         }
+
+
 
         private void AddText(string str,int column, int row)
         {
@@ -84,15 +91,34 @@ namespace team_development.UI.MatchScheme
             } else
             {
                 Cryptography g = new Cryptography();
-                //JwxtLogin jwxtLogin = new JwxtLogin(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), refresh);
-                JwxtLogin jwxtLogin = JwxtSingleton.GetInstance(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), refresh);
+                JwxtLogin jwxtLogin = JwxtLoginSingleton.GetInstance(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), refresh);
                 jwxtLogin.Show();
             }
         }
 
         private void refresh()
         {
-            //AddText("refresh", 4, 3);
+            MatchSchemeItem matchSchemeItem = AnalyseJWXT.GetMatchSchemeItem();
+            if (matchSchemeItem != null)
+            {
+                MessageBox.Show("加载匹配培养方案完成");
+                for (int i = 0; i < matchSchemeItem.needs.Count; i++)
+                {
+                    AddText(matchSchemeItem.needs[i], 3, i + 1);
+                }
+                for (int i = 0; i < matchSchemeItem.study.Count; i++)
+                {
+                    AddText(matchSchemeItem.study[i], 4, i + 1);
+                }
+                for (int i = 0; i < matchSchemeItem.lefts.Count; i++)
+                {
+                    AddText(matchSchemeItem.lefts[i], 5, i + 1);
+                }
+            }
+            else
+            {
+                MessageBox.Show("刷新失败");
+            }
         }
     }
 }

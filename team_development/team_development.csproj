@@ -85,7 +85,7 @@
     <Compile Include="UI\JWXT\JwxtLogin.Designer.cs">
       <DependentUpon>JwxtLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\JWXT\JwxtSingleton.cs" />
+    <Compile Include="UI\JWXT\JwxtLoginSingleton.cs" />
     <Compile Include="UI\Query\QueryEmploy\OfferArticle.cs">
       <SubType>Form</SubType>
     </Compile>

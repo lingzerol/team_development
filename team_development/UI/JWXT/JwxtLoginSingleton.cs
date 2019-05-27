@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace team_development.UI.JWXT
 {
-    public class JwxtSingleton
+    public class JwxtLoginSingleton
     {
-        private static JwxtLogin jwxtLogin;
+        private static JwxtLogin jwxtLogin = null;
 
         public static JwxtLogin GetInstance(string username, string password, Refresh refresh)
         {

@@ -16,6 +16,10 @@ namespace team_development.UI.Absence
         public AbsenceInput()
         {
             InitializeComponent();
+            this.StuName.Text = GlobalData.userInfo.StudentName;
+            this.StuNumber.Text = GlobalData.userInfo.StudentNumber;
+            this.Department.Text = "电气信息学院";
+            this.PhoneNumber.Text = "10086";
         }
 
         private void Absence_Load(object sender, EventArgs e)
