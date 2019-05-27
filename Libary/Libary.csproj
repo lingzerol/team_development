@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="AbsenceWordManager.cs" />
     <Compile Include="GetElectricCharge\GetElectricCharge.cs" />
+    <Compile Include="GetJWXT\AnalyseJWXT.cs" />
     <Compile Include="GetJWXT\Course.cs" />
     <Compile Include="GetIcas.cs" />
     <Compile Include="GetInfo.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="GetJWXT\Gpa.cs" />
     <Compile Include="GetJWXT\MatchSchemeItem.cs" />
     <Compile Include="GetJWXT\PyJWXT.cs" />
+    <Compile Include="GetMealCard\PyMealcard.cs" />
     <Compile Include="GetValue.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="NoticeSearch.cs" />
@@ -84,6 +86,7 @@
   <ItemGroup>
     <Content Include="CourseFile\course.txt" />
     <Content Include="GetJWXT\login.exe" />
+    <Content Include="GetMealCard\mealcard.exe" />
     <Content Include="GetNotifications\Get_Article.exe" />
     <Content Include="GetNotifications\Get_Notifications.exe" />
   </ItemGroup>

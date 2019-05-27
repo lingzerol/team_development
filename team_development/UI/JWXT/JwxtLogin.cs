@@ -44,7 +44,8 @@ namespace team_development.UI.JWXT
 
         private void JwxtLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            JwxtSingleton.SetNull();
+            pyJwxt.Destroy();
+            JwxtLoginSingleton.SetNull();
         }
     }
 }

@@ -73,6 +73,7 @@ namespace Lib.GetJWXT
             if(fs != null)
             {
                 fs.Close();
+                fs = null;
             }
             try
             {
@@ -83,6 +84,26 @@ namespace Lib.GetJWXT
                 thread = new Thread(this.Init);
                 thread.Start();
             } catch(System.InvalidOperationException e)
+            {
+                //MessageBox.Show("你点的太快了~~");
+            }
+        }
+
+        public void Destroy()
+        {
+            if (fs != null)
+            {
+                fs.Close();
+                fs = null;
+            }
+            try
+            {
+                proc.StandardInput.WriteLine("-1");
+                proc.WaitForExit();
+                proc.Close();
+                thread.Abort();
+            }
+            catch (System.InvalidOperationException e)
             {
                 //MessageBox.Show("你点的太快了~~");
             }
