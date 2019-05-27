@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lib;
 using Lib.GetMealCard;
+using team_development.FormLib;
+using team_development.UI.Query.QueryMealCard;
 
 namespace team_development.UI.QueryMealCard
 {
@@ -53,12 +55,36 @@ namespace team_development.UI.QueryMealCard
         private void QueryButton_Click(object sender, EventArgs e)
         {
             //QueryMealCard();
+            /*
             string content = File.ReadAllText(@"mealcard.txt", Encoding.UTF8);
             textBox1.Text = "电气信息学院";
             textBox2.Text = GlobalData.userInfo.StudentName;
             textBox3.Text = content;
             textBox4.Text = "正常";
+            */
+            Log.log.Info("Click Refresh button In MatchScheme Form.");
+            if (GlobalData.userInfo.StudentNumber == null || GlobalData.userInfo.JWXTPassword == null)
+            {
+                MessageBox.Show("请完善您的个人信息", "出现错误");
+                this.Hide();
+                MenuGetter.GetMenu(MenuType.Nothing);
+                ((Form1)(this.ParentForm)).TurnForm(MenuType.UserInfo);
+            }
+            else
+            {
+                
+                SzjdLogin szjdLogin = SzjdLoginSingleton.GetInstance(GlobalData.userInfo.StudentNumber, "040939", refresh);
+                szjdLogin.Show();
+            }
 
+        }
+        private void refresh()
+        {
+            string content = File.ReadAllText(@"mealcard.txt", Encoding.UTF8);
+            textBox1.Text = "电气信息学院";
+            textBox2.Text = GlobalData.userInfo.StudentName;
+            textBox3.Text = content;
+            textBox4.Text = "正常";
         }
     }
 }

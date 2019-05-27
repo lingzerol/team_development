@@ -21,11 +21,11 @@ namespace Lib.GetMealCard
         Thread thread = null;
         FileStream fs = null;
 
-        public PyMealcard(string username, string password)
+        public PyMealcard(string username, string password,PictureBox validateBox)
         {
             this.username = username;
             this.password = password;
-            //this.validateBox = validateBox;
+            this.validateBox = validateBox;
             thread = new Thread(this.Init);
             thread.Start();
         }
@@ -91,7 +91,27 @@ namespace Lib.GetMealCard
             }
         }
 
-        public string GetAll(string validate)
+        public void Destroy()
+        {
+            if (fs != null)
+            {
+                fs.Close();
+                fs = null;
+            }
+            try
+            {
+                proc.StandardInput.WriteLine("-1");
+                proc.WaitForExit();
+                proc.Close();
+                thread.Abort();
+            }
+            catch (System.InvalidOperationException e)
+            {
+                //MessageBox.Show("你点的太快了~~");
+            }
+        }
+
+        public Boolean GetAll(string validate)
         {
             if (code.Equals("1001"))
             {
@@ -102,18 +122,19 @@ namespace Lib.GetMealCard
                     code = proc.StandardOutput.ReadToEnd();
                     proc.WaitForExit();
                     proc.Close();
-                    MessageBox.Show("登录成功");
+                    MessageBox.Show("成功获取饭卡余额");
                 }
                 else
                 {
-                    MessageBox.Show("验证码错误，请重试");
+                    MessageBox.Show("验证码或用户密码错误，请重试");
                     Retry();
+                    return false;
                 }
-                return code;
+                return true;
             }
             else
             {
-                return code;
+                return false;
             }
         }
 
