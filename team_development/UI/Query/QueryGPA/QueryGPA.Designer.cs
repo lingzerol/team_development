@@ -39,6 +39,7 @@
             this.show_gpa = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.Refresh_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // choose_semester
@@ -145,7 +146,6 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "查询成绩";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
             // 
@@ -156,7 +156,18 @@
             this.label2.Size = new System.Drawing.Size(65, 29);
             this.label2.TabIndex = 10;
             this.label2.Text = "GPA";
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
+            // 
+            // Refresh_button
+            // 
+            this.Refresh_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Refresh_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Refresh_button.Location = new System.Drawing.Point(948, 6);
+            this.Refresh_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Refresh_button.Name = "Refresh_button";
+            this.Refresh_button.Size = new System.Drawing.Size(94, 66);
+            this.Refresh_button.TabIndex = 1;
+            this.Refresh_button.UseVisualStyleBackColor = true;
+            this.Refresh_button.Click += new System.EventHandler(this.Refresh_button_Click);
             // 
             // QueryMark
             // 
@@ -164,6 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
+            this.Controls.Add(this.Refresh_button);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.show_gpa);
@@ -195,5 +207,6 @@
         private System.Windows.Forms.ListView show_gpa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Refresh_button;
     }
 }
