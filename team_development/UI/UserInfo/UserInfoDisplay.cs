@@ -63,7 +63,7 @@ namespace team_development.UI.UserInfo
             GlobalData.userInfo.JWXTPassword = g.Encryption(GlobalData.userInfo.JWXTPassword);
 
             Storage.Save(GlobalData.userInfo, "UserInfo.xml");
-        }
+        } 
         private void infochange_Click(object sender, EventArgs e)
         {
             Save();
