@@ -18,13 +18,14 @@ namespace team_development
 {
     public partial class ValidateForm : Form
     {
-        private GetJWXT jwxt = GetJWXT.jwxt;
+        //private GetJWXT jwxt = GetJWXT.jwxt;
+        private PyJWXT pyJwxt = null;
         private Geticas getIcas = Geticas.Icas;
         private Waiting wait = new Waiting();
         public ValidateForm()
         {
             InitializeComponent();
-            ValidateImage.Image = jwxt.GetValidateImage();
+            //ValidateImage.Image = jwxt.GetValidateImage();
             if(GlobalData.userInfo.JWXTPassword == null || GlobalData.userInfo.StudentNumber == null || GlobalData.userInfo.SZJDPassword == null || GlobalData.userInfo.DormNumber == null) {
                 MessageBox.Show("请完善您的个人信息", "出现错误");
                 this.Hide();
@@ -33,6 +34,10 @@ namespace team_development
                 form.TurnForm(MenuType.UserInfo);
                 form.ShowDialog();
                 Application.ExitThread();
+            } else
+            {
+                Cryptography g = new Cryptography();
+                pyJwxt = new PyJWXT(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), ValidateImage);
             }
         }
 
@@ -45,17 +50,21 @@ namespace team_development
         {
 
             Cryptography g = new Cryptography();
-            bool result = jwxt.Login(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), getValidate.Text);
+            //bool result = jwxt.Login(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), getValidate.Text);
             getIcas.Login(GlobalData.userInfo.StudentNumber,g.Decrypt(GlobalData.userInfo.SZJDPassword));
             PyNotifications getNoti = new PyNotifications();
 
-            wait.StartKiller();
+            //wait.StartKiller();
             this.Hide();
             MenuGetter.GetMenu(MenuType.Nothing);
             Form1 form = new Form1();
-            if (!result)
+            //if (!result)
+            //{
+            //    MessageBox.Show("密码或验证码错误", "Error");
+            //    form.TurnForm(MenuType.UserInfo);
+            //}
+            if (!pyJwxt.GetAll(getValidate.Text))
             {
-                MessageBox.Show("密码或验证码错误", "Error");
                 form.TurnForm(MenuType.UserInfo);
             }
             form.ShowDialog();
@@ -64,7 +73,8 @@ namespace team_development
 
         private void ValidateImage_Click(object sender, EventArgs e)
         {
-            ValidateImage.Image = jwxt.GetValidateImage();
+            //ValidateImage.Image = jwxt.GetValidateImage();
+            pyJwxt.Retry();
         }
 
         private void ValidateForm_Load(object sender, EventArgs e)
