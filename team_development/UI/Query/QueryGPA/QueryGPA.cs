@@ -154,7 +154,7 @@ namespace team_development.UI.QueryGPA
                 {
                     Cryptography g = new Cryptography();
                     //JwxtLogin jwxtLogin = new JwxtLogin(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), refresh);
-                    JwxtLogin jwxtLogin = JwxtSingleton.GetInstance(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), refresh);
+                    JwxtLogin jwxtLogin = JwxtLoginSingleton.GetInstance(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), refresh);
                     jwxtLogin.Show();
                 }
         }

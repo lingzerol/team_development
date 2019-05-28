@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
-            this.btn_back = new System.Windows.Forms.Button();
             this.choosetype = new System.Windows.Forms.ComboBox();
             this.showitem = new System.Windows.Forms.ListView();
+            this.refresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -63,16 +63,6 @@
             this.btn_search.UseVisualStyleBackColor = true;
             this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // btn_back
-            // 
-            this.btn_back.Location = new System.Drawing.Point(345, 13);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(95, 25);
-            this.btn_back.TabIndex = 4;
-            this.btn_back.Text = "返回上一页";
-            this.btn_back.UseVisualStyleBackColor = true;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
-            // 
             // choosetype
             // 
             this.choosetype.FormattingEnabled = true;
@@ -82,7 +72,7 @@
             "讲座报告",
             "学生通知",
             "教师通知"});
-            this.choosetype.Location = new System.Drawing.Point(20, 76);
+            this.choosetype.Location = new System.Drawing.Point(339, 16);
             this.choosetype.Name = "choosetype";
             this.choosetype.Size = new System.Drawing.Size(121, 23);
             this.choosetype.TabIndex = 5;
@@ -91,13 +81,23 @@
             // 
             // showitem
             // 
-            this.showitem.Location = new System.Drawing.Point(29, 116);
+            this.showitem.Location = new System.Drawing.Point(20, 66);
             this.showitem.Name = "showitem";
-            this.showitem.Size = new System.Drawing.Size(742, 407);
+            this.showitem.Size = new System.Drawing.Size(751, 457);
             this.showitem.TabIndex = 6;
             this.showitem.UseCompatibleStateImageBehavior = false;
             this.showitem.SelectedIndexChanged += new System.EventHandler(this.showitem_SelectedIndexChanged);
             this.showitem.Click += new System.EventHandler(this.showitem_Click);
+            // 
+            // refresh
+            // 
+            this.refresh.Location = new System.Drawing.Point(696, 43);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(75, 23);
+            this.refresh.TabIndex = 7;
+            this.refresh.Text = "刷新";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
             // Search
             // 
@@ -105,9 +105,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
+            this.Controls.Add(this.refresh);
             this.Controls.Add(this.showitem);
             this.Controls.Add(this.choosetype);
-            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.label1);
@@ -125,8 +125,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button btn_search;
-        private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.ComboBox choosetype;
         private System.Windows.Forms.ListView showitem;
+        private System.Windows.Forms.Button refresh;
     }
 }
