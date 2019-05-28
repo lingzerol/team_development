@@ -11,6 +11,7 @@ using Lib;
 using System.Web;
 using System.Threading;
 using System.IO;
+using Lib.GetNotifications;
 
 namespace team_development.UI.Search
 {
@@ -36,10 +37,8 @@ namespace team_development.UI.Search
 
         private void Search_Load(object sender, EventArgs e)
         {
-            allinfos = GetInfo(@"Campus_notification.txt");
-            allinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
-            allinfos.AddRange(GetInfo(@"Student_notification.txt"));
-            allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));
+
+            //MessageBox.Show(allinfos.Count.ToString());
         }
         private void TurnToForm(Form f)
         {
@@ -49,6 +48,11 @@ namespace team_development.UI.Search
         private void btn_search_Click(object sender, EventArgs e)
         {
             Log.log.Info("Search the Jinan University's news and notices.");
+            allinfos.Clear();
+            allinfos = GetInfo(@"Campus_notification.txt");
+            allinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
+            allinfos.AddRange(GetInfo(@"Student_notification.txt"));
+            allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));
             //MessageBox.Show(searchBox.Text);
             List<Info> searchinfos = new List<Info>();
             foreach (Info record in allinfos)
@@ -147,6 +151,7 @@ namespace team_development.UI.Search
         private void refresh_Click(object sender, EventArgs e)
         {
             PyNotifications getnoti = new PyNotifications();
+            PyNews getnews = new PyNews();
         }
     }
 }
