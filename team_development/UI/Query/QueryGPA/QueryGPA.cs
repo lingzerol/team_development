@@ -13,6 +13,7 @@ using Lib;
 using team_development.FormLib;
 using team_development.UI.UserInfo;
 using team_development.UI.JWXT;
+using System.IO;
 
 namespace team_development.UI.QueryGPA
 {
@@ -24,7 +25,6 @@ namespace team_development.UI.QueryGPA
         public QueryMark()
         {
             InitializeComponent();
-            choose_semester.SelectedIndex = 0;
             choose_academic_year.SelectedIndex = 0;
             TableLoad();
             /*timer.Interval = 3000;
@@ -68,7 +68,10 @@ namespace team_development.UI.QueryGPA
             show_gpa.Clear();
             TableLoad();
 
-            HtmlDocument GpaDoc = jwxt.GetGPA();
+            string filePath = @"gpa.txt";
+            string content = File.ReadAllText(filePath, Encoding.UTF8);
+            //MessageBox.Show("set gpa");
+            /*HtmlDocument GpaDoc = jwxt.GetGPA();
             string str = (string)GpaDoc.Body.InnerHtml;
             string itemlist=null;
             List<Gpa> Gpas;
@@ -126,7 +129,7 @@ namespace team_development.UI.QueryGPA
                     MessageBox.Show("switch error");
                     break;
             }//end of switch
-            this.show_gpa.EndUpdate();
+            this.show_gpa.EndUpdate();*/
         }
         public void ShowGpa(ListViewItem temp,Gpa g) {
             temp = new ListViewItem();

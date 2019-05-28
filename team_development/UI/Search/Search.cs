@@ -52,12 +52,12 @@ namespace team_development.UI.Search
         private void btn_search_Click(object sender, EventArgs e)
         {
             Log.log.Info("Search the Jinan University's news and notices.");
-            allinfos.Clear();
+            /*allinfos.Clear();
             allinfos = GetInfo(@"jnu_news.txt");
-            allinfos .AddRange(GetInfo(@"Campus_notification.txt"));
+            allinfos.AddRange(GetInfo(@"Campus_notification.txt"));
             allinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
             allinfos.AddRange(GetInfo(@"Student_notification.txt"));
-            allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));
+            allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));*/
             //MessageBox.Show(searchBox.Text);
             List<Info> searchinfos = new List<Info>();
             foreach (Info record in allinfos)
@@ -133,7 +133,8 @@ namespace team_development.UI.Search
 
         private List<Info> GetInfo(string path)
         {
-            showedinfos.Clear();
+            //showedinfos.Clear();
+            List<Info> temp = new List<Info>();
             string filePath = path;
             //FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
             //StreamReader sr = new StreamReader(fileStream, Encoding.Default);
@@ -143,9 +144,9 @@ namespace team_development.UI.Search
             for (int i = 0; i < element.Length - 3; i += 3)
             {
                 info = new Info(element[i], element[i + 1], element[i + 2]);
-                showedinfos.Add(info);
+                temp.Add(info);
             }
-            return showedinfos;
+            return temp;
         }
 
         private void showitem_SelectedIndexChanged(object sender, EventArgs e)
@@ -165,38 +166,9 @@ namespace team_development.UI.Search
         {
             PyNotifications getnoti = new PyNotifications();
             PyNews getnews = new PyNews();
-            //MessageBox.Show(choosetype.SelectedIndex.ToString());
-            showitem.Clear();
-            TableLoad();
-            this.showitem.BeginUpdate();
-            switch (choosetype.SelectedIndex)
-            {
-                case 0:
-                    //MessageBox.Show("nothing changed");
-                    showedinfos = GetInfo(@"jnu_news.txt");
-                    Filllistview(showedinfos);
-                    break;
-                case 1:
-                    showedinfos = GetInfo(@"Campus_notification.txt");
-                    Filllistview(showedinfos);
-                    break;
-                case 2:
-                    showedinfos = GetInfo(@"Lecture_notification.txt");
-                    Filllistview(showedinfos);
-                    break;
-                case 3:
-                    showedinfos = GetInfo(@"Student_notification.txt");
-                    Filllistview(showedinfos);
-                    break;
-                case 4:
-                    showedinfos = GetInfo(@"Teacher_notification.txt");
-                    Filllistview(showedinfos);
-                    //MessageBox.Show(abc);
-                    break;
-                default:
-                    break;
-            }//end of switch
-            this.showitem.EndUpdate();
+            Waiting wait = new Waiting();
+            wait.StartKiller();
+            Choosetypetoshow(choosetype.SelectedIndex);
         }
     }
 }

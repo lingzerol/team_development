@@ -20,11 +20,11 @@ namespace Lib
         public const int WM_CLOSE = 0x10;
         public Waiting() { }
         private IsOK ok = null;
-        public void StartKiller(bool show=true,int span = 5000, IsOK ok = null)
+        public void StartKiller(bool show=true,int span = 10000, IsOK ok = null)
         {
             this.ok = ok;
             Timer timer = new Timer();
-            timer.Interval = span; //3秒启动 
+            timer.Interval = span; //5秒启动 
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
             if(show)
