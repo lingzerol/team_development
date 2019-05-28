@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QueryMark));
             this.student_id = new System.Windows.Forms.Label();
             this.student_id_text = new System.Windows.Forms.TextBox();
             this.student_name = new System.Windows.Forms.Label();
@@ -138,9 +139,11 @@
             // 
             // Refresh_button
             // 
+            this.Refresh_button.FlatAppearance.BorderSize = 0;
             this.Refresh_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Refresh_button.Location = new System.Drawing.Point(861, 36);
+            this.Refresh_button.Image = ((System.Drawing.Image)(resources.GetObject("Refresh_button.Image")));
+            this.Refresh_button.Location = new System.Drawing.Point(845, 40);
             this.Refresh_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Refresh_button.Name = "Refresh_button";
             this.Refresh_button.Size = new System.Drawing.Size(94, 66);

@@ -25,7 +25,7 @@ namespace team_development.UI.QueryGPA
         public QueryMark()
         {
             InitializeComponent();
-            choose_semester.SelectedIndex = 0;
+           // choose_semester.SelectedIndex = 0;
             choose_academic_year.SelectedIndex = 0;
             TableLoad();
             /*timer.Interval = 3000;
@@ -81,9 +81,9 @@ namespace team_development.UI.QueryGPA
             int flag = 0;
             if (choose_academic_year.Text !="ALL")
                 flag++;
-            if (choose_semester.Text != "ALL")
+           /* if (choose_semester.Text != "ALL")
                 flag+=2;
-
+                */
             this.show_gpa.BeginUpdate();
             switch (flag) {
                 case 0:
@@ -104,20 +104,20 @@ namespace team_development.UI.QueryGPA
                 case 2:
                     foreach (Gpa g in Gpas)
                     {
-                        if (g.coursecode==choose_semester.Text)
+                      /*  if (g.coursecode==choose_semester.Text)
                         {
                             ShowGpa(temp, g);
-                        }
+                        }*/
                     }
                     break;
                 case 3:
                     foreach (Gpa g in Gpas)
                     {
-                        if ((g.schoolyear == choose_academic_year.Text)&& 
+                      /*  if ((g.schoolyear == choose_academic_year.Text)&& 
                             (g.coursecode == choose_semester.Text))
                         {
                             ShowGpa(temp, g);
-                        }
+                        }*/
                     }
                     break;
                 default:
