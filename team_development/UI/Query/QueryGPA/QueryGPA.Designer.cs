@@ -129,9 +129,9 @@
             // show_gpa
             // 
             this.show_gpa.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.show_gpa.Location = new System.Drawing.Point(87, 128);
+            this.show_gpa.Location = new System.Drawing.Point(56, 128);
             this.show_gpa.Name = "show_gpa";
-            this.show_gpa.Size = new System.Drawing.Size(868, 428);
+            this.show_gpa.Size = new System.Drawing.Size(944, 428);
             this.show_gpa.TabIndex = 8;
             this.show_gpa.UseCompatibleStateImageBehavior = false;
             this.show_gpa.SelectedIndexChanged += new System.EventHandler(this.Show_gpa_SelectedIndexChanged);

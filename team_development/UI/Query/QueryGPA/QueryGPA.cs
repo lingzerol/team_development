@@ -13,6 +13,7 @@ using Lib;
 using team_development.FormLib;
 using team_development.UI.UserInfo;
 using team_development.UI.JWXT;
+using System.IO;
 
 namespace team_development.UI.QueryGPA
 {
@@ -43,8 +44,8 @@ namespace team_development.UI.QueryGPA
             show_gpa.View = View.Details;
             show_gpa.Scrollable = true;
             
-            this.show_gpa.Columns.Add("学年", 90, HorizontalAlignment.Center);
-            this.show_gpa.Columns.Add("学期", 60, HorizontalAlignment.Center);
+            this.show_gpa.Columns.Add("学年", 130, HorizontalAlignment.Center);
+            this.show_gpa.Columns.Add("课程代码", 80, HorizontalAlignment.Center);
             this.show_gpa.Columns.Add("课程名称", 150, HorizontalAlignment.Center);
             this.show_gpa.Columns.Add("学分", 80, HorizontalAlignment.Center);
             this.show_gpa.Columns.Add("成绩", 80, HorizontalAlignment.Center);
@@ -67,18 +68,15 @@ namespace team_development.UI.QueryGPA
         {
             show_gpa.Clear();
             TableLoad();
-
-            HtmlDocument GpaDoc = jwxt.GetGPA();
-            string str = (string)GpaDoc.Body.InnerHtml;
+            //HtmlDocument GpaDoc = jwxt.GetGPA();
+            //string str = (string)GpaDoc.Body.InnerHtml;
+            StreamReader sr = new StreamReader(@"gpa.txt", Encoding.Default);
+            string str=sr.ReadToEnd();
+            str = str.Substring(str.IndexOf("备注"));
             string itemlist=null;
             List<Gpa> Gpas;
-            Gpas = jwxt.GetGpaList(str);
-
-            foreach (Gpa g in Gpas)
-            {
-                itemlist += g.mark + "\r\n";
-
-            }
+            Gpas = jwxt.GetGpaList(str);                       
+           
             ListViewItem temp=new ListViewItem();
             int flag = 0;
             if (choose_academic_year.Text !="ALL")
@@ -106,7 +104,7 @@ namespace team_development.UI.QueryGPA
                 case 2:
                     foreach (Gpa g in Gpas)
                     {
-                        if (g.semester==choose_semester.Text)
+                        if (g.coursecode==choose_semester.Text)
                         {
                             ShowGpa(temp, g);
                         }
@@ -116,7 +114,7 @@ namespace team_development.UI.QueryGPA
                     foreach (Gpa g in Gpas)
                     {
                         if ((g.schoolyear == choose_academic_year.Text)&& 
-                            (g.semester == choose_semester.Text))
+                            (g.coursecode == choose_semester.Text))
                         {
                             ShowGpa(temp, g);
                         }
@@ -127,11 +125,12 @@ namespace team_development.UI.QueryGPA
                     break;
             }//end of switch
             this.show_gpa.EndUpdate();
+            
         }
         public void ShowGpa(ListViewItem temp,Gpa g) {
             temp = new ListViewItem();
             temp.Text = g.schoolyear;
-            temp.SubItems.Add(g.semester);
+            temp.SubItems.Add(g.coursecode);
             temp.SubItems.Add(g.coursename);
             temp.SubItems.Add(g.credit.ToString());
             temp.SubItems.Add(g.mark.ToString());
@@ -154,13 +153,12 @@ namespace team_development.UI.QueryGPA
                 {
                     Cryptography g = new Cryptography();
                     //JwxtLogin jwxtLogin = new JwxtLogin(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), refresh);
-                    JwxtLogin jwxtLogin = JwxtLoginSingleton.GetInstance(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), refresh);
+                    JwxtLogin jwxtLogin = JwxtLoginSingleton.GetInstance(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), SetGpa);
                     jwxtLogin.Show();
                 }
+                
         }
 
-        private void refresh() {
-
-        }
+        
     }
 }

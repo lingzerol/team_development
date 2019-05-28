@@ -214,61 +214,102 @@ namespace Lib.GetJWXT
 
         public List<Gpa> GetGpaList(string str)
         {
-            List<Gpa> Gpas = new List<Gpa>();
-            Regex reg = new Regex(@"<TD>[^<]*</TD>", RegexOptions.IgnoreCase);
+            List<Gpa> Gpas = new List<Gpa>();         
+            Regex reg = new Regex(@"<td>[^<]*</td>", RegexOptions.IgnoreCase);
             MatchCollection mc = reg.Matches(str);
             string item;
             int i = 0;
             string a = "";
             string schoolyear = "";
-            string semester = "";
+            string coursecode = "";
             string coursename = "";
             float credit = 0, mark = 0, gp = 0;
             string coursecategory = "";
+            string itemlist = "";
             foreach (Match m in mc)
             {
                 item = m.Value;
-                Console.WriteLine(item);//
+                Console.WriteLine(item);
                 int IndexofA = item.IndexOf(">");
-                int IndexofB = item.IndexOf("</TD>");
-                string Ru = item.Substring(IndexofA + 1, IndexofB - IndexofA - 1);
-                if (!Ru.Equals(""))
+                int IndexofB = item.IndexOf("</td>");
+                string Ru = item.Substring(IndexofA + 1, IndexofB - IndexofA - 1).Trim();
+                string rex = "[1-9][0-9][0-9][0-9]";
+                if(Ru!= "&nbsp;"&&Ru!= "----"&&Ru!= "--------"&&Ru!= "------------------------------------------------")
                 {
-                    switch (i)
+                    if (Regex.Match(Ru, rex).ToString() != "" && IsChina(Ru))
+                          schoolyear = Ru;
+                       // itemlist += Ru+"\n";
+                    else
                     {
-                        case 0:
-                            schoolyear = Ru;
-                            break;
-                        case 1:
-                            semester = Ru;
-                            break;
-                        case 2:
-                            coursename = Ru;
-                            break;
-                        case 3:
-                            credit = Convert.ToSingle(Ru);
-                            break;
-                        case 4:
-                            mark = Convert.ToSingle(Ru);
-                            break;
-                        case 5:
-                            gp = Convert.ToSingle(Ru);
-                            break;
-                        case 9:
-                            coursecategory = Ru;
+                        if (i != 0 || IsNumeric(Ru))
+                        {
+                            switch (i)
+                            {
+                                case 0:
+                                    coursecode = Ru;
 
-                            Gpa gpa = new Gpa(schoolyear, semester, coursename, credit, mark, gp, coursecategory);
-                            Gpas.Add(gpa);
-                            break;
+                                    break;
+                                case 1:
+                                    coursename = Ru;
+                                    break;
+                                case 2:
+                                    coursecategory = Ru;
+                                    break;
+                                case 3:
+                                    mark = Convert.ToSingle(Ru);
+                                    break;
+                                case 4:
+                                    credit = Convert.ToSingle(Ru);
+                                    break;
+                                case 5:
+                                    gp = Convert.ToSingle(Ru);
+                                      Gpa gpa = new Gpa(schoolyear, coursecode, coursename, credit, mark, gp, coursecategory);
+                                      Gpas.Add(gpa);
+                                      
+                                    break;
+                            }
+                            i++;
+                            i = i % 6;
+                            itemlist += Ru+"\n";
+                        }
                     }
-                    i++;
-                    i = i % 11;
-
                 }
+                
             }
+          //  MessageBox.Show(itemlist);
             return Gpas;
         }
+        private static bool IsNumeric(string str) //接收一个string类型的参数,保存到str里
+        {
+            if (str == null || str.Length == 0)    //验证这个参数是否为空
+                return false;                           //是，就返回False
+            ASCIIEncoding ascii = new ASCIIEncoding();//new ASCIIEncoding 的实例
+            byte[] bytestr = ascii.GetBytes(str);         //把string类型的参数保存到数组里
 
+            foreach (byte c in bytestr)                   //遍历这个数组里的内容
+            {
+                if (c < 48 || c > 57)                          //判断是否为数字
+                {
+                    return false;                              //不是，就返回False
+                }
+            }
+            return true;                                        //是，就返回True
+        }
+
+        
+        public bool IsChina(string CString)  //判断是否含有中文
+        {
+            bool BoolValue = false;
+            for (int i = 0; i < CString.Length; i++)
+            {
+                if (Convert.ToInt32(Convert.ToChar(CString.Substring(i, 1))) > Convert.ToInt32(Convert.ToChar(128)))
+                {
+                    BoolValue = true;
+                }
+
+            }
+            return BoolValue;
+        }
     }
 
 
