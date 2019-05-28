@@ -48,14 +48,15 @@
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(466, 14);
+            this.searchBox.Location = new System.Drawing.Point(557, 25);
             this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(208, 25);
+            this.searchBox.Size = new System.Drawing.Size(133, 25);
             this.searchBox.TabIndex = 2;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(696, 12);
+            this.btn_search.Location = new System.Drawing.Point(696, 24);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(75, 25);
             this.btn_search.TabIndex = 3;
@@ -72,7 +73,7 @@
             "讲座报告",
             "学生通知",
             "教师通知"});
-            this.choosetype.Location = new System.Drawing.Point(339, 16);
+            this.choosetype.Location = new System.Drawing.Point(324, 24);
             this.choosetype.Name = "choosetype";
             this.choosetype.Size = new System.Drawing.Size(121, 23);
             this.choosetype.TabIndex = 5;
@@ -81,9 +82,9 @@
             // 
             // showitem
             // 
-            this.showitem.Location = new System.Drawing.Point(20, 66);
+            this.showitem.Location = new System.Drawing.Point(20, 70);
             this.showitem.Name = "showitem";
-            this.showitem.Size = new System.Drawing.Size(751, 457);
+            this.showitem.Size = new System.Drawing.Size(751, 327);
             this.showitem.TabIndex = 6;
             this.showitem.UseCompatibleStateImageBehavior = false;
             this.showitem.SelectedIndexChanged += new System.EventHandler(this.showitem_SelectedIndexChanged);
@@ -91,7 +92,7 @@
             // 
             // refresh
             // 
-            this.refresh.Location = new System.Drawing.Point(696, 43);
+            this.refresh.Location = new System.Drawing.Point(451, 24);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(75, 23);
             this.refresh.TabIndex = 7;
@@ -103,6 +104,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
             this.Controls.Add(this.refresh);

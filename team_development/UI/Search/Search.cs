@@ -34,7 +34,6 @@ namespace team_development.UI.Search
 
             showitem.View = View.Details;
             showitem.Scrollable = true;
-
             this.showitem.Columns.Add("标题", 570, HorizontalAlignment.Center);
             this.showitem.Columns.Add("时间", 130, HorizontalAlignment.Center);
         }
@@ -52,15 +51,15 @@ namespace team_development.UI.Search
         private void btn_search_Click(object sender, EventArgs e)
         {
             Log.log.Info("Search the Jinan University's news and notices.");
-            /*allinfos.Clear();
+            allinfos.Clear();
             allinfos = GetInfo(@"jnu_news.txt");
             allinfos.AddRange(GetInfo(@"Campus_notification.txt"));
             allinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
             allinfos.AddRange(GetInfo(@"Student_notification.txt"));
-            allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));*/
+            allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));
             //MessageBox.Show(searchBox.Text);
             List<Info> searchinfos = new List<Info>();
-            foreach (Info record in showedinfos)
+            foreach (Info record in allinfos)
             {
                 if (record.getTitle().IndexOf(searchBox.Text) != -1)
                     searchinfos.Add(record);
@@ -126,6 +125,7 @@ namespace team_development.UI.Search
             foreach (Info record in targetinfos)
             {
                 ListViewItem item = new ListViewItem();
+                
                 item.Text = record.getTitle();
                 item.SubItems.Add(record.getTime());
                 showitem.Items.Add(item);
@@ -170,6 +170,11 @@ namespace team_development.UI.Search
             Waiting wait = new Waiting();
             wait.StartKiller();
             Choosetypetoshow(choosetype.SelectedIndex);
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
