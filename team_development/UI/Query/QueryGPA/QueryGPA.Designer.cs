@@ -28,32 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.choose_semester = new System.Windows.Forms.ComboBox();
             this.student_id = new System.Windows.Forms.Label();
             this.student_id_text = new System.Windows.Forms.TextBox();
             this.student_name = new System.Windows.Forms.Label();
             this.student_name_text = new System.Windows.Forms.TextBox();
             this.academic_year = new System.Windows.Forms.Label();
             this.choose_academic_year = new System.Windows.Forms.ComboBox();
-            this.semester = new System.Windows.Forms.Label();
             this.show_gpa = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Refresh_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // choose_semester
-            // 
-            this.choose_semester.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.choose_semester.FormattingEnabled = true;
-            this.choose_semester.Items.AddRange(new object[] {
-            "ALL",
-            "上",
-            "下"});
-            this.choose_semester.Location = new System.Drawing.Point(849, 79);
-            this.choose_semester.Name = "choose_semester";
-            this.choose_semester.Size = new System.Drawing.Size(121, 28);
-            this.choose_semester.TabIndex = 7;
             // 
             // student_id
             // 
@@ -95,11 +80,11 @@
             // 
             this.academic_year.AutoSize = true;
             this.academic_year.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.academic_year.Location = new System.Drawing.Point(546, 82);
+            this.academic_year.Location = new System.Drawing.Point(559, 82);
             this.academic_year.Name = "academic_year";
-            this.academic_year.Size = new System.Drawing.Size(39, 20);
+            this.academic_year.Size = new System.Drawing.Size(75, 20);
             this.academic_year.TabIndex = 4;
-            this.academic_year.Text = "学年";
+            this.academic_year.Text = "学年-学期";
             // 
             // choose_academic_year
             // 
@@ -107,24 +92,18 @@
             this.choose_academic_year.FormattingEnabled = true;
             this.choose_academic_year.Items.AddRange(new object[] {
             "ALL",
-            "2015-2016",
-            "2016-2017",
-            "2017-2018",
-            "2018-2019"});
-            this.choose_academic_year.Location = new System.Drawing.Point(601, 79);
+            "2015-2016，上",
+            "2015-2016，下",
+            "2016-2017，上",
+            "2016-2017，下",
+            "2017-2018，上",
+            "2017-2018，下",
+            "2018-2019，上",
+            "2018-2019，下"});
+            this.choose_academic_year.Location = new System.Drawing.Point(666, 78);
             this.choose_academic_year.Name = "choose_academic_year";
             this.choose_academic_year.Size = new System.Drawing.Size(120, 28);
             this.choose_academic_year.TabIndex = 5;
-            // 
-            // semester
-            // 
-            this.semester.AutoSize = true;
-            this.semester.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.semester.Location = new System.Drawing.Point(795, 82);
-            this.semester.Name = "semester";
-            this.semester.Size = new System.Drawing.Size(39, 20);
-            this.semester.TabIndex = 6;
-            this.semester.Text = "学期";
             // 
             // show_gpa
             // 
@@ -161,7 +140,7 @@
             // 
             this.Refresh_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh_button.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Refresh_button.Location = new System.Drawing.Point(948, 6);
+            this.Refresh_button.Location = new System.Drawing.Point(861, 36);
             this.Refresh_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Refresh_button.Name = "Refresh_button";
             this.Refresh_button.Size = new System.Drawing.Size(94, 66);
@@ -179,8 +158,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.show_gpa);
-            this.Controls.Add(this.choose_semester);
-            this.Controls.Add(this.semester);
             this.Controls.Add(this.choose_academic_year);
             this.Controls.Add(this.academic_year);
             this.Controls.Add(this.student_name_text);
@@ -196,14 +173,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox choose_semester;
         private System.Windows.Forms.Label student_id;
         private System.Windows.Forms.TextBox student_id_text;
         private System.Windows.Forms.Label student_name;
         private System.Windows.Forms.TextBox student_name_text;
         private System.Windows.Forms.Label academic_year;
         private System.Windows.Forms.ComboBox choose_academic_year;
-        private System.Windows.Forms.Label semester;
         private System.Windows.Forms.ListView show_gpa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
