@@ -60,7 +60,7 @@ namespace team_development.UI.Search
             allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));*/
             //MessageBox.Show(searchBox.Text);
             List<Info> searchinfos = new List<Info>();
-            foreach (Info record in allinfos)
+            foreach (Info record in showedinfos)
             {
                 if (record.getTitle().IndexOf(searchBox.Text) != -1)
                     searchinfos.Add(record);
@@ -69,7 +69,8 @@ namespace team_development.UI.Search
             TableLoad();
             this.showitem.BeginUpdate();
             if (searchinfos != null && searchinfos.Count > 0) {
-                Filllistview(searchinfos);
+                showedinfos = searchinfos;
+                Filllistview(showedinfos);
                 //MessageBox.Show(searchinfos.Count.ToString());
             }
             else
