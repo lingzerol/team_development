@@ -41,7 +41,7 @@ namespace Lib.GetNotifications
             proc.WaitForExit();//关键，等待外部程序退出后才能往下执行}
             //Response.Write(output);//输出
             proc.Close();
-            MessageBox.Show("跑完了");
+            //MessageBox.Show("跑完了");
         }
     }
 }
