@@ -17,9 +17,12 @@ namespace team_development.UI.MatchScheme
 {
     public partial class MatchScheme : Form
     {
+
+        List<Control> collection;
         public MatchScheme()
         {
             InitializeComponent();
+            collection = new List<Control>();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,6 +48,7 @@ namespace team_development.UI.MatchScheme
 
         private void MatchScheme_Load(object sender, EventArgs e)
         {
+            RemoveText();
             MatchSchemeItem matchSchemeItem = AnalyseJWXT.GetMatchSchemeItem();
             if(matchSchemeItem != null)
             {
@@ -70,13 +74,22 @@ namespace team_development.UI.MatchScheme
         }
 
 
-
+        
         private void AddText(string str,int column, int row)
         {
             Label lb = new Label();
             lb.Text = str;
             lb.TextAlign = ContentAlignment.MiddleCenter;
+            collection.Add(lb);
             this.tableLayoutPanel1.Controls.Add(lb, column, row);
+        }
+
+        private void RemoveText()
+        {
+            for(int i=0; i<collection.Count; i++)
+            {
+                this.tableLayoutPanel1.Controls.Remove(collection[i]);
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -98,6 +111,7 @@ namespace team_development.UI.MatchScheme
 
         private void refresh()
         {
+            RemoveText();
             MatchSchemeItem matchSchemeItem = AnalyseJWXT.GetMatchSchemeItem();
             if (matchSchemeItem != null)
             {

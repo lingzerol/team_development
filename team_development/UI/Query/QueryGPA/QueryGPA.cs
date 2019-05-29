@@ -75,6 +75,10 @@ namespace team_development.UI.QueryGPA
             //string str = (string)GpaDoc.Body.InnerHtml;
             StreamReader sr = new StreamReader(@"gpa.txt", Encoding.Default);
             string str=sr.ReadToEnd();
+            sr.Close();
+            if (str.IndexOf("备注") < 0) {
+                return;
+            }
             str = str.Substring(str.IndexOf("备注"));
             string itemlist=null;
             List<Gpa> Gpas;
