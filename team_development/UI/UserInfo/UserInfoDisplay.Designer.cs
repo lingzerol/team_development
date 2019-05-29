@@ -44,7 +44,6 @@ namespace team_development.UI.UserInfo
             this.SZJDPasswordTextBox = new System.Windows.Forms.TextBox();
             this.JWXTPasswordTextBox = new System.Windows.Forms.TextBox();
             this.infochange = new System.Windows.Forms.Button();
-            this.LoginBtn = new System.Windows.Forms.Button();
             this.show_password = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -152,24 +151,13 @@ namespace team_development.UI.UserInfo
             // infochange
             // 
             this.infochange.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.infochange.Location = new System.Drawing.Point(664, 449);
+            this.infochange.Location = new System.Drawing.Point(552, 453);
             this.infochange.Name = "infochange";
             this.infochange.Size = new System.Drawing.Size(91, 37);
             this.infochange.TabIndex = 20;
             this.infochange.Text = "修改";
             this.infochange.UseVisualStyleBackColor = true;
             this.infochange.Click += new System.EventHandler(this.infochange_Click);
-            // 
-            // LoginBtn
-            // 
-            this.LoginBtn.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.LoginBtn.Location = new System.Drawing.Point(443, 449);
-            this.LoginBtn.Name = "LoginBtn";
-            this.LoginBtn.Size = new System.Drawing.Size(91, 37);
-            this.LoginBtn.TabIndex = 21;
-            this.LoginBtn.Text = "登录";
-            this.LoginBtn.UseVisualStyleBackColor = true;
-            this.LoginBtn.Click += new System.EventHandler(this.LoginBtn_Click);
             // 
             // show_password
             // 
@@ -190,7 +178,6 @@ namespace team_development.UI.UserInfo
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1054, 568);
             this.Controls.Add(this.show_password);
-            this.Controls.Add(this.LoginBtn);
             this.Controls.Add(this.infochange);
             this.Controls.Add(this.JWXTPasswordTextBox);
             this.Controls.Add(this.SZJDPasswordTextBox);
@@ -226,7 +213,6 @@ namespace team_development.UI.UserInfo
         private System.Windows.Forms.TextBox SZJDPasswordTextBox;
         private System.Windows.Forms.TextBox JWXTPasswordTextBox;
         private System.Windows.Forms.Button infochange;
-        private System.Windows.Forms.Button LoginBtn;
         private System.Windows.Forms.CheckBox show_password;
     }
 }

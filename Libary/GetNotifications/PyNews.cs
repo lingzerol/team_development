@@ -17,8 +17,6 @@ namespace Lib.GetNotifications
         FileStream fs = null;
 
         public PyNews() {
-            thread = new Thread(this.Init);
-            thread.Start();
         }
 
         public void Init()

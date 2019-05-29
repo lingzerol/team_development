@@ -71,14 +71,7 @@ namespace team_development.UI.UserInfo
             MessageBox.Show("修改成功！");
         }
 
-        private void LoginBtn_Click(object sender, EventArgs e)
-        {
-            Save();
-            Application.ExitThread();
-            Application.Exit();
-            Application.Restart();
-            Process.GetCurrentProcess().Kill();
-        }
+ 
 
         private void show_password_CheckedChanged_1(object sender, EventArgs e)
         {

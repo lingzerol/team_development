@@ -27,8 +27,6 @@ namespace team_development.UI.QueryGPA
             InitializeComponent();
             choose_academic_year.SelectedIndex = 0;
             TableLoad();
-            student_id_text.Text = GlobalData.userInfo.StudentNumber;
-            student_name_text.Text = GlobalData.userInfo.StudentName;
             SetGpa();
         }
 
@@ -60,6 +58,8 @@ namespace team_development.UI.QueryGPA
         }
         private void SetGpa()
         {
+            student_id_text.Text = GlobalData.userInfo.StudentNumber;
+            student_name_text.Text = GlobalData.userInfo.StudentName;
             if (!File.Exists(@"gpa.txt")) {
                 return;
             }

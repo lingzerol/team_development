@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using Lib;
+using Lib.GetNotifications;
 
 namespace team_developmentTests
 {
@@ -13,10 +14,15 @@ namespace team_developmentTests
     [TestClass]
     public class NotificationTest
     {
-        public NotificationTest()
+        [TestInitialize]
+        public void Init()
         {
-            if (!File.Exists("Campus_notification.txt")) {
+            if (!File.Exists(@"jnu_news.txt") || !File.Exists(@"Campus_notification.txt") || !File.Exists(@"Lecture_notification.txt") || !File.Exists(@"Student_notification.txt") || !File.Exists(@"Teacher_notification.txt"))
+            {
                 PyNotifications notitest = new PyNotifications();
+                notitest.Init();
+                PyNews getnews = new PyNews();
+                getnews.Init();
             }
         }
 
@@ -63,7 +69,10 @@ namespace team_developmentTests
         [TestMethod]
         public void Txtget()
         {
-            Assert.IsTrue(File.Exists("Campus_notification.txt"));
+            Assert.IsTrue(File.Exists(@"jnu_news.txt"));
+            Assert.IsTrue(File.Exists(@"Campus_notification.txt"));
+            Assert.IsTrue(File.Exists(@"Lecture_notification.txt"));
+            Assert.IsTrue(File.Exists(@"Teacher_notification.txt"));
         }
     }
 }

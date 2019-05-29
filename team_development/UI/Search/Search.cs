@@ -177,7 +177,9 @@ namespace team_development.UI.Search
         private void refresh_Click(object sender, EventArgs e)
         {
             PyNotifications getnoti = new PyNotifications();
+            new Thread(getnoti.Init).Start();
             PyNews getnews = new PyNews();
+            new Thread(getnews.Init).Start();
             Waiting wait = new Waiting();
             wait.StartKiller();
             Choosetypetoshow(choosetype.SelectedIndex);

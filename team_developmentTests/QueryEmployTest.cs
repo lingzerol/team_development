@@ -15,7 +15,7 @@ namespace team_developmentTests
             QueryEmploy employ = new QueryEmploy();
             employ.Activate();
             String c = "dataGridViewOffer";
-           employ.Controls.Find(c,true);
+            employ.Controls.Find(c,true);
             
             //employ.Click()
 

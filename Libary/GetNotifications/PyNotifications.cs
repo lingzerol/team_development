@@ -18,8 +18,6 @@ namespace Lib
 
         public PyNotifications()
         {
-            thread = new Thread(this.Init);
-            thread.Start();
         }
 
         public void Init()
