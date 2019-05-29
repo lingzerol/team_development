@@ -25,8 +25,11 @@ namespace team_development.UI.Search
         {
             InitializeComponent();
             TableLoad();
-            showedinfos = GetInfo(@"jnu_news.txt");
-            Filllistview(showedinfos);
+            if (File.Exists(@"jnu_news.txt"))
+            {
+                showedinfos = GetInfo(@"jnu_news.txt");
+                Filllistview(showedinfos);
+            }
         }
 
         private void TableLoad() {

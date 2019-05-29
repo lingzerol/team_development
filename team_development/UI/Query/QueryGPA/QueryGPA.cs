@@ -66,6 +66,9 @@ namespace team_development.UI.QueryGPA
 
         private void SetGpa()
         {
+            if (!File.Exists(@"gpa.txt")) {
+                return;
+            }
             show_gpa.Clear();
             TableLoad();
             //HtmlDocument GpaDoc = jwxt.GetGPA();
