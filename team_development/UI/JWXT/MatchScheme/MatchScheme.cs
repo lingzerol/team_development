@@ -50,7 +50,7 @@ namespace team_development.UI.MatchScheme
         {
             RemoveText();
             MatchSchemeItem matchSchemeItem = AnalyseJWXT.GetMatchSchemeItem();
-            if(matchSchemeItem != null)
+            if(matchSchemeItem != null&& matchSchemeItem.needs.Count>0)
             {
                 MessageBox.Show("加载匹配培养方案完成");
                 for (int i = 0; i < matchSchemeItem.needs.Count; i++)

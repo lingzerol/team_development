@@ -68,7 +68,6 @@ namespace team_development.UI.UserInfo
         {
             Save();
             AbsenceWordManager.FromName = GlobalData.userInfo.StudentName;
-            GlobalData.userInfo.StudentNumber = GlobalData.userInfo.StudentNumber;
             MessageBox.Show("修改成功！");
         }
 
