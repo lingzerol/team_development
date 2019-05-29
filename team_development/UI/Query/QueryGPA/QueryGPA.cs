@@ -25,12 +25,8 @@ namespace team_development.UI.QueryGPA
         public QueryMark()
         {
             InitializeComponent();
-           // choose_semester.SelectedIndex = 0;
             choose_academic_year.SelectedIndex = 0;
             TableLoad();
-            /*timer.Interval = 3000;
-            timer.Tick += new EventHandler(timerTick);
-            timer.Start();*/
             student_id_text.Text = GlobalData.userInfo.StudentNumber;
             student_name_text.Text = GlobalData.userInfo.StudentName;
             SetGpa();
@@ -81,7 +77,6 @@ namespace team_development.UI.QueryGPA
             }
             str = str.Substring(str.IndexOf("备注"));
             string itemlist=null;
-            List<Gpa> Gpas;
             Gpas = jwxt.GetGpaList(str);                       
            
             ListViewItem temp=new ListViewItem();
@@ -166,6 +161,89 @@ namespace team_development.UI.QueryGPA
                 
         }
 
-        
+        private void choose_academic_year_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show(choose_academic_year.SelectedIndex.ToString());
+            ListViewItem temp = new ListViewItem();
+            this.show_gpa.BeginUpdate();
+            show_gpa.Clear();
+            TableLoad();
+            switch (choose_academic_year.SelectedIndex) {
+                case 0:
+                    foreach (Gpa g in Gpas) {
+                        ShowGpa(temp, g);
+                    }
+                    break;
+                case 1:
+                    //MessageBox.Show(Gpas[2].coursename);
+                    foreach (Gpa g in Gpas) {
+                        if (g.schoolyear.Contains("2015-2016"))
+                            if (g.schoolyear.Contains("上"))
+                                ShowGpa(temp, g);
+                    }
+                    break;
+                case 2:
+                    foreach (Gpa g in Gpas)
+                    {
+                        if (g.schoolyear.Contains("2015-2016"))
+                            if (g.schoolyear.Contains("下"))
+                                ShowGpa(temp, g);
+                    }
+                    break;
+                case 3:
+                    foreach (Gpa g in Gpas)
+                    {
+                        if (g.schoolyear.Contains("2016-2017"))
+                            if (g.schoolyear.Contains("上"))
+                                ShowGpa(temp, g);
+                    }
+                    break;
+                case 4:
+                    foreach (Gpa g in Gpas)
+                    {
+                        if (g.schoolyear.Contains("2016-2017"))
+                            if (g.schoolyear.Contains("下"))
+                                ShowGpa(temp, g);
+                    }
+                    break;
+                case 5:
+                    foreach (Gpa g in Gpas)
+                    {
+                        if (g.schoolyear.Contains("2017-2018"))
+                            if (g.schoolyear.Contains("上"))
+                                ShowGpa(temp, g);
+                    }
+                    break;
+                case 6:
+                    foreach (Gpa g in Gpas)
+                    {
+                        if (g.schoolyear.Contains("2017-2018"))
+                            if (g.schoolyear.Contains("下"))
+                                ShowGpa(temp, g);
+                    }
+                    break;
+                case 7:
+                    foreach (Gpa g in Gpas)
+                    {
+                        if (g.schoolyear.Contains("2018-2019"))
+                            if (g.schoolyear.Contains("上"))
+                                ShowGpa(temp, g);
+                    }
+                    break;
+                case 8:
+                    foreach (Gpa g in Gpas)
+                    {
+                        if (g.schoolyear.Contains("2018-2019"))
+                            if (g.schoolyear.Contains("下"))
+                                ShowGpa(temp, g);
+                    }
+                    break;
+                default:
+                    MessageBox.Show("combobox error");
+                    break;
+
+            }//end of switch
+            this.show_gpa.EndUpdate();
+        }
     }
 }
