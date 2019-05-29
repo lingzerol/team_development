@@ -59,7 +59,7 @@ namespace team_development.UI.CourseSelection
         private void CancelButton_Click(object sender, EventArgs e)
         {
             Log.log.Info("Click CancelButton in TimeSetting Form.");
-            timer.Stop();
+            timer1.Enabled = false;
             this.Close();
         }
 
