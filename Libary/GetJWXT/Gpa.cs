@@ -8,21 +8,21 @@ namespace Lib.GetJWXT
 {
     public class Gpa
     {
+        public string coursecode;
         public string schoolyear;
-        public string semester;
         public  string coursename;
         public float credit;
         public float mark;
         public float gp;
         public string coursecategory;
 
-       public Gpa(string schoolyear, string semester, string coursename, float credit, float mark,
+       public Gpa(string schoolyear, string coursecode, string coursename, float credit, float mark,
             float gp, string coursecategory)
         {
             this.schoolyear = schoolyear;
-            this.semester = semester;
             this.coursename = coursename;
             this.credit = credit;
+            this.coursecode = coursecode;
             this.mark = mark;
             this.gp = gp;
             this.coursecategory = coursecategory;

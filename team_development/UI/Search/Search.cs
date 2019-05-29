@@ -11,23 +11,25 @@ using Lib;
 using System.Web;
 using System.Threading;
 using System.IO;
+using Lib.GetNotifications;
 
 namespace team_development.UI.Search
 {
     public partial class Search : Form
     {
         private NoticeSearch notice = new NoticeSearch();
-        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+        List<Info> allinfos = new List<Info>();
+        List<Info> showedinfos = new List<Info>();
 
         public Search()
         {
             InitializeComponent();
-            
-            timer.Interval = 2000;
-            timer.Tick += new EventHandler(timerTick);
-            timer.Stop();
-            notice.getHtml("%E6%9A%A8%E5%8D%97%E5%A4%A7%E5%AD%A6%E7%8F%A0%E6%B5%B7%E6%A0%A1%E5%8C%BA");
-            timer.Start();
+            TableLoad();
+            if (File.Exists(@"jnu_news.txt"))
+            {
+                showedinfos = GetInfo(@"jnu_news.txt");
+                Filllistview(showedinfos);
+            }
         }
 
         private void TableLoad() {
@@ -35,54 +37,32 @@ namespace team_development.UI.Search
 
             showitem.View = View.Details;
             showitem.Scrollable = true;
-
             this.showitem.Columns.Add("标题", 570, HorizontalAlignment.Center);
             this.showitem.Columns.Add("时间", 130, HorizontalAlignment.Center);
-        }
-
-        private void timerTick(object sender, EventArgs e)
-        {
-            try
-            {
-                //webBrowser1.DocumentText = notice.getText();               
-                timer.Stop();
-            }
-            catch (Exception E)
-            {
-                Log.log.Error(E.ToString());
-            }
         }
 
         private void Search_Load(object sender, EventArgs e)
         {
 
+            //MessageBox.Show(allinfos.Count.ToString());
         }
         private void TurnToForm(Form f)
         {
             ((Form1)(this.ParentForm)).TurnForm(f);
         }
 
-        /*private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            webBrowser1.ScriptErrorsSuppressed = true;
-            webBrowser1.Document.Body.Style = "zoom:0.73";
-            foreach (HtmlElement archor in webBrowser1.Document.Links)
-            {
-                archor.SetAttribute("target", "_self");
-            }
-
-            foreach (HtmlElement form in this.webBrowser1.Document.Forms)
-            {
-                form.SetAttribute("target", "_self");
-            }
-        }*/
-
         private void btn_search_Click(object sender, EventArgs e)
         {
             Log.log.Info("Search the Jinan University's news and notices.");
+            allinfos.Clear();
+            allinfos = GetInfo(@"jnu_news.txt");
+            allinfos.AddRange(GetInfo(@"Campus_notification.txt"));
+            allinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
+            allinfos.AddRange(GetInfo(@"Student_notification.txt"));
+            allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));
             //MessageBox.Show(searchBox.Text);
             List<Info> searchinfos = new List<Info>();
-            foreach (Info record in infos)
+            foreach (Info record in allinfos)
             {
                 if (record.getTitle().IndexOf(searchBox.Text) != -1)
                     searchinfos.Add(record);
@@ -91,7 +71,8 @@ namespace team_development.UI.Search
             TableLoad();
             this.showitem.BeginUpdate();
             if (searchinfos != null && searchinfos.Count > 0) {
-                Filllistview(searchinfos);
+                showedinfos = searchinfos;
+                Filllistview(showedinfos);
                 //MessageBox.Show(searchinfos.Count.ToString());
             }
             else
@@ -99,46 +80,47 @@ namespace team_development.UI.Search
             this.showitem.EndUpdate();
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
-        {
-            Log.log.Info("Go back to the previous page.");
-            timer.Start();
-            //webBrowser1.GoBack();
-        }
-
-        List<Info> infos = new List<Info>();
         private void choosetype_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (choosetype.SelectedIndex != null) {
-                showitem.Clear();
-                TableLoad();
-                this.showitem.BeginUpdate();
-                switch (choosetype.SelectedIndex) {
-                    case 0:
-                        MessageBox.Show("nothing changed");
-                        break;
-                    case 1:
-                        infos = GetInfo(@"Campus_notification.txt");
-                        Filllistview(infos);
-                        break;
-                    case 2:
-                        infos = GetInfo(@"Lecture_notification.txt");
-                        Filllistview(infos);
-                        break;
-                    case 3:
-                        infos = GetInfo(@"Student_notification.txt");
-                        Filllistview(infos);
-                        break;
-                    case 4:
-                        infos = GetInfo(@"Teacher_notification.txt");
-                        Filllistview(infos);
-                        //MessageBox.Show(abc);
-                        break;
-                    default:
-                        break;
-                }//end of switch
-                this.showitem.EndUpdate();
-            }            
+            if (choosetype.SelectedIndex != null)
+            {
+                Choosetypetoshow(choosetype.SelectedIndex);
+            }
+        }
+
+        private void Choosetypetoshow(int index)
+        {
+            showitem.Clear();
+            TableLoad();
+            this.showitem.BeginUpdate();
+            switch (index)
+            {
+                case 0:
+                    //MessageBox.Show("nothing changed");
+                    showedinfos = GetInfo(@"jnu_news.txt");
+                    Filllistview(showedinfos);
+                    break;
+                case 1:
+                    showedinfos = GetInfo(@"Campus_notification.txt");
+                    Filllistview(showedinfos);
+                    break;
+                case 2:
+                    showedinfos = GetInfo(@"Lecture_notification.txt");
+                    Filllistview(showedinfos);
+                    break;
+                case 3:
+                    showedinfos = GetInfo(@"Student_notification.txt");
+                    Filllistview(showedinfos);
+                    break;
+                case 4:
+                    showedinfos = GetInfo(@"Teacher_notification.txt");
+                    Filllistview(showedinfos);
+                    //MessageBox.Show(abc);
+                    break;
+                default:
+                    break;
+            }//end of switch
+            this.showitem.EndUpdate();
         }
 
         private void Filllistview(List<Info> targetinfos)
@@ -146,6 +128,7 @@ namespace team_development.UI.Search
             foreach (Info record in targetinfos)
             {
                 ListViewItem item = new ListViewItem();
+                
                 item.Text = record.getTitle();
                 item.SubItems.Add(record.getTime());
                 showitem.Items.Add(item);
@@ -154,7 +137,8 @@ namespace team_development.UI.Search
 
         private List<Info> GetInfo(string path)
         {
-            infos.Clear();
+            //showedinfos.Clear();
+            List<Info> temp = new List<Info>();
             string filePath = path;
             //FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
             //StreamReader sr = new StreamReader(fileStream, Encoding.Default);
@@ -164,9 +148,9 @@ namespace team_development.UI.Search
             for (int i = 0; i < element.Length - 3; i += 3)
             {
                 info = new Info(element[i], element[i + 1], element[i + 2]);
-                infos.Add(info);
+                temp.Add(info);
             }
-            return infos;
+            return temp;
         }
 
         private void showitem_SelectedIndexChanged(object sender, EventArgs e)
@@ -176,10 +160,24 @@ namespace team_development.UI.Search
         private void showitem_Click(object sender, EventArgs e)
         {
             if (showitem.SelectedItems.Count > 0) {
-                Notisditails notisditails = new Notisditails(infos[showitem.SelectedIndices[0]].getUrl());
+                Notisditails notisditails = new Notisditails(showedinfos[showitem.SelectedIndices[0]].getUrl());
                 notisditails.ShowDialog();
                 //MessageBox.Show(showitem.SelectedIndices[0].ToString());
             }
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            PyNotifications getnoti = new PyNotifications();
+            PyNews getnews = new PyNews();
+            Waiting wait = new Waiting();
+            wait.StartKiller();
+            Choosetypetoshow(choosetype.SelectedIndex);
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,14 +37,14 @@
             this.notisdetails.Location = new System.Drawing.Point(0, 0);
             this.notisdetails.MinimumSize = new System.Drawing.Size(20, 20);
             this.notisdetails.Name = "notisdetails";
-            this.notisdetails.Size = new System.Drawing.Size(800, 450);
+            this.notisdetails.Size = new System.Drawing.Size(1054, 568);
             this.notisdetails.TabIndex = 0;
             // 
             // Notisditails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1054, 568);
             this.Controls.Add(this.notisdetails);
             this.Name = "Notisditails";
             this.Text = "Notisditails";
