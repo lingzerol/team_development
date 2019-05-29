@@ -66,7 +66,7 @@ namespace team_development.UI.QueryMealCard
             else
             {
                 
-                SzjdLogin szjdLogin = SzjdLoginSingleton.GetInstance(GlobalData.userInfo.StudentNumber, "040939", refresh);
+                SzjdLogin szjdLogin = SzjdLoginSingleton.GetInstance(GlobalData.userInfo.StudentNumber, GlobalData.userInfo.SZJDPassword, refresh);
                 szjdLogin.Show();
             }
 

@@ -83,11 +83,11 @@ namespace team_development.UI.UserInfo
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(274, 275);
+            this.label5.Location = new System.Drawing.Point(293, 275);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(145, 25);
+            this.label5.Size = new System.Drawing.Size(126, 25);
             this.label5.TabIndex = 4;
-            this.label5.Text = "数字暨大密码：";
+            this.label5.Text = "校园卡密码：";
             // 
             // label6
             // 
@@ -136,6 +136,7 @@ namespace team_development.UI.UserInfo
             this.SZJDPasswordTextBox.Font = new System.Drawing.Font("微软雅黑", 10.8F);
             this.SZJDPasswordTextBox.Location = new System.Drawing.Point(443, 275);
             this.SZJDPasswordTextBox.Name = "SZJDPasswordTextBox";
+            this.SZJDPasswordTextBox.PasswordChar = '*';
             this.SZJDPasswordTextBox.Size = new System.Drawing.Size(312, 31);
             this.SZJDPasswordTextBox.TabIndex = 18;
             // 
@@ -144,6 +145,7 @@ namespace team_development.UI.UserInfo
             this.JWXTPasswordTextBox.Font = new System.Drawing.Font("微软雅黑", 10.8F);
             this.JWXTPasswordTextBox.Location = new System.Drawing.Point(443, 330);
             this.JWXTPasswordTextBox.Name = "JWXTPasswordTextBox";
+            this.JWXTPasswordTextBox.PasswordChar = '*';
             this.JWXTPasswordTextBox.Size = new System.Drawing.Size(312, 31);
             this.JWXTPasswordTextBox.TabIndex = 19;
             // 
@@ -179,7 +181,6 @@ namespace team_development.UI.UserInfo
             this.show_password.TabIndex = 22;
             this.show_password.Text = "显示密码";
             this.show_password.UseVisualStyleBackColor = true;
-            this.show_password.Checked = true;
             this.show_password.CheckedChanged += new System.EventHandler(this.show_password_CheckedChanged_1);
             // 
             // UserInfoDisplay

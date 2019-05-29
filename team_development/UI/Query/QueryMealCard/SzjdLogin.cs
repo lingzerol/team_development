@@ -24,6 +24,7 @@ namespace team_development.UI.Query.QueryMealCard
             pyMeal = new PyMealcard(username, password, ValidateImage);
         }
 
+
         private void Confirm_Click(object sender, EventArgs e)
         {
             if (!pyMeal.GetAll(getValidate.Text))
@@ -44,33 +45,7 @@ namespace team_development.UI.Query.QueryMealCard
             pyMeal.Retry();
         }
 
-        private void JwxtLogin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            pyMeal.Destroy();
-            SzjdLoginSingleton.SetNull();
-        }
-
-        private void Confirm_Click1(object sender, EventArgs e)
-        {
-            if (!pyMeal.GetAll(getValidate.Text))
-            {
-                pyMeal.Retry();
-            }
-            else
-            {
-                refresh();
-                this.Close();
-
-            }
-
-        }
-
-        private void ValidateImage1_Click(object sender, EventArgs e)
-        {
-            pyMeal.Retry();
-        }
-
-        private void JwxtLogin1_FormClosing(object sender, FormClosingEventArgs e)
+        private void SzjdLogin_FormClosing(object sender,FormClosingEventArgs e)
         {
             pyMeal.Destroy();
             SzjdLoginSingleton.SetNull();

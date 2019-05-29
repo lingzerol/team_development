@@ -87,7 +87,7 @@ namespace Lib.GetMealCard
             }
             catch (System.InvalidOperationException e)
             {
-                MessageBox.Show("你点的太快了~~");
+               // MessageBox.Show("你点的太快了~~");
             }
         }
 

@@ -45,7 +45,7 @@
             this.Confirm.TabIndex = 8;
             this.Confirm.Text = "确认";
             this.Confirm.UseVisualStyleBackColor = true;
-            this.Confirm.Click += new System.EventHandler(this.Confirm_Click1);
+            this.Confirm.Click += new System.EventHandler(this.Confirm_Click);
             // 
             // getValidate
             // 
@@ -73,6 +73,7 @@
             this.ValidateImage.Size = new System.Drawing.Size(114, 41);
             this.ValidateImage.TabIndex = 5;
             this.ValidateImage.TabStop = false;
+            this.ValidateImage.Click += new System.EventHandler(this.ValidateImage_Click);
             // 
             // SzjdLogin
             // 
@@ -86,6 +87,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SzjdLogin";
             this.Text = "SzjdLogin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SzjdLogin_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.ValidateImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
