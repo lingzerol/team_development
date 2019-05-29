@@ -21,6 +21,7 @@ namespace team_development.UI.QueryMealCard
         public QueryMealcard()
         {
             InitializeComponent();
+            refresh();
         }
 
         private void MealcardInquiry_Load(object sender, EventArgs e)
@@ -54,14 +55,6 @@ namespace team_development.UI.QueryMealCard
 
         private void QueryButton_Click(object sender, EventArgs e)
         {
-            //QueryMealCard();
-            /*
-            string content = File.ReadAllText(@"mealcard.txt", Encoding.UTF8);
-            textBox1.Text = "电气信息学院";
-            textBox2.Text = GlobalData.userInfo.StudentName;
-            textBox3.Text = content;
-            textBox4.Text = "正常";
-            */
             Log.log.Info("Click Refresh button In MatchScheme Form.");
             if (GlobalData.userInfo.StudentNumber == null || GlobalData.userInfo.JWXTPassword == null)
             {
