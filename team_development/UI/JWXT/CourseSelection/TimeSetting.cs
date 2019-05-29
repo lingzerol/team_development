@@ -41,9 +41,7 @@ namespace team_development.UI.CourseSelection
 
         private void TimeSetting_Load(object sender, EventArgs e)
         {
-            TimeNow.Text = DateTime.Now.ToString();
-            EndTime.Text = "2019/5/25 20:00:00";           
-            TimeNow.ReadOnly = true;
+            EndTime.Text = "2019/6/15 20:00:00";           
             timer1.Enabled = true;
 
         }
@@ -62,8 +60,8 @@ namespace team_development.UI.CourseSelection
             //this.timer1.Start();//计时器开始运行
             DateTime timeend = Convert.ToDateTime(EndTime.Text);
             TimeSpan ts = timeend.Subtract(DateTime.Now).Duration();
-            TimeNow.Text = DateTime.Now.ToString();
-            label3.Text = ts.Days.ToString() + "天" + ts.Hours.ToString() + "小时" + ts.Minutes.ToString() + "分钟" + ts.Seconds.ToString() + "秒";
+         
+            //label3.Text = ts.Days.ToString() + "天" + ts.Hours.ToString() + "小时" + ts.Minutes.ToString() + "分钟" + ts.Seconds.ToString() + "秒";
             if (timeend<=DateTime.Now)
             {
                 MessageBox.Show("选课成功");

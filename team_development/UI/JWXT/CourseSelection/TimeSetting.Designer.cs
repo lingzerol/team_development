@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.OKButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.TimeNow = new System.Windows.Forms.TextBox();
             this.EndTime = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
@@ -62,36 +60,19 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(66, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 25);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "当前时间";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(66, 85);
+            this.label2.Location = new System.Drawing.Point(66, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 25);
+            this.label2.Size = new System.Drawing.Size(107, 25);
             this.label2.TabIndex = 15;
-            this.label2.Text = "选课时间";
-            // 
-            // TimeNow
-            // 
-            this.TimeNow.Location = new System.Drawing.Point(178, 38);
-            this.TimeNow.Name = "TimeNow";
-            this.TimeNow.Size = new System.Drawing.Size(243, 25);
-            this.TimeNow.TabIndex = 16;
+            this.label2.Text = "选课时间：";
             // 
             // EndTime
             // 
-            this.EndTime.Location = new System.Drawing.Point(178, 85);
+            this.EndTime.Location = new System.Drawing.Point(184, 51);
             this.EndTime.Name = "EndTime";
             this.EndTime.Size = new System.Drawing.Size(243, 25);
             this.EndTime.TabIndex = 17;
@@ -104,17 +85,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(179, 135);
+            this.label3.Location = new System.Drawing.Point(179, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 25);
             this.label3.TabIndex = 18;
-            this.label3.Text = "label3";
+            this.label3.Text = "XX天XX小时XX分钟XX秒";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(66, 135);
+            this.label4.Location = new System.Drawing.Point(66, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 25);
             this.label4.TabIndex = 19;
@@ -128,9 +109,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.EndTime);
-            this.Controls.Add(this.TimeNow);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OKButton);
             this.Name = "TimeSetting";
@@ -144,9 +123,7 @@
         #endregion
         private System.Windows.Forms.Button OKButton;
         private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TimeNow;
         private System.Windows.Forms.TextBox EndTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label3;
