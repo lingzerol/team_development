@@ -71,7 +71,6 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="GetGpaTest.cs" />
     <Compile Include="Lib\MenuGetterTests.cs" />
     <Compile Include="MatchSchemeTest.cs" />
     <Compile Include="MealcardTest.cs" />
@@ -81,10 +80,14 @@
     <Compile Include="CourseLoadTest.cs" />
     <Compile Include="AbsenceWordManagerTest.cs" />
     <Compile Include="QueryEmployTest.cs" />
+    <Compile Include="QueryGpaTest.cs" />
     <Compile Include="UserInfoSaveTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="GenericTest2.GenericTest">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
