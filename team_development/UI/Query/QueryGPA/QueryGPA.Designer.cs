@@ -63,7 +63,7 @@
             // 
             this.student_name.AutoSize = true;
             this.student_name.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.student_name.Location = new System.Drawing.Point(303, 82);
+            this.student_name.Location = new System.Drawing.Point(288, 82);
             this.student_name.Name = "student_name";
             this.student_name.Size = new System.Drawing.Size(39, 20);
             this.student_name.TabIndex = 2;
@@ -72,7 +72,7 @@
             // student_name_text
             // 
             this.student_name_text.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.student_name_text.Location = new System.Drawing.Point(358, 79);
+            this.student_name_text.Location = new System.Drawing.Point(347, 79);
             this.student_name_text.Name = "student_name_text";
             this.student_name_text.Size = new System.Drawing.Size(120, 27);
             this.student_name_text.TabIndex = 3;
@@ -81,7 +81,7 @@
             // 
             this.academic_year.AutoSize = true;
             this.academic_year.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.academic_year.Location = new System.Drawing.Point(559, 82);
+            this.academic_year.Location = new System.Drawing.Point(514, 82);
             this.academic_year.Name = "academic_year";
             this.academic_year.Size = new System.Drawing.Size(75, 20);
             this.academic_year.TabIndex = 4;
@@ -101,10 +101,11 @@
             "2017-2018，下",
             "2018-2019，上",
             "2018-2019，下"});
-            this.choose_academic_year.Location = new System.Drawing.Point(666, 78);
+            this.choose_academic_year.Location = new System.Drawing.Point(595, 78);
             this.choose_academic_year.Name = "choose_academic_year";
-            this.choose_academic_year.Size = new System.Drawing.Size(120, 28);
+            this.choose_academic_year.Size = new System.Drawing.Size(191, 28);
             this.choose_academic_year.TabIndex = 5;
+            this.choose_academic_year.SelectedIndexChanged += new System.EventHandler(this.choose_academic_year_SelectedIndexChanged);
             // 
             // show_gpa
             // 
