@@ -122,9 +122,19 @@ namespace Lib.GetJWXT
                     proc.Close();
                     //MessageBox.Show("成功获取gpa和匹培养方案");
                 }
-                else
+                else if (code.Equals("-102"))
                 {
-                    MessageBox.Show("验证码或用户密码错误，请重试");
+                    MessageBox.Show("验证码错误，请重试");
+                    Retry();
+                    return false;
+                }
+                else if (code.Equals("-103"))
+                {
+                    MessageBox.Show("用户密码错误，请重试");
+                    Retry();
+                    return false;
+                }else {
+                    MessageBox.Show("网络错误，请重试");
                     Retry();
                     return false;
                 }

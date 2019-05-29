@@ -53,6 +53,10 @@ namespace team_development.UI.Search
 
         private void btn_search_Click(object sender, EventArgs e)
         {
+            if (!File.Exists(@"jnu_news.txt") || !File.Exists(@"Campus_notification.txt") || !File.Exists(@"Lecture_notification.txt") || !File.Exists(@"Student_notification.txt") || !File.Exists(@"Teacher_notification.txt"))
+            {
+                return;
+            }
             Log.log.Info("Search the Jinan University's news and notices.");
             allinfos.Clear();
             allinfos = GetInfo(@"jnu_news.txt");
@@ -97,24 +101,19 @@ namespace team_development.UI.Search
             {
                 case 0:
                     //MessageBox.Show("nothing changed");
-                    showedinfos = GetInfo(@"jnu_news.txt");
-                    Filllistview(showedinfos);
+                    Filllistview(@"jnu_news.txt");
                     break;
                 case 1:
-                    showedinfos = GetInfo(@"Campus_notification.txt");
-                    Filllistview(showedinfos);
+                    Filllistview(@"Campus_notification.txt");
                     break;
                 case 2:
-                    showedinfos = GetInfo(@"Lecture_notification.txt");
-                    Filllistview(showedinfos);
+                    Filllistview(@"Lecture_notification.txt");
                     break;
                 case 3:
-                    showedinfos = GetInfo(@"Student_notification.txt");
-                    Filllistview(showedinfos);
+                    Filllistview(@"Student_notification.txt");
                     break;
                 case 4:
-                    showedinfos = GetInfo(@"Teacher_notification.txt");
-                    Filllistview(showedinfos);
+                    Filllistview(@"Teacher_notification.txt");
                     //MessageBox.Show(abc);
                     break;
                 default:
@@ -122,9 +121,18 @@ namespace team_development.UI.Search
             }//end of switch
             this.showitem.EndUpdate();
         }
-
+        private void Filllistview(string path) {
+            if (!File.Exists(@"jnu_news.txt"))
+            {
+                MessageBox.Show("请刷新");
+                return;
+            }
+            List<Info> targetinfos = GetInfo(path);
+            Filllistview(targetinfos);
+        }
         private void Filllistview(List<Info> targetinfos)
         {
+            
             foreach (Info record in targetinfos)
             {
                 ListViewItem item = new ListViewItem();

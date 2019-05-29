@@ -18,17 +18,19 @@ namespace team_development.UI.QueryElectricity
         private Waiting wait = new Waiting();
         private GetElectricCharge gec = new GetElectricCharge();
         private Mutex charge_mtx = new Mutex();
+        private string previous_charge = null;
         public QueryElectricity()
         {
             InitializeComponent();
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
             Dorm.Text = GlobalData.userInfo.DormNumber;
-            gec.GetElectric(Dorm.Text, new SetCharge(this.SetElectricCharge));
+           
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
             gec.GetElectric(Dorm.Text,new SetCharge(this.SetElectricCharge));
+            previous_charge = result.Text;
             wait.StartKiller(true,3000, IsOK);
         }
 
@@ -40,6 +42,7 @@ namespace team_development.UI.QueryElectricity
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             gec.GetElectric(Dorm.Text, new SetCharge(this.SetElectricCharge));
+            previous_charge = result.Text;
             wait.StartKiller(true,1000,IsOK);
         }
 
@@ -58,7 +61,7 @@ namespace team_development.UI.QueryElectricity
         public bool IsOK() {
             bool ok = false;
             charge_mtx.WaitOne();
-            if (result.Text.Length > 0)
+            if (result.Text!=previous_charge)
                 ok = true;
             charge_mtx.ReleaseMutex();
             return ok;
