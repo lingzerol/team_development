@@ -12,6 +12,7 @@ using Lib;
 using Lib.GetMealCard;
 using team_development.FormLib;
 using team_development.UI.Query.QueryMealCard;
+using team_development.UI.UserInfo;
 
 namespace team_development.UI.QueryMealCard
 {
@@ -65,8 +66,9 @@ namespace team_development.UI.QueryMealCard
             }
             else
             {
-                
-                SzjdLogin szjdLogin = SzjdLoginSingleton.GetInstance(GlobalData.userInfo.StudentNumber, GlobalData.userInfo.SZJDPassword, refresh);
+
+                Cryptography g = new Cryptography();
+                SzjdLogin szjdLogin = SzjdLoginSingleton.GetInstance(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.SZJDPassword), refresh);
                 szjdLogin.Show();
             }
 
