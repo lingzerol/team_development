@@ -120,7 +120,7 @@ namespace Lib.GetJWXT
                     code = proc.StandardOutput.ReadToEnd();
                     proc.WaitForExit();
                     proc.Close();
-                    MessageBox.Show("成功获取gpa和匹培养方案");
+                    //MessageBox.Show("成功获取gpa和匹培养方案");
                 }
                 else
                 {
