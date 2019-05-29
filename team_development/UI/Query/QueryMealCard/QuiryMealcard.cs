@@ -24,7 +24,7 @@ namespace team_development.UI.QueryMealCard
             InitializeComponent();
             refresh();
         }
-
+        
         private void MealcardInquiry_Load(object sender, EventArgs e)
         {
 
@@ -75,6 +75,8 @@ namespace team_development.UI.QueryMealCard
         }
         private void refresh()
         {
+            if (!File.Exists(@"mealcard.txt"))
+               return;
             string content = File.ReadAllText(@"mealcard.txt", Encoding.UTF8);
             textBox1.Text = "电气信息学院";
             textBox2.Text = GlobalData.userInfo.StudentName;

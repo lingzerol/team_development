@@ -58,8 +58,6 @@ namespace team_development.UI.QueryGPA
         {
 
         }
-
-
         private void SetGpa()
         {
             if (!File.Exists(@"gpa.txt")) {
