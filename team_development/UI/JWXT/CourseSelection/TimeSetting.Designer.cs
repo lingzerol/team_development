@@ -79,7 +79,7 @@
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick_1);
             // 
             // label3
             // 
