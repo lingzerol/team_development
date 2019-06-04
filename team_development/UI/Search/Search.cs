@@ -59,7 +59,13 @@ namespace team_development.UI.Search
             }
             Log.log.Info("Search the Jinan University's news and notices.");
             allinfos.Clear();
-            allinfos = GetInfo(@"jnu_news.txt");
+            //allinfos里面存放着全部学院全部新闻和通知
+            allinfos = GetInfo(@"baozhuang_news.txt");
+            allinfos.AddRange(GetInfo(@"diangong_news.txt"));
+            allinfos.AddRange(GetInfo(@"fanyi_news.txt"));
+            allinfos.AddRange(GetInfo(@"renwen_news.txt"));
+            allinfos.AddRange(GetInfo(@"zhike_news.txt"));
+            allinfos.AddRange(GetInfo(@"guoshang_news.txt"));
             allinfos.AddRange(GetInfo(@"Campus_notification.txt"));
             allinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
             allinfos.AddRange(GetInfo(@"Student_notification.txt"));
@@ -107,7 +113,6 @@ namespace team_development.UI.Search
             switch (index)
             {
                 case 0:
-                    //MessageBox.Show("nothing changed");
                     //Filllistview(@"baozhuang_news.txt");
                     showedinfos = GetInfo(@"baozhuang_news.txt");//默认新闻，具体要看用户选择
                     //showedinfos.AddRange(GetInfo(@"diangong_news.txt"));
