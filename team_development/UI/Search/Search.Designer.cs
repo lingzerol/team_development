@@ -34,6 +34,7 @@
             this.choosetype = new System.Windows.Forms.ComboBox();
             this.showitem = new System.Windows.Forms.ListView();
             this.refresh = new System.Windows.Forms.Button();
+            this.choosecollege = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -48,7 +49,7 @@
             // 
             // searchBox
             // 
-            this.searchBox.Location = new System.Drawing.Point(557, 25);
+            this.searchBox.Location = new System.Drawing.Point(485, 22);
             this.searchBox.Name = "searchBox";
             this.searchBox.Size = new System.Drawing.Size(133, 25);
             this.searchBox.TabIndex = 2;
@@ -56,7 +57,7 @@
             // 
             // btn_search
             // 
-            this.btn_search.Location = new System.Drawing.Point(696, 24);
+            this.btn_search.Location = new System.Drawing.Point(696, 39);
             this.btn_search.Name = "btn_search";
             this.btn_search.Size = new System.Drawing.Size(75, 25);
             this.btn_search.TabIndex = 3;
@@ -92,13 +93,29 @@
             // 
             // refresh
             // 
-            this.refresh.Location = new System.Drawing.Point(451, 24);
+            this.refresh.Location = new System.Drawing.Point(696, 12);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(75, 23);
             this.refresh.TabIndex = 7;
             this.refresh.Text = "刷新";
             this.refresh.UseVisualStyleBackColor = true;
             this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // choosecollege
+            // 
+            this.choosecollege.FormattingEnabled = true;
+            this.choosecollege.Items.AddRange(new object[] {
+            "包装学院",
+            "翻译学院",
+            "电气工程学院",
+            "国际商学院",
+            "人文学院",
+            "智能科学与工程学院"});
+            this.choosecollege.Location = new System.Drawing.Point(485, 53);
+            this.choosecollege.Name = "choosecollege";
+            this.choosecollege.Size = new System.Drawing.Size(121, 23);
+            this.choosecollege.TabIndex = 8;
+            this.choosecollege.SelectedIndexChanged += new System.EventHandler(this.choosecollege_SelectedIndexChanged);
             // 
             // Search
             // 
@@ -107,6 +124,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 568);
+            this.Controls.Add(this.choosecollege);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.showitem);
             this.Controls.Add(this.choosetype);
@@ -130,5 +148,6 @@
         private System.Windows.Forms.ComboBox choosetype;
         private System.Windows.Forms.ListView showitem;
         private System.Windows.Forms.Button refresh;
+        private System.Windows.Forms.ComboBox choosecollege;
     }
 }

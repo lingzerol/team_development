@@ -18,16 +18,16 @@ namespace team_development.UI.Search
     public partial class Search : Form
     {
         private NoticeSearch notice = new NoticeSearch();
-        List<Info> allinfos = new List<Info>();
-        List<Info> showedinfos = new List<Info>();
+        public List<Info> allinfos = new List<Info>();
+        public List<Info> showedinfos = new List<Info>();
 
         public Search()
         {
             InitializeComponent();
             TableLoad();
-            if (File.Exists(@"jnu_news.txt"))
+            if (File.Exists(@"baozhuang_news.txt"))
             {
-                showedinfos = GetInfo(@"jnu_news.txt");
+                showedinfos = GetInfo(@"baozhuang_news.txt");   //默认的信息
                 Filllistview(showedinfos);
             }
         }
@@ -92,6 +92,13 @@ namespace team_development.UI.Search
             }
         }
 
+        private void choosecollege_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (choosecollege.SelectedIndex != null) {
+
+            }
+        }
+
         private void Choosetypetoshow(int index)
         {
             showitem.Clear();
@@ -101,18 +108,26 @@ namespace team_development.UI.Search
             {
                 case 0:
                     //MessageBox.Show("nothing changed");
-                    Filllistview(@"jnu_news.txt");
+                    //Filllistview(@"baozhuang_news.txt");
+                    showedinfos = GetInfo(@"baozhuang_news.txt");//默认新闻，具体要看用户选择
+                    //showedinfos.AddRange(GetInfo(@"diangong_news.txt"));
+                    Filllistview(showedinfos);
+                    //Filllistview(@"diangong_news.txt");
                     break;
                 case 1:
+                    showedinfos = GetInfo(@"Campus_notification.txt");
                     Filllistview(@"Campus_notification.txt");
                     break;
                 case 2:
+                    showedinfos = GetInfo(@"Lecture_notification.txt");
                     Filllistview(@"Lecture_notification.txt");
                     break;
                 case 3:
+                    showedinfos = GetInfo(@"Student_notification.txt");
                     Filllistview(@"Student_notification.txt");
                     break;
                 case 4:
+                    showedinfos = GetInfo(@"Teacher_notification.txt");
                     Filllistview(@"Teacher_notification.txt");
                     //MessageBox.Show(abc);
                     break;
@@ -189,5 +204,7 @@ namespace team_development.UI.Search
         {
 
         }
+
+
     }
 }

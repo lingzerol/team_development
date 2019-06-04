@@ -16,14 +16,26 @@ namespace Lib.GetNotifications
         Thread thread = null;
         FileStream fs = null;
 
-        public PyNews() {
+        public PyNews()
+        {
         }
 
         public void Init()
         {
+            ProRun(@"\Libary\GetNotifications\baozhuang_news.exe");
+            ProRun(@"\Libary\GetNotifications\diangong_news.exe");
+            ProRun(@"\Libary\GetNotifications\fanyi_news.exe");
+            ProRun(@"\Libary\GetNotifications\renwen_news.exe");
+            ProRun(@"\Libary\GetNotifications\zhike_news.exe");
+            ProRun(@"\Libary\GetNotifications\guoshang_news.exe");
+
+        }
+        public void ProRun(String url)
+        {
             Log.log.Info("Receive notifications from official website.");
             proc = new Process();
-            proc.StartInfo.FileName = System.AppContext.BaseDirectory.Substring(0, System.AppContext.BaseDirectory.LastIndexOf(@"\team_development")) + @"\Libary\GetNotifications\jnu_news.exe";
+            proc.StartInfo.FileName = System.AppContext.BaseDirectory.Substring(0, System.AppContext.BaseDirectory.LastIndexOf(@"\team_development")) + url;
+
             //proc.StartInfo.Arguments = username + " " + password;
 
             proc.StartInfo.UseShellExecute = false;
@@ -39,7 +51,7 @@ namespace Lib.GetNotifications
             proc.WaitForExit();//关键，等待外部程序退出后才能往下执行}
             //Response.Write(output);//输出
             proc.Close();
-            //MessageBox.Show("跑完了");
+
         }
     }
 }
