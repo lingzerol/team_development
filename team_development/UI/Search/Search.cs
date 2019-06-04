@@ -20,6 +20,7 @@ namespace team_development.UI.Search
         private NoticeSearch notice = new NoticeSearch();
         public List<Info> allinfos = new List<Info>();
         public List<Info> showedinfos = new List<Info>();
+        private List<Info> preinfos = new List<Info>();
 
         public Search()
         {
@@ -29,6 +30,7 @@ namespace team_development.UI.Search
             {
                 showedinfos = GetInfo(@"baozhuang_news.txt");   //默认的信息
                 Filllistview(showedinfos);
+                preinfos = new List<Info>(showedinfos);
             }
         }
 
@@ -115,7 +117,7 @@ namespace team_development.UI.Search
                 case 0:
                     //Filllistview(@"baozhuang_news.txt");
                     showedinfos = GetInfo(@"baozhuang_news.txt");//默认新闻，具体要看用户选择
-                    //showedinfos.AddRange(GetInfo(@"diangong_news.txt"));
+                   //showedinfos.AddRange(GetInfo(@"diangong_news.txt"));
                     Filllistview(showedinfos);
                     //Filllistview(@"diangong_news.txt");
                     break;
@@ -136,9 +138,12 @@ namespace team_development.UI.Search
                     Filllistview(@"Teacher_notification.txt");
                     //MessageBox.Show(abc);
                     break;
+
                 default:
                     break;
             }//end of switch
+            preinfos = new List<Info>(showedinfos);
+            getinfos();
             this.showitem.EndUpdate();
         }
         private void Filllistview(string path) {
@@ -208,8 +213,87 @@ namespace team_development.UI.Search
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
 
+        }       
+
+        private void checkBox2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            getinfos();
         }
 
+        private void checkBox6_CheckedChanged_1(object sender, EventArgs e)
+        {
+            getinfos();
+        }
 
+        private void checkBox4_CheckedChanged_1(object sender, EventArgs e)
+        {
+            getinfos();
+        }
+
+        private void checkBox5_CheckedChanged_1(object sender, EventArgs e)
+        {
+            getinfos();
+        }
+
+        private void checkBox3_CheckedChanged_1(object sender, EventArgs e)
+        {
+            getinfos();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+                // showitem.Clear();
+                /*  TableLoad();
+                  this.showitem.BeginUpdate();
+                  //MessageBox.Show("包装");
+                //  showedinfos.AddRange(GetInfo(@"baozhuang_news.txt"));
+
+                //                 showedinfos = GetInfo(@"baozhuang_news.txt");
+                  Filllistview(@"baozhuang_news.txt");
+                  this.showitem.EndUpdate();
+      */
+                getinfos();
+            
+   
+        }
+        void getinfos()
+        {
+            showitem.Clear();
+            TableLoad();
+            this.showitem.BeginUpdate();
+            showedinfos.Clear();
+            showedinfos = new List<Info>(preinfos);  //深复制
+            if (checkBox1.Checked)
+            {
+                showedinfos.AddRange(GetInfo(@"baozhuang_news.txt"));               
+            }
+            if (checkBox2.Checked)
+            {
+                showedinfos.AddRange(GetInfo(@"diangong_news.txt"));
+               
+            }
+            if (checkBox3.Checked)
+            {
+                showedinfos.AddRange(GetInfo(@"zhike_news.txt"));               
+            }
+            if (checkBox4.Checked)
+            {
+                showedinfos.AddRange(GetInfo(@"guoshang_news.txt"));              
+            }
+            if (checkBox5.Checked)
+            {
+                showedinfos.AddRange(GetInfo(@"fanyi_news.txt"));
+
+            }
+            if (checkBox6.Checked)
+            {
+                showedinfos.AddRange(GetInfo(@"renwen_news.txt"));
+            }           
+            Filllistview(showedinfos);
+
+            this.showitem.EndUpdate();
+        }
+        
     }
 }
