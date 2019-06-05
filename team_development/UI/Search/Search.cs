@@ -172,6 +172,9 @@ namespace team_development.UI.Search
         {
             //showedinfos.Clear();
             List<Info> temp = new List<Info>();
+            if (!File.Exists(path)) {
+                return temp;
+            }
             string filePath = path;
             //FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
             //StreamReader sr = new StreamReader(fileStream, Encoding.Default);
