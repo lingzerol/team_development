@@ -39,7 +39,6 @@ namespace team_developmentTests
                  ref missing, ref missing, ref missing, ref isVisible, ref missing,
                  ref missing, ref missing, ref missing);
 
-                //填写
                 String testString = "";
                 if (doc.Bookmarks.Exists("ToName"))
                 {
