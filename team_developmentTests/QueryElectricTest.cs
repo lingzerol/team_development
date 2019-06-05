@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Lib.GetElectricCharge;
 using System.Threading;
+using Lib;
 
 namespace team_developmentTests
 {
@@ -9,8 +10,10 @@ namespace team_developmentTests
     public class QueryElectricTest
     {
         GetElectricCharge gec = new GetElectricCharge();
+        Waiting wait = new Waiting();
         Mutex charge_mtx = new Mutex();
-        string electric;
+        string previous_charge = null;
+        string electric = null ;
 
         public void SetElectricCharge(string charge)
         {
@@ -19,13 +22,31 @@ namespace team_developmentTests
             electric = charge;
         }
 
+        public bool IsOK()
+        {
+            bool ok = false;
+            charge_mtx.WaitOne();
+            if (electric != previous_charge)
+                ok = true;
+            charge_mtx.ReleaseMutex();
+            return ok;
+        }
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            gec.GetElectric("3305", new SetCharge(this.SetElectricCharge));
+            previous_charge = electric;
+            wait.StartKiller(true, 1000, IsOK);
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
-            gec.GetElectric("3305", new SetCharge(this.SetElectricCharge));
+            wait.StartKiller(true, 1000, IsOK);
             if (electric == null)
             {
-                //Assert.Fail();
+                Assert.Fail();
             }
         }
     }
