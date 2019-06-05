@@ -32,6 +32,30 @@ namespace team_development.UI.Search
                 Filllistview(showedinfos);
                 preinfos = new List<Info>(showedinfos);
             }
+            switch (GlobalData.userInfo.College)
+            {
+                case 0:
+                    checkBox_cahs.Checked = true;
+                    break;
+                case 1:
+                    checkBox_translate.Checked = true;
+                    break;
+                case 2:
+                    checkBox_nb.Checked = true;
+                    break;
+                case 3:
+                    checkBox_it.Checked = true;
+                    break;
+                case 4:
+                    checkBox_ele.Checked = true;
+                    break;
+                case 5:
+                    checkBox_pack.Checked = true;
+                    break;
+                default:
+                    break;
+            }
+            getinfos();
         }
 
         private void TableLoad() {
@@ -260,29 +284,29 @@ namespace team_development.UI.Search
             this.showitem.BeginUpdate();
             showedinfos.Clear();
             showedinfos = new List<Info>(preinfos);  //深复制
-            if (checkBox1.Checked)
+            if (checkBox_pack.Checked)
             {
                 showedinfos.AddRange(GetInfo(@"baozhuang_news.txt"));               
             }
-            if (checkBox2.Checked)
+            if (checkBox_ele.Checked)
             {
                 showedinfos.AddRange(GetInfo(@"dianqi_news.txt"));
                
             }
-            if (checkBox3.Checked)
+            if (checkBox_it.Checked)
             {
                 showedinfos.AddRange(GetInfo(@"zhike_news.txt"));               
             }
-            if (checkBox4.Checked)
+            if (checkBox_nb.Checked)
             {
                 showedinfos.AddRange(GetInfo(@"guoshang_news.txt"));              
             }
-            if (checkBox5.Checked)
+            if (checkBox_translate.Checked)
             {
                 showedinfos.AddRange(GetInfo(@"fanyi_news.txt"));
 
             }
-            if (checkBox6.Checked)
+            if (checkBox_cahs.Checked)
             {
                 showedinfos.AddRange(GetInfo(@"renwen_news.txt"));
             }           

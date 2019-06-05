@@ -33,6 +33,29 @@ namespace team_development.UI.UserInfo
                 Cryptography g = new Cryptography();
                 SZJDPasswordTextBox.Text = g.Decrypt(GlobalData.userInfo.SZJDPassword);
                 JWXTPasswordTextBox.Text = g.Decrypt(GlobalData.userInfo.JWXTPassword);
+                switch (GlobalData.userInfo.College)
+                {
+                    case 0:
+                        radioButton_cahs.Checked = true;
+                        break;
+                    case 1:
+                        radioButton_translate.Checked = true;
+                        break;
+                    case 2:
+                        radioButton_nb.Checked = true;
+                        break;
+                    case 3:
+                        radioButton_it.Checked = true;
+                        break;
+                    case 4:
+                        radioButton_ele.Checked = true;
+                        break;
+                    case 5:
+                        radioButton_pack.Checked = true;
+                        break;
+                    default:
+                        break;
+                }
             }
             
 
@@ -58,6 +81,33 @@ namespace team_development.UI.UserInfo
             GlobalData.userInfo.SZJDPassword = SZJDPasswordTextBox.Text;
             GlobalData.userInfo.JWXTPassword = JWXTPasswordTextBox.Text;
 
+            if (radioButton_cahs.Checked)
+            {
+                GlobalData.userInfo.College = 0;
+            }
+            else if (radioButton_translate.Checked)
+            {
+                GlobalData.userInfo.College = 1;
+            }
+            else if (radioButton_nb.Checked)
+            {
+                GlobalData.userInfo.College = 2;
+            }
+            else if (radioButton_it.Checked)
+            {
+                GlobalData.userInfo.College = 3;
+            }
+            else if (radioButton_ele.Checked)
+            {
+                GlobalData.userInfo.College = 4;
+            }
+            else if (radioButton_pack.Checked)
+            {
+                GlobalData.userInfo.College = 5;
+            }
+            else {
+                GlobalData.userInfo.College = -1;
+            }
             Cryptography g = new Cryptography();
             GlobalData.userInfo.SZJDPassword = g.Encryption(GlobalData.userInfo.SZJDPassword);
             GlobalData.userInfo.JWXTPassword = g.Encryption(GlobalData.userInfo.JWXTPassword);
@@ -87,6 +137,11 @@ namespace team_development.UI.UserInfo
                 JWXTPasswordTextBox.PasswordChar = '*';
                 SZJDPasswordTextBox.PasswordChar = '*';
             }
+        }
+
+        private void Label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
