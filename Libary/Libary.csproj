@@ -90,6 +90,7 @@
     <Content Include="GetMealCard\mealcard.exe" />
     <Content Include="GetNotifications\baozhuang_news.exe" />
     <Content Include="GetNotifications\diangong_news.exe" />
+    <Content Include="GetNotifications\dianqi_news.exe" />
     <Content Include="GetNotifications\fanyi_news.exe" />
     <Content Include="GetNotifications\Get_Article.exe" />
     <Content Include="GetNotifications\Get_Notifications.exe" />

@@ -17,13 +17,13 @@ namespace team_developmentTests
         [TestInitialize]
         public void Init()
         {
-            if (!File.Exists(@"jnu_news.txt") || !File.Exists(@"Campus_notification.txt") || !File.Exists(@"Lecture_notification.txt") || !File.Exists(@"Student_notification.txt") || !File.Exists(@"Teacher_notification.txt"))
-            {
-                PyNotifications notitest = new PyNotifications();
-                notitest.Init();
-                PyNews getnews = new PyNews();
-                getnews.Init();
-            }
+            if (File.Exists(@"Campus_notification.txt"))
+                File.Delete(@"Campus_notification.txt");
+            //File.Delete(@"Lecture_notification.txt");
+            //File.Delete(@"Student_notification.txt");
+            //File.Delete(@"Teacher_notification.txt");
+            if (File.Exists(@"baozhuang_news.txt"))
+                File.Delete(@"baozhuang_news.txt");
         }
 
         private TestContext testContextInstance;
@@ -67,12 +67,21 @@ namespace team_developmentTests
         #endregion
 
         [TestMethod]
-        public void Txtget()
+        public void GetNotis()
         {
-            Assert.IsTrue(File.Exists(@"jnu_news.txt"));
+            Assert.IsFalse(File.Exists(@"Campus_notification.txt"));
+            PyNotifications notitest = new PyNotifications();
+            notitest.Init();
             Assert.IsTrue(File.Exists(@"Campus_notification.txt"));
-            Assert.IsTrue(File.Exists(@"Lecture_notification.txt"));
-            Assert.IsTrue(File.Exists(@"Teacher_notification.txt"));
+        }
+
+        [TestMethod]
+        public void Getnews()
+        {
+            Assert.IsFalse(File.Exists(@"baozhuang_news.txt"));
+            PyNews newstest = new PyNews();
+            newstest.Init();
+            Assert.IsTrue(File.Exists(@"baozhuang_news.txt"));
         }
     }
 }

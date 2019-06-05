@@ -63,7 +63,7 @@ namespace team_development.UI.Search
             allinfos.Clear();
             //allinfos里面存放着全部学院全部新闻和通知
             allinfos = GetInfo(@"baozhuang_news.txt");
-            allinfos.AddRange(GetInfo(@"diangong_news.txt"));
+            allinfos.AddRange(GetInfo(@"dianqi_news.txt"));
             allinfos.AddRange(GetInfo(@"fanyi_news.txt"));
             allinfos.AddRange(GetInfo(@"renwen_news.txt"));
             allinfos.AddRange(GetInfo(@"zhike_news.txt"));
@@ -100,13 +100,6 @@ namespace team_development.UI.Search
             }
         }
 
-        private void choosecollege_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (choosecollege.SelectedIndex != null) {
-
-            }
-        }
-
         private void Choosetypetoshow(int index)
         {
             showitem.Clear();
@@ -117,9 +110,9 @@ namespace team_development.UI.Search
                 case 0:
                     //Filllistview(@"baozhuang_news.txt");
                     showedinfos = GetInfo(@"baozhuang_news.txt");//默认新闻，具体要看用户选择
-                   //showedinfos.AddRange(GetInfo(@"diangong_news.txt"));
+                   //showedinfos.AddRange(GetInfo(@"dianqi_news.txt"));
                     Filllistview(showedinfos);
-                    //Filllistview(@"diangong_news.txt");
+                    //Filllistview(@"dianqi_news.txt");
                     break;
                 case 1:
                     showedinfos = GetInfo(@"Campus_notification.txt");
@@ -147,7 +140,7 @@ namespace team_development.UI.Search
             this.showitem.EndUpdate();
         }
         private void Filllistview(string path) {
-            if (!File.Exists(@"jnu_news.txt"))
+            if (!File.Exists(@"baozhuang_news.txt")||!File.Exists(@"Teacher_notification.txt"))
             {
                 MessageBox.Show("请刷新");
                 return;
@@ -270,7 +263,7 @@ namespace team_development.UI.Search
             }
             if (checkBox2.Checked)
             {
-                showedinfos.AddRange(GetInfo(@"diangong_news.txt"));
+                showedinfos.AddRange(GetInfo(@"dianqi_news.txt"));
                
             }
             if (checkBox3.Checked)
