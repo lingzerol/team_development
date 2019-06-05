@@ -21,17 +21,12 @@ namespace team_development.UI.Search
         public List<Info> allinfos = new List<Info>();
         public List<Info> showedinfos = new List<Info>();
         private List<Info> preinfos = new List<Info>();
-
+        private int type = 0;
         public Search()
         {
             InitializeComponent();
             TableLoad();
-            if (File.Exists(@"baozhuang_news.txt"))
-            {
-                showedinfos = GetInfo(@"baozhuang_news.txt");   //默认的信息
-                Filllistview(showedinfos);
-                preinfos = new List<Info>(showedinfos);
-            }
+
             switch (GlobalData.userInfo.College)
             {
                 case 0:
@@ -129,14 +124,11 @@ namespace team_development.UI.Search
             showitem.Clear();
             TableLoad();
             this.showitem.BeginUpdate();
+            type = index;
             switch (index)
             {
                 case 0:
-                    //Filllistview(@"baozhuang_news.txt");
-                    showedinfos = GetInfo(@"baozhuang_news.txt");//默认新闻，具体要看用户选择
-                   //showedinfos.AddRange(GetInfo(@"dianqi_news.txt"));
-                    Filllistview(showedinfos);
-                    //Filllistview(@"dianqi_news.txt");
+                    
                     break;
                 case 1:
                     showedinfos = GetInfo(@"Campus_notification.txt");
@@ -159,8 +151,15 @@ namespace team_development.UI.Search
                 default:
                     break;
             }//end of switch
+            if (index == 0) {
+                showedinfos = new List<Info>();
+                
+            }
             preinfos = new List<Info>(showedinfos);
-            getinfos();
+            if (index == 0)
+            {
+                getinfos();
+            }
             this.showitem.EndUpdate();
         }
         private void Filllistview(string path) {
@@ -283,37 +282,41 @@ namespace team_development.UI.Search
             TableLoad();
             this.showitem.BeginUpdate();
             showedinfos.Clear();
-            showedinfos = new List<Info>(preinfos);  //深复制
-            if (checkBox_pack.Checked)
+            showedinfos = new List<Info>(preinfos);
+            if (type == 0)
             {
-                showedinfos.AddRange(GetInfo(@"baozhuang_news.txt"));               
-            }
-            if (checkBox_ele.Checked)
-            {
-                showedinfos.AddRange(GetInfo(@"dianqi_news.txt"));
-               
-            }
-            if (checkBox_it.Checked)
-            {
-                showedinfos.AddRange(GetInfo(@"zhike_news.txt"));               
-            }
-            if (checkBox_nb.Checked)
-            {
-                showedinfos.AddRange(GetInfo(@"guoshang_news.txt"));              
-            }
-            if (checkBox_translate.Checked)
-            {
-                showedinfos.AddRange(GetInfo(@"fanyi_news.txt"));
+                 //深复制
+                if (checkBox_pack.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"baozhuang_news.txt"));
+                }
+                if (checkBox_ele.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"dianqi_news.txt"));
+
+                }
+                if (checkBox_it.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"zhike_news.txt"));
+                }
+                if (checkBox_nb.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"guoshang_news.txt"));
+                }
+                if (checkBox_translate.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"fanyi_news.txt"));
+
+                }
+                if (checkBox_cahs.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"renwen_news.txt"));
+                }
 
             }
-            if (checkBox_cahs.Checked)
-            {
-                showedinfos.AddRange(GetInfo(@"renwen_news.txt"));
-            }           
             Filllistview(showedinfos);
 
             this.showitem.EndUpdate();
         }
-        
     }
 }
