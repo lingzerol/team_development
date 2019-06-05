@@ -34,7 +34,6 @@
             this.choosetype = new System.Windows.Forms.ComboBox();
             this.showitem = new System.Windows.Forms.ListView();
             this.refresh = new System.Windows.Forms.Button();
-            this.choosecollege = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
@@ -106,22 +105,6 @@
             this.refresh.Text = "刷新";
             this.refresh.UseVisualStyleBackColor = true;
             this.refresh.Click += new System.EventHandler(this.refresh_Click);
-            // 
-            // choosecollege
-            // 
-            this.choosecollege.FormattingEnabled = true;
-            this.choosecollege.Items.AddRange(new object[] {
-            "包装学院",
-            "翻译学院",
-            "电气工程学院",
-            "国际商学院",
-            "人文学院",
-            "智能科学与工程学院"});
-            this.choosecollege.Location = new System.Drawing.Point(485, 53);
-            this.choosecollege.Name = "choosecollege";
-            this.choosecollege.Size = new System.Drawing.Size(121, 23);
-            this.choosecollege.TabIndex = 8;
-            this.choosecollege.SelectedIndexChanged += new System.EventHandler(this.choosecollege_SelectedIndexChanged);
             // 
             // checkBox1
             // 
@@ -202,7 +185,6 @@
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.choosecollege);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.showitem);
             this.Controls.Add(this.choosetype);
@@ -226,7 +208,6 @@
         private System.Windows.Forms.ComboBox choosetype;
         private System.Windows.Forms.ListView showitem;
         private System.Windows.Forms.Button refresh;
-        private System.Windows.Forms.ComboBox choosecollege;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
