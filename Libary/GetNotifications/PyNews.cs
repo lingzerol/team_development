@@ -22,14 +22,9 @@ namespace Lib.GetNotifications
 
         public void Init()
         {
-            ProRun(@"\Libary\GetNotifications\baozhuang_news.exe");
-            ProRun(@"\Libary\GetNotifications\dianqi_news.exe");
-            ProRun(@"\Libary\GetNotifications\fanyi_news.exe");
-            ProRun(@"\Libary\GetNotifications\renwen_news.exe");
-            ProRun(@"\Libary\GetNotifications\zhike_news.exe");
-            ProRun(@"\Libary\GetNotifications\guoshang_news.exe");
-
+            ProRun(@"\Libary\GetNotifications\news.exe");
         }
+
         public void ProRun(String url)
         {
             Log.log.Info("Receive notifications from official website.");
