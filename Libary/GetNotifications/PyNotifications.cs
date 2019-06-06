@@ -12,19 +12,16 @@ namespace Lib
 {
     public class PyNotifications
     {
-        Process proc = new Process();
+        
         Thread thread = null;
         FileStream fs = null;
 
         public PyNotifications()
         {
         }
-
-        public void Init()
-        {
-            Log.log.Info("Receive notifications from official website.");
-            proc = new Process();
-            proc.StartInfo.FileName = System.AppContext.BaseDirectory.Substring(0, System.AppContext.BaseDirectory.LastIndexOf(@"\team_development")) + @"\Libary\GetNotifications\Get_Notifications.exe";
+        private Process getProcess(string file) {
+            Process proc = new Process();
+            proc.StartInfo.FileName = System.AppContext.BaseDirectory.Substring(0, System.AppContext.BaseDirectory.LastIndexOf(@"\team_development")) + @"\Libary\GetNotifications\"+file;
             //proc.StartInfo.Arguments = username + " " + password;
 
             proc.StartInfo.UseShellExecute = false;
@@ -35,13 +32,25 @@ namespace Lib
 
             proc.StartInfo.RedirectStandardError = true;
             proc.StartInfo.CreateNoWindow = true;
+            return proc;
+        }
+        public void Init()
+        {
+            Log.log.Info("Receive notifications from official website.");
+            Process proc = getProcess("Get_Notifications.exe");
+            Process inform_proc = getProcess("inform.exe");
             proc.Start();
+            inform_proc.Start();
+
+
+
             string output = proc.StandardOutput.ReadToEnd();
             proc.WaitForExit();//关键，等待外部程序退出后才能往下执行}
             //Response.Write(output);//输出
             proc.Close();
             //MessageBox.Show("跑完了");
-
+            inform_proc.WaitForExit();
+            inform_proc.Close();
         }
     }
 }

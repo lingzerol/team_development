@@ -285,7 +285,7 @@ namespace team_development.UI.Search
             showedinfos = new List<Info>(preinfos);
             if (type == 0)
             {
-                 //深复制
+                //深复制
                 if (checkBox_pack.Checked)
                 {
                     showedinfos.AddRange(GetInfo(@"baozhuang_news.txt"));
@@ -313,6 +313,37 @@ namespace team_development.UI.Search
                     showedinfos.AddRange(GetInfo(@"renwen_news.txt"));
                 }
 
+            }
+            else if (type == 3) {
+                if (checkBox_pack.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"baozhuang_inform.txt"));
+                }
+                if (checkBox_ele.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"Electric_inform.txt"));
+                   
+
+                }
+                if (checkBox_it.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"IT_inform.txt"));
+                    
+                }
+                if (checkBox_nb.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"NB_inform.txt"));
+                }
+                if (checkBox_translate.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"translate_inform.txt"));
+
+                }
+                if (checkBox_cahs.Checked)
+                {
+                    showedinfos.AddRange(GetInfo(@"rwxy_inform.txt"));
+                   
+                }
             }
             Filllistview(showedinfos);
 
