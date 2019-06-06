@@ -4,27 +4,24 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using Lib;
-using Lib.GetNotifications;
 using System.Text.RegularExpressions;
 
 namespace team_developmentTests
 {
     /// <summary>
-    /// NotificationTest 的摘要说明
+    /// NewsNNotisIsTrue 的摘要说明
     /// </summary>
     [TestClass]
-    public class NotificationTest
+    public class NewsNNotisIsTrueTest
     {
-        [TestInitialize]
-        public void Init()
+        public NewsNNotisIsTrueTest()
         {
-            if (File.Exists(@"Campus_notification.txt"))
-                File.Delete(@"Campus_notification.txt");
-            //File.Delete(@"Lecture_notification.txt");
-            //File.Delete(@"Student_notification.txt");
-            //File.Delete(@"Teacher_notification.txt");
-            if (File.Exists(@"baozhuang_news.txt"))
-                File.Delete(@"baozhuang_news.txt");
+            if (!File.Exists(@"Campus_notification.txt"))
+            {
+                PyNotifications notitest = new PyNotifications();
+                notitest.Init();
+            }
+
         }
 
         private TestContext testContextInstance;
@@ -68,23 +65,24 @@ namespace team_developmentTests
         #endregion
 
         [TestMethod]
-        public void GetNotis()
+        public void NotisIsTrue()
         {
-            Assert.IsFalse(File.Exists(@"Campus_notification.txt"));
-            PyNotifications notitest = new PyNotifications();
-            notitest.Init();
-            Assert.IsTrue(File.Exists(@"Campus_notification.txt"));
-        }
+            Assert.IsTrue(File.Exists(@"Teacher_notification.txt"));
+            System.IO.StreamReader filetest = new StreamReader(@"Teacher_notification.txt");
+            string titletest = filetest.ReadLine();
+            string pubtimetest = filetest.ReadLine();
+            string urltest = filetest.ReadLine();
+            if (titletest == null || pubtimetest == null || urltest == null)
+                Assert.Fail();
 
-        [TestMethod]
-        public void Getnews()
-        {
-            Assert.IsFalse(File.Exists(@"baozhuang_news.txt"));
-            PyNews newstest = new PyNews();
-            newstest.Init();
-            Assert.IsTrue(File.Exists(@"baozhuang_news.txt"));
-        }
+            Regex url = new Regex("[a-zA-z]+://[^\\s]*");
+            Assert.IsTrue(url.IsMatch(urltest));
 
-       
+            Regex pubtime = new Regex("([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))");
+            Assert.IsTrue(pubtime.IsMatch(pubtimetest));
+
+            Regex title = new Regex("[\u4e00-\u9fa5]");
+            Assert.IsTrue(title.IsMatch(titletest));
+        }
     }
 }
