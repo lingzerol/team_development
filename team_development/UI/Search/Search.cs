@@ -18,7 +18,9 @@ namespace team_development.UI.Search
     public partial class Search : Form
     {
         private NoticeSearch notice = new NoticeSearch();
+        //allinfos存放所有院的所有通知和新闻
         public List<Info> allinfos = new List<Info>();
+        //showedinfos存放现在要显示的通知和新闻
         public List<Info> showedinfos = new List<Info>();
         private List<Info> preinfos = new List<Info>();
         private int type = 0;
@@ -58,8 +60,9 @@ namespace team_development.UI.Search
 
             showitem.View = View.Details;
             showitem.Scrollable = true;
-            this.showitem.Columns.Add("标题", 570, HorizontalAlignment.Center);
+            this.showitem.Columns.Add("标题", 500, HorizontalAlignment.Center);
             this.showitem.Columns.Add("时间", 130, HorizontalAlignment.Center);
+            this.showitem.Columns.Add("发布单位", 130, HorizontalAlignment.Center);
         }
 
         private void Search_Load(object sender, EventArgs e)
@@ -74,10 +77,10 @@ namespace team_development.UI.Search
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            if (!File.Exists(@"jnu_news.txt") || !File.Exists(@"Campus_notification.txt") || !File.Exists(@"Lecture_notification.txt") || !File.Exists(@"Student_notification.txt") || !File.Exists(@"Teacher_notification.txt"))
+            /*if (!File.Exists(@"jnu_news.txt") || !File.Exists(@"Campus_notification.txt") || !File.Exists(@"Lecture_notification.txt") || !File.Exists(@"Student_notification.txt") || !File.Exists(@"Teacher_notification.txt"))
             {
                 return;
-            }
+            }*/
             Log.log.Info("Search the Jinan University's news and notices.");
             allinfos.Clear();
             //allinfos里面存放着全部学院全部新闻和通知
@@ -87,15 +90,24 @@ namespace team_development.UI.Search
             allinfos.AddRange(GetInfo(@"renwen_news.txt"));
             allinfos.AddRange(GetInfo(@"zhike_news.txt"));
             allinfos.AddRange(GetInfo(@"guoshang_news.txt"));
-            allinfos.AddRange(GetInfo(@"Campus_notification.txt"));
-            allinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
-            allinfos.AddRange(GetInfo(@"Student_notification.txt"));
-            allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));
-            //MessageBox.Show(searchBox.Text);
+
+            allinfos.AddRange(GetInfo(@"baozhuang_inform.txt"));    //包装院
+            allinfos.AddRange(GetInfo(@"Electric_inform.txt")); //电气院
+            allinfos.AddRange(GetInfo(@"IT_inform.txt"));   //智科院
+            allinfos.AddRange(GetInfo(@"NB_inform.txt"));   //国商院
+            allinfos.AddRange(GetInfo(@"rwxy_inform.txt")); //人文院
+            allinfos.AddRange(GetInfo(@"translate_inform.txt"));    //翻院
+
+            //allinfos.AddRange(GetInfo(@"Campus_notification.txt"));
+            //allinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
+            //allinfos.AddRange(GetInfo(@"Student_notification.txt"));
+            //allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));
+            //MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(searchBox.Text)));
             List<Info> searchinfos = new List<Info>();
             foreach (Info record in allinfos)
             {
                 if (record.getTitle().IndexOf(searchBox.Text) != -1)
+                //if (record.getTitle().IndexOf(Encoding.UTF8.GetString(Encoding.Default.GetBytes(searchBox.Text))) != -1)
                     searchinfos.Add(record);
             }
             showitem.Clear();
@@ -180,10 +192,12 @@ namespace team_development.UI.Search
                 
                 item.Text = record.getTitle();
                 item.SubItems.Add(record.getTime());
+                item.SubItems.Add(record.getIssuer());
                 showitem.Items.Add(item);
             }
         }
 
+        //要修改：读取的同时设置学院和类型，比如：国商新闻、国商通知之类的
         private List<Info> GetInfo(string path)
         {
             //showedinfos.Clear();
@@ -192,14 +206,58 @@ namespace team_development.UI.Search
                 return temp;
             }
             string filePath = path;
+            string issuer = "unidentify source";
+            switch (filePath) {
+                case @"baozhuang_news.txt":
+                    issuer = "包装新闻";
+                    break;
+                case @"dianqi_news.txt":
+                    issuer = "电气新闻";
+                    break;
+                case @"fanyi_news.txt":
+                    issuer = "翻译新闻";
+                    break;
+                case @"renwen_news.txt":
+                    issuer = "人文新闻";
+                    break;
+                case @"zhike_news.txt":
+                    issuer = "智科新闻";
+                    break;
+                case @"guoshang_news.txt":
+                    issuer = "国商新闻";
+                    break;
+                case @"baozhuang_inform.txt":
+                    issuer = "包装通知";
+                    break;
+                case @"Electric_inform.txt":
+                    issuer = "电气通知";
+                    break;
+                case @"IT_inform.txt":
+                    issuer = "智科通知";
+                    break;
+                case @"NB_inform.txt":
+                    issuer = "国商通知";
+                    break;
+                case @"rwxy_inform.txt":
+                    issuer = "人文通知";
+                    break;
+                case @"translate_inform.txt":
+                    issuer = "翻译通知";
+                    break;
+                default:
+                    issuer = "没有进入case";
+                    break;
+            }
             //FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
             //StreamReader sr = new StreamReader(fileStream, Encoding.Default);
-            string content = File.ReadAllText(filePath, Encoding.UTF8);
+            //string content = File.ReadAllText(filePath, Encoding.UTF8);
+            string content = File.ReadAllText(filePath);
             string[] element = content.Split(new string[] { "\n" }, StringSplitOptions.None);
             Info info;
             for (int i = 0; i < element.Length - 3; i += 3)
             {
                 info = new Info(element[i], element[i + 1], element[i + 2]);
+                info.setIssuer(issuer);
                 temp.Add(info);
             }
             return temp;
@@ -272,10 +330,9 @@ namespace team_development.UI.Search
                   Filllistview(@"baozhuang_news.txt");
                   this.showitem.EndUpdate();
       */
-                getinfos();
-            
-   
+                getinfos();            
         }
+
         void getinfos()
         {
             showitem.Clear();
@@ -283,6 +340,9 @@ namespace team_development.UI.Search
             this.showitem.BeginUpdate();
             showedinfos.Clear();
             showedinfos = new List<Info>(preinfos);
+
+            //要修改：比如点选了国商，则要遍历一遍allinfos，
+            //把其中issuer包含国商字段的拿出来加到showedinfos中
             if (type == 0)
             {
                 //深复制
@@ -302,6 +362,8 @@ namespace team_development.UI.Search
                 if (checkBox_nb.Checked)
                 {
                     showedinfos.AddRange(GetInfo(@"guoshang_news.txt"));
+                    //6.10 test
+                    showedinfos.AddRange(GetInfo(@"NB_inform.txt"));
                 }
                 if (checkBox_translate.Checked)
                 {

@@ -18,6 +18,7 @@ namespace team_developmentTests
         [TestInitialize]
         public void Init()
         {
+
             if (File.Exists(@"Campus_notification.txt"))
                 File.Delete(@"Campus_notification.txt");
             //File.Delete(@"Lecture_notification.txt");

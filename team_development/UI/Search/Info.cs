@@ -11,11 +11,16 @@ namespace team_development.UI.Search
         private String time;
         private String url;
         private String title;
+        private String issuer;
         public Info(String mytitle, String mytime, String myurl)
         {
             time = mytime;
             url = myurl;
             title = mytitle;
+        }
+
+        public void setIssuer(String issuer) {
+            this.issuer = issuer;
         }
         public String getTime()
         {
@@ -29,5 +34,10 @@ namespace team_development.UI.Search
         {
             return title;
         }
+        public String getIssuer()
+        {
+            return issuer;
+        }
+
     }
 }

@@ -87,6 +87,7 @@
     <Content Include="GetMealCard\mealcard.exe" />
     <Content Include="GetNotifications\Get_Article.exe" />
     <Content Include="GetNotifications\Get_Notifications.exe" />
+    <Content Include="GetNotifications\inform.exe" />
     <Content Include="GetNotifications\jnu_news.exe" />
     <Content Include="GetNotifications\news.exe" />
   </ItemGroup>

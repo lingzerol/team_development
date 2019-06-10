@@ -14,6 +14,10 @@ namespace team_developmentTests
     [TestClass]
     public class NewsNNotisIsTrueTest
     {
+        Regex url = new Regex("[a-zA-z]+://[^\\s]*");
+        Regex pubtime = new Regex("([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))");
+        Regex title = new Regex("[\u4e00-\u9fa5]");
+
         public NewsNNotisIsTrueTest()
         {
             if (!File.Exists(@"Campus_notification.txt"))
@@ -21,7 +25,6 @@ namespace team_developmentTests
                 PyNotifications notitest = new PyNotifications();
                 notitest.Init();
             }
-
         }
 
         private TestContext testContextInstance;
@@ -67,22 +70,29 @@ namespace team_developmentTests
         [TestMethod]
         public void NotisIsTrue()
         {
-            Assert.IsTrue(File.Exists(@"Teacher_notification.txt"));
-            System.IO.StreamReader filetest = new StreamReader(@"Teacher_notification.txt");
+            //Assert.IsTrue(File.Exists(@"Teacher_notification.txt"));
+            //System.IO.StreamReader filetest = new StreamReader(@"Teacher_notification.txt");
+            notistrue(@"Campus_notification.txt");
+            notistrue(@"Teacher_notification.txt");
+            notistrue(@"Student_notification.txt");
+            notistrue(@"Lecture_notification.txt");
+        }
+
+        public void notistrue(string path) {
+            Assert.IsTrue(File.Exists(path));
+            System.IO.StreamReader filetest = new StreamReader(path);
             string titletest = filetest.ReadLine();
             string pubtimetest = filetest.ReadLine();
             string urltest = filetest.ReadLine();
             if (titletest == null || pubtimetest == null || urltest == null)
                 Assert.Fail();
 
-            Regex url = new Regex("[a-zA-z]+://[^\\s]*");
             Assert.IsTrue(url.IsMatch(urltest));
 
-            Regex pubtime = new Regex("([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3})-(((0[13578]|1[02])-(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)-(0[1-9]|[12][0-9]|30))|(02-(0[1-9]|[1][0-9]|2[0-8])))");
             Assert.IsTrue(pubtime.IsMatch(pubtimetest));
 
-            Regex title = new Regex("[\u4e00-\u9fa5]");
             Assert.IsTrue(title.IsMatch(titletest));
+            filetest.Close();
         }
     }
 }
