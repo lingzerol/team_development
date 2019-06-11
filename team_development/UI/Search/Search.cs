@@ -245,22 +245,34 @@ namespace team_development.UI.Search
                     issuer = "翻译通知";
                     break;
                 default:
-                    issuer = "没有进入case";
+                    //issuer = "没有进入case";
                     break;
             }
             //FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
             //StreamReader sr = new StreamReader(fileStream, Encoding.Default);
-            //string content = File.ReadAllText(filePath, Encoding.UTF8);
-            string content = File.ReadAllText(filePath);
+            string content = File.ReadAllText(filePath, Encoding.UTF8);
+            //string content = File.ReadAllText(filePath);
             string[] element = content.Split(new string[] { "\n" }, StringSplitOptions.None);
             Info info;
-            for (int i = 0; i < element.Length - 3; i += 3)
+            if (filePath.IndexOf("news") != -1)
             {
-                info = new Info(element[i], element[i + 1], element[i + 2]);
-                info.setIssuer(issuer);
-                temp.Add(info);
-            }
-            return temp;
+                for (int i = 0; i < element.Length - 3; i += 3)
+                {
+                    info = new Info(element[i], element[i + 1], element[i + 2]);
+                    info.setIssuer(issuer);
+                    temp.Add(info);
+                }
+                return temp;
+            }//end of if
+            else {
+                for (int i = 0; i < element.Length - 3; i += 3)
+                {
+                    info = new Info(element[i], element[i + 2], element[i + 1]);
+                    info.setIssuer(issuer);
+                    temp.Add(info);
+                }
+                return temp;
+            } 
         }
 
         private void showitem_SelectedIndexChanged(object sender, EventArgs e)
