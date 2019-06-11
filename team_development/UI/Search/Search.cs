@@ -349,15 +349,17 @@ namespace team_development.UI.Search
                 if (checkBox_pack.Checked)
                 {
                     showedinfos.AddRange(GetInfo(@"baozhuang_news.txt"));
+                    showedinfos.AddRange(GetInfo(@"baozhuang_info.txt"));
                 }
                 if (checkBox_ele.Checked)
                 {
                     showedinfos.AddRange(GetInfo(@"dianqi_news.txt"));
-
+                    showedinfos.AddRange(GetInfo(@"Electric_inform.txt"));
                 }
                 if (checkBox_it.Checked)
                 {
                     showedinfos.AddRange(GetInfo(@"zhike_news.txt"));
+                    showedinfos.AddRange(GetInfo(@"IT_inform.txt"));
                 }
                 if (checkBox_nb.Checked)
                 {
@@ -368,11 +370,12 @@ namespace team_development.UI.Search
                 if (checkBox_translate.Checked)
                 {
                     showedinfos.AddRange(GetInfo(@"fanyi_news.txt"));
-
+                    showedinfos.AddRange(GetInfo(@"translate_inform.txt"));
                 }
                 if (checkBox_cahs.Checked)
                 {
                     showedinfos.AddRange(GetInfo(@"renwen_news.txt"));
+                    showedinfos.AddRange(GetInfo(@"rwxy_inform.txt"));
                 }
 
             }
