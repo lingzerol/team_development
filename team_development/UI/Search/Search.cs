@@ -376,6 +376,7 @@ namespace team_development.UI.Search
                 {
                     showedinfos.AddRange(GetInfo(@"renwen_news.txt"));
                     showedinfos.AddRange(GetInfo(@"rwxy_inform.txt"));
+                    //
                 }
 
             }
