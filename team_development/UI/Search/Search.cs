@@ -52,7 +52,13 @@ namespace team_development.UI.Search
                 default:
                     break;
             }
-            getinfos();
+            showedinfos = GetInfo(@"Student_notification.txt");
+            showedinfos.AddRange(GetInfo(@"Teacher_notification.txt"));
+            showedinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
+            showedinfos.AddRange(GetInfo(@"Campus_notification.txt"));
+            preinfos = new List<Info>(showedinfos);
+            Filllistview(showedinfos);
+           // getinfos();
         }
 
         private void TableLoad() {
@@ -98,10 +104,10 @@ namespace team_development.UI.Search
             allinfos.AddRange(GetInfo(@"rwxy_inform.txt")); //人文院
             allinfos.AddRange(GetInfo(@"translate_inform.txt"));    //翻院
             allinfos.AddRange(GetInfo(@"sina.txt"));
-            //allinfos.AddRange(GetInfo(@"Campus_notification.txt"));
-            //allinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
-            //allinfos.AddRange(GetInfo(@"Student_notification.txt"));
-            //allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));
+            allinfos.AddRange(GetInfo(@"Campus_notification.txt"));
+            allinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
+            allinfos.AddRange(GetInfo(@"Student_notification.txt"));
+            allinfos.AddRange(GetInfo(@"Teacher_notification.txt"));
             //MessageBox.Show(Encoding.UTF8.GetString(Encoding.Default.GetBytes(searchBox.Text)));
             List<Info> searchinfos = new List<Info>();
             foreach (Info record in allinfos)
@@ -140,7 +146,12 @@ namespace team_development.UI.Search
             switch (index)
             {
                 case 0:
-                    
+                    showedinfos = GetInfo(@"Student_notification.txt");
+                    showedinfos.AddRange(GetInfo(@"Teacher_notification.txt"));
+                    showedinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
+                    showedinfos.AddRange(GetInfo(@"Campus_notification.txt"));
+                    preinfos = new List<Info>(showedinfos);
+                    Filllistview(showedinfos);
                     break;
                 case 1:
                     showedinfos = GetInfo(@"sina.txt");
@@ -162,11 +173,7 @@ namespace team_development.UI.Search
                 default:
                     break;
             }//end of switch
-            if (index == 0) {
-                showedinfos = new List<Info>();
-                
-            }
-            preinfos = new List<Info>(showedinfos);
+           
             if (index == 0)
             {
                 getinfos();
@@ -207,6 +214,18 @@ namespace team_development.UI.Search
             string filePath = path;
             string issuer = "unidentify source";
             switch (filePath) {
+                case @"Student_notification.txt":
+                    issuer = "学生通知";
+                    break;
+                case @"Teacher_notification.txt":
+                    issuer = "教师通知";
+                    break;
+                case @"Lecture_notification.txt":
+                    issuer = "课程通知";
+                    break;
+                case @"Campus_notification.txt":
+                    issuer = "校园通知";
+                    break;
                 case @"baozhuang_news.txt":
                     issuer = "包装新闻";
                     break;
@@ -292,8 +311,13 @@ namespace team_development.UI.Search
             new Thread(getsina.Init).Start();
             Waiting wait = new Waiting();
             wait.StartKiller();
+            
             Choosetypetoshow(choosetype.SelectedIndex);
-        }
+            if (type == 0)
+            {
+                getinfos();
+            }
+         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
@@ -302,42 +326,49 @@ namespace team_development.UI.Search
 
         private void checkBox2_CheckedChanged_1(object sender, EventArgs e)
         {
-            getinfos();
+            if (type == 0)
+                getinfos();
         }
 
         private void checkBox6_CheckedChanged_1(object sender, EventArgs e)
         {
-            getinfos();
+            if (type == 0)
+                getinfos();
         }
 
         private void checkBox4_CheckedChanged_1(object sender, EventArgs e)
         {
-            getinfos();
+            if (type == 0)
+                getinfos();
         }
 
         private void checkBox5_CheckedChanged_1(object sender, EventArgs e)
         {
-            getinfos();
+            if (type == 0)
+                getinfos();
         }
 
         private void checkBox3_CheckedChanged_1(object sender, EventArgs e)
         {
-            getinfos();
+            if (type == 0)
+                getinfos();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            
-                // showitem.Clear();
-                /*  TableLoad();
-                  this.showitem.BeginUpdate();
-                  //MessageBox.Show("包装");
-                //  showedinfos.AddRange(GetInfo(@"baozhuang_news.txt"));
 
-                //                 showedinfos = GetInfo(@"baozhuang_news.txt");
-                  Filllistview(@"baozhuang_news.txt");
-                  this.showitem.EndUpdate();
-      */
+            // showitem.Clear();
+            /*  TableLoad();
+              this.showitem.BeginUpdate();
+              //MessageBox.Show("包装");
+            //  showedinfos.AddRange(GetInfo(@"baozhuang_news.txt"));
+
+            //                 showedinfos = GetInfo(@"baozhuang_news.txt");
+              Filllistview(@"baozhuang_news.txt");
+              this.showitem.EndUpdate();
+  */
+            if (type == 0)
+
                 getinfos();            
         }
 
@@ -357,7 +388,7 @@ namespace team_development.UI.Search
                 if (checkBox_pack.Checked)
                 {
                     showedinfos.AddRange(GetInfo(@"baozhuang_news.txt"));
-                    showedinfos.AddRange(GetInfo(@"baozhuang_info.txt"));
+                    showedinfos.AddRange(GetInfo(@"baozhuang_inform.txt"));
                 }
                 if (checkBox_ele.Checked)
                 {
@@ -386,38 +417,37 @@ namespace team_development.UI.Search
                     showedinfos.AddRange(GetInfo(@"rwxy_inform.txt"));
                     //
                 }
-            }
-            else if (type == 3) {
-                if (checkBox_pack.Checked)
-                {
-                    showedinfos.AddRange(GetInfo(@"baozhuang_inform.txt"));
-                }
-                if (checkBox_ele.Checked)
-                {
-                    showedinfos.AddRange(GetInfo(@"Electric_inform.txt"));                  
-                }
-                if (checkBox_it.Checked)
-                {
-                    showedinfos.AddRange(GetInfo(@"IT_inform.txt"));
+            }           
+            //else if (type == 3) {
+            //    if (checkBox_pack.Checked)
+            //    {
+            //        showedinfos.AddRange(GetInfo(@"baozhuang_inform.txt"));
+            //    }
+            //    if (checkBox_ele.Checked)
+            //    {
+            //        showedinfos.AddRange(GetInfo(@"Electric_inform.txt"));                  
+            //    }
+            //    if (checkBox_it.Checked)
+            //    {
+            //        showedinfos.AddRange(GetInfo(@"IT_inform.txt"));
                     
-                }
-                if (checkBox_nb.Checked)
-                {
-                    showedinfos.AddRange(GetInfo(@"NB_inform.txt"));
-                }
-                if (checkBox_translate.Checked)
-                {
-                    showedinfos.AddRange(GetInfo(@"translate_inform.txt"));
+            //    }
+            //    if (checkBox_nb.Checked)
+            //    {
+            //        showedinfos.AddRange(GetInfo(@"NB_inform.txt"));
+            //    }
+            //    if (checkBox_translate.Checked)
+            //    {
+            //        showedinfos.AddRange(GetInfo(@"translate_inform.txt"));
 
-                }
-                if (checkBox_cahs.Checked)
-                {
-                    showedinfos.AddRange(GetInfo(@"rwxy_inform.txt"));
+            //    }
+            //    if (checkBox_cahs.Checked)
+            //    {
+            //        showedinfos.AddRange(GetInfo(@"rwxy_inform.txt"));
                    
-                }
-            }
+            //    }
+            //}
             Filllistview(showedinfos);
-
             this.showitem.EndUpdate();
         }
     }
