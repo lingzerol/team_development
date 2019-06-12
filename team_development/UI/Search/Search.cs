@@ -97,7 +97,7 @@ namespace team_development.UI.Search
             allinfos.AddRange(GetInfo(@"NB_inform.txt"));   //国商院
             allinfos.AddRange(GetInfo(@"rwxy_inform.txt")); //人文院
             allinfos.AddRange(GetInfo(@"translate_inform.txt"));    //翻院
-
+            allinfos.AddRange(GetInfo(@"sina.txt"));
             //allinfos.AddRange(GetInfo(@"Campus_notification.txt"));
             //allinfos.AddRange(GetInfo(@"Lecture_notification.txt"));
             //allinfos.AddRange(GetInfo(@"Student_notification.txt"));
@@ -143,23 +143,22 @@ namespace team_development.UI.Search
                     
                     break;
                 case 1:
-                    showedinfos = GetInfo(@"Campus_notification.txt");
-                    Filllistview(@"Campus_notification.txt");
+                    showedinfos = GetInfo(@"sina.txt");
+                    Filllistview(@"sina.txt");
                     break;
-                case 2:
-                    showedinfos = GetInfo(@"Lecture_notification.txt");
-                    Filllistview(@"Lecture_notification.txt");
-                    break;
-                case 3:
-                    showedinfos = GetInfo(@"Student_notification.txt");
-                    Filllistview(@"Student_notification.txt");
-                    break;
-                case 4:
-                    showedinfos = GetInfo(@"Teacher_notification.txt");
-                    Filllistview(@"Teacher_notification.txt");
-                    //MessageBox.Show(abc);
-                    break;
-
+                //case 2:
+                //    showedinfos = GetInfo(@"sina.txt");
+                //    Filllistview(@"sina.txt");
+                //    break;
+                //case 3:
+                //    showedinfos = GetInfo(@"Student_notification.txt");
+                //    Filllistview(@"Student_notification.txt");
+                //    break;
+                //case 4:
+                //    showedinfos = GetInfo(@"Teacher_notification.txt");
+                //    Filllistview(@"Teacher_notification.txt");
+                //    //MessageBox.Show(abc);
+                //    break;
                 default:
                     break;
             }//end of switch
@@ -243,6 +242,9 @@ namespace team_development.UI.Search
                     break;
                 case @"translate_inform.txt":
                     issuer = "翻译通知";
+                    break;
+                case @"sina.txt":
+                    issuer = "新浪新闻";
                     break;
                 default:
                     //issuer = "没有进入case";

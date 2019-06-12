@@ -74,11 +74,8 @@
             // 
             this.choosetype.FormattingEnabled = true;
             this.choosetype.Items.AddRange(new object[] {
-            "校内新闻",
-            "校区公告",
-            "讲座报告",
-            "学生通知",
-            "教师通知"});
+            "校内新闻和通知",
+            "新浪新闻"});
             this.choosetype.Location = new System.Drawing.Point(324, 24);
             this.choosetype.Name = "choosetype";
             this.choosetype.Size = new System.Drawing.Size(121, 23);

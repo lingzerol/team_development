@@ -13,6 +13,7 @@ using team_development.FormLib;
 using team_development.UI.UserInfo;
 using team_development.UI;
 using Lib.GetElectricCharge;
+using Lib.GetNotifications;
 
 namespace team_development
 {
@@ -53,7 +54,7 @@ namespace team_development
             //bool result = jwxt.Login(GlobalData.userInfo.StudentNumber, g.Decrypt(GlobalData.userInfo.JWXTPassword), getValidate.Text);
             getIcas.Login(GlobalData.userInfo.StudentNumber,g.Decrypt(GlobalData.userInfo.SZJDPassword));
             PyNotifications getNoti = new PyNotifications();
-
+          
             //wait.StartKiller();
             this.Hide();
             MenuGetter.GetMenu(MenuType.Nothing);
