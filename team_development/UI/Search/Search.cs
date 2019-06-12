@@ -276,15 +276,25 @@ namespace team_development.UI.Search
             //string content = File.ReadAllText(filePath);
             string[] element = content.Split(new string[] { "\n" }, StringSplitOptions.None);
             Info info;
-
-            for (int i = 0; i < element.Length - 3; i += 3)
+            if (filePath.IndexOf("news") != -1||filePath.IndexOf("inform")!=-1)
             {
-                info = new Info(element[i], element[i + 1], element[i + 2]);
-                info.setIssuer(issuer);
-                temp.Add(info);
-            }
-            return temp;
-
+                for (int i = 0; i < element.Length - 3; i += 3)
+                {
+                    info = new Info(element[i], element[i + 1], element[i + 2]);
+                    info.setIssuer(issuer);
+                    temp.Add(info);
+                }
+                return temp;
+            }//end of if
+            else {
+                for (int i = 0; i < element.Length - 3; i += 3)
+                {
+                    info = new Info(element[i], element[i + 2], element[i + 1]);
+                    info.setIssuer(issuer);
+                    temp.Add(info);
+                }
+                return temp;
+            } 
         }
 
         private void showitem_SelectedIndexChanged(object sender, EventArgs e)
