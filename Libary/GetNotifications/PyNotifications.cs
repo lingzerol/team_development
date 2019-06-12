@@ -39,10 +39,10 @@ namespace Lib
             Log.log.Info("Receive notifications from official website.");
             Process proc = getProcess("Get_Notifications.exe");
             Process inform_proc = getProcess("inform.exe");
+            Process sino_proc = getProcess("sina.exe");
             proc.Start();
             inform_proc.Start();
-
-
+            sino_proc.Start();
 
             string output = proc.StandardOutput.ReadToEnd();
             proc.WaitForExit();//关键，等待外部程序退出后才能往下执行}
@@ -51,6 +51,8 @@ namespace Lib
             //MessageBox.Show("跑完了");
             inform_proc.WaitForExit();
             inform_proc.Close();
+            sino_proc.WaitForExit();
+            sino_proc.Close();
         }
     }
 }

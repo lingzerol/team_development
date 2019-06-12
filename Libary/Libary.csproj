@@ -67,6 +67,7 @@
     <Compile Include="GetJWXT\PyJWXT.cs" />
     <Compile Include="GetMealCard\PyMealcard.cs" />
     <Compile Include="GetNotifications\PyNews.cs" />
+    <Compile Include="GetNotifications\PySina.cs" />
     <Compile Include="GetValue.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="NoticeSearch.cs" />
@@ -90,6 +91,7 @@
     <Content Include="GetNotifications\inform.exe" />
     <Content Include="GetNotifications\jnu_news.exe" />
     <Content Include="GetNotifications\news.exe" />
+    <Content Include="GetNotifications\sina.exe" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

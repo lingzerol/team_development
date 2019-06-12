@@ -294,6 +294,9 @@ namespace team_development.UI.Search
             new Thread(getnoti.Init).Start();
             PyNews getnews = new PyNews();
             new Thread(getnews.Init).Start();
+            PySina getsina = new PySina();
+            //getsina.Init();
+            new Thread(getsina.Init).Start();
             Waiting wait = new Waiting();
             wait.StartKiller();
             Choosetypetoshow(choosetype.SelectedIndex);
