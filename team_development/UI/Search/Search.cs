@@ -377,7 +377,7 @@ namespace team_development.UI.Search
                 {
                     showedinfos.AddRange(GetInfo(@"guoshang_news.txt"));
                     //6.10 test
-                    showedinfos.AddRange(GetInfo(@"NB_inform.txt"));
+                    showedinfos.AddRange(GetInfo(@"NB_inform.txt"));                    
                 }
                 if (checkBox_translate.Checked)
                 {
@@ -390,7 +390,6 @@ namespace team_development.UI.Search
                     showedinfos.AddRange(GetInfo(@"rwxy_inform.txt"));
                     //
                 }
-
             }
             else if (type == 3) {
                 if (checkBox_pack.Checked)
@@ -399,9 +398,7 @@ namespace team_development.UI.Search
                 }
                 if (checkBox_ele.Checked)
                 {
-                    showedinfos.AddRange(GetInfo(@"Electric_inform.txt"));
-                   
-
+                    showedinfos.AddRange(GetInfo(@"Electric_inform.txt"));                  
                 }
                 if (checkBox_it.Checked)
                 {
