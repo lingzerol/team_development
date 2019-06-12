@@ -246,6 +246,7 @@ namespace team_development.UI.Search
                 case @"sina.txt":
                     issuer = "新浪新闻";
                     break;
+                    //
                 default:
                     //issuer = "没有进入case";
                     break;
