@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +37,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,13 +49,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,14 +72,179 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\Forum\Forum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forum\Forum.Designer.cs">
+      <DependentUpon>Forum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GlobalData.cs" />
+    <Compile Include="UI\JWXT\JwxtLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\JWXT\JwxtLogin.Designer.cs">
+      <DependentUpon>JwxtLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\JWXT\JwxtLoginSingleton.cs" />
+    <Compile Include="UI\Query\QueryEmploy\OfferArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Query\QueryEmploy\OfferArticle.Designer.cs" />
+    <Compile Include="UI\Query\QueryMealCard\SzjdLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Query\QueryMealCard\SzjdLogin.Designer.cs">
+      <DependentUpon>SzjdLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Query\QueryMealCard\SzjdLoginSingleton.cs" />
+    <Compile Include="UI\Search\Info.cs" />
+    <Compile Include="UI\Query\QueryInform\QueryInform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Query\QueryInform\QueryInform.Designer.cs">
+      <DependentUpon>QueryInform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Query\QueryEmploy\QuiryOffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Query\QueryEmploy\QuiryOffer.Designer.cs">
+      <DependentUpon>QuiryOffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Query\QueryInform\QueryInformArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Query\QueryInform\QueryInformArticle.Designer.cs">
+      <DependentUpon>QueryInformArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\JWXT\CourseSelection\CourseSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\JWXT\CourseSelection\CourseSelection.designer.cs">
+      <DependentUpon>CourseSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Absence\AbsenceInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Absence\AbsenceInput.Designer.cs">
+      <DependentUpon>AbsenceInput.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\JWXT\CourseSelection\LeftTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\JWXT\CourseSelection\LeftTime.Designer.cs">
+      <DependentUpon>LeftTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLib\MenuGetter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\JWXT\CourseSelection\TimeSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\JWXT\CourseSelection\TimeSetting.Designer.cs">
+      <DependentUpon>TimeSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Query\QueryGPA\QueryGPA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Query\QueryGPA\QueryGPA.Designer.cs">
+      <DependentUpon>QueryGPA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Query\QueryMealCard\QuiryMealcard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Query\QueryMealCard\QuiryMealcard.Designer.cs">
+      <DependentUpon>QuiryMealcard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\JWXT\MatchScheme\MatchScheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\JWXT\MatchScheme\MatchScheme.Designer.cs">
+      <DependentUpon>MatchScheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Search\Notisditails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Search\Notisditails.Designer.cs">
+      <DependentUpon>Notisditails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Search\Search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Search\Search.Designer.cs">
+      <DependentUpon>Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserInfo\Cryptography.cs" />
+    <Compile Include="UI\UserInfo\UserInfo.cs" />
+    <Compile Include="UI\UserInfo\UserInfoDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserInfo\UserInfoDisplay.Designer.cs">
+      <DependentUpon>UserInfoDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Query\QueryElectricity\QueryElectricity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Query\QueryElectricity\QueryElectricity.Designer.cs">
+      <DependentUpon>QueryElectricity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValidateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ValidateForm.Designer.cs">
+      <DependentUpon>ValidateForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\Forum\Forum.resx">
+      <DependentUpon>Forum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\JWXT\JwxtLogin.resx">
+      <DependentUpon>JwxtLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Query\QueryEmploy\OfferArticle.resx" />
+    <EmbeddedResource Include="UI\Query\QueryInform\QueryInform.resx">
+      <DependentUpon>QueryInform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Query\QueryEmploy\QuiryOffer.resx">
+      <DependentUpon>QuiryOffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Query\QueryInform\QueryInformArticle.resx">
+      <DependentUpon>QueryInformArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\JWXT\CourseSelection\CourseSelection.resx">
+      <DependentUpon>CourseSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\JWXT\CourseSelection\LeftTime.resx">
+      <DependentUpon>LeftTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="UI\Absence\TemplatePreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Absence\TemplatePreview.Designer.cs">
+      <DependentUpon>TemplatePreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Absence\TemplateSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Absence\TemplateSelect.Designer.cs">
+      <DependentUpon>TemplateSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Absence\WordPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Absence\WordPreview.Designer.cs">
+      <DependentUpon>WordPreview.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\Absence\AbsenceInput.resx">
+      <DependentUpon>AbsenceInput.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -66,6 +254,45 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\JWXT\CourseSelection\TimeSetting.resx">
+      <DependentUpon>TimeSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Query\QueryGPA\QueryGPA.resx">
+      <DependentUpon>QueryGPA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Query\QueryMealCard\QuiryMealcard.resx">
+      <DependentUpon>QuiryMealcard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\JWXT\MatchScheme\MatchScheme.resx">
+      <DependentUpon>MatchScheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Query\QueryMealCard\SzjdLogin.resx">
+      <DependentUpon>SzjdLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Search\Notisditails.resx">
+      <DependentUpon>Notisditails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Search\Search.resx">
+      <DependentUpon>Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserInfo\UserInfoDisplay.resx">
+      <DependentUpon>UserInfoDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Absence\TemplatePreview.resx">
+      <DependentUpon>TemplatePreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Absence\TemplateSelect.resx">
+      <DependentUpon>TemplateSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Absence\WordPreview.resx">
+      <DependentUpon>WordPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Query\QueryElectricity\QueryElectricity.resx">
+      <DependentUpon>QueryElectricity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValidateForm.resx">
+      <DependentUpon>ValidateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -79,6 +306,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libary\Libary.csproj">
+      <Project>{bdaa33a0-f471-4ebe-b257-2328129e4749}</Project>
+      <Name>Libary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
